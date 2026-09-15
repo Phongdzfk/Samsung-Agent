@@ -1,0 +1,251 @@
+Slide 1 – Báo cáo tuần 2
+
+Em xin trình bày báo cáo tuần 2 của đề tài xây dựng bộ nhớ dài hạn cho LLM Agent.
+
+Ở đây, LLM là Large LanguageModel, tức mô hình ngôn ngữ lớn; còn Long-Term Memory, hay LTM, là bộ nhớ dài hạn được bổ sung để Agent có thể lưu giữ và sử dụng thông tin qua nhiều phiên hội thoại.
+
+Trong tuần 2, nhóm tập trung vào ba nội dung chính: thứ nhất là khảo sát các benchmark liên quan; thứ hai là xác định tám năng lực bộ nhớ cần xây dựng và thiết kế kiến trúc tổng thể; cuối cùng là lựa chọn các công nghệ để triển khai trong các tuần tiếp theo.
+
+Hệ thống ưu tiên triển khai và đánh giá trên tiếng Anh do các benchmark chính đều sử dụng tiếng Anh. Phần tiếng Việt và khả năng xuyên ngữ được xem là hướng mở rộng nếu thời gian cho phép.
+
+⸻
+
+Slide 2 – Cập nhật từ benchmark
+
+Đầu tiên là kết quả khảo sát benchmark.
+
+Nhóm tập trung vào bốn benchmark gồm LoCoMo, LongMemEval, MemoryAgentBench và BEAM.
+
+Qua khảo sát, nhóm nhận thấy các benchmark gần đây không chỉ đánh giá khả năng nhớ lại thông tin mà còn đi sâu vào các bài toán như cập nhật kiến thức, xử lý mâu thuẫn, suy luận qua nhiều phiên và suy luận theo thời gian.
+
+Ví dụ, LongMemEval có bài toán Knowledge Update, tức cập nhật kiến thức khi thông tin của người dùng thay đổi. MemoryAgentBench có Fact Consolidation, đánh giá khả năng hợp nhất và xử lý nhiều thông tin có liên quan. BEAM cũng đánh giá cập nhật kiến thức và xử lý thông tin mâu thuẫn.
+
+Một điểm quan trọng là các benchmark này chủ yếu sử dụng tiếng Anh. Vì vậy, nhóm quyết định lấy tiếng Anh làm ngôn ngữ chính để có thể đánh giá trực tiếp trên benchmark. Tiếng Việt và khả năng xuyên ngữ sẽ được coi là phần mở rộng thay vì mục tiêu bắt buộc của hệ thống.
+
+⸻
+
+Slide 3 – Tám năng lực của bộ nhớ
+
+Từ các benchmark đã khảo sát, nhóm tổng hợp thành tám năng lực chính.
+
+Thứ nhất là trích xuất và nhớ chính xác thông tin.
+
+Thứ hai là suy luận đa phiên, tức có thể kết hợp thông tin từ nhiều phiên hội thoại khác nhau.
+
+Thứ ba là suy luận thời gian, để hiểu thông tin nào đúng tại một thời điểm cụ thể.
+
+Thứ tư là cập nhật kiến thức khi thông tin cũ thay đổi.
+
+Thứ năm là giải quyết mâu thuẫn khi hệ thống nhận được các thông tin không thể tự xác định cái nào đúng.
+
+Thứ sáu là khả năng từ chối trả lời khi bộ nhớ không có đủ bằng chứng.
+
+Thứ bảy là tuân theo sở thích của người dùng.
+
+Và thứ tám là hiểu dài hạn và tóm tắt các phiên hội thoại thành những ký ức cô đọng hơn.
+
+Trước đây nhóm có xem nhất quán xuyên ngữ là năng lực thứ chín. Tuy nhiên, sau khi thu hẹp phạm vi, phần này được chuyển thành hướng mở rộng. Vì vậy hệ thống chính hiện tại được đánh giá trên tám năng lực.
+
+⸻
+
+Slide 4 – Kiến trúc phân lớp
+
+Từ tám năng lực trên, nhóm thiết kế hệ thống theo kiến trúc phân lớp.
+
+Ở tầng L0 là tầng giao diện. Giai đoạn đầu nhóm sử dụng CLI, viết đầy đủ là Command-Line Interface, tức giao diện dòng lệnh. Sau này có thể bổ sung HTTP API, tức giao diện để các ứng dụng khác gọi tới hệ thống.
+
+L1 là tầng điều phối. Ở đây LLM Agent chịu trách nhiệm điều phối một lượt tương tác theo luồng đọc bộ nhớ, tạo câu trả lời và sau đó ghi lại những thông tin cần thiết.
+
+L2 là tầng dịch vụ bộ nhớ, bao gồm trích xuất fact, chuẩn hóa, cập nhật, truy xuất, lắp ngữ cảnh và tóm tắt.
+
+L3 là tầng chỉ mục, gồm vector ngữ nghĩa, BM25 để tìm kiếm theo từ khóa và Slot Registry để quản lý các thuộc tính bộ nhớ.
+
+L4 là tầng lưu trữ. SQLite đóng vai trò source of truth, tức nguồn dữ liệu gốc đáng tin cậy. ChromaDB được sử dụng làm chỉ mục vector phục vụ truy xuất nhanh.
+
+Cuối cùng, L5 là tầng adapter kết nối với LLM, embedding model và reranker.
+
+Một nguyên tắc quan trọng ở đây là tách dữ liệu gốc khỏi chỉ mục. SQLite giữ dữ liệu chính, còn ChromaDB và BM25 chỉ phục vụ tìm kiếm và có thể dựng lại từ dữ liệu gốc khi cần.
+
+⸻
+
+Slide 5 – Xử lý ngôn ngữ
+
+Slide này mô tả thiết kế xử lý ngôn ngữ.
+
+Ở tầng ghi, một fact có thể giữ lại text, tức câu gốc của người dùng, đồng thời có text_canon, tức dạng nội dung đã được chuẩn hóa. Các slot cũng được đưa về khóa thống nhất để tránh trường hợp cùng một thuộc tính nhưng hệ thống lại hiểu thành hai slot khác nhau.
+
+Ví dụ, các cách viết khác nhau của cùng một cấp độ như n4 và N4 cần được chuẩn hóa để hệ thống không hiểu nhầm đó là một lần cập nhật.
+
+Ở tầng đọc, thiết kế hiện tại ưu tiên một chỉ mục vector trên dữ liệu chuẩn hóa cho phạm vi chính.
+
+Phần hai chỉ mục trên slide là hướng mở rộng cho xử lý xuyên ngữ. Chỉ mục thứ nhất nhúng nội dung ở ngôn ngữ gốc, còn chỉ mục thứ hai nhúng nội dung đã chuẩn hóa. Khi sử dụng cả hai, kết quả có thể được hợp nhất bằng RRF.
+
+RRF là Reciprocal Rank Fusion, tức phương pháp hợp nhất nhiều danh sách kết quả dựa trên thứ hạng của chúng thay vì so trực tiếp các điểm số khác thang đo.
+
+Tuy nhiên, khả năng xuyên ngữ hiện không phải mục tiêu bắt buộc. Hệ thống chính vẫn ưu tiên tiếng Anh và phần hai chỉ mục được giữ như một hướng mở rộng.
+
+⸻
+
+Slide 6 – Lược đồ bộ nhớ và provenance
+
+Tiếp theo là cách một memory record được lưu.
+
+Biểu diễn ở phía trên slide là dạng rút gọn. Trong đó subject xác định đối tượng, attribute xác định thuộc tính, value là giá trị, seq là thứ tự phiên bản và lang là ngôn ngữ.
+
+Ví dụ, slot user, japanese_level có giá trị N4 ở sequence số 4.
+
+Trong triển khai thực tế, một record còn có nhiều metadata hơn và được chia thành bốn nhóm.
+
+Nhóm đầu tiên lưu thông tin nhận dạng và nội dung của fact.
+
+Nhóm thứ hai quản lý độ mới và phiên bản, ví dụ sequence, trạng thái và bản ghi nào đã thay thế bản cũ.
+
+Nhóm thứ ba quản lý thời gian hiệu lực và loại memory.
+
+Nhóm cuối cùng là provenance, tức nguồn gốc của thông tin, giúp hệ thống biết thông tin đến từ user hay assistant, đã được xác nhận hay chưa và có cần kiểm tra lại hay không.
+
+Điểm quan trọng ở đây là cơ chế pending. Nếu một thông tin do chính assistant sinh ra nhưng người dùng chưa xác nhận, hệ thống không đưa ngay nó thành sự thật chính thức. Cách này giúp tránh hiện tượng hệ thống lưu lại chính thông tin sai do mình tạo ra rồi sử dụng nó ở những phiên sau.
+
+⸻
+
+Slide 7 – Pipeline truy xuất
+
+Khi cần lấy thông tin từ bộ nhớ, hệ thống sử dụng Hybrid Retrieval, tức kết hợp nhiều phương pháp truy xuất.
+
+Phương pháp đầu tiên là Dense Retrieval. Dense ở đây là truy xuất bằng vector embedding. Nội dung được chuyển thành vector và so sánh độ tương đồng, nhờ đó hệ thống có thể tìm được những memory gần nhau về ngữ nghĩa ngay cả khi câu hỏi không sử dụng đúng các từ đã lưu.
+
+Phương pháp thứ hai là BM25. Đây là một thuật toán truy xuất theo từ khóa. Nó đặc biệt hữu ích với những thông tin cần khớp chính xác như N4, mã lớp, mã sản phẩm hoặc tên riêng.
+
+Trong phần mở rộng xuyên ngữ, hệ thống có thể có hai Dense index, một trên nội dung gốc và một trên nội dung chuẩn hóa.
+
+Các danh sách kết quả sau đó được hợp nhất bằng RRF, tức Reciprocal Rank Fusion. RRF sử dụng thứ hạng của candidate trong từng danh sách để tạo một thứ hạng chung. Cách này phù hợp khi kết hợp BM25 với vector retrieval vì điểm của hai phương pháp không nằm trên cùng một thang đo. (OpenSearch Documentation)
+
+Sau RRF, hệ thống sử dụng reranker để đánh giá lại các candidate và đưa những memory phù hợp nhất lên đầu.
+
+Cuối cùng, Context Assembler lựa chọn các memory phù hợp để đưa vào context của LLM, thay vì đưa toàn bộ lịch sử hội thoại vào mô hình.
+
+⸻
+
+Slide 8 – Luồng xử lý một lượt hội thoại
+
+Một lượt hội thoại được chia thành bốn pha chính.
+
+Pha đầu tiên là Extraction. LLM phân tích nội dung người dùng và trích xuất các fact có khả năng cần lưu.
+
+Pha thứ hai là Update. Phần này chủ yếu do Python xử lý theo các quy tắc xác định trước. Một fact có thể dẫn đến ADD, UPDATE, DELETE, NOOP hoặc CONFLICT.
+
+ADD là thêm mới, UPDATE là cập nhật, DELETE là xóa, NOOP nghĩa là không cần thay đổi và CONFLICT là phát hiện mâu thuẫn chưa thể tự giải quyết.
+
+Pha thứ ba là Retrieval. Hệ thống truy xuất các memory liên quan, hợp nhất kết quả, rerank, loại bỏ các phiên bản cũ và lựa chọn thông tin phù hợp với giới hạn context.
+
+Pha cuối cùng là Generation. LLM nhận câu hỏi cùng context đã được chuẩn bị để sinh câu trả lời.
+
+Nguyên tắc của nhóm là những công việc liên quan đến ngữ nghĩa thì giao cho LLM, còn những thao tác cần chính xác và xác định như so sánh sequence, chọn phiên bản mới nhất hay cập nhật trạng thái thì xử lý bằng Python.
+
+⸻
+
+Slide 9 – Knowledge Update và Conflict Resolution
+
+Một trong tám năng lực quan trọng là cập nhật kiến thức.
+
+Ví dụ, nếu trước đây người dùng nói trình độ tiếng Nhật là N4 và sau đó nói đã đạt N3, đây là một cập nhật có thứ tự thời gian rõ ràng.
+
+Hệ thống tạo sequence mới cho N3 và đánh dấu bản N4 cũ là đã bị thay thế. Khi cần lấy giá trị hiện tại, hệ thống có thể xác định bằng quy tắc trên sequence thay vì yêu cầu LLM tự phán đoán đâu là thông tin mới nhất.
+
+Trường hợp Conflict Resolution khác với Update.
+
+Nếu hệ thống nhận được hai thông tin mâu thuẫn nhưng không có đủ căn cứ về thời gian hoặc nguồn để xác định thông tin nào đúng, hệ thống không tự chọn một giá trị. Thay vào đó, nó đánh dấu CONFLICT và đưa vào hàng chờ để xử lý hoặc yêu cầu người dùng xác nhận.
+
+Qua benchmark, nhóm nhận thấy việc chỉ truy xuất được thông tin liên quan chưa đảm bảo hệ thống sẽ luôn chọn đúng fact mới nhất. Vì vậy nhóm đưa phần xử lý freshness, tức độ mới của thông tin, về logic xác định thay vì phụ thuộc hoàn toàn vào LLM.
+
+⸻
+
+Slide 10 – Công nghệ sử dụng
+
+Về công nghệ, nhóm ưu tiên các thành phần có thể triển khai với chi phí thấp hoặc chạy local.
+
+LLM được sử dụng cho các công việc cần hiểu ngữ nghĩa như trích xuất fact, lập kế hoạch truy vấn và tóm tắt.
+
+BGE-M3 được lựa chọn làm embedding model, tức mô hình chuyển văn bản thành vector để phục vụ Dense Retrieval.
+
+Bên cạnh đó là reranker để đánh giá lại mức độ liên quan của các candidate sau bước truy xuất ban đầu.
+
+Về lưu trữ, SQLite giữ dữ liệu chính và quan hệ giữa các memory. ChromaDB giữ vector index. BM25 đảm nhiệm truy xuất theo từ khóa.
+
+Hệ thống được triển khai bằng Python và sử dụng pytest cho kiểm thử tự động. Ngoài ra nhóm có thể sử dụng mock LLM trong unit test để kiểm thử logic mà không phải gọi model thật trong mọi trường hợp.
+
+⸻
+
+Slide 11 – Đánh giá hệ thống
+
+Nhóm dự kiến đánh giá hệ thống theo ba nhóm chỉ số chính.
+
+Nhóm thứ nhất là Accuracy, tức độ chính xác. Phần này đo khả năng trả lời đúng theo từng loại câu hỏi và từng năng lực bộ nhớ.
+
+Nhóm thứ hai là Consistency, tức tính nhất quán. Ví dụ sau khi thông tin đã được cập nhật, hệ thống có còn trả lại fact cũ hay không; khi thiếu bằng chứng có biết từ chối hay không; và có duy trì đúng sở thích của người dùng hay không.
+
+Nhóm thứ ba là Performance, tức hiệu năng.
+
+Trong đó p50 là mức latency mà khoảng 50 phần trăm lượt xử lý hoàn thành không vượt quá, còn p95 là mức mà khoảng 95 phần trăm lượt xử lý hoàn thành không vượt quá. Hai chỉ số này giúp đánh giá cả trường hợp thông thường lẫn các lượt xử lý chậm.
+
+Ngoài ra, mỗi lượt xử lý đều có trace log, tức nhật ký ghi lại các bước hệ thống đã thực hiện. Trace này giúp nhóm phân tích lỗi và xác định lỗi xuất hiện ở extraction, retrieval, update hay generation.
+
+Đánh giá chính sẽ ưu tiên tiếng Anh để tương thích với benchmark. Các phép đo tiếng Việt hoặc xuyên ngữ sẽ chỉ bổ sung nếu nhóm triển khai phần mở rộng.
+
+⸻
+
+Slide 12 – Thiết kế ablation
+
+Ngoài việc đo kết quả cuối cùng, nhóm sử dụng ablation study, tức lần lượt loại bỏ từng thành phần để xem thành phần đó thực sự đóng góp bao nhiêu.
+
+Full-context là baseline đưa nhiều lịch sử hội thoại trực tiếp vào context.
+
+Dense-only chỉ sử dụng Dense Retrieval mà không kết hợp BM25.
+
+No-rerank giữ bước retrieval nhưng bỏ reranker, từ đó có thể đo xem reranker cải thiện chất lượng kết quả bao nhiêu.
+
+LLM-judge, hay có thể gọi rõ hơn là LLM-based freshness, là cấu hình để LLM tự lựa chọn thông tin mới nhất thay vì sử dụng quy tắc sequence xác định. Cấu hình này được dùng để so sánh với cách xử lý freshness bằng Python của nhóm.
+
+Cuối cùng là cấu hình đầy đủ của hệ thống.
+
+Nếu triển khai phần xuyên ngữ, nhóm có thể bổ sung cấu hình native-index-only để đánh giá đóng góp của chỉ mục chuẩn hóa. Tuy nhiên đây là ablation cho phần mở rộng, không phải phần bắt buộc của tám năng lực chính.
+
+⸻
+
+Slide 13 – Lộ trình tám tuần
+
+Về lộ trình, tuần 1 nhóm tập trung khảo sát bài toán và xây dựng nền tảng ban đầu.
+
+Tuần 2 là giai đoạn hiện tại, tập trung khảo sát benchmark, xác định tám năng lực, thiết kế kiến trúc và lựa chọn công nghệ.
+
+Tuần 3 sẽ xây dựng pipeline end-to-end cơ bản, bắt đầu từ SQLite, Dense Retrieval và trace log.
+
+Tuần 4 tập trung vào Slot Registry, sequence và các thao tác ADD, UPDATE, DELETE, NOOP và CONFLICT.
+
+Tuần 5 phát triển Hybrid Retrieval với Dense, BM25 và RRF, đồng thời bổ sung suy luận đa phiên, suy luận thời gian và pinned memory cho sở thích.
+
+Tuần 6 tập trung vào reranker, cơ chế abstention, tức biết từ chối khi không đủ bằng chứng, và Session Summarization để tạo episodic memory.
+
+Tuần 7 thực hiện đánh giá, ablation và phân tích lỗi.
+
+Cuối cùng, tuần 8 hoàn thiện hệ thống, đóng gói và tổng hợp báo cáo.
+
+Phần tiếng Việt và xuyên ngữ sẽ được thực hiện như hướng mở rộng nếu tiến độ của tám năng lực chính đảm bảo.
+
+⸻
+
+Slide 14 – Tổng kết tuần 2 và bước tiếp theo
+
+Tổng kết tuần 2, nhóm đã hoàn thành khảo sát các benchmark chính, từ đó xác định tám năng lực cốt lõi của hệ bộ nhớ dài hạn.
+
+Nhóm cũng đã thiết kế kiến trúc phân lớp, xác định SQLite là source of truth, còn ChromaDB và BM25 là các chỉ mục phục vụ truy xuất.
+
+Pipeline retrieval được định hướng theo Hybrid Retrieval, kết hợp Dense Retrieval theo ngữ nghĩa với BM25 theo từ khóa, sau đó hợp nhất và rerank để chọn memory phù hợp.
+
+Ngoài ra, nhóm đã thiết kế cơ chế sequence để quản lý phiên bản, provenance để theo dõi nguồn gốc và trạng thái pending để hạn chế việc hệ thống tự lưu lại thông tin chưa được người dùng xác nhận.
+
+Sang tuần 3, mục tiêu chính là đưa kiến trúc này thành một pipeline end-to-end có thể chạy được: từ nhận hội thoại, trích xuất fact, lưu vào SQLite, tạo vector index, truy xuất lại memory và ghi trace cho toàn bộ quá trình.
+
+Sau khi phần cốt lõi hoạt động ổn định, nhóm mới tiếp tục mở rộng sang các năng lực phức tạp hơn và phần tiếng Việt hoặc xuyên ngữ nếu tiến độ cho phép.
+
+Em xin hết phần báo cáo tuần 2 và mong nhận được góp ý của anh về phạm vi tám năng lực cũng như kiến trúc hiện tại của hệ thống.
