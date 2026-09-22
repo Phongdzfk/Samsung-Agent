@@ -45,6 +45,30 @@ _MEMORY_COLS = (
     "speaker confirmed needs_review session_id turn_id source_text created_at"
 ).split()
 
+# ---------------------------------------------------------------------------
+# Di trú của tuần 4 — CHƯA bật ở tuần 3
+# ---------------------------------------------------------------------------
+# Bất biến mong muốn: mỗi slot (subject, attribute) chỉ có ĐÚNG MỘT bản 'active'.
+# SQLite không có CHECK nào diễn đạt nổi điều đó, nhưng một UNIQUE index BỘ PHẬN
+# thì có — và nó được ép ở tầng ghi, không phụ thuộc vào việc ai đó có nhớ gọi
+# đúng hàm hay không.
+#
+# Vì sao tuần 3 chưa bật: tuần 3 chưa có `UpdateManager`. Tầng ghi chỉ chèn thêm
+# bản mới, còn việc bỏ bản cũ là của `active_slots()` — lọc bằng window function
+# lúc ĐỌC. Bật ràng buộc này bây giờ thì mọi lần cập nhật một slot đều ném
+# IntegrityError, xem `test_active_slots_keeps_max_seq_per_slot`.
+#
+# Tuần 4, khi `add_facts` biết tự hạ bản cũ xuống 'superseded' trong cùng
+# transaction, ràng buộc trở thành lưới an toàn: nó biến lỗi "quên hạ bản cũ" từ
+# một lỗi ÂM THẦM (hai bản cùng 'active', truy xuất trả về bản nào là tùy seq)
+# thành một lỗi nổ ngay tại điểm ghi, có vết, sửa được.
+#
+# Chạy bằng `executescript`, nên khi đưa vào schema.sql ở tuần 4 thì dán y nguyên.
+WEEK4_ACTIVE_SLOT_CONSTRAINT = """
+CREATE UNIQUE INDEX IF NOT EXISTS ux_memory_one_active_per_slot
+  ON memory (subject, attribute) WHERE status = 'active';
+"""
+
 
 def utcnow() -> str:
     """Mốc thời gian ISO-8601 UTC. Dùng một hàm duy nhất cho cả hệ để các mốc
@@ -117,12 +141,46 @@ class IngestResult:
 class Ledger:
     """Bọc một file SQLite. Mở một lần, dùng suốt phiên."""
 
-    def __init__(self, path: str | Path = "ltm.db") -> None:
+    def __init__(
+        self,
+        path: str | Path = "ltm.db",
+        *,
+        assistant_status: str = "pending",
+    ) -> None:
+        """`assistant_status` quyết định số phận fact trích từ lượt trợ lý:
+
+        - `"pending"` — mặc định, đúng thiết kế (mục 6): chờ người dùng xác nhận.
+        - `"active"`  — CHỈ dùng cho cấu hình đối chứng `no-gate` ở tuần 7, để đo
+          xem cổng nguồn gốc lấy đi bao nhiêu điểm ở nhóm câu hỏi
+          `single-session-assistant`. Đừng bật ở hệ thật.
+        """
+        if assistant_status not in ("pending", "active"):
+            raise ValueError("assistant_status phải là 'pending' hoặc 'active'")
+        self.assistant_status = assistant_status
         self.path = str(path)
         self.conn = sqlite3.connect(self.path, isolation_level=None)
         self.conn.row_factory = sqlite3.Row
         self._configure()
         self._migrate()
+
+    @classmethod
+    def fresh(cls, path: str | Path, **kw) -> "Ledger":
+        """Xóa hẳn file DB rồi mở lại — dùng ở ĐẦU MỖI CASE khi chạy eval.
+
+        Mỗi câu hỏi LongMemEval có haystack riêng. Dùng lại file DB của case
+        trước là để fact của câu 7 nhiễm vào câu 200; sổ cái không có cách nào
+        tự biết điều đó, và mọi số đo thành vô nghĩa mà vẫn trông hợp lý.
+
+        Xóa cả `-wal` và `-shm`: ở chế độ WAL, dữ liệu đã ghi có thể còn nằm
+        trong hai file đó, xóa mỗi file chính là chưa sạch.
+        """
+        p = Path(path)
+        for suffix in ("", "-wal", "-shm"):
+            f = Path(str(p) + suffix)
+            if f.exists():
+                f.unlink()
+        p.parent.mkdir(parents=True, exist_ok=True)
+        return cls(p, **kw)
 
     # -- hạ tầng ------------------------------------------------------------
     def _configure(self) -> None:
@@ -168,18 +226,26 @@ class Ledger:
         session_id: str,
         turn_id: str,
         source_text: str | None = None,
+        turn_time: str | None = None,
     ) -> IngestResult:
         """Ghi các fact của MỘT lượt hội thoại, trong một transaction.
 
         Hoặc cả lượt vào, hoặc không gì vào. Nửa vời là trạng thái không thể
         dò lại được từ nhật ký vết.
 
+        `turn_time` — **bắt buộc truyền khi chạy benchmark.** Đó là ngày của
+        PHIÊN hội thoại, không phải giờ hệ thống. Haystack của LongMemEval trải
+        dài hàng tháng trong quá khứ; nếu để trống thì mọi fact đều mang
+        `valid_from` là hôm nay, mọi câu hỏi thời gian ("lúc đó trình độ là gì")
+        mất sạch căn cứ, và năng lực 3 luôn sai mà không có lỗi nào hiện ra.
+        Bỏ trống chỉ đúng cho hội thoại trực tiếp, nơi giờ hệ thống chính là giờ thật.
+
         Cổng nguồn gốc (mục 6): fact trích từ lượt của TRỢ LÝ vào `pending` và
         không được truy xuất, tới khi người dùng xác nhận ở lượt sau. Đây là
         thứ ngăn hệ tự ghi lại ảo giác của chính nó rồi coi đó là sự thật.
         """
         result = IngestResult()
-        now = utcnow()
+        now = turn_time or utcnow()
 
         self.conn.execute("BEGIN IMMEDIATE")
         try:
@@ -190,7 +256,7 @@ class Ledger:
                     continue
 
                 seq = self._next_seq()
-                status = "pending" if f.speaker == "assistant" else "active"
+                status = self.assistant_status if f.speaker == "assistant" else "active"
                 cur = self.conn.execute(
                     """
                     INSERT INTO memory (
@@ -361,17 +427,3 @@ class Ledger:
             "traces": by("SELECT kind, COUNT(*) FROM trace GROUP BY kind"),
         }
 
-
-# ---------------------------------------------------------------------------
-# Ràng buộc để BẬT Ở TUẦN 4, không phải tuần 3
-# ---------------------------------------------------------------------------
-# Tuần 3 chỉ có thao tác ADD. Nạp LongMemEval, một người nói N5 rồi sau đó nói
-# N4 sẽ sinh hai bản `active` cùng slot — đúng như thiết kế, vì `MemoryUpdater`
-# chưa tồn tại. Bật ràng buộc này bây giờ là tự làm vỡ pipeline.
-#
-# Tuần 4, sau khi có UPDATE, chạy đúng một dòng dưới đây. Từ lúc đó mọi lỗi
-# logic cập nhật sẽ NỔ NGAY tại chỗ thay vì âm thầm làm hỏng số liệu:
-WEEK4_ACTIVE_SLOT_CONSTRAINT = """
-CREATE UNIQUE INDEX IF NOT EXISTS ux_active_slot
-  ON memory (subject, attribute) WHERE status = 'active';
-"""
