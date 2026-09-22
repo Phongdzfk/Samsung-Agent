@@ -1,0 +1,167 @@
+# KỊCH BẢN THUYẾT TRÌNH TUẦN 3 (15 slide, khoảng 14–16 phút)
+
+> Số liệu ở slide 3, 4, 5 đã lấy từ output thật của ba notebook (chạy trên Kaggle, GPU Tesla T4 cho notebook 02), không còn là số ước lượng. Slide 4 và 5 là ảnh biểu đồ thật xuất trực tiếp từ notebook — dùng khi mentor muốn xem số liệu thô, có thể lướt nhanh nếu không có câu hỏi.
+> Dấu **↳** là gợi ý thao tác: chỉ vào đâu trên slide.
+
+---
+
+## Slide 1 · Tiêu đề (0:20)
+
+Em xin chào anh. Em xin trình bày báo cáo tuần 3 của đề tài xây dựng bộ nhớ dài hạn cho LLM Agent.
+
+Tuần 2 nhóm đã khóa thiết kế. Tuần 3 là tuần chuyển từ thiết kế sang mã nguồn. Kết quả chính của tuần là kho ký ức SQLite đã hoàn thành kèm bộ kiểm thử, cùng ba notebook khảo sát dữ liệu, và một kế hoạch chi tiết để dựng pipeline chạy đầu–cuối trong phần còn lại của tuần. Năng lực nhắm tới là năng lực số 1: trích xuất và nhớ chính xác.
+
+---
+
+## Slide 2 · Các quyết định thiết kế đã chốt (1:00)
+
+Trước hết em nhắc lại những quyết định tuần 2 đã khóa, và nhóm không mở lại trong tuần 3.
+
+↳ *Chỉ lần lượt từng thẻ.* Khung tám năng lực, mỗi năng lực gắn một benchmark, một thành phần và một tuần. Kiến trúc sáu lớp, trong đó điểm quan trọng nhất là tách kho ký ức SQLite khỏi chỉ mục Chroma và BM25. Song ngữ: mỗi ký ức lưu văn bản gốc, bản tiếng Anh chuẩn hóa và ngôn ngữ; khóa slot luôn bằng tiếng Anh. Đường truy xuất lai: dense cộng BM25, hợp nhất RRF, reranker, lọc bản mới nhất theo seq, rồi lắp ngữ cảnh. Cổng nguồn gốc: thông tin do trợ lý nói chỉ vào trạng thái pending, chờ người dùng xác nhận. Công nghệ đều miễn phí. Và phương pháp đánh giá ba trục, năm cấu hình, cùng mô hình nền, cùng k, cùng ngân sách token.
+
+↳ *Chỉ xuống khung dưới.* Tồn đọng của tuần 2 là hết tuần nhóm có thiết kế và dữ liệu khảo sát nhưng chưa có mã nguồn chạy được. Tuần 3 giải quyết việc này: bộ nạp dữ liệu chuẩn thay cho đọc thủ công trong notebook, và khung mã nguồn.
+
+---
+
+## Slide 3 · Khảo sát dữ liệu LongMemEval-S (1:30)
+
+Trước khi vào phần mã, em xin trình bày ba notebook khảo sát trên LongMemEval-S. Cả ba đều không tốn chi phí API.
+
+↳ *Chỉ cột trái tối.* Notebook 01 chạy trên CPU: 500 câu hỏi, 6 loại, tổng cộng phải nạp 23.867 phiên — nếu đi qua API miễn phí sẽ mất khoảng 16 ngày, nên buộc phải nhúng bằng mô hình chạy local. 64,8% số câu cần bằng chứng ở nhiều hơn một phiên, và độ trùng từ vựng trung vị giữa câu hỏi với câu chứa đáp án là 50%. Cuối notebook, nhóm chia dev và test phân tầng theo loại câu hỏi với seed cố định: 150 câu dev để chỉnh tham số, 350 câu test khóa đến tuần 7. Notebook 02 chạy GPU Tesla T4 đúng một lần: nhúng toàn bộ 247.238 đoạn văn bản bằng BGE-M3, mất khoảng 22 phút, kiểm tra nhanh cho thấy cosine của câu chứa đáp án luôn cao hơn rõ rệt so với câu ngẫu nhiên. Notebook 03 chạy CPU, không nhúng lại, so ba đường truy xuất là vector, BM25 và RRF trên 149 câu của tập dev.
+
+↳ *Chỉ bảng bên phải.* Mỗi phép đo trả lời một quyết định thiết kế.
+Thứ nhất, ngưỡng từ chối: độ chồng lấn cosine giữa câu chứa đáp án và lượt ngẫu nhiên là 12,1% — trung bình 0,59 so với 0,34. Chồng lấn không lớn nhưng vẫn còn, nên nhóm giữ quyết định đặt ngưỡng từ chối lên điểm reranker ở tuần 6 thay vì lên cosine thô.
+Thứ hai, BM25 và RRF: tại k bằng 30, RRF thấp hơn chỉ dùng vector 1,4 điểm nhưng cao hơn chỉ dùng BM25 6,3 điểm. Tuy nhiên ở k bằng 10, tức giá trị nhóm định dùng thực tế, RRF cao nhất: 88,3% so với 86,7% của vector và 79,7% của BM25. Vì vậy nhóm vẫn giữ truy xuất lai.
+Thứ ba, tách truy vấn con: 64,8% số câu cần hơn một phiên bằng chứng. Đây là căn cứ để ưu tiên thử QueryPlanner ở tuần 5 và đo mức cải thiện thật, chứ chưa khẳng định chắc sẽ cần.
+Thứ tư, giá trị k: recall bão hòa quanh k từ 20 đến 30 — vector đạt 95,4% tại k bằng 20, RRF đạt 95% tại k bằng 30.
+Thứ năm, ưu tiên cải thiện: loại multi-session có recall@10 thấp nhất, 78,6% với RRF, trong khi các loại còn lại đều trên 87%.
+
+Lưu ý quan trọng: đây là recall của tầng truy xuất, chưa phải accuracy cuối. Khoảng chênh giữa hai con số sẽ do baseline oracle đo ở tuần 7.
+
+Nếu anh muốn xem số liệu thô thay vì chỉ nghe kết luận, em có hai slide phụ lục biểu đồ ngay sau đây — nếu không cần, em xin phép bỏ qua để vào phần mã nguồn.
+
+---
+
+## Slide 4 · Phụ lục 1/2 — số liệu thô: ngưỡng cosine và Recall@k (0:45, chỉ mở nếu được hỏi)
+
+Đây là hai biểu đồ thật, xuất trực tiếp từ notebook 03, không phải số minh họa.
+
+↳ *Chỉ ảnh trái.* Phân bố cosine giữa câu hỏi và đoạn văn bản: cột tím là câu chứa đáp án, cột xám là lượt ngẫu nhiên. Hai phân bố có tách nhau nhưng vẫn chồng lấn 12,1%, nghĩa là một ngưỡng cosine đơn lẻ khó tách hoàn toàn hai nhóm. Đây là lý do nhóm dùng điểm reranker ở tuần 6 thay vì đặt ngưỡng cứng lên cosine.
+
+↳ *Chỉ ảnh phải.* Recall@k của ba đường vector, BM25 và hợp nhất RRF, trên 149 câu hỏi tập dev. Đường RRF nằm trên cùng ở vùng k nhỏ — đúng vùng nhóm dùng thực tế (đường kẻ chấm đánh dấu k=10): 88,3% so với 86,7% của vector và 79,7% của BM25. Ở k lớn hơn, vector bắt kịp và nhỉnh hơn RRF một chút, nhưng ở giá trị k thực dùng thì RRF vẫn tốt nhất.
+
+---
+
+## Slide 5 · Phụ lục 2/2 — số liệu thô: vì sao macro-average, vì sao ưu tiên multi-session (0:45, chỉ mở nếu được hỏi)
+
+Hai biểu đồ này giải thích cho hai quyết định thiết kế em vừa nói.
+
+↳ *Chỉ ảnh trái.* Phân bố 500 câu hỏi theo 6 loại: từ 6% đến 27%. Nếu tính một accuracy gộp, hai loại đông nhất sẽ quyết định phần lớn điểm số, che mất các loại ít câu hơn. Đó là lý do báo cáo dùng macro-average theo loại câu hỏi thay vì một con số chung.
+
+↳ *Chỉ ảnh phải.* Recall@10 tách theo loại: năm trong sáu loại đạt trên 87%, riêng multi-session chỉ 78,6% với RRF — thấp nhất rõ rệt. Đây là căn cứ để nhóm ưu tiên cải thiện truy xuất cho loại câu hỏi đa phiên trong các tuần tới.
+
+---
+
+## Slide 6 · Pipeline đầu–cuối tối giản (1:00)
+
+Mục tiêu tuần 3 là dựng một pipeline mỏng nhưng thông suốt: nạp hội thoại, trích fact, ghi vào kho, nhúng, truy xuất, trả lời, chấm điểm. Chưa có logic slot và seq, chưa BM25, chưa reranker, vì mỗi thứ có tuần riêng.
+
+↳ *Chỉ ô tối "Ghi vào kho".* Ô tối là phần đã hoàn thành.
+
+Tiêu chí hoàn thành là một lệnh chạy được trên tập dev và ra bảng số, kèm ba điều kiện. Một: bảng accuracy tách theo loại câu hỏi, không dùng một con số gộp. Hai: mọi lượt để lại một dòng trong nhật ký vết, để truy được vì sao một câu trả lời sai. Ba: pytest đạt toàn bộ, chạy offline bằng LLM giả lập, không tiêu hao hạn mức. Mục tiêu thực chất là đường cơ sở đầu tiên và hạ tầng cho các tuần 4 đến 7.
+
+---
+
+## Slide 7 · Kho ký ức: nguồn sự thật duy nhất (1:15)
+
+Nhóm chọn làm một module thật sâu thay vì dựng đủ mọi file ở mức sơ sài. Module đó là kho ký ức, một cơ sở dữ liệu SQLite ghi lại mọi fact mà agent học được, mỗi fact có số thứ tự seq và trạng thái. Có ba lý do.
+
+Một, sai ở đây khó phát hiện nhất. Chroma trả sai một ứng viên thì reranker còn có cơ hội loại bỏ; kho ký ức ghi sai một bản active thì lỗi lan sang toàn bộ truy xuất, và không có tầng nào kiểm tra lại để bắt được ngay.
+
+Hai, kho ký ức không gọi LLM, nên kiểm thử hoàn toàn offline, không tiêu hao hạn mức Gemini.
+
+Ba, toàn bộ logic cập nhật của tuần 4 chỉ là các thao tác ghi lên đúng bảng này, nên schema chốt từ tuần 3 giúp tuần 4 không phải nhập lại dữ liệu.
+
+↳ *Chỉ khung dưới.* Hợp đồng với tầng chỉ mục: Chroma chỉ lưu id, vector và một ít metadata để lọc. Nội dung đưa cho LLM luôn được nạp lại từ kho ký ức. Nhờ vậy hai bên không thể mâu thuẫn về nội dung; trường hợp xấu nhất là chỉ mục lỗi thời, và hàm rebuild sửa được.
+
+---
+
+## Slide 8 · Bốn lỗi tiềm ẩn và cách xử lý (1:15)
+
+Đây là bốn lỗi dễ xảy ra âm thầm mà nhóm đã xử lý trong `ledger.py`.
+
+Một, `PRAGMA foreign_keys` mặc định tắt trong SQLite, nên `superseded_by` trỏ vào id không tồn tại vẫn ghi được. Nhóm bật cho từng kết nối trong hàm cấu hình.
+
+Hai, cấp phát seq. Cách select max cộng một có thể cấp trùng khi hai tiến trình eval chạy song song. Nhóm dùng `UPDATE ... RETURNING`, là phép nguyên tử.
+
+Ba, thứ tự của `get_by_ids`. Truy vấn `WHERE id IN` trả theo rowid, làm mất thứ hạng của reranker mà không báo lỗi. Nhóm sắp lại đúng thứ tự đầu vào.
+
+Bốn, `json.dumps` mặc định ép ký tự ASCII, làm vết tiếng Việt thành chuỗi escape, khó đọc khi gỡ lỗi. Nhóm đặt `ensure_ascii` bằng False.
+
+---
+
+## Slide 9 · Lọc bản cũ bằng SQL và ràng buộc cho tuần 4 (1:15)
+
+Việc lọc bản cũ được làm bằng SQL, không bằng LLM, đúng nguyên tắc số 1 của thiết kế: việc cần chính xác thì không giao cho mô hình. Với mỗi slot, một câu window function chỉ giữ bản có seq lớn nhất, tất định và giải thích được. Phương án nhờ LLM chọn bản mới nhất chính là cấu hình đối chứng llm-judge ở tuần 7, nên nhóm sẽ đo chênh lệch chứ không khẳng định suông.
+
+↳ *Chỉ khung ràng buộc.* Có một ràng buộc nhóm cố ý chưa bật: unique index trên slot active. Tuần 3 chỉ có thao tác ADD, nên khi nạp LongMemEval, một người nói N5 rồi sau nói N4 sẽ sinh hai bản active cùng slot. Điều đó đúng thiết kế vì MemoryUpdater chưa tồn tại. Bật ràng buộc bây giờ sẽ làm gián đoạn pipeline. Tuần 4, sau khi có UPDATE, nhóm chạy đúng một dòng này, từ đó mọi lỗi logic cập nhật được phát hiện ngay thay vì âm thầm làm sai số liệu. Đã có sẵn một test chứng minh ràng buộc bắt đúng lỗi.
+
+---
+
+## Slide 10 · Kết quả kiểm thử: 16/16 test đạt (1:00)
+
+Kho ký ức có 16 test, đạt toàn bộ, chạy dưới một giây, không gọi mạng. 16 test này kiểm tra các bất biến chính của kho ký ức, mỗi test một bất biến đã cam kết trong tài liệu kiến trúc.
+
+↳ *Đọc lần lượt các dòng bên phải.* Seq tăng đơn điệu và không trùng. Fact từ lượt trợ lý không vào chỉ mục, chỉ hiển thị sau khi người dùng xác nhận. Mỗi slot chỉ trả về bản seq lớn nhất và loại bản đã xóa. Khóa tiếng Việt có dấu bị từ chối với lý do `attribute_not_ascii`; khóa như `Japanese Level` hay `2nd_language` bị từ chối với lý do `attribute_bad_format`. Mọi lần từ chối đều được ghi lại, nên tính được tỉ lệ khóa lỗi cho báo cáo. Cuối cùng, chỉ mục nhúng bản tiếng Anh chuẩn hóa nhưng metadata vẫn giữ ngôn ngữ gốc là tiếng Việt.
+
+---
+
+## Slide 11 · Kế hoạch thực thi 7 ngày (1:30)
+
+Kế hoạch bảy ngày chia cho hai người để không sửa chung một file. Giao diện giữa hai phần là dataclass Fact, đã cố định trong `ledger.py`. Mục tiêu cuối tuần là 11 file mã nguồn.
+
+Ngày 1, cả hai. Người A dựng khung repo và adapter: config tập trung một chỗ, giao diện LLMAdapter duy nhất để tuần 6 đổi sang Groq hay Ollama chỉ sửa một file, bọc BGE-M3 có cache với tên mô hình nằm trong khóa cache, và FakeLLM cho test offline. Người B viết ngay chỉ mục Chroma cùng hàm rebuild, vì phần này không phụ thuộc extractor.
+
+Ngày 2 đến 3, người A làm FactExtractor, thành phần duy nhất gọi LLM ở tầng ghi, nên chất lượng của nó quyết định trần điểm của hệ. Cache theo sha1 của lượt là bắt buộc để chạy lại eval không tốn hạn mức. Tiêu chí hoàn thành: trích tay 20 lượt, mười Việt mười Anh, tỉ lệ khóa đúng từ 90 phần trăm trở lên.
+
+Ngày 3 đến 4, người B làm bộ lắp ngữ cảnh có chia hạn ngạch, đếm token bằng tokenizer thật, và agent với hai hàm nạp lượt và trả lời.
+
+Ngày 4 đến 5, người A làm bộ đánh giá: loader dữ liệu, judge với prompt chấm chốt ngay tuần này, và vòng chạy với mỗi case một file DB riêng.
+
+Ngày 5 đến 6, cả hai chạy 100 câu trên tập dev, phân tích mười câu sai đầu tiên và đo tỉ lệ token Việt trên Anh bằng tokenizer thật. Ngày 7 tổng hợp số và viết báo cáo.
+
+---
+
+## Slide 12 · Các chỉ số báo cáo và ba nguyên tắc đo (1:15)
+
+Cuối tuần nhóm sẽ báo cáo sáu nhóm số. Accuracy theo từng loại câu hỏi của LongMemEval-S làm đường cơ sở. Tỉ lệ khóa slot bị từ chối, tách theo lý do, đo trực tiếp chất lượng prompt trích xuất. Số fact mỗi lượt và số slot phân biệt. Độ trễ p50 và p95 tách theo pha. Token mỗi truy vấn tách theo ngôn ngữ, vì gộp tiếng Việt với tiếng Anh là số vô nghĩa. Và phân loại mười câu sai đầu tiên để quyết định thứ tự ưu tiên tuần 4 đến 6.
+
+↳ *Chỉ ba thẻ bên dưới.* Ba nguyên tắc để tránh sai lệch. Một: tuần 3 chưa có logic cập nhật — đã có schema, cấp phát seq và cách đọc bản mới nhất từ tuần 3, nhưng logic ADD/UPDATE/DELETE/NOOP/CONFLICT và ràng buộc mỗi slot một bản active để dành cho tuần 4, vì làm sớm thì tuần 4 không còn gì để so sánh. Hai: cache ngay từ ngày đầu, nếu không mỗi lần chạy lại 100 câu phải làm từ đầu. Ba: chốt mô hình chấm và prompt chấm ngay tuần này, vì đổi giữa chừng làm mọi số đo trước đó mất giá trị so sánh, theo khuyến nghị của Zheng và cộng sự.
+
+---
+
+## Slide 13 · Rủi ro và biện pháp xử lý (0:45)
+
+Bốn rủi ro riêng của tuần 3. Hạn mức Gemini 1.500 lượt mỗi ngày có thể cạn giữa lúc chạy eval: xử lý bằng cache trích xuất theo sha1 của lượt. Phiên trong LongMemEval-S rất dài nên trích xuất chậm: tuần này chạy 100 câu trước, đo tốc độ rồi mới quyết định mở rộng. Lần tải đầu của BGE-M3 nặng: tải sẵn và ghim phiên bản. Và hai người cùng sửa một file: kho ký ức và extractor ở hai thư mục riêng, giao diện là dataclass Fact đã cố định.
+
+---
+
+## Slide 14 · Lộ trình 8 tuần (0:40)
+
+Về lộ trình tám tuần, tuần 1 và 2 đã xong, tuần 3 là chặng hiện tại. Tuần 4 là logic cập nhật ADD/UPDATE/DELETE/NOOP/CONFLICT, ràng buộc mỗi slot một bản active, cùng cổng pending — seq và cách đọc bản mới nhất thì đã xong từ tuần 3. Tuần 5 là BM25, RRF, tách truy vấn con, khoảng hiệu lực và ký ức pinned. Tuần 6 là reranker, hiệu chỉnh ngưỡng từ chối, tóm tắt phiên và bộ test tiếng Việt. Tuần 7 chạy các cấu hình đánh giá và phân tích lỗi. Tuần 8 viết báo cáo và đóng gói. Lộ trình này giữ nguyên so với tuần 2.
+
+---
+
+## Slide 15 · Tổng kết tiến độ tuần 3 (1:00)
+
+Tổng kết tuần 3. Đã xong: kho ký ức SQLite với schema, lớp ledger và 16 test đạt; ba notebook trên LongMemEval-S gồm khảo sát và chia dev/test, nhúng BGE-M3 và đo Recall@k trên dev; và kế hoạch chi tiết bảy ngày cho 11 file mã nguồn. Còn lại trong tuần: adapter, FactExtractor, chỉ mục Chroma, agent, bộ đánh giá, rồi chạy 100 câu và phân loại lỗi để có đường cơ sở đầu tiên.
+
+Trên slide chỉ còn tiến độ, nhưng em xin phép hỏi thêm hai vấn đề bằng lời.
+
+Em có hai vấn đề xin ý kiến anh.
+
+Một, với đường cơ sở LongMemEval-S, tuần này nhóm chạy 100 câu trên tập dev. Anh thấy nên mở rộng ngay lên toàn bộ tập, hay giữ 100 câu cho đến khi có reranker ở tuần 6 rồi mới chạy toàn bộ?
+
+Hai, với cấu hình đối chứng llm-judge, tức để LLM tự chọn bản mới nhất thay cho seq lớn nhất, anh thấy có đáng dành thời gian chạy không, hay coi cơ chế tất định là hiển nhiên đúng và bỏ cấu hình này?
+
+Em xin hết phần báo cáo tuần 3 và mong nhận được góp ý của anh. Em xin cảm ơn.

@@ -13,7 +13,7 @@ Tuần 2 đã khóa các quyết định sau, và nhóm không mở lại trong 
 | Quyết định | Nội dung |
 |---|---|
 | Khung năng lực | 8 năng lực, mỗi năng lực gắn một benchmark, một thành phần, một tuần |
-| Kiến trúc | 6 lớp; **tách sổ cái (SQLite) khỏi chỉ mục (Chroma, BM25)** |
+| Kiến trúc | 6 lớp; **tách kho ký ức (SQLite) khỏi chỉ mục (Chroma, BM25)** |
 | Song ngữ | Chuẩn hóa ở tầng ghi: `text` / `text_canon` / `lang`; khóa slot luôn tiếng Anh |
 | Truy xuất | dense + BM25 → RRF → reranker → lọc `max(seq)` → lắp ngữ cảnh theo hạn ngạch |
 | Nguồn gốc | Fact từ lượt trợ lý vào `pending`, chờ người dùng xác nhận |
@@ -21,9 +21,9 @@ Tuần 2 đã khóa các quyết định sau, và nhóm không mở lại trong 
 | Đánh giá | 3 trục × 5 cấu hình đối chứng, cùng mô hình nền – cùng k – cùng ngân sách token |
 | Ngoài phạm vi | Nhất quán xuyên ngữ — chủ động để làm hướng mở rộng |
 
-Ngoài tài liệu thiết kế, nhóm đã có các **notebook khảo sát dữ liệu** LongMemEval-S,
-FactConsolidation và BEAM: nắm được cấu trúc phiên, phân bố loại câu hỏi và độ dài lịch sử.
-Đó là cơ sở để tuần 3 viết loader chuẩn thay vì đọc dữ liệu thủ công trong notebook.
+Ngoài tài liệu thiết kế, nhóm đã có **ba notebook trên LongMemEval-S** (thư mục `DataExplore`):
+01 khảo sát cấu trúc và chia dev/test, 02 nhúng BGE-M3, 03 đo Recall@k của vector, BM25 và RRF
+trên tập dev. Đó là cơ sở để tuần 3 viết loader chuẩn thay vì đọc dữ liệu thủ công trong notebook.
 
 **Việc còn nợ:** khung mã nguồn. Hết tuần 2 nhóm có thiết kế và dữ liệu, chưa có gì chạy được.
 
@@ -31,7 +31,7 @@ FactConsolidation và BEAM: nắm được cấu trúc phiên, phân bố loại
 
 ## 2. Mục tiêu tuần 3
 
-Dựng **đường mỏng nhưng thông suốt**: nạp hội thoại → trích fact → ghi sổ cái → nhúng →
+Dựng **đường mỏng nhưng thông suốt**: nạp hội thoại → trích fact → ghi vào kho → nhúng →
 truy xuất → trả lời → chấm điểm. Chưa có slot/seq logic, chưa BM25, chưa reranker — mỗi thứ
 đó có tuần của nó. Mục tiêu tuần này là **con số đầu tiên** và **hạ tầng để mọi tuần sau
 dựa vào**.
@@ -41,7 +41,7 @@ dựa vào**.
 Một lệnh chạy được, ra bảng số:
 
 ```
-python -m ltm.eval.run --config dense-only --dataset longmemeval_s --n 100
+python -m ltm.eval.run --config dense-only --dataset longmemeval_s --split dev --n 100
 ```
 
 Kèm ba điều kiện:
@@ -52,13 +52,13 @@ Kèm ba điều kiện:
 
 ---
 
-## 3. Phần làm kỹ nhất tuần này: sổ cái *(đã xong)*
+## 3. Phần làm kỹ nhất tuần này: kho ký ức *(đã xong)*
 
 Nhóm chọn làm **một module thật sâu** thay vì dựng đủ mọi file ở mức sơ sài. Module đó là
-sổ cái, vì ba lý do:
+kho ký ức, vì ba lý do:
 
 1. **Đây là nơi duy nhất không được phép sai.** Chroma trả nhầm một ứng viên thì reranker
-   còn vớt lại; sổ cái ghi sai một bản `active` thì mọi thứ phía sau sai và không có cách
+   còn vớt lại; kho ký ức ghi sai một bản `active` thì mọi thứ phía sau sai và không có cách
    nào biết.
 2. **Không gọi LLM** nên test được 100% offline, không đụng hạn mức Gemini.
 3. Toàn bộ logic cập nhật của tuần 4 chỉ là các phép ghi lên đúng bảng này. Schema đúng từ
@@ -67,9 +67,9 @@ sổ cái, vì ba lý do:
 ### 3.1. Hợp đồng với tầng chỉ mục
 
 > Chroma chỉ lưu `id` + vector + vài metadata để lọc.
-> Nội dung đưa cho LLM **luôn** được nạp lại từ sổ cái qua `get_by_ids()`.
+> Nội dung đưa cho LLM **luôn** được nạp lại từ kho ký ức qua `get_by_ids()`.
 
-Nhờ vậy chỉ mục và sổ cái không bao giờ bất đồng về nội dung — cùng lắm là chỉ mục cũ, và
+Nhờ vậy chỉ mục và kho ký ức không bao giờ bất đồng về nội dung — cùng lắm là chỉ mục cũ, và
 `rebuild` sửa được. Đây là điều kiện để tuần 6 quét tham số embedding mà không sợ hỏng dữ liệu.
 
 ### 3.2. Bốn chi tiết dễ hỏng âm thầm, đã xử lý
@@ -124,7 +124,7 @@ cam kết trong tài liệu kiến trúc — test hỏng nghĩa là kiến trúc
 
 ## 4. Kế hoạch thực thi chi tiết
 
-Cấu trúc thư mục mục tiêu cuối tuần — **8 file mã nguồn**, không hơn:
+Cấu trúc thư mục mục tiêu cuối tuần — **11 file mã nguồn**, không hơn:
 
 ```
 ltm/
@@ -242,7 +242,7 @@ Con số này vào báo cáo.
 ```python
 def upsert(items: list[dict]) -> None        # nhận đúng định dạng iter_for_index()
 def query(text: str, k: int, where: dict | None = None) -> list[tuple[int, float]]
-def rebuild(ledger: Ledger) -> int           # xóa collection, nạp lại từ sổ cái
+def rebuild(ledger: Ledger) -> int           # xóa collection, nạp lại từ kho ký ức
 ```
 
    `rebuild()` phải viết ngay ngày đầu, không để sau: nó là thứ chứng minh chỉ mục đúng là
@@ -375,7 +375,7 @@ cắt nhầm · sinh sai**. Bảng phân loại này là thứ quyết định t
 | Hạn mức Gemini 1.500 lượt/ngày hết giữa lúc chạy eval | Cache trích xuất theo `sha1(lượt)`; chạy lại eval không gọi lại LLM |
 | LongMemEval-S có phiên rất dài, trích xuất chậm | Tuần 3 chạy 100 câu trước; đo tốc độ rồi mới quyết mở rộng |
 | BGE-M3 tải model lần đầu nặng | Tải sẵn về máy, ghim phiên bản trong `requirements.txt` |
-| Hai người sửa cùng một file | Sổ cái và extractor tách hẳn hai thư mục; giao diện giữa chúng là dataclass `Fact`, đã cố định từ ngày 2 |
+| Hai người sửa cùng một file | Kho ký ức và extractor tách hẳn hai thư mục; giao diện giữa chúng là dataclass `Fact`, đã cố định từ ngày 2 |
 
 ---
 
