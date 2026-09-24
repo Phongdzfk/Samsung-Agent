@@ -1,7 +1,0 @@
-Kho ký ức có 16 test, đạt toàn bộ, chạy dưới một giây, không gọi mạng. Năm nhóm test trên màn hình là năm lời cam kết về tính toàn vẹn, nguồn gốc và khả năng truy vết của dữ liệu — test sai nghĩa là một trong những cam kết này bị vi phạm, chứ không phải lỗi vặt.
-[Chỉ thẻ seq.] Seq tăng đơn điệu và không trùng — con số 16 là tổng số test.
-[Chỉ thẻ pending.] Fact từ lượt trợ lý không vào chỉ mục ngay, chỉ hiển thị sau khi người dùng xác nhận.
-[Chỉ thẻ max(seq).] Mỗi slot chỉ trả về bản có seq lớn nhất và loại bỏ bản đã xóa — toàn bộ test đều đạt.
-[Chỉ thẻ Khóa slot.] Khóa tiếng Việt có dấu (ví dụ trình_độ_tiếng_nhật) bị từ chối với lý do attribute_not_ascii; khóa sai định dạng như Japanese Level hay 2nd_language bị từ chối với lý do attribute_bad_format — toàn bộ chạy dưới 1 giây, không gọi mạng.
-[Chỉ thẻ Nhật ký vết.] Mọi lần từ chối đều được ghi lại, nên tính được tỉ lệ khóa lỗi cho báo cáo — mỗi test ứng với một bất biến đã cam kết trong tài liệu kiến trúc, test sai nghĩa là kiến trúc bị vi phạm chứ không phải lỗi vặt.
-Năm cam kết này chính là điều kiện để các tầng phía trên — chỉ mục, truy xuất, agent — được phép tin tưởng dữ liệu từ kho ký ức mà không phải kiểm tra lại.
