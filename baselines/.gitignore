@@ -1,0 +1,5 @@
+models/
+LightMem/
+data/
+results/
+!data/split.json
