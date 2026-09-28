@@ -1,0 +1,7 @@
+# Python 3.10+
+numpy>=1.24
+pyyaml>=6.0
+openai>=1.40            # client OpenAI-compatible để gọi 9router
+ijson>=3.2              # đọc LongMemEval (265 MB) dạng stream
+sentence-transformers>=3.0   # BGE-M3 (kéo theo torch; bản CPU là đủ nếu đã có cache Kaggle)
+pytest>=8.0
