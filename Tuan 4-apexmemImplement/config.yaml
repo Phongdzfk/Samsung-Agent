@@ -1,0 +1,71 @@
+# Mọi tham số của hệ ở MỘT chỗ. Ghi đè bằng biến môi trường LTM__<mục>__<khóa>,
+# ví dụ: LTM__LLM__MODEL=cx/gpt-5.4   hoặc   LTM__AGENT__MAX_STEPS=10
+
+llm:
+  base_url: http://localhost:20128/v1   # endpoint OpenAI-compatible của 9router
+  api_key_env: NINEROUTER_API_KEY        # tên biến môi trường chứa API key của 9router
+  model: cx/gpt-5.6-luna                 # GỌI THẲNG 1 MÔ HÌNH, KHÔNG dùng tên combo
+  temperature: null                      # gpt-5.x qua Codex có thể từ chối temperature → để null
+  reasoning_effort: null                 # low | medium | high | null (không gửi)
+  max_tokens: null
+  timeout: 300
+  max_retries: 8                         # 429/5xx: chờ lũy thừa, tối đa max_wait giây mỗi lần
+  max_wait: 600
+  rpm: 0                                # giới hạn request/phút phía client; 0 = không giới hạn
+  stream: false                          # đổi true nếu 9router/Codex chỉ trả stream
+  strict_model: false                    # true: dừng ngay nếu model phục vụ khác model yêu cầu
+  cache_path: data/cache/llm_cache.db
+  roles:                                 # model riêng cho từng vai trò; null = dùng llm.model
+    extract: null
+    resolve: null
+    agent: null
+    reader: null                         # baseline SimpleSearch
+    judge: cx/gpt-5.6-luna                   # nên KHÁC model trả lời (slide 12)
+
+embed:
+  backend: sentence-transformers         # sentence-transformers | hash (chỉ để test offline)
+  model: BAAI/bge-m3
+  device: cpu                            # cuda nếu máy có GPU
+  batch_size: 16
+  max_seq_length: 512                    # PHẢI giống lúc nhúng trên Kaggle, không thì cache trượt
+  cache_path: data/cache/embed_cache.db
+
+filter:
+  enabled: true
+  mode: threshold
+  threshold: 0.475
+  min_sessions: 5
+  max_sessions: 20
+  top_sessions: 10         
+  store_all_turns: true
+
+extract:
+  turns_per_call: 12                     # gom nhiều lượt vào 1 lời gọi (bài báo: 1 lượt/lời gọi)
+  max_turn_chars: 3000
+  include_assistant: true
+
+resolve:
+  top_k: 5
+  min_candidate_sim: 0.60                # dưới ngưỡng → tạo thực thể mới, không gọi LLM
+  prop_auto_merge_sim: 0.97              # trên ngưỡng → gộp thuộc tính, không gọi LLM
+  prop_candidate_sim: 0.80               # giữa hai ngưỡng → hỏi LLM
+
+agent:
+  protocol: tools                        # tools (function calling) | json (ReAct dạng văn bản)
+  max_steps: 20
+  tools: [schema_viewer, entity_lookup, graph_sql, search, property_search]
+  search_k: 10
+  max_tool_chars: 6000
+
+baseline:
+  top_sessions: 5                        # SimpleSearch: K = V + fact, top-5 phiên
+
+eval:
+  dataset_path: data/longmemeval/longmemeval_s_cleaned.json
+  runs_dir: data/runs
+  graphs_dir: data/graphs
+  splits_dir: data/splits
+  split_seed: 42
+  dev_size: 150
+  judge_trials: 1                        # bài báo: trung bình 3 lần
+  workers: 2
