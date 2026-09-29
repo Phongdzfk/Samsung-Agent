@@ -1,0 +1,39 @@
+{
+  "question_id": "af082822",
+  "question_type": "temporal-reasoning",
+  "question": "How many weeks ago did I attend the friends and family sale at Nordstrom?",
+  "ground_truth": 2,
+  "generated_answer": "You attended the Nordstrom friends-and-family sale **2 weeks ago**, on **Thursday, November 17, 2022**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2022-11-18T17:03:01.000 Fri User attended a friends-and-family sale at Nordstrom the previous day.",
+    "2022-11-18T17:03:01.000 Fri User bought several dresses and tops at Nordstrom for 20% off.",
+    "2022-11-18T02:35:00.000 Fri User recently bought a pair of boots and a sweater from Macy's during the Black Friday sale.",
+    "2022-11-18T21:02:01.000 Fri User previously had an enjoyable time at an outlet mall with friends and found great deals on shoes.",
+    "2022-11-18T02:35:01.000 Fri User received 40% off the boots and 20% off the sweater during Macy's Black Friday sale.",
+    "2022-11-18T17:03:01.000 Fri User received a $20 gift card for spending more than $100 at Nordstrom.",
+    "2022-11-18T05:14:05.000 Fri User recently bought Converse Chuck Taylor All Star Pro sneakers on sale at Nordstrom and likes them.",
+    "2022-10-29T22:31:00.000 Sat User wants the dates for the E-commerce Expo in Los Angeles.",
+    "2022-10-29T22:31:02.000 Sat User attended Tech Expo last month in New York City.",
+    "2022-11-18T21:02:01.000 Fri User is considering ordering more items from Everlane and is interested in hearing about the brand's new collection.",
+    "2022-11-18T21:02:02.000 Fri User bought a pair of black ankle boots from Sam Edelman during the outlet-mall trip.",
+    "2022-11-18T04:21:01.000 Fri User was relatively available on Thursday and Friday of the following week.",
+    "2022-11-18T17:03:02.000 Fri User attended the annual holiday market in their city.",
+    "2022-11-18T21:02:01.000 Fri User considered their outlet-mall shopping trip a fun day out.",
+    "2022-11-18T17:03:02.000 Fri User bought stocking stuffers, including cozy socks and gourmet chocolates.",
+    "2022-11-18T08:16:00.000 Fri User remembers that their last payday was on March 10th and believes it was a Thursday.",
+    "2022-10-29T22:31:01.000 Sat User believes the E-commerce Expo in Los Angeles is happening next month.",
+    "2022-11-18T02:35:01.000 Fri User bought black leather knee-high boots.",
+    "2022-11-18T17:03:02.000 Fri User bought unique gifts for their siblings at the holiday market, including a handmade candle and a customized phone case.",
+    "2022-11-18T05:14:03.000 Fri User bought distressed denim jeans from a Gap outlet store for $40 and considers the purchase a steal."
+  ],
+  "answer_session_ids": [
+    "answer_b51b6115_1"
+  ],
+  "time_build_s": 1867.4829246997833,
+  "time_retrieve_s": 0.1143803596496582,
+  "time_answer_s": 3.483424425125122,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

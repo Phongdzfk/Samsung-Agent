@@ -1,0 +1,40 @@
+{
+  "question_id": "61f8c8f8",
+  "question_type": "multi-session",
+  "question": "How much faster did I finish the 5K run compared to my previous year's time?",
+  "ground_truth": "10 minutes",
+  "generated_answer": "You finished the 5K **10 minutes faster** than last year—improving from **45 minutes to 35 minutes**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-10-01T16:16:01.000 Sun User completed a 5K run last year in 45 minutes.",
+    "2023-10-01T11:48:00.000 Sun User recently resumed running and completed a 5K in 35 minutes.",
+    "2023-10-01T16:16:04.000 Sun User is looking forward to starting their 5K training and tracking their progress.",
+    "2023-10-01T16:16:01.000 Sun User is unsure how to pace themselves during the base-building phase of their 5K training.",
+    "2023-10-01T16:16:01.000 Sun User is considering starting with a base-building phase for their 5K training.",
+    "2023-10-01T16:16:05.000 Sun User is ready to begin the base-building phase of their 5K training.",
+    "2023-10-01T16:16:03.000 Sun User wants tips for staying motivated during the base-building phase of their 5K training.",
+    "2023-10-01T16:16:00.000 Sun User is training for a 5K run and wants to create a training plan.",
+    "2023-10-01T11:48:04.000 Sun User wants to mention in the promotional post that their recent 5K run inspired them to organize the charity event.",
+    "2023-10-01T16:16:02.000 Sun User plans to maintain a pace of approximately 16 minutes per mile during the base-building phase.",
+    "2023-10-01T08:02:01.000 Sun Running campaigns in all five cities is described as discounted to 10,000 INR per city, with a stated total of 50,000 INR.",
+    "2023-10-01T07:50:04.000 Sun User believes that having a strong core can improve running efficiency and reduce the risk of injury.",
+    "2023-10-01T07:50:03.000 Sun User believes that having a strong core can improve running efficiency and reduce the risk of injury.",
+    "2023-10-01T07:50:05.000 Sun User believes that having a strong core can improve running efficiency and reduce the risk of injury.",
+    "2023-10-01T07:50:02.000 Sun User is considering incorporating high-intensity interval training into their routine.",
+    "2023-10-01T20:31:00.000 Sun User completed a coding boot camp in December.",
+    "2023-10-01T08:02:01.000 Sun Running campaigns in all three cities is discounted to 12,000 INR per city, for a stated total of 36,000 INR.",
+    "2023-10-01T14:52:02.000 Sun User wants to know which is better for gaming performance, Intel or AMD.",
+    "2023-10-01T08:02:01.000 Sun Running an advertising campaign in one city costs 15,000 INR.",
+    "2023-10-01T08:43:05.000 Sun User identifies improved performance on specific NLP tasks, reduced training time, and fewer data requirements as benefits of transfer learning."
+  ],
+  "answer_session_ids": [
+    "answer_872e8da2_2",
+    "answer_872e8da2_1"
+  ],
+  "time_build_s": 1917.3294756412506,
+  "time_retrieve_s": 0.03023838996887207,
+  "time_answer_s": 2.5897679328918457,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

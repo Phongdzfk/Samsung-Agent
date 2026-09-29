@@ -1,0 +1,39 @@
+{
+  "question_id": "95bcc1c8",
+  "question_type": "single-session-user",
+  "question": "How many amateur comedians did I watch perform at the open mic night?",
+  "ground_truth": "10",
+  "generated_answer": "You watched **10 amateur comedians** perform at the open mic night.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-22T14:59:00.000 Mon User recently attended an open-mic night where they saw 10 amateur comedians perform, and found it inspiring to see people trying out new material.",
+    "2023-05-22T14:59:05.000 Mon User had a great time at an open-mic night a few weeks ago.",
+    "2023-05-22T14:59:00.000 Mon User is looking for tips on writing comedy and is taking a stand-up comedy class to develop new material.",
+    "2023-05-22T14:59:02.000 Mon User is trying to incorporate personal experiences into their jokes and wants to make their comedy more relatable and authentic.",
+    "2023-05-28T13:05:05.000 Sun User drank too many beers at the Super Bowl party.",
+    "2023-05-22T14:59:01.000 Mon User wants advice on structuring a comedy set because their jokes feel disconnected and they are unsure how to organize them into a cohesive set.",
+    "2023-05-26T22:26:04.000 Fri The user and their roommate were on the edge of their seats throughout the Duke versus North Carolina game.",
+    "2023-05-28T13:05:03.000 Sun User played tennis with their coworker John last weekend.",
+    "2023-05-22T14:59:05.000 Mon User believes improv can help generate new ideas and material for comedy writing.",
+    "2023-05-28T12:43:05.000 Sun User has taken five flights in the past two months, which is a personal record.",
+    "2023-05-22T14:59:05.000 Mon User wants to incorporate improvisational exercises or freewriting into their writing process to develop new joke ideas.",
+    "2023-05-22T14:59:04.000 Mon User found the improv exercises fun and felt that they became more spontaneous and creative.",
+    "2023-05-28T13:05:04.000 Sun User won their tennis match against John last weekend.",
+    "2023-05-26T22:26:04.000 Fri User especially likes March Madness Trivia and Commercial Break Challenges as party activities.",
+    "2023-05-26T22:26:04.000 Fri User expects the March Madness Trivia and Commercial Break Challenges to engage and excite party guests.",
+    "2023-05-26T22:26:04.000 Fri User recently watched a Duke versus North Carolina game with their roommate.",
+    "2023-05-22T14:59:04.000 Mon User has been incorporating more improvisation into daily conversations with friends and family.",
+    "2023-05-25T10:08:05.000 Thu User has not yet performed or danced with a group but hopes to do so soon.",
+    "2023-05-27T00:48:05.000 Sat User is considering inviting friends over for a TV night.",
+    "2023-05-22T14:59:04.000 Mon In the improv class, user did exercises involving thinking on their feet and responding to unexpected situations."
+  ],
+  "answer_session_ids": [
+    "answer_cb742a61"
+  ],
+  "time_build_s": 2082.6498188972473,
+  "time_retrieve_s": 0.0919952392578125,
+  "time_answer_s": 1.9301624298095703,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

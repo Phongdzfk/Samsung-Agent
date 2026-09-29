@@ -1,0 +1,39 @@
+{
+  "question_id": "gpt4_468eb064",
+  "question_type": "temporal-reasoning",
+  "question": "Who did I meet with during the lunch last Tuesday?",
+  "ground_truth": "Emma",
+  "generated_answer": "You had lunch with **Emma**, a freelance writer, last Tuesday (April 11, 2023).",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-04-11T22:13:00.000 Tue User had lunch with Emma, a freelance writer, on April 11, 2023.",
+    "2023-04-11T01:21:03.000 Tue User attended Universal Studios' Halloween Horror Nights three weeks ago on a Friday evening with friends Emma and Ryan.",
+    "2023-04-11T20:41:00.000 Tue User had an amazing time in New York City trying different food spots alone.",
+    "2023-04-11T01:21:00.000 Tue User visited Universal Studios three weeks ago on a Friday evening with friends Emma and Ryan.",
+    "2023-04-11T04:47:00.000 Tue User played Scattergories with their family three Sundays ago at their cousin's birthday party.",
+    "2023-04-11T22:13:00.000 Tue The speaker at the user's digital marketing workshop was Rachel Lee.",
+    "2023-04-11T01:21:05.000 Tue User is comparing Disneyland's holiday event with Universal Studios' Halloween Horror Nights, which they attended three weeks earlier on a Friday evening with friends Emma and Ryan.",
+    "2023-04-11T04:47:02.000 Tue User had a great experience at a board game café last weekend.",
+    "2023-04-11T22:13:00.000 Tue User attended a digital marketing workshop the week before April 11, 2023.",
+    "2023-04-11T20:41:01.000 Tue User is interested in trying Italian beef sandwiches in Chicago.",
+    "2023-04-11T07:51:05.000 Tue User stated that they did not ask about cooking classes and requested that the previous cooking-class response be disregarded.",
+    "2023-04-11T04:47:04.000 Tue User won a game of Ticket to Ride against their roommate Mike two weeks ago.",
+    "2023-04-11T07:51:03.000 Tue User is seeking advice on planning and executing farm-to-table meals.",
+    "2023-04-11T07:51:04.000 Tue User was seeking advice on structuring and leading cooking classes and on the equipment and supplies needed.",
+    "2023-04-11T08:09:01.000 Tue User plans to visit food stalls and try local specialties during their trip.",
+    "2023-04-11T20:41:00.000 Tue User recently took a four-day solo trip to New York City.",
+    "2023-04-07T20:39:00.000 Fri User recently traveled to Chicago.",
+    "2023-04-11T01:21:01.000 Tue User is looking for restaurant recommendations at Disneyland.",
+    "2023-04-07T20:39:00.000 Fri User finished reading The New Yorker on the flight home from Chicago.",
+    "2023-04-11T20:41:02.000 Tue User is interested in trying Chicago's famous deep-dish pizza."
+  ],
+  "answer_session_ids": [
+    "answer_9b09d95b_1"
+  ],
+  "time_build_s": 1985.586895942688,
+  "time_retrieve_s": 0.166093111038208,
+  "time_answer_s": 2.2979896068573,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

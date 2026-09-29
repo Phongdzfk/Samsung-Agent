@@ -1,5 +1,12 @@
-models/
+# Repo LightMem gốc (có git riêng) và các file nặng tải về
 LightMem/
+models/
 data/
-results/
 !data/split.json
+
+# Log chạy, thư viện, ảnh render lại được
+dev150.log
+__pycache__/
+report/node_modules/
+report/*.pdf
+report/slide-*.png

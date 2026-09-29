@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_7de946e7",
+  "question_type": "temporal-reasoning",
+  "question": "Which health issue did I deal with first, the persistent cough or the skin tag removal?",
+  "ground_truth": "Persistent cough",
+  "generated_answer": "You dealt with the **persistent cough first**. You visited Dr. Smith for it on February 10, while the skin tag was removed later, on February 22.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-02-28T01:14:03.000 Tue The area from the user's skin-tag removal had fully healed.",
+    "2023-02-28T01:14:03.000 Tue User underwent a minor surgical procedure to remove a skin tag from their neck on February 22.",
+    "2023-02-28T05:10:01.000 Tue The user's cough persisted after finishing the antibiotics.",
+    "2023-02-28T01:14:00.000 Tue User recently had a skin tag removed from their neck.",
+    "2023-02-28T05:10:02.000 Tue User saw a pulmonologist, Dr. Johnson, on March 10th because of their persistent cough.",
+    "2023-02-28T05:10:00.000 Tue User had a persistent cough for three weeks and visited their primary care physician, Dr. Smith, on February 10th.",
+    "2023-02-28T05:10:01.000 Tue Dr. Smith diagnosed the user's cough as bronchitis and prescribed antibiotics.",
+    "2023-02-28T05:10:02.000 Tue The chest X-ray revealed that the user had developed pneumonia.",
+    "2023-02-28T01:14:00.000 Tue User was taking antibiotics for pneumonia.",
+    "2023-02-28T05:10:02.000 Tue Dr. Johnson ordered a chest X-ray.",
+    "2023-02-28T05:10:04.000 Tue User received a flu shot at a local pharmacy on March 20th.",
+    "2023-02-28T01:14:02.000 Tue User recently received a flu vaccination on March 20.",
+    "2023-02-28T01:14:03.000 Tue User was still taking antibiotics for pneumonia and expected to finish the course soon.",
+    "2023-02-28T01:14:03.000 Tue User was looking forward to returning to normal without needing to take medication every day.",
+    "2023-02-28T01:14:00.000 Tue User is trying to improve their health after experiencing several recent setbacks.",
+    "2023-02-28T05:10:02.000 Tue User has also experienced abdominal pain, mostly in the morning.",
+    "2023-02-28T05:10:01.000 Tue User had been tracking their food and symptoms for about one month.",
+    "2023-02-28T05:10:01.000 Tue User finished the prescribed antibiotics on February 20th.",
+    "2023-02-28T05:10:04.000 Tue User's grandmother was hospitalized with influenza in January.",
+    "2023-02-28T05:10:05.000 Tue User has been trying to educate themselves about various health topics."
+  ],
+  "answer_session_ids": [
+    "answer_6a78e959_2",
+    "answer_6a78e959_1"
+  ],
+  "time_build_s": 2369.194011926651,
+  "time_retrieve_s": 0.2091846466064453,
+  "time_answer_s": 2.7668490409851074,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

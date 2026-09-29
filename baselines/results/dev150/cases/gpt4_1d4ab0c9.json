@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_1d4ab0c9",
+  "question_type": "temporal-reasoning",
+  "question": "How many days passed between the day I started watering my herb garden and the day I harvested my first batch of fresh herbs?",
+  "ground_truth": "24 days. 25 days (including the last day) is also acceptable.",
+  "generated_answer": "18 days passed between March 22, 2023, and April 15, 2023.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-03-22T11:41:00.000 Wed User started watering their herb garden every morning on March 22, 2023, and is excited to see the herbs grow.",
+    "2023-04-15T17:48:00.000 Sat User harvested their first batch of fresh herbs from a herb garden kit.",
+    "2023-03-22T11:41:00.000 Wed User is seeking advice on how to keep fresh herbs usable for a longer period.",
+    "2023-04-15T17:48:01.000 Sat User wants advice on storing fresh herbs so they remain fresh for longer.",
+    "2023-04-15T17:48:02.000 Sat User wants to know how to determine whether frozen herbs are still safe or suitable to use after several months.",
+    "2023-03-22T11:41:00.000 Wed User is planning to make a salad for dinner tonight and wants to use fresh herbs.",
+    "2023-04-15T17:48:02.000 Sat User is curious about freezing fresh herbs.",
+    "2023-04-15T17:48:00.000 Sat User is excited to use their fresh herbs in different dishes.",
+    "2023-03-22T11:41:03.000 Wed User has been tracking their gardening progress with a gardening app.",
+    "2023-04-15T17:48:00.000 Sat User is looking for new recipe ideas featuring fresh herbs.",
+    "2023-03-22T11:41:03.000 Wed User observed that their cherry tomato plants have been growing rapidly since they began fertilizing them weekly with balanced fertilizer.",
+    "2023-04-15T14:30:00.000 Sat User bought the backpack exactly three weeks earlier, on a Sunday, at an outlet mall.",
+    "2023-03-22T11:41:04.000 Wed User plans to monitor the cherry tomato plants' growth and adjust their fertilization schedule as needed.",
+    "2023-04-15T17:48:03.000 Sat User wants to know how often to turn their compost pile.",
+    "2023-04-15T17:48:04.000 Sat User recently implemented a drip irrigation system in their backyard.",
+    "2023-03-22T11:41:01.000 Wed User is seeking recipes for homemade fertilizers.",
+    "2023-04-15T10:36:00.000 Sat User adjusted their morning jogging schedule to 7:00 a.m. because the sun was rising later than usual.",
+    "2023-03-22T11:41:03.000 Wed User is considering experimenting with homemade fertilizers for their cherry tomato plants.",
+    "2023-04-15T22:06:00.000 Sat The notes mention avoiding repetition and refer to World Day, although the specific context is unclear.",
+    "2023-03-22T11:41:04.000 Wed User decided to try banana peel fertilizer first for their cherry tomato plants."
+  ],
+  "answer_session_ids": [
+    "answer_febde667_1",
+    "answer_febde667_2"
+  ],
+  "time_build_s": 1824.3722231388092,
+  "time_retrieve_s": 0.06991028785705566,
+  "time_answer_s": 3.252474069595337,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

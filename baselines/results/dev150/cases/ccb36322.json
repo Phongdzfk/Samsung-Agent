@@ -1,0 +1,39 @@
+{
+  "question_id": "ccb36322",
+  "question_type": "single-session-user",
+  "question": "What is the name of the music streaming service have I been using lately?",
+  "ground_truth": "Spotify",
+  "generated_answer": "Spotify.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-20T10:20:01.000 Sat User has been listening frequently to Arctic Monkeys and The Neighbourhood songs on Spotify.",
+    "2023-05-26T10:55:01.000 Fri User has been using Netflix for a while.",
+    "2023-05-26T10:55:03.000 Fri User has been using Netflix for about six months.",
+    "2023-05-20T10:20:00.000 Sat User is looking for concert recommendations.",
+    "2023-05-20T10:20:03.000 Sat User usually prefers smaller, local music venues because they offer a more intimate experience.",
+    "2023-05-25T21:26:01.000 Thu User is unsure which photo-album service to use and wants to compare the prices and features of Shutterfly, Snapfish, and Mixbook.",
+    "2023-05-22T17:55:00.000 Mon User is looking for upcoming rock or pop concerts in the Philadelphia area over the next few months.",
+    "2023-05-20T10:20:04.000 Sat User thinks local acts and smaller-stage music festivals are a good way to discover new music and experience something different.",
+    "2023-05-22T17:55:04.000 Mon User wants to know what to expect from Waterparks' live setlist, including whether the band is playing new songs or focusing on older material.",
+    "2023-05-26T10:55:01.000 Fri User has recently been watching more Netflix original content.",
+    "2023-05-26T10:55:01.000 Fri User is open to trying new genres and less popular or lesser-known shows.",
+    "2023-05-20T10:20:01.000 Sat User is currently very interested in indie alternative rock.",
+    "2023-05-20T00:05:03.000 Sat User is developing a song concept about being on a morning commute and watching the city wake up.",
+    "2023-05-20T10:20:04.000 Sat User is open to exploring local musical acts and music festivals with smaller stages.",
+    "2023-05-26T10:55:00.000 Fri User is looking for new shows to watch on Netflix.",
+    "2023-05-20T10:20:03.000 Sat User recently saw The 1975 at a local music venue downtown.",
+    "2023-05-20T10:20:03.000 Sat User has had great experiences at a local music venue downtown.",
+    "2023-05-21T00:12:00.000 Sun People wanted information about how to find service providers.",
+    "2023-05-26T10:55:03.000 Fri User is open to trying new genres.",
+    "2023-05-25T19:26:03.000 Thu User is excited to try new Vinyasa flow and yin yoga videos on YouTube."
+  ],
+  "answer_session_ids": [
+    "answer_f1fbb330"
+  ],
+  "time_build_s": 1567.4642975330353,
+  "time_retrieve_s": 0.11274337768554688,
+  "time_answer_s": 3.704716444015503,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

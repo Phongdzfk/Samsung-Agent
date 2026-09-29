@@ -1,0 +1,40 @@
+{
+  "question_id": "3fe836c9",
+  "question_type": "multi-session",
+  "question": "How much more was the pre-approval amount than the final sale price of the house?",
+  "ground_truth": "$25,000",
+  "generated_answer": "The pre-approval amount was **$25,000 more** than the final sale price ($350,000 − $325,000).",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-23T11:09:00.000 Tue The final sale price of the user's house was $325,000.",
+    "2023-05-29T05:56:00.000 Mon User was recently pre-approved for a mortgage, and the lender said they could borrow up to $350,000.",
+    "2023-05-29T05:56:01.000 Mon User estimates that their mortgage payment will be around $1,664 per month, which is higher than expected.",
+    "2023-05-23T11:09:00.000 Tue User considers the $325,000 purchase price a great deal because the subdivision has a community pool and playground.",
+    "2023-05-29T05:56:00.000 Mon User is looking to buy a house and wants to calculate their mortgage payments.",
+    "2023-05-23T11:09:00.000 Tue User bought a house and wants to budget for potential home maintenance and repair costs.",
+    "2023-05-29T05:56:02.000 Mon User is considering making a larger down payment to avoid private mortgage insurance (PMI) on a $350,000 loan.",
+    "2023-05-29T05:56:03.000 Mon User is unsure about how mortgage interest rates are determined and is interested in ways to negotiate a better rate.",
+    "2023-05-23T11:09:01.000 Tue User wants to know the average cost of homeowner's insurance in their area.",
+    "2023-05-26T10:13:00.000 Fri User is considering selling some collectibles and wants advice on accurately pricing them. User recently bought a limited-edition Tag Heuer Carrera at a charity auction for $2,500 and is unsure whether it can be resold for a profit.",
+    "2023-05-28T07:28:03.000 Sun User decided to choose the Economy fare.",
+    "2023-05-28T07:28:01.000 Sun User's budget is approximately $200 for a one-way ticket.",
+    "2023-05-29T05:56:02.000 Mon User believes mortgage insurance could add a significant amount to their monthly payments.",
+    "2023-05-26T10:13:03.000 Fri User owns a limited-edition Tag Heuer Carrera purchased at a charity auction for $2,500 and is considering selling it because they do not wear it as often as expected. User wants to know whether they can sell it for a profit or at least break even.",
+    "2023-05-23T11:09:02.000 Tue User is evaluating the trade-off between a higher deductible and a lower insurance premium.",
+    "2023-05-26T10:13:05.000 Fri User reiterates that they bought a limited-edition Tag Heuer Carrera at a charity auction for $2,500 and are considering selling it because they do not wear it as often as expected.",
+    "2023-05-21T05:40:00.000 Sun User bought a pair of Tory Burch shoes and a Madewell dress at the Nordstrom half-yearly sale.",
+    "2023-05-23T11:09:01.000 Tue User wants to understand which factors affect homeowner's insurance premiums.",
+    "2023-05-21T05:40:00.000 Sun User recently returned from the Nordstrom half-yearly sale.",
+    "2023-05-23T14:08:04.000 Tue User owns a pair of Adidas Superstar sneakers that they bought during a sale."
+  ],
+  "answer_session_ids": [
+    "answer_1bb63ea5_2",
+    "answer_1bb63ea5_1"
+  ],
+  "time_build_s": 1849.778823852539,
+  "time_retrieve_s": 0.13595962524414062,
+  "time_answer_s": 6.33599591255188,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

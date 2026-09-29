@@ -1,0 +1,40 @@
+{
+  "question_id": "21d02d0d",
+  "question_type": "multi-session",
+  "question": "How many fun runs did I miss in March due to work commitments?",
+  "ground_truth": "2",
+  "generated_answer": "You missed **2 fun runs** in March due to work commitments: on **March 5** and **March 26, 2023**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-04-26T15:47:00.000 Wed User missed the local park's 5K fun run on March 5, 2023, because of work commitments.",
+    "2023-04-26T01:52:00.000 Wed User has been busy with work recently and missed several events, including a 5K fun run on March 26th.",
+    "2023-04-26T15:47:00.000 Wed User completed their first full marathon on April 10, 2023.",
+    "2023-04-26T09:08:02.000 Wed Three weeks have passed since the last day of summer.",
+    "2023-04-26T15:47:00.000 Wed User is active in the running community and attends most weekly 5K fun runs at a local park.",
+    "2023-04-26T01:52:00.000 Wed User wants to plan a training schedule for the next few months, including running, yoga classes, and swimming sessions.",
+    "2023-04-26T15:47:00.000 Wed User felt somewhat sore after completing the marathon.",
+    "2023-04-26T15:47:04.000 Wed User plans to focus on swimming endurance and incorporate intervals to challenge themselves.",
+    "2023-04-26T01:52:01.000 Wed User can dedicate approximately five to six days per week to training.",
+    "2023-04-26T15:47:03.000 Wed User plans to incorporate the recommended exercises into their routine.",
+    "2023-04-26T01:52:01.000 Wed User prefers to run on Saturday mornings and Wednesday evenings.",
+    "2023-04-26T18:16:02.000 Wed User is seeking suggestions for incorporating more physical activity into their daily routine, especially on busy days when they have limited time.",
+    "2023-04-26T01:52:01.000 Wed User wants to build endurance in swimming, running, and cycling.",
+    "2023-04-26T01:52:01.000 Wed User wants one or two rest days between training sessions.",
+    "2023-04-26T15:47:02.000 Wed User plans to try the recommended stretches and exercises.",
+    "2023-04-26T09:08:04.000 Wed User is considering booking the ski trip for late January or early February.",
+    "2023-04-26T17:40:04.000 Wed User has been doing laundry every other day since they began attending workout classes.",
+    "2023-04-26T01:52:01.000 Wed User is training for a local triathlon in July.",
+    "2023-04-26T18:16:05.000 Wed User's daily routine is fairly consistent during the week.",
+    "2023-04-26T09:08:04.000 Wed User wants to avoid the peak holiday season."
+  ],
+  "answer_session_ids": [
+    "answer_2c637141_2",
+    "answer_2c637141_1"
+  ],
+  "time_build_s": 1908.2047674655914,
+  "time_retrieve_s": 0.08526229858398438,
+  "time_answer_s": 3.0423295497894287,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

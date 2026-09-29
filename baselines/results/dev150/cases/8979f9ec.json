@@ -1,0 +1,40 @@
+{
+  "question_id": "8979f9ec",
+  "question_type": "multi-session",
+  "question": "What is the total number of lunch meals I got from the chicken fajitas and lentil soup?",
+  "ground_truth": "8 meals",
+  "generated_answer": "You got **8 lunch meals in total**: 3 from the chicken fajitas and 5 from the lentil soup.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-26T23:55:01.000 Fri User made a large batch of lentil soup that lasted for five lunches.",
+    "2023-05-26T23:55:05.000 Fri User recently made a large batch of lentil soup that lasted for five lunches.",
+    "2023-05-24T20:19:00.000 Wed User had chicken fajitas with sautéed onions and bell peppers for lunch; they made the fajitas the previous week, and this was the third meal they got from them.",
+    "2023-05-23T12:31:03.000 Tue User has been making chicken fajitas frequently.",
+    "2023-05-26T23:55:01.000 Fri User is looking for hearty soup recipes suitable for meal preparation.",
+    "2023-05-23T12:31:04.000 Tue User makes chicken fajitas using a marinade containing soy sauce and lime juice.",
+    "2023-05-23T12:31:01.000 Tue User has been eating salmon or tilapia for dinner at least twice a week.",
+    "2023-05-26T23:55:00.000 Fri User is looking for new recipes to try, particularly lunch recipes.",
+    "2023-05-26T23:55:02.000 Fri User is intrigued by butternut squash and chickpea curry soup.",
+    "2023-05-26T23:55:03.000 Fri User is excited to try butternut squash and chickpea curry soup.",
+    "2023-05-26T23:55:02.000 Fri User likes the idea of a creamy soup texture with Indian spices.",
+    "2023-05-26T23:55:01.000 Fri User has recently been interested in soups.",
+    "2023-05-26T23:55:02.000 Fri User has never had butternut squash in a soup before.",
+    "2023-05-28T21:31:00.000 Sun User would like to find affordable dining options in the Latin Quarter.",
+    "2023-05-26T23:55:00.000 Fri User has been meal prepping frequently and finds it a significant time saver.",
+    "2023-05-24T20:19:02.000 Wed User plans to make a frittata using roasted sweet potatoes and caramelized onions.",
+    "2023-05-24T13:39:01.000 Wed User is considering whether the girl they are making the meal for would be impressed by it.",
+    "2023-05-26T23:55:05.000 Fri User is looking for new recipes to try.",
+    "2023-05-24T13:39:00.000 Wed User wants to create an impressive recipe using only kimchi, balsamic vinegar, sweet potatoes, lamb, salmon, and licorice.",
+    "2023-05-28T21:31:02.000 Sun User is looking for nearby cafés or restaurants where they can get a quick lunch or snack while visiting the Luxembourg Gardens."
+  ],
+  "answer_session_ids": [
+    "answer_35e36341_1",
+    "answer_35e36341_2"
+  ],
+  "time_build_s": 1841.8292570114136,
+  "time_retrieve_s": 0.08958053588867188,
+  "time_answer_s": 10.215885639190674,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

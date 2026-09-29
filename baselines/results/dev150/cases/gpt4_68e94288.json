@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_68e94288",
+  "question_type": "temporal-reasoning",
+  "question": "What was the social media activity I participated 5 days ago?",
+  "ground_truth": "You participated in a social media challenge called #PlankChallenge.",
+  "generated_answer": "Five days ago, on March 15, 2023, you participated in the **#PlankChallenge** on social media and found it motivating.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-03-15T09:07:00.000 Wed User participated in the #PlankChallenge on social media on March 15, 2023, and found it motivating.",
+    "2023-02-08T07:43:05.000 Wed User wants tips, newsletters, and social-media accounts for staying up to date on the ethical and social implications of emerging technologies.",
+    "2023-02-18T14:58:02.000 Sat User learned about their administrative-day approach from the time-management webinar they attended on Wednesday, February 15, 2023.",
+    "2023-02-18T14:58:00.000 Sat User recently attended a time-management webinar on Wednesday, February 15, 2023, and found it helpful for generating ideas.",
+    "2023-02-12T23:22:05.000 Sun User wants to create a workout video focused on leg strength and share it on their social media channels.",
+    "2023-03-05T04:49:00.000 Sun User attended a concert a few weeks ago and sat next to a couple visiting from out of town.",
+    "2023-03-10T01:55:00.000 Fri User shared a vegan chili recipe using the hashtag #FoodieAdventures yesterday.",
+    "2023-02-12T23:22:03.000 Sun User wants to use popular fitness apps and platforms to create and share workout videos with their followers.",
+    "2023-02-18T14:58:03.000 Sat User wants to review their habit-tracker app and plan tasks for the following week during their administrative day.",
+    "2023-02-08T07:43:04.000 Wed User plans to explore online courses and attend speaker-series events related to the ethical and social implications of emerging technologies.",
+    "2023-03-10T01:55:04.000 Fri User recently posted a vegan chili recipe on Instagram using the hashtag #FoodieAdventures.",
+    "2023-02-17T03:35:04.000 Fri User asked who was heavily influenced by or influenced someone in connection with \"cloud,\" but the question was incomplete.",
+    "2023-02-15T13:15:05.000 Wed User is seeking tips for keeping their digital life organized.",
+    "2023-03-11T00:32:03.000 Sat User had a great experience volunteering backstage at a professional theater production about a month before March 11, 2023.",
+    "2023-02-08T07:43:05.000 Wed User plans to explore programs and events about the ethical and social implications of emerging technologies.",
+    "2023-02-21T03:16:03.000 Tue User wants information about special guest appearances and surprise moments during the \"Greatest Hits Live\" tour that fans discussed.",
+    "2023-03-03T01:48:00.000 Fri User attended a cocktail-making class at a local bar last Saturday.",
+    "2023-02-14T16:30:00.000 Tue User has been enjoying streaming content on their new TV.",
+    "2023-02-15T13:15:02.000 Wed User plans to watch Stranger Things and has heard positive things about it.",
+    "2023-03-06T21:51:05.000 Mon Friday is the user's administrative work day."
+  ],
+  "answer_session_ids": [
+    "answer_9793daa4_2",
+    "answer_9793daa4_1"
+  ],
+  "time_build_s": 2120.006604194641,
+  "time_retrieve_s": 0.18116474151611328,
+  "time_answer_s": 2.5478150844573975,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

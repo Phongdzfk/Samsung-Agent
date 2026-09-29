@@ -1,0 +1,40 @@
+{
+  "question_id": "ba358f49",
+  "question_type": "multi-session",
+  "question": "How many years will I be when my friend Rachel gets married?",
+  "ground_truth": "33",
+  "generated_answer": "You will be **33 years old** when Rachel gets married next year.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2022-09-01T03:06:00.000 Thu User's friend Rachel is getting married next year.",
+    "2022-09-01T03:06:00.000 Thu Rachel's upcoming wedding has prompted the user to think about their own life goals.",
+    "2022-09-01T14:04:00.000 Thu User had a Meissen porcelain vase appraised on September 1, 2022.",
+    "2022-09-01T17:24:03.000 Thu User plans to mention to the mechanic that their car has been driven 4,500 miles since its last oil change.",
+    "2022-09-01T12:29:05.000 Thu In the episode, the hosts answered a question about how to deal with a noisy neighbor.",
+    "2022-09-01T14:04:03.000 Thu User plans to ask the appraiser about the vase's painter's mark.",
+    "2022-09-01T03:06:04.000 Thu User plans to remain in their industry for a long time.",
+    "2022-09-01T09:16:01.000 Thu User wants to stay on track to finish their thesis by the end of the year.",
+    "2022-09-01T09:16:01.000 Thu User does not yet have a specific thesis submission deadline.",
+    "2022-09-01T15:17:00.000 Thu A record has the caption \"test\" and a date-like value beginning with 2023-02.",
+    "2022-09-01T15:17:00.000 Thu One record has the caption \"Image Title\" and a date-like value of 1970-01-2023-05T15:58:2023.",
+    "2022-09-01T22:21:03.000 Thu User plans to send a YouTube link to their friends so they can arrange a time to watch the documentary together.",
+    "2022-09-01T14:04:02.000 Thu User plans to ask the appraiser to investigate the vase's painter's mark.",
+    "2022-09-01T15:17:00.000 Thu The data contains timestamp-like values including 2023-02-22T06:51:29, 2023-02-22T06:51, and 2023-02-22T06:55:58.",
+    "2022-09-01T18:07:00.000 Thu User received a new passport with an updated name on September 1, 2022.",
+    "2022-09-01T03:06:02.000 Thu User plans to ask prospective programs about their career services and graduate job-placement rates.",
+    "2022-09-01T16:42:04.000 Thu User plans to practice meditation for 10 minutes five days a week.",
+    "2022-09-01T23:28:01.000 Thu User has been trying to get more stage time since starting a stand-up comedy class six weeks ago.",
+    "2022-09-01T16:14:01.000 Thu User is 32 years old and in their 30s.",
+    "2022-09-01T03:06:00.000 Thu User has been working in their industry for five years."
+  ],
+  "answer_session_ids": [
+    "answer_cbd08e3c_1",
+    "answer_cbd08e3c_2"
+  ],
+  "time_build_s": 1968.0031371116638,
+  "time_retrieve_s": 0.06866645812988281,
+  "time_answer_s": 3.884730815887451,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

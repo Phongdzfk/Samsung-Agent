@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_483dd43c",
+  "question_type": "temporal-reasoning",
+  "question": "Which show did I start watching first, 'The Crown' or 'Game of Thrones'?",
+  "ground_truth": "'Game of Thrones'",
+  "generated_answer": "You started watching **“Game of Thrones” first**—about a month before May 29, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-29T09:49:00.000 Mon User started watching the third season of \"The Crown\" on Sunday afternoon and finished it in 14 days.",
+    "2023-05-29T09:49:00.000 Mon While watching \"The Crown,\" user watched at least two to three episodes every day.",
+    "2023-05-29T04:31:00.000 Mon User had been meaning to watch \"Game of Thrones\" and started it about a month ago.",
+    "2023-05-29T09:49:02.000 Mon User is interested in fantasy shows similar to \"Game of Thrones.\"",
+    "2023-05-29T04:31:00.000 Mon User has finished the first four seasons of \"Game of Thrones\" and is really enjoying the series.",
+    "2023-05-29T09:49:00.000 Mon User finished binge-watching the third season of \"The Crown\" on Netflix.",
+    "2023-05-29T09:49:00.000 Mon User is looking for new shows similar to \"The Crown.\"",
+    "2023-05-29T09:49:01.000 Mon User has seen some previously recommended shows but has not watched all of them.",
+    "2023-05-29T04:31:00.000 Mon User is looking for new shows to watch on HBO Max.",
+    "2023-05-29T04:31:04.000 Mon User watches cooking shows on Netflix, particularly \"Nailed It!\" and \"The Great British Baking Show\".",
+    "2023-05-29T09:49:01.000 Mon User has been rewatching favorite episodes of \"Friends\" on HBO Max.",
+    "2023-05-29T04:31:03.000 Mon User wants to resume watching favorite episodes of \"Friends\" on HBO Max.",
+    "2023-05-29T09:49:03.000 Mon User has been watching many TV shows lately.",
+    "2023-05-29T09:49:01.000 Mon User has been subscribed to HBO Max for about six months.",
+    "2023-05-29T04:31:03.000 Mon User has been subscribed to HBO Max for about six months.",
+    "2023-05-29T01:47:01.000 Mon User is considering which historical landmark in the East of England to visit first and wants to know why one would be recommended.",
+    "2023-05-29T04:31:01.000 Mon User watches documentaries on Hulu, particularly documentaries about true crime and science.",
+    "2023-05-29T09:49:01.000 Mon User is interested in sitcoms or comedies similar to \"Friends.\"",
+    "2023-05-29T04:31:02.000 Mon User recently finished watching \"The Marvelous Mrs. Maisel\" on Amazon Prime and loved it.",
+    "2023-05-29T04:31:02.000 Mon User has access to HBO Max, Hulu, and Amazon Prime Video."
+  ],
+  "answer_session_ids": [
+    "answer_fb793c87_1",
+    "answer_fb793c87_2"
+  ],
+  "time_build_s": 2405.3760113716125,
+  "time_retrieve_s": 0.027698516845703125,
+  "time_answer_s": 2.1995465755462646,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

@@ -1,0 +1,40 @@
+{
+  "question_id": "22d2cb42",
+  "question_type": "knowledge-update",
+  "question": "Where did I get my guitar serviced?",
+  "ground_truth": "The music shop on Main St.",
+  "generated_answer": "You got your guitar serviced at a music shop on Main Street, likely Rhythm Central.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-29T14:10:02.000 Mon User previously had their guitar serviced at a music shop on Main Street.",
+    "2023-05-20T16:26:00.000 Sat User has an acoustic guitar that needs servicing and has not yet arranged to have it serviced.",
+    "2023-05-29T14:10:01.000 Mon User was considering having their guitar serviced at a music shop on Main Street because they believe the shop offers servicing.",
+    "2023-05-29T14:10:02.000 Mon User is seeking tips on how to prepare their guitar for servicing.",
+    "2023-05-20T16:26:04.000 Sat User decided to have their acoustic guitar serviced before the music festival.",
+    "2023-05-20T16:26:04.000 Sat User is looking for a music shop on Main Street that offers guitar servicing.",
+    "2023-05-20T16:26:03.000 Sat User is considering having their acoustic guitar serviced soon and was deciding whether to do it before or after the music festival.",
+    "2023-05-29T14:10:02.000 Mon User believes the Main Street music shop is good at guitar maintenance.",
+    "2023-05-20T16:26:05.000 Sat User believes Rhythm Central has a good reputation for guitar servicing.",
+    "2023-05-20T16:26:05.000 Sat User plans to call Rhythm Central to ask about its guitar-servicing services and prices.",
+    "2023-05-20T16:26:02.000 Sat User is looking for music shops in their area that sell violins.",
+    "2023-05-29T14:10:03.000 Mon User is seeking advice on how to price their old saxophone case.",
+    "2023-05-29T14:10:04.000 Mon User plans to list their old saxophone case on Craigslist for $120.",
+    "2023-05-20T16:26:03.000 Sat User plans to check out several music shops in their area for violins.",
+    "2023-05-29T14:10:03.000 Mon User is thinking about selling their old saxophone case.",
+    "2023-05-20T10:38:01.000 Sat User bought a new belt from Fossil last week.",
+    "2023-06-20T14:55:04.000 Tue User is looking for reliable local clockmakers who specialize in repairing antique clocks.",
+    "2023-05-23T03:59:03.000 Tue User bought several merchandise items at the music festival, including a Pale Waves T-shirt and a vinyl record of The 1975's latest album.",
+    "2023-05-29T14:10:05.000 Mon User previously sold an electronic keyboard for $200.",
+    "2023-05-29T14:10:04.000 Mon User plans to describe the saxophone case as being in good condition."
+  ],
+  "answer_session_ids": [
+    "answer_bcce0b73_1",
+    "answer_bcce0b73_2"
+  ],
+  "time_build_s": 3446.8927171230316,
+  "time_retrieve_s": 0.35619044303894043,
+  "time_answer_s": 2.0145483016967773,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

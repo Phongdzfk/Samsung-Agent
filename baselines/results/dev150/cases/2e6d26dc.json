@@ -1,0 +1,42 @@
+{
+  "question_id": "2e6d26dc",
+  "question_type": "multi-session",
+  "question": "How many babies were born to friends and family members in the last few months?",
+  "ground_truth": 5,
+  "generated_answer": "Five babies: Jasper, Charlotte, Max, and the twins Ava and Lily.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-13T02:13:00.000 Sat User's college friend David recently had a baby boy named Jasper, who was born a few weeks before May 13, 2023.",
+    "2023-05-13T02:13:04.000 Sat User's friends Mike and Emma have a daughter named Charlotte who was born around the same time as Max, in March.",
+    "2023-05-13T14:49:02.000 Sat User's friend David and his wife recently had their third child, a baby boy named Jasper.",
+    "2023-05-13T09:18:03.000 Sat User's cousin Rachel had a baby boy named Max in March.",
+    "2023-05-13T09:18:00.000 Sat User's cousin Rachel had a baby boy named Max in March.",
+    "2023-05-13T02:13:04.000 Sat User's cousin Rachel has a son named Max who was born in March.",
+    "2023-05-13T07:51:00.000 Sat User is planning a baby gift for their aunt's twins, Ava and Lily, who were born in April.",
+    "2023-05-13T09:18:00.000 Sat User knows how exciting it is to receive thoughtful baby gifts.",
+    "2023-05-13T14:49:00.000 Sat Mike and Emma's daughter Charlotte was born a few weeks after Rachel's baby shower.",
+    "2023-05-13T14:49:00.000 Sat User's friends Mike and Emma recently welcomed their first child, a girl named Charlotte.",
+    "2023-05-13T02:13:04.000 Sat User's aunt has twins named Ava and Lily who were born in April.",
+    "2023-05-13T09:18:00.000 Sat User attended Rachel's baby shower in February.",
+    "2023-05-13T09:18:03.000 Sat User attended Rachel's baby shower in February.",
+    "2023-05-13T14:49:02.000 Sat Jasper was born a few weeks before the conversation.",
+    "2023-05-13T02:13:05.000 Sat User's friend Sarah has an adopted daughter named Aaliyah, whose birthday the user wants to remember.",
+    "2023-05-13T07:51:03.000 Sat User is considering adding a message or the twins' birthdate to the blanket.",
+    "2023-05-13T14:49:00.000 Sat User wants the latest updates about their friends' children.",
+    "2023-05-13T09:18:03.000 Sat User is excited to give their friend's baby a gift that is just as thoughtful.",
+    "2023-05-13T14:49:01.000 Sat User wants to invite all the new parents in their circle.",
+    "2023-05-13T09:18:00.000 Sat User is planning a baby gift for a friend's upcoming baby shower."
+  ],
+  "answer_session_ids": [
+    "answer_fa526fc0_4",
+    "answer_fa526fc0_3",
+    "answer_fa526fc0_1",
+    "answer_fa526fc0_2"
+  ],
+  "time_build_s": 1678.3402700424194,
+  "time_retrieve_s": 0.01985311508178711,
+  "time_answer_s": 2.858412981033325,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

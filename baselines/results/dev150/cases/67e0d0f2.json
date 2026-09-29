@@ -1,0 +1,40 @@
+{
+  "question_id": "67e0d0f2",
+  "question_type": "multi-session",
+  "question": "What is the total number of online courses I've completed?",
+  "ground_truth": "20",
+  "generated_answer": "You’ve completed **20 online courses in total**: **12 on Coursera** and **8 on edX**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T15:53:04.000 Sat User has completed 12 courses on Coursera.",
+    "2023-05-27T15:53:00.000 Sat User has already completed some data analysis courses on Coursera.",
+    "2023-05-21T17:49:04.000 Sun User is looking forward to starting the course and working on its assignments.",
+    "2023-05-21T17:49:01.000 Sun User wants to know the duration and topics covered in Andrew Ng's machine learning course on Coursera.",
+    "2023-05-21T17:49:02.000 Sun User has completed eight previous edX courses in data analysis.",
+    "2023-05-21T17:49:00.000 Sun User has built a solid foundation in data analysis through online courses on edX.",
+    "2023-05-21T17:49:01.000 Sun User is particularly interested in Andrew Ng's machine learning course on Coursera.",
+    "2023-05-27T15:53:00.000 Sat User wants to improve their data analysis skills and is looking for online resources or courses that build on their existing foundation.",
+    "2023-05-21T17:49:05.000 Sun User is excited to begin the course, start working on assignments, and undertake personal projects.",
+    "2023-05-24T14:06:03.000 Wed User is interested in the Coursera course Data Science for Business by the University of Colorado Boulder.",
+    "2023-05-27T15:53:02.000 Sat User is seeking advice on how to use the course effectively, including how to approach its exercises and projects.",
+    "2023-05-26T17:53:04.000 Fri User has been taking sculpting classes for three months.",
+    "2023-05-24T14:06:00.000 Wed User is looking for recommendations for popular Coursera courses related to data science.",
+    "2023-05-27T15:53:03.000 Sat User is interested in whether the course projects use real-world datasets.",
+    "2023-05-27T15:53:03.000 Sat User is interested in whether the course allows learners to work on projects aligned with their own interests.",
+    "2023-05-21T17:49:04.000 Sun User is weighing whether to work on personal projects alongside the coursework or focus solely on the coursework.",
+    "2023-05-27T15:53:01.000 Sat User is interested in DataCamp courses, particularly courses focused on data visualization.",
+    "2023-05-24T14:06:04.000 Wed User is interested in the Coursera course Python for Data Science by the University of Michigan.",
+    "2023-05-21T17:49:02.000 Sun User wants to learn more about the course assignments and how they will help apply machine learning concepts to real-world problems.",
+    "2023-05-24T14:06:04.000 Wed User wants to learn which topics are covered in Python for Data Science and how it differs from other Python courses on Coursera."
+  ],
+  "answer_session_ids": [
+    "answer_3a5010af_2",
+    "answer_3a5010af_1"
+  ],
+  "time_build_s": 2074.4984152317047,
+  "time_retrieve_s": 0.07732915878295898,
+  "time_answer_s": 6.950103044509888,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

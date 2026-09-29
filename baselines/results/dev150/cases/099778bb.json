@@ -1,0 +1,40 @@
+{
+  "question_id": "099778bb",
+  "question_type": "multi-session",
+  "question": "What percentage of leadership positions do women hold in the my company?",
+  "ground_truth": "20%",
+  "generated_answer": "Women hold **20% of leadership positions** in your company: **20 out of 100**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-30T17:22:03.000 Tue User is looking for data on the average percentage of leadership positions held by women in companies of similar size and industry.",
+    "2023-05-21T02:21:01.000 Sun User learned at the gender equality workshop that women occupy 20 leadership positions in their company.",
+    "2023-05-30T17:22:02.000 Tue User is interested in data about diversity and inclusion in leadership positions, including demographics and representation of underrepresented groups.",
+    "2023-05-30T17:22:00.000 Tue User's company has 100 leadership positions across the company.",
+    "2023-05-21T02:21:02.000 Sun User is curious about how their company's gender ratio compares with industry benchmarks.",
+    "2023-05-30T17:22:04.000 Tue User considers having 100 leadership positions to be significant.",
+    "2023-05-30T17:22:04.000 Tue User is looking for best practices for structuring a leadership team with 100 positions.",
+    "2023-05-21T02:21:05.000 Sun User wants the report to cover data on the diversity of new hires, such as the percentage of women or underrepresented groups in recent hiring cohorts.",
+    "2023-05-30T17:22:03.000 Tue User is particularly interested in the representation of underrepresented groups in leadership positions.",
+    "2023-05-30T17:22:04.000 Tue User is interested in comparing their company's leadership structure with industry benchmarks.",
+    "2023-05-21T02:21:02.000 Sun User wants to know whether the diversity and inclusion report covers employee resource groups, such as women's networks or LGBTQ+ groups.",
+    "2023-05-21T02:21:01.000 Sun User wants diversity and inclusion reports to include data on the demographics of their company's workforce, such as the gender ratio.",
+    "2023-05-30T17:22:01.000 Tue User is looking for resources that provide benchmarks for leadership positions across different industries to compare with their company's leadership structure.",
+    "2023-05-30T17:22:05.000 Tue User is seeking suggestions for increasing diversity and inclusion in their company's leadership team.",
+    "2023-05-30T17:22:05.000 Tue User is interested in ways to create a more inclusive leadership team.",
+    "2023-05-21T02:21:01.000 Sun User recently attended a workshop on gender equality.",
+    "2023-05-21T02:21:05.000 Sun User is curious whether the report discusses the company's strategy for increasing diversity in hiring, including blind-hiring practices or diversity-focused recruitment initiatives.",
+    "2023-05-21T02:21:03.000 Sun User is curious whether the diversity and inclusion report covers employee feedback sentiment, including results from employee engagement surveys or focus groups.",
+    "2023-05-21T02:21:04.000 Sun User is interested in how employees perceive their company's diversity and inclusion efforts.",
+    "2023-05-21T02:21:02.000 Sun User plans to check out their company's diversity and inclusion report."
+  ],
+  "answer_session_ids": [
+    "answer_80d6d664_2",
+    "answer_80d6d664_1"
+  ],
+  "time_build_s": 1968.2821624279022,
+  "time_retrieve_s": 0.1410660743713379,
+  "time_answer_s": 3.1187965869903564,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

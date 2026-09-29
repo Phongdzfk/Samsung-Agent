@@ -1,0 +1,213 @@
+{
+ "n_done": 125,
+ "n_dev": 150,
+ "n_test": 350,
+ "types": [
+  {
+   "type": "single-session-user",
+   "dev": 21,
+   "test": 49,
+   "done": 21,
+   "correct": 21,
+   "acc": 1.0
+  },
+  {
+   "type": "single-session-assistant",
+   "dev": 17,
+   "test": 39,
+   "done": 9,
+   "correct": 3,
+   "acc": 0.3333333333333333
+  },
+  {
+   "type": "single-session-preference",
+   "dev": 9,
+   "test": 21,
+   "done": 9,
+   "correct": 7,
+   "acc": 0.7777777777777778
+  },
+  {
+   "type": "multi-session",
+   "dev": 40,
+   "test": 93,
+   "done": 40,
+   "correct": 33,
+   "acc": 0.825
+  },
+  {
+   "type": "temporal-reasoning",
+   "dev": 40,
+   "test": 93,
+   "done": 30,
+   "correct": 26,
+   "acc": 0.8666666666666667
+  },
+  {
+   "type": "knowledge-update",
+   "dev": 23,
+   "test": 55,
+   "done": 16,
+   "correct": 15,
+   "acc": 0.9375
+  }
+ ],
+ "micro": 0.84,
+ "macro": 0.7900462962962962,
+ "n_types_run": 6,
+ "abs": {
+  "n": 1,
+  "correct": 1
+ },
+ "build_min": {
+  "mean": 37.21771642888387,
+  "median": 33.467062922318775,
+  "max": 61.122219224770866
+ },
+ "retrieve_s": 0.17973302459716797,
+ "answer_s": 4.087394472122193,
+ "wrong": [
+  {
+   "id": "0bc8ad93",
+   "type": "temporal-reasoning",
+   "q": "I mentioned visiting a museum two months ago. Did I visit with a friend or not?",
+   "gold": "No, you did not visit with a friend.",
+   "pred": "Yes. You visited the museum with someone—specifically, you toured the Science Museum with a friend who is a ch"
+  },
+  {
+   "id": "1b9b7252",
+   "type": "single-session-assistant",
+   "q": "I wanted to follow up on our previous conversation about mindfulness techniques. You mentioned some great reso",
+   "gold": "Mindful.org.",
+   "pred": "The website was likely **UCLA Mindful** (the UCLA Mindful Awareness Research Center): **https://www.uclahealth"
+  },
+  {
+   "id": "1da05512",
+   "type": "single-session-preference",
+   "q": "I'm trying to decide whether to buy a NAS device now or wait. What do you think?",
+   "gold": "The user would prefer responses that take into account their current h",
+   "pred": "Given your goals, I’d lean toward buying a NAS now—provided you choose one that fits your storage needs and se"
+  },
+  {
+   "id": "2bf43736",
+   "type": "single-session-assistant",
+   "q": "I was going through our previous chat and I wanted to clarify something about the prayer of beginners in Tanqu",
+   "gold": "Chapter 4 of Book 1, titled 'Vocal Prayer and Meditation'.",
+   "pred": "In Tanquerey’s *The Spiritual Life*, the **prayer of beginners** is discussed in **Part II, Book I, Chapter II"
+  },
+  {
+   "id": "3249768e",
+   "type": "single-session-assistant",
+   "q": "I'm looking back at our previous conversation about building a cocktail bar. You recommended five bottles to m",
+   "gold": "Absinthe",
+   "pred": "The memories don’t specify the five-bottle list, so I can’t reliably identify what the fifth bottle was."
+  },
+  {
+   "id": "37f165cf",
+   "type": "multi-session",
+   "q": "What was the page count of the two novels I finished in January and March?",
+   "gold": "856",
+   "pred": "The two novels were:  - **The Nightingale** by Kristin Hannah — **440 pages** - **The Power** by Naomi Alderma"
+  },
+  {
+   "id": "7024f17c",
+   "type": "multi-session",
+   "q": "How many hours of jogging and yoga did I do last week?",
+   "gold": "0.5 hours",
+   "pred": "Based on the memories, you did **0 hours of jogging and 0 hours of yoga last week**. The only recorded jog was"
+  },
+  {
+   "id": "75f70248",
+   "type": "single-session-preference",
+   "q": "I've been sneezing quite a bit lately. Do you think it might be my living room?",
+   "gold": "The user would prefer responses that consider the potential impact of ",
+   "pred": "Yes, it could be. Your cat sheds heavily, so the living room may contain cat hair and dander, especially in th"
+  },
+  {
+   "id": "7e00a6cb",
+   "type": "single-session-assistant",
+   "q": "I'm planning my trip to Amsterdam again and I was wondering, what was the name of that hostel near the Red Lig",
+   "gold": "International Budget Hostel",
+   "pred": "I don’t have the specific hostel name in the available memories—only that you were considering budget-friendly"
+  },
+  {
+   "id": "8fb83627",
+   "type": "knowledge-update",
+   "q": "How many issues of National Geographic have I finished reading?",
+   "gold": "Five",
+   "pred": "You have finished reading **three issues** of National Geographic."
+  },
+  {
+   "id": "9a707b81",
+   "type": "temporal-reasoning",
+   "q": "How many days ago did I attend a baking class at a local culinary school when I made my friend's birthday cake",
+   "gold": "21 days. 22 days (including the last day) is also acceptable.",
+   "pred": "You attended the baking class on March 20, 2022—26 days before April 15, 2022."
+  },
+  {
+   "id": "ceb54acb",
+   "type": "single-session-assistant",
+   "q": "In our previous chat, you suggested 'sexual compulsions' and a few other options for alternative terms for cer",
+   "gold": "I suggested 'sexual fixations', 'problematic sexual behaviors', 'sexua",
+   "pred": "I can’t determine the other four options from the memories provided. They only mention topics such as social-m"
+  },
+  {
+   "id": "d23cf73b",
+   "type": "multi-session",
+   "q": "How many different cuisines have I learned to cook or tried out in the past few months?",
+   "gold": "4",
+   "pred": "You’ve explored about **six different cuisines or culinary traditions**:  1. Thai   2. Indian   3. Vegan cuisi"
+  },
+  {
+   "id": "d682f1a2",
+   "type": "multi-session",
+   "q": "How many different types of food delivery services have I used recently?",
+   "gold": "3",
+   "pred": "You’ve used **one identifiable type** recently: a **pre-made meal delivery service**, such as Fresh Fusion."
+  },
+  {
+   "id": "e9327a54",
+   "type": "single-session-assistant",
+   "q": "I'm planning to revisit Orlando. I was wondering if you could remind me of that unique dessert shop with the g",
+   "gold": "The Sugar Factory at Icon Park.",
+   "pred": "I don’t have the exact shop name in the saved memories—only that you were looking for fun, family-friendly des"
+  },
+  {
+   "id": "eac54adc",
+   "type": "temporal-reasoning",
+   "q": "How many days ago did I launch my website when I signed a contract with my first client?",
+   "gold": "19 days ago. 20 days (including the last day) is also acceptable.",
+   "pred": "You launched your website **19 days before** signing your first-client contract (February 10 to March 1, 2023)"
+  },
+  {
+   "id": "gpt4_15e38248",
+   "type": "multi-session",
+   "q": "How many pieces of furniture did I buy, assemble, sell, or fix in the past few months?",
+   "gold": "4",
+   "pred": "You handled **3 pieces of furniture** in the past few months:  - **Bought:** 1 coffee table   - **Assembled:**"
+  },
+  {
+   "id": "gpt4_1d4ab0c9",
+   "type": "temporal-reasoning",
+   "q": "How many days passed between the day I started watering my herb garden and the day I harvested my first batch ",
+   "gold": "24 days. 25 days (including the last day) is also acceptable.",
+   "pred": "18 days passed between March 22, 2023, and April 15, 2023."
+  },
+  {
+   "id": "gpt4_2f91af09",
+   "type": "multi-session",
+   "q": "How many total pieces of writing have I completed since I started writing again three weeks ago, including sho",
+   "gold": "23",
+   "pred": "You completed **25 pieces** in total:  - 17 poems   - 5 short stories   - 3 writing-challenge pieces (one per "
+  },
+  {
+   "id": "gpt4_59c863d7",
+   "type": "multi-session",
+   "q": "How many model kits have I worked on or bought?",
+   "gold": "I have worked on or bought five model kits. The scales of the models a",
+   "pred": "You have worked on or bought **4 model kits**:  1. 1/72-scale B-29 bomber — bought   2. 1/24-scale 1969 Camaro"
+  }
+ ],
+ "llm": "cx/gpt-5.6-luna",
+ "judge": "cx/gpt-5.6-terra"
+}

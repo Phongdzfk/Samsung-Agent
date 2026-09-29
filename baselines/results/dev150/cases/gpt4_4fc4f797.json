@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_4fc4f797",
+  "question_type": "temporal-reasoning",
+  "question": "How many days passed between the day I received feedback about my car's suspension and the day I tested my new suspension setup?",
+  "ground_truth": "38 days. 39 days (including the last day) is also acceptable.",
+  "generated_answer": "37 days passed—from March 17, 2023, when you received feedback about the suspension, to April 23, 2023, when you tested the new setup.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-03-17T15:43:02.000 Fri User is seeking advice on approaching a track day while testing new suspension settings.",
+    "2023-03-17T15:43:02.000 Fri User plans to test their car's new suspension setup during an open track day at Virginia International Raceway next month.",
+    "2023-03-17T15:43:05.000 Fri User plans to test their car's new suspension setup during an open track day at Virginia International Raceway.",
+    "2023-04-23T02:44:00.000 Sun User plans to test their car's new suspension setup at VIR.",
+    "2023-03-17T15:43:03.000 Fri User plans to begin suspension testing with a baseline setup.",
+    "2023-03-17T15:43:00.000 Fri User is seeking advice on suspension settings for a 2018 Honda Civic Si.",
+    "2023-03-17T15:43:03.000 Fri User plans to make incremental changes to the suspension settings, focus on one adjustment axis at a time, and take notes on the effects of each change.",
+    "2023-04-23T02:44:01.000 Sun User wants to ensure that their car's new suspension setup is properly dialed in.",
+    "2023-03-17T15:43:00.000 Fri User wants general guidelines for setting suspension stiffness for track driving.",
+    "2023-03-17T15:43:05.000 Fri Judges have told the user that their car's suspension was too soft.",
+    "2023-03-17T15:43:05.000 Fri User believes the overly soft suspension has been affecting their car's handling, particularly in fast corners.",
+    "2023-03-17T15:43:02.000 Fri User hopes the track day will help them better understand how their car handles.",
+    "2023-03-17T15:43:05.000 Fri User hopes the testing will help them better understand how their car handles, especially in fast corners.",
+    "2023-04-15T18:58:01.000 Sat Because the user attended five workshops in three months, they may need to block out dedicated time to review each one.",
+    "2023-04-15T18:58:01.000 Sat User plans to review their notes within 24 to 48 hours of each workshop.",
+    "2023-02-26T03:07:00.000 Sun User felt somewhat sluggish on February 26, 2023.",
+    "2023-03-17T15:43:01.000 Fri User has ordered new coilovers for their car.",
+    "2023-03-17T15:43:01.000 Fri User plans to install the new coilovers next weekend.",
+    "2023-03-17T23:18:05.000 Fri User has noticed changes since starting Pilates.",
+    "2023-02-20T02:48:02.000 Mon User ordered a kitchen cart from Wayfair last month, and it arrived on the 15th."
+  ],
+  "answer_session_ids": [
+    "answer_be07688f_1",
+    "answer_be07688f_2"
+  ],
+  "time_build_s": 1866.071833372116,
+  "time_retrieve_s": 0.1312394142150879,
+  "time_answer_s": 4.187135934829712,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

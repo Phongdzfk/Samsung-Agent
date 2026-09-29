@@ -1,0 +1,39 @@
+{
+  "question_id": "b0479f84",
+  "question_type": "single-session-preference",
+  "question": "I've got some free time tonight, any documentary recommendations?",
+  "ground_truth": "The user would prefer documentary recommendations that are similar in style and theme to 'Our Planet', 'Free Solo', and 'Tiger King', which they have previously enjoyed. They might not prefer recommendations of documentaries that are vastly different in tone or subject matter from these titles. The preferred response utilizes the user's previously mentioned viewing history to suggest documentaries that cater to their tastes.",
+  "generated_answer": "Absolutely—since you enjoyed **_Our Planet_**, **_Free Solo_**, and **_Tiger King_**, here are a few strong picks for tonight:\n\n### Nature and wildlife\n- **_Planet Earth II_** – Spectacular wildlife cinematography and a natural follow-up to _Our Planet_.\n- **_Dynasties_** – More intimate and character-driven, following individual animal families through survival struggles.\n- **_Chasing Coral_** – A visually striking documentary about coral-reef loss and climate change.\n- **_My Octopus Teacher_** – A quiet, moving relationship between a filmmaker and an octopus.\n- **_The Elephant Whisperers_** – A heartfelt short documentary about caretakers raising an orphaned elephant.\n\n### Adventure and human achievement\n- **_The Dawn Wall_** – If you liked _Free Solo_, this follows climbers attempting an extraordinarily difficult route on El Capitan.\n- **_Meru_** – Another gripping climbing documentary, with a strong focus on perseverance and friendship.\n- **_14 Peaks: Nothing Is Impossible_** – High-altitude adventure and an ambitious mountaineering challenge.\n\n### Unusual true crime and eccentric real life\n- **_The Staircase_** – A complex, engrossing murder case with many competing theories.\n- **_Icarus_** – Begins as a cycling investigation and develops into a much larger international scandal.\n- **_Wild Wild Country_** – A bizarre, fascinating story about a controversial spiritual community and its conflict with a small Oregon town.\n- **_The Imposter_** – A twist-filled true-crime mystery that feels almost unbelievable.\n\nFor a single choice tonight: pick **_The Dawn Wall_** for the closest match to _Free Solo_, **_Dynasties_** for _Our Planet_, or **_Wild Wild Country_** for the strange, chaotic appeal of _Tiger King_.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-28T13:25:00.000 Sun User wants recommendations for documentary series similar to \"Our Planet,\" \"Free Solo,\" and \"Tiger King.\"",
+    "2023-05-28T13:25:00.000 Sun User has been watching many documentaries lately, particularly on Netflix, and has finished watching \"Our Planet,\" \"Free Solo,\" and \"Tiger King.\"",
+    "2023-05-22T20:55:04.000 Mon User wants recommendations for additional comedy podcasts.",
+    "2023-05-22T20:55:00.000 Mon User has recently been very interested in true-crime podcasts.",
+    "2023-05-28T13:25:01.000 Sun User is interested in nature and wildlife documentaries and wants to learn more about \"Dynasties\" and \"Chasing Coral,\" including how they differ from \"Our Planet\" and \"Planet Earth.\"",
+    "2023-05-22T20:55:05.000 Mon User wants to explore more comedy podcasts.",
+    "2023-05-25T17:50:00.000 Thu User is looking for new TV shows to watch.",
+    "2023-05-22T20:55:01.000 Mon User wants recommendations for other entrepreneurship podcasts.",
+    "2023-05-22T20:55:03.000 Mon User wants recommendations for other news and current-events podcasts.",
+    "2023-05-25T17:50:04.000 Thu User is interested in finding themes or elements shared by \"The Expanse\" and the shows they are considering.",
+    "2023-05-30T20:32:05.000 Tue User is looking for recommendations for literary-fiction or contemporary-novel authors and books.",
+    "2023-05-22T20:55:00.000 Mon User enjoys \"Crime Junkie\" and wants similar podcast recommendations.",
+    "2023-05-22T23:47:04.000 Mon User wants recommendations for books exploring different cultures, identities, and experiences.",
+    "2023-05-22T20:55:04.000 Mon User finds these comedy podcasts funny.",
+    "2023-05-25T17:50:02.000 Thu User has a packed schedule with other shows they are watching.",
+    "2023-05-25T17:50:05.000 Thu User wants tips for staying organized and tracking multiple TV shows at once.",
+    "2023-05-22T20:55:00.000 Mon User is looking for new podcasts to listen to.",
+    "2023-05-25T17:50:05.000 Thu User needs to juggle their viewing schedule across multiple shows.",
+    "2023-05-22T20:55:05.000 Mon User is especially interested in comedy podcasts similar to \"My Brother, My Brother and Me\" in vibe or style.",
+    "2023-05-30T20:32:04.000 Tue User is considering focusing on short stories for the creative-writing workshop."
+  ],
+  "answer_session_ids": [
+    "answer_30f63ddb"
+  ],
+  "time_build_s": 1681.8631403446198,
+  "time_retrieve_s": 0.015903234481811523,
+  "time_answer_s": 10.996744871139526,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

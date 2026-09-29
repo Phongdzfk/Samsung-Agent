@@ -1,0 +1,39 @@
+{
+  "question_id": "5e1b23de",
+  "question_type": "temporal-reasoning",
+  "question": "How many months ago did I attend the photography workshop?",
+  "ground_truth": 3,
+  "generated_answer": "You attended the photography workshop about **3 months ago**, on November 1, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-11-01T00:46:03.000 Wed User attended a three-day photography workshop in a nearby city on November 1, 2023.",
+    "2023-11-01T00:46:03.000 Wed At the photography workshop, user learned about different photography techniques and styles.",
+    "2023-10-29T14:58:00.000 Sun User attended a gardening workshop at a community center during the first week of June.",
+    "2023-11-01T07:54:03.000 Wed User is considering joining a photography community.",
+    "2023-11-01T07:54:03.000 Wed User has recently become interested in photography.",
+    "2023-11-01T22:02:00.000 Wed User attended a lecture series at the Science Museum about a month and a half ago.",
+    "2023-10-15T12:32:04.000 Sun User plans to apply photography advice during their photoshoot next weekend.",
+    "2023-10-15T12:32:03.000 Sun User took sunset photographs during a hike at Red Rock Canyon last weekend.",
+    "2023-11-01T00:46:00.000 Wed User is looking for inspiration and tips related to photography.",
+    "2023-11-01T22:02:02.000 Wed User attended a guided tour about Impressionist art.",
+    "2023-10-08T04:56:00.000 Sun User completed a six-week online digital marketing course conducted by HubSpot.",
+    "2023-11-01T22:02:02.000 Wed User is interested in behind-the-scenes tours and special events that provide a deeper understanding of artwork and the museum's collections.",
+    "2023-10-15T12:32:03.000 Sun User is planning a photoshoot with friends next weekend.",
+    "2023-10-15T12:32:00.000 Sun User is planning a photoshoot with friends next weekend.",
+    "2023-11-01T22:02:02.000 Wed User is interested in the Art Museum's guided tours.",
+    "2023-11-01T22:02:04.000 Wed User would love to take a conservation and restoration tour focused on Impressionist paintings.",
+    "2023-10-15T12:32:05.000 Sun User is unsure where to start with organizing and managing photos after a shoot.",
+    "2023-10-15T12:32:05.000 Sun User is trying to develop a workflow for organizing and managing photos after a shoot.",
+    "2023-11-01T22:02:03.000 Wed User wants to know whether the museum offers tours focused on the conservation and restoration of Impressionist paintings.",
+    "2023-10-03T19:00:00.000 Tue User worked on their research proposal for weeks before submitting it."
+  ],
+  "answer_session_ids": [
+    "answer_c18d480b_1"
+  ],
+  "time_build_s": 1666.0832915306091,
+  "time_retrieve_s": 0.24270176887512207,
+  "time_answer_s": 3.283104181289673,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

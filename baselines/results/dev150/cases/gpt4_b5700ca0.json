@@ -1,0 +1,39 @@
+{
+  "question_id": "gpt4_b5700ca0",
+  "question_type": "temporal-reasoning",
+  "question": "Where did I attend the religious activity last week?",
+  "ground_truth": "the Episcopal Church",
+  "generated_answer": "You attended a Maundy Thursday service at an Episcopal Church last week.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-04-06T05:36:03.000 Thu User attended a Maundy Thursday service at an Episcopal Church and found it beautiful and moving.",
+    "2023-03-14T18:53:02.000 Tue User attended a leadership development program on April 12 and 13.",
+    "2023-03-14T18:53:00.000 Tue User had a meeting with Rachel on March 3, and the meeting went very well.",
+    "2023-04-06T05:36:04.000 Thu User is interested in volunteer opportunities with their church or community group.",
+    "2023-04-06T05:36:01.000 Thu User is available to volunteer on weekdays, preferably in the evenings.",
+    "2023-04-06T05:36:00.000 Thu User helped at an Easter Egg Hunt event the previous week.",
+    "2023-03-14T18:53:01.000 Tue User received an invitation to attend a leadership development program after the meeting with Rachel on March 3.",
+    "2023-04-06T18:36:05.000 Thu User considers it a beautiful day and is looking forward to enjoying the scenery and getting exercise.",
+    "2023-03-29T23:59:00.000 Wed User has previously visited San Francisco.",
+    "2023-04-06T09:56:03.000 Thu User is asking when Jewish people came to Sokolov.",
+    "2023-04-06T05:36:05.000 Thu User's church group is considering organizing a food drive or helping with a special food bank event.",
+    "2023-04-06T18:36:05.000 Thu User plans to take a bike ride through a park after their yoga class today.",
+    "2023-04-06T05:36:05.000 Thu User is looking for ways for their church group to make a more significant contribution to the food bank's mission.",
+    "2023-03-20T12:25:00.000 Mon User returned from a solo trip to New York City two weeks ago.",
+    "2023-03-20T12:25:00.000 Mon User had an amazing experience on their recent solo trip to New York City.",
+    "2023-03-26T21:45:00.000 Sun User attended a lecture on abstract expressionism at the University Art Museum on April 15.",
+    "2023-04-06T09:56:04.000 Thu User wants more details about the rabbis and scholars associated with Sokolov's Jewish community.",
+    "2023-04-04T00:48:03.000 Tue User is considering changing their Wednesday evening routine.",
+    "2023-04-06T18:36:03.000 Thu User is excited to start taking yoga classes at the new studio today.",
+    "2023-03-27T12:21:05.000 Mon User is fascinated by unique architecture and is interested in whether others have personally visited any of the recommended places."
+  ],
+  "answer_session_ids": [
+    "answer_a17423e8_1"
+  ],
+  "time_build_s": 2026.1763122081757,
+  "time_retrieve_s": 0.14682412147521973,
+  "time_answer_s": 2.4646804332733154,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

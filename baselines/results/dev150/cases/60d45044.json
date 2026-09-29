@@ -1,0 +1,39 @@
+{
+  "question_id": "60d45044",
+  "question_type": "single-session-user",
+  "question": "What type of rice is my favorite?",
+  "ground_truth": "Japanese short-grain rice",
+  "generated_answer": "Your favorite type of rice is Japanese short-grain rice.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T00:47:02.000 Sat User's favorite rice is Japanese short-grain rice.",
+    "2023-05-27T00:47:02.000 Sat User is interested in simple recipes involving grilled chicken or vegetables that pair well with Japanese short-grain rice.",
+    "2023-05-21T22:19:01.000 Sun User likes herby and Indian-style popcorn ideas.",
+    "2023-05-27T00:47:02.000 Sat User is thinking of making Japanese-style dishes.",
+    "2023-05-21T22:19:00.000 Sun User is looking for snack variations that are easy to make.",
+    "2023-05-21T22:19:03.000 Sun User is considering experimenting with cookie flavors such as oatmeal raisin with nuts.",
+    "2023-05-21T22:19:04.000 Sun User is interested in trying other healthy nuts and seeds.",
+    "2023-05-21T22:19:02.000 Sun User is looking for healthy snack options that can curb sweet cravings.",
+    "2023-05-27T00:47:01.000 Sat User is interested in simple recipes, such as marinades or sauces, that use basil and mint.",
+    "2023-05-23T07:46:04.000 Tue User is interested in the flavor and tenderness produced by low-and-slow cooking.",
+    "2023-05-27T00:47:03.000 Sat User is thinking of making onigiri for lunch today.",
+    "2023-05-21T22:19:03.000 Sun User is interested in healthier cookie options and flavor combinations.",
+    "2023-05-21T22:19:04.000 Sun User is excited to try healthier cookie options and flavor combinations.",
+    "2023-05-21T22:19:00.000 Sun User is seeking inspiration for new snack ideas, especially healthier snacks.",
+    "2023-05-21T22:19:02.000 Sun User has been experimenting with paprika and garlic powder as popcorn seasonings.",
+    "2023-05-23T07:46:02.000 Tue User's marinated chicken breasts turned out very well.",
+    "2023-05-28T23:12:01.000 Sun User is looking for a gift for a friend who loves to cook.",
+    "2023-05-29T19:15:02.000 Mon User has always been interested in Native American culture.",
+    "2023-05-21T22:19:01.000 Sun User is interested in seasonings that pair well with olive oil.",
+    "2023-05-21T22:19:00.000 Sun User has been making popcorn frequently, usually with olive oil and a little salt."
+  ],
+  "answer_session_ids": [
+    "answer_9cddca88"
+  ],
+  "time_build_s": 1802.989338874817,
+  "time_retrieve_s": 0.09722590446472168,
+  "time_answer_s": 1.6295182704925537,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

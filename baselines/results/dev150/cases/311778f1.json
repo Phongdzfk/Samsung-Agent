@@ -1,0 +1,39 @@
+{
+  "question_id": "311778f1",
+  "question_type": "single-session-user",
+  "question": "How many hours did I spend watching documentaries on Netflix last month?",
+  "ground_truth": "10",
+  "generated_answer": "You spent approximately **10 hours** watching documentaries on Netflix last month.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-25T06:04:04.000 Thu User spent around 10 hours watching documentaries on Netflix last month, which was more than expected.",
+    "2023-05-25T06:04:01.000 Thu User spent approximately 10 hours watching documentaries on Netflix last month.",
+    "2023-05-25T06:04:00.000 Thu User watches documentaries on Netflix, especially documentaries about space exploration and artificial intelligence.",
+    "2023-05-24T10:22:03.000 Wed User can dedicate about three hours per week to research and professional development.",
+    "2023-05-25T06:04:04.000 Thu User may try to reduce their Netflix screen time in the coming months.",
+    "2023-05-25T06:04:04.000 Thu User is glad to be able to track their Netflix screen time.",
+    "2023-05-25T06:04:00.000 Thu User learned a great deal from the Netflix series \"Cosmos.\"",
+    "2023-05-25T06:04:01.000 Thu User wants help tracking their Netflix screen time.",
+    "2023-05-20T13:05:05.000 Sat User plans to check out the recommended podcasts.",
+    "2023-05-25T06:04:05.000 Thu User is considering reducing their screen time by 30 minutes per day.",
+    "2023-05-20T13:05:04.000 Sat User enjoys listening to \"The Daily Boost\" and \"The Motivation Minute\" podcasts.",
+    "2023-05-21T13:18:05.000 Sun User is considering exploring authors and series similar to \"The Hitchhiker's Guide to the Galaxy\" in humor and satire.",
+    "2023-05-24T10:22:03.000 Wed User is usually more focused in the morning and prefers to do research then.",
+    "2023-05-24T10:22:02.000 Wed User wants to allocate time for researching industry trends and best practices.",
+    "2023-05-28T05:00:03.000 Sun User has been watching a lot of sports recently, especially the NBA playoffs that started a few weeks earlier.",
+    "2023-05-20T13:05:03.000 Sat User plans to listen to music and podcasts to stay occupied and energized throughout the cycling ride.",
+    "2023-05-21T13:18:02.000 Sun User is looking for audiobooks similar to \"The Hitchhiker's Guide to the Galaxy\" in humor and satire to stay entertained during their daily commute.",
+    "2023-05-29T05:02:00.000 Mon User recently watched their friend’s baby, Olivia, while the friend went out for date night last weekend.",
+    "2023-05-29T10:00:04.000 Mon User has some experience with scikit-learn.",
+    "2023-05-29T05:02:04.000 Mon User is unsure whether mentioning their experience watching Olivia would be appropriate in the card or would provide too much information."
+  ],
+  "answer_session_ids": [
+    "answer_e40b054e"
+  ],
+  "time_build_s": 1791.4467432498932,
+  "time_retrieve_s": 0.20209932327270508,
+  "time_answer_s": 2.2015445232391357,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

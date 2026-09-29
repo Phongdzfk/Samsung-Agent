@@ -1,0 +1,41 @@
+{
+  "question_id": "0bc8ad93",
+  "question_type": "temporal-reasoning",
+  "question": "I mentioned visiting a museum two months ago. Did I visit with a friend or not?",
+  "ground_truth": "No, you did not visit with a friend.",
+  "generated_answer": "Yes. You visited the museum with someone—specifically, you toured the Science Museum with a friend who is a chemistry professor.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2022-10-22T23:02:03.000 Sat User has visited various museums over the past few months.",
+    "2022-10-22T23:02:00.000 Sat User recently visited the Science Museum.",
+    "2022-10-22T23:02:04.000 Sat User again recalled taking a behind-the-scenes tour of the Science Museum with a friend who is a chemistry professor.",
+    "2022-10-22T23:02:04.000 Sat User enjoyed exploring the Science Museum's collection of rare minerals with their friend.",
+    "2022-10-22T23:02:02.000 Sat During the behind-the-scenes Science Museum tour, the user and their friend viewed the museum's collection of rare minerals.",
+    "2022-10-22T23:02:00.000 Sat User took a behind-the-scenes tour at the Science Museum with a friend who is a chemistry professor.",
+    "2022-12-16T13:06:00.000 Fri User attended the \"Art in Bloom\" exhibition at a local art museum about three weeks ago.",
+    "2022-12-16T13:06:04.000 Fri User attended a private viewing of the new contemporary art exhibit at the city gallery last Thursday evening.",
+    "2022-10-22T23:02:03.000 Sat User considers museum events and exhibits a good way to learn new things and have fun.",
+    "2023-02-18T00:56:04.000 Sat User is curious about the Natural History Museum's fossil collection.",
+    "2023-02-18T00:56:00.000 Sat User attended a guided tour at the Natural History Museum with their father on February 17, 2023.",
+    "2022-10-22T23:02:04.000 Sat User plans to search online and check directories for museums and science centers they have not yet visited.",
+    "2022-12-16T13:06:03.000 Fri User is considering visiting the city gallery to see a new contemporary art exhibit.",
+    "2022-12-16T13:06:04.000 Fri User is asking whether the other party has heard about the new contemporary art exhibit.",
+    "2022-10-22T23:02:05.000 Sat User plans to consult directories to find lesser-known museums or science centers.",
+    "2022-12-16T13:06:02.000 Fri User recently attended a lecture on Impressionism at a university's art museum, which sparked their interest.",
+    "2023-02-18T00:56:05.000 Sat User remains impressed by the fossil collection displayed at the Natural History Museum.",
+    "2022-10-22T23:02:03.000 Sat User is interested in discovering other museums or science centers in their area.",
+    "2022-10-22T23:02:03.000 Sat User has been trying to take advantage of many museum events and exhibits in their area.",
+    "2022-10-22T23:02:00.000 Sat User was amazed by the complexity of the Science Museum's exhibits."
+  ],
+  "answer_session_ids": [
+    "answer_f4ea84fc_3",
+    "answer_f4ea84fc_2",
+    "answer_f4ea84fc_1"
+  ],
+  "time_build_s": 2073.569505929947,
+  "time_retrieve_s": 0.19855713844299316,
+  "time_answer_s": 2.1832640171051025,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

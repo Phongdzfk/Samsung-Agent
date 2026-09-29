@@ -1,0 +1,39 @@
+{
+  "question_id": "1faac195",
+  "question_type": "single-session-user",
+  "question": "Where does my sister Emily live?",
+  "ground_truth": "Denver",
+  "generated_answer": "Your sister Emily lives in Denver.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-20T21:14:01.000 Sat User is thinking about visiting their sister Emily in Denver soon and wants information about kid-friendly attractions there.",
+    "2023-05-20T21:14:02.000 Sat User is considering bringing their niece Emma, who takes piano lessons, to a concert or show in Denver that might inspire her interest in music.",
+    "2023-05-30T00:28:01.000 Tue User lives near 33rd Street and 3rd Avenue.",
+    "2023-05-22T12:41:07.000 Mon User stated that they live in Judea and Samaria.",
+    "2023-05-23T11:11:01.000 Tue User lives in New York.",
+    "2023-05-28T09:52:01.000 Sun User is located in the Midwest.",
+    "2023-05-23T11:11:01.000 Tue User plans to visit their mother's best friend in San Francisco.",
+    "2023-05-21T19:19:01.000 Sun User spent five days at their aunt's house in Miami.",
+    "2023-05-26T07:37:00.000 Fri User has been living in Tokyo, Japan, for about six months.",
+    "2023-05-23T11:11:01.000 Tue User prefers to stay in a hotel near their mother's best friend's residence.",
+    "2023-05-28T18:10:01.000 Sun User is considering spinning because their friend Emily recommended it.",
+    "2023-05-26T07:37:02.000 Fri User has been living in Tokyo for about six months.",
+    "2023-05-28T18:10:05.000 Sun User plans to message Maria to ask whether she is available on Tuesdays or Thursdays.",
+    "2023-05-22T12:41:09.000 Mon User asked where the Sea of Galilee is located.",
+    "2023-05-23T11:11:05.000 Tue User and their ex-boyfriend have not been in touch for years.",
+    "2023-05-23T11:11:00.000 Tue User is trying to plan a trip to visit their mother's best friend, who has been diagnosed with terminal cancer.",
+    "2023-05-26T07:37:03.000 Fri User wants information about Ryokan Sanga's location and how to get around Kyoto.",
+    "2023-05-23T11:11:03.000 Tue User wants to send a care package to their mother's best friend.",
+    "2023-05-22T12:41:10.000 Mon User stated that the Sea of Galilee is located in northern Israel.",
+    "2023-05-20T21:14:04.000 Sat User thinks the \"Musical Storytime\" concert would be perfect for Emma and wants information about the McNichols Civic Center Building, including public transportation and car accessibility and kid-friendly amenities."
+  ],
+  "answer_session_ids": [
+    "answer_d01949bf"
+  ],
+  "time_build_s": 1651.4149363040924,
+  "time_retrieve_s": 0.27990198135375977,
+  "time_answer_s": 1.6248564720153809,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

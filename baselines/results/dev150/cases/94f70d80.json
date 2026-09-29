@@ -1,0 +1,39 @@
+{
+  "question_id": "94f70d80",
+  "question_type": "single-session-user",
+  "question": "How long did it take me to assemble the IKEA bookshelf?",
+  "ground_truth": "4 hours",
+  "generated_answer": "It took you four hours to assemble the IKEA bookshelf.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-30T09:54:01.000 Tue User recently assembled an IKEA bookshelf, which took four hours, and did not find the experience too difficult.",
+    "2023-05-30T09:54:03.000 Tue User had a decent experience assembling an IKEA bookshelf and is wondering whether IKEA coffee tables are similarly easy to assemble.",
+    "2023-05-30T09:54:03.000 Tue User plans to stop by IKEA while shopping to look at coffee tables with storage.",
+    "2023-05-30T09:54:05.000 Tue User plans to visit West Elm, Crate & Barrel, and IKEA this weekend to look at coffee tables with storage.",
+    "2023-05-22T15:07:05.000 Mon User finished the recent 5K charity run in 35 minutes.",
+    "2023-05-30T09:54:02.000 Tue User is considering style, material, budget, and storage needs when evaluating coffee tables.",
+    "2023-05-26T11:42:05.000 Fri User completed a half-marathon on April 10th.",
+    "2023-05-30T13:29:02.000 Tue User usually works out in the evening around 6:30 or 7:00 p.m.",
+    "2023-05-30T13:29:05.000 Tue User wants to start their bedtime routine earlier and aims to be in bed by 11:00 p.m. on most nights.",
+    "2023-05-22T15:07:02.000 Mon The food bank event included a competition to see which team could pack the most meals in one hour.",
+    "2023-05-26T14:49:03.000 Fri User plans to make a reservation to ensure they get a good table.",
+    "2023-05-21T21:42:00.000 Sun The Kherson District Zemstvo Administration reported on convening a Ukrainian National Congress of Kherson Province in Odesa from June 28 to June 30, 1917.",
+    "2023-05-25T07:09:05.000 Thu User wants to know whether the Natural History Museum's ancient-civilizations exhibition is already open or when it is scheduled to open.",
+    "2023-05-22T15:07:02.000 Mon User's team came in second place in the one-hour meal-packing competition.",
+    "2023-05-30T13:29:01.000 Tue User needs to leave home by 8:15 a.m. on Mondays and Thursdays to arrive on time for their 9:00 a.m. meetings.",
+    "2023-05-21T21:42:00.000 Sun A resolution of the Kherson District Zemstvo Assembly's extraordinary session on June 26, 1917, concerned Ukrainian autonomy.",
+    "2023-05-20T09:28:03.000 Sat User thinks they attended the digital marketing workshop around February 10th and 11th.",
+    "2023-05-26T14:49:01.000 Fri User was initially considering trying a new place for brunch.",
+    "2023-05-30T09:54:05.000 Tue User plans to read online reviews and ratings to better assess the quality and durability of each coffee table.",
+    "2023-05-22T18:32:01.000 Mon User bought the silver necklace with the tiny star pendant from a local boutique on February 15."
+  ],
+  "answer_session_ids": [
+    "answer_c63c0458"
+  ],
+  "time_build_s": 2129.703661441803,
+  "time_retrieve_s": 0.1396484375,
+  "time_answer_s": 2.0701937675476074,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

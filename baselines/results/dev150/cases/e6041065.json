@@ -1,0 +1,40 @@
+{
+  "question_id": "e6041065",
+  "question_type": "multi-session",
+  "question": "What percentage of packed shoes did I wear on my last trip?",
+  "ground_truth": "40%",
+  "generated_answer": "You wore 2 of the 5 packed pairs of shoes, so you wore **40%** of them.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-29T17:24:04.000 Mon On a previous trip, user packed five pairs of shoes.",
+    "2023-05-20T07:46:00.000 Sat On their last trip, user packed many shoes but only wore their sneakers and sandals, so they do not plan to pack extra shoes.",
+    "2023-05-29T17:24:04.000 Mon Because user packed five pairs of shoes, they had to make sure their luggage had enough space for snacks.",
+    "2023-05-20T07:46:02.000 Sat User wants advice on how many undergarments and pairs of socks to pack.",
+    "2023-05-29T17:24:01.000 Mon User worries about packing enough undergarments and socks, especially for trips involving outdoor activities.",
+    "2023-05-29T17:24:03.000 Mon On a previous trip, user packed an entire bag of skincare and hair-care products but used only half of them.",
+    "2023-05-29T17:24:01.000 Mon User often forgets to pack enough undergarments and socks.",
+    "2023-05-20T07:46:01.000 Sat User is considering planned activities and weather when deciding which clothing to pack.",
+    "2023-05-20T07:46:00.000 Sat User is planning a five-day trip and wants to pack lightly.",
+    "2023-05-29T17:24:04.000 Mon On a previous trip, user packed nuts and energy bars, which helped them save money and stay energized while traveling.",
+    "2023-05-20T07:46:02.000 Sat User plans to pack their favorite pair of black pants and a pair of comfortable shorts.",
+    "2023-05-29T17:24:00.000 Mon User tends to overpack but wants to bring enough clothing options.",
+    "2023-05-29T17:24:05.000 Mon User has been making a packing list one week before traveling to help plan and prepare.",
+    "2023-05-23T16:27:05.000 Tue User made approximately $80 at Artisan Market with their knitted scarves and hats.",
+    "2023-05-30T22:44:05.000 Tue After the walk, user plans to go to Pier 39's Marketplace to shop for souvenirs.",
+    "2023-05-29T17:24:00.000 Mon User is planning a five-day trip to a city and wants to pack lightly.",
+    "2023-05-20T07:46:04.000 Sat User has had good experiences bringing their own snacks while traveling and wants suggestions for snacks to pack.",
+    "2023-05-29T17:24:02.000 Mon User has been trying to pack more scarves and jackets to add variety to outfits.",
+    "2023-05-28T13:03:04.000 Sun User was happy to use accumulated miles for a luxurious travel experience.",
+    "2023-05-20T07:46:04.000 Sat User plans to pack a small toiletry bag containing a toothbrush, toothpaste, deodorant, and prescription medications."
+  ],
+  "answer_session_ids": [
+    "answer_4eb6d671_2",
+    "answer_4eb6d671_1"
+  ],
+  "time_build_s": 1969.0909848213196,
+  "time_retrieve_s": 0.11334800720214844,
+  "time_answer_s": 4.52533745765686,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

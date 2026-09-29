@@ -1,0 +1,39 @@
+{
+  "question_id": "ec81a493",
+  "question_type": "single-session-user",
+  "question": "How many copies of my favorite artist's debut album were released worldwide?",
+  "ground_truth": "500",
+  "generated_answer": "500 copies were released worldwide.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T15:55:03.000 Sat User's signed poster from their favorite artist's debut album is a limited edition of 500 copies worldwide.",
+    "2023-05-27T15:55:01.000 Sat User owns a signed poster that came with their favorite artist's debut album and considers it a unique piece.",
+    "2023-05-27T15:55:00.000 Sat User wants to organize their vinyl collection and is looking for record storage solutions that protect albums from scratches and damage.",
+    "2023-05-21T05:15:05.000 Sun User placed three online orders the previous week: two from Amazon and one from ASOS.",
+    "2023-05-28T13:03:05.000 Sun User's Instagram cat photo received 27 likes, which they consider decent engagement for their account.",
+    "2023-05-23T02:47:00.000 Tue User is considering personalized gifts such as photo albums and customized phone cases.",
+    "2023-05-24T10:52:05.000 Wed User has started learning some Hamilton lyrics to impress their friends.",
+    "2023-05-24T02:06:02.000 Wed User bought a set of four bathroom towels from Bed Bath & Beyond: two blue towels and two white towels.",
+    "2023-05-22T09:41:01.000 Mon Watching the recorded version of Hamilton increased the user's appreciation of its music.",
+    "2023-05-21T15:07:04.000 Sun User plans to take additional photos of their jam and display at the next market.",
+    "2023-05-21T15:07:00.000 Sun User sold 20 jars of homemade strawberry jam at a farmers' market in the town square three weeks ago.",
+    "2023-05-22T09:41:01.000 Mon User watched a recorded version of Hamilton on Disney+ a few weeks ago.",
+    "2023-05-22T09:41:01.000 Mon User has been listening to the Hamilton soundtrack nonstop.",
+    "2023-05-22T09:41:01.000 Mon User admires how Lin-Manuel Miranda blends hip-hop with traditional show tunes in Hamilton.",
+    "2023-05-21T15:07:02.000 Sun User is considering offering custom jam flavors in the future.",
+    "2023-05-22T09:41:00.000 Mon User has been listening to many musical soundtracks and cannot get enough of Hamilton.",
+    "2023-05-23T13:51:03.000 Tue User wants to know how often a cassette should be replaced and what the general rule of thumb is for cassette replacement.",
+    "2023-05-21T05:15:05.000 Sun The user's two Amazon orders were for a new pair of sneakers and a wireless charging pad.",
+    "2023-05-24T10:52:05.000 Wed User has been listening to the Hamilton soundtrack nonstop since watching the 2020 Tony Awards ceremony.",
+    "2023-05-21T15:07:02.000 Sun Some customers asked the user to offer custom jam flavors."
+  ],
+  "answer_session_ids": [
+    "answer_ed1982fc"
+  ],
+  "time_build_s": 1739.2658731937408,
+  "time_retrieve_s": 0.07132887840270996,
+  "time_answer_s": 2.571268320083618,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

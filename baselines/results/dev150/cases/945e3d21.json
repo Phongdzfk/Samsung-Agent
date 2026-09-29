@@ -1,0 +1,40 @@
+{
+  "question_id": "945e3d21",
+  "question_type": "knowledge-update",
+  "question": "How often do I attend yoga classes to help with my anxiety?",
+  "ground_truth": "Three times a week.",
+  "generated_answer": "You attend yoga classes three times a week to help with your anxiety.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-11-30T03:29:01.000 Thu User attends yoga classes three times a week.",
+    "2023-08-11T05:12:02.000 Fri User has been prioritizing self-care and practices yoga twice a week, which helps them relax and focus.",
+    "2023-08-11T05:12:05.000 Fri User feels that yoga helps them feel more grounded and centered, especially on days when they feel anxious.",
+    "2023-11-30T03:29:01.000 Thu User feels more focused on days when they attend yoga classes.",
+    "2023-11-30T03:29:02.000 Thu User appreciated that their yoga schedule was taken into account in the work schedule.",
+    "2023-12-07T12:09:01.000 Thu The Google Form's yoga-duration options are 0 to 3 months, 3 to 6 months, and more than 6 months.",
+    "2023-12-07T12:09:00.000 Thu User is working on a project about the effects of yoga.",
+    "2023-08-11T05:12:05.000 Fri User is interested in incorporating more mindfulness into their daily routine, including on busy days.",
+    "2023-08-11T05:12:02.000 Fri User is interested in stress-reducing apps and meditation techniques.",
+    "2023-11-30T03:29:01.000 Thu User finds that yoga helps clear their head.",
+    "2023-08-11T05:12:04.000 Fri User is interested in books and resources to better understand anxiety and depression.",
+    "2023-08-11T05:12:05.000 Fri User has been trying to educate themselves more about anxiety and depression and wants trusted resources to refer to.",
+    "2023-12-12T01:24:03.000 Tue User has been taking art classes on Saturdays at a local studio.",
+    "2023-12-05T23:56:03.000 Tue User has been taking an intensive English-language course on weekends since March.",
+    "2023-08-11T05:12:03.000 Fri User has been using meditation to set intentions and focus on their goals for the day.",
+    "2023-08-11T05:12:04.000 Fri User believes journaling and reflection exercises will help them explore their thoughts and emotions more deeply.",
+    "2023-12-07T12:09:02.000 Thu The Google Form asks about profuse sweating, trembling of the hands or legs or the whole body, and increased heartbeat when talking to strangers or speaking in public.",
+    "2023-12-02T07:06:04.000 Sat User's brother is going through anxiety and depression.",
+    "2023-12-02T07:06:04.000 Sat User is considering asking their parents to take their brother to therapy sessions more frequently.",
+    "2023-12-02T07:06:05.000 Sat User plans to express concern about their brother's well-being and the effects of his anxiety and depression."
+  ],
+  "answer_session_ids": [
+    "answer_6a4f8626_1",
+    "answer_6a4f8626_2"
+  ],
+  "time_build_s": 3357.1617970466614,
+  "time_retrieve_s": 0.1407628059387207,
+  "time_answer_s": 2.5640814304351807,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

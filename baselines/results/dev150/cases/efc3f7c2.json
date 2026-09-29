@@ -1,0 +1,40 @@
+{
+  "question_id": "efc3f7c2",
+  "question_type": "multi-session",
+  "question": "How much earlier do I wake up on Fridays compared to other weekdays?",
+  "ground_truth": "30 minutes",
+  "generated_answer": "You wake up **30 minutes earlier on Fridays**—at **6:00 AM** instead of your usual **6:30 AM** on other weekdays.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-29T07:46:00.000 Mon On Fridays, user likes to get a head start by waking up at 6:00 AM and wants help planning a busy day.",
+    "2023-05-24T12:46:00.000 Wed User usually meditates and exercises right after waking up at 6:30 AM on weekdays.",
+    "2023-05-27T23:10:01.000 Sat User's mother usually sends a good-morning message around 7:15 a.m., and the user responds immediately.",
+    "2023-05-27T23:10:02.000 Sat User has been waking up at 7:30 a.m. every day and wants a reliable alarm clock app for traveling.",
+    "2023-05-24T12:46:01.000 Wed User wants to add preparing lunch to their morning routine, and lunch preparation usually takes about 20 minutes.",
+    "2023-05-24T12:46:04.000 Wed User takes the 8:05 AM bus to work and arrives at the office by 8:40 AM.",
+    "2023-05-24T12:46:00.000 Wed User is planning a morning routine for the week and wants reminders for meditation and gym sessions.",
+    "2023-05-25T09:41:02.000 Thu User usually writes for at least 30 minutes every morning before work.",
+    "2023-05-22T22:18:00.000 Mon User is getting ready for an online yoga class scheduled from 7:00 to 8:00 p.m. on May 22, 2023.",
+    "2023-05-29T07:46:01.000 Mon User has a daily team meeting at 9:00 AM.",
+    "2023-05-23T06:09:03.000 Tue User struggles to get enough sleep and to stay focused during the day, and is seeking advice to improve sleep quality.",
+    "2023-05-21T14:14:00.000 Sun User feels that watering their herb garden every morning has been a great way to start the day.",
+    "2023-05-29T07:46:01.000 Mon User wants to fit a 45-minute workout, 30 minutes of meditation, getting ready for work, and preparing lunch, which takes about 20 minutes, into their schedule.",
+    "2023-05-29T07:46:04.000 Mon User needs to respond to urgent emails before the daily team meeting and wanted to schedule 15 minutes for email between getting ready for work and getting coffee.",
+    "2023-05-29T07:46:02.000 Mon User was concerned about needing more time to finish their project and wanted to move their lunch break to 12:30 PM to use an additional 30 minutes for project work.",
+    "2023-05-24T12:46:04.000 Wed User started taking a different route to work the previous week; it adds about 10 minutes to the commute, but the user prefers it because it is less crowded.",
+    "2023-05-24T12:46:02.000 Wed User prefers the first suggested scheduling option for their routine.",
+    "2023-05-22T19:55:01.000 Mon User plans to spend approximately three to four days at the Grand Canyon and drive around the South Rim.",
+    "2023-05-25T09:41:01.000 Thu User has been struggling to find time to write every day.",
+    "2023-05-29T07:46:01.000 Mon User's top priority for the day is finishing a project due by the end of the day, requiring several hours of focused work."
+  ],
+  "answer_session_ids": [
+    "answer_fc81d1a2_1",
+    "answer_fc81d1a2_2"
+  ],
+  "time_build_s": 1874.6582312583923,
+  "time_retrieve_s": 0.12715864181518555,
+  "time_answer_s": 3.80893611907959,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

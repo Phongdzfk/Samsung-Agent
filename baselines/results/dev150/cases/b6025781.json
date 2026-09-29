@@ -1,0 +1,39 @@
+{
+  "question_id": "b6025781",
+  "question_type": "single-session-preference",
+  "question": "I'm planning my meal prep next week, any suggestions for new recipes?",
+  "ground_truth": "The user would prefer responses that suggest healthy meal prep recipes, especially those that incorporate quinoa and roasted vegetables, and offer variations in protein sources. They might appreciate suggestions that build upon their existing preferences, such as new twists on chicken Caesar salads or turkey and avocado wraps. The user may not prefer responses that suggest unhealthy or high-calorie meal prep options, or those that deviate significantly from their established healthy eating habits.",
+  "generated_answer": "Here are a few meal-prep ideas that fit your interest in quinoa, roasted vegetables, and Mexican-inspired flavors:\n\n1. **Chicken fajita quinoa bowls**  \n   Roast sliced chicken breast, bell peppers, onions, and sweet potatoes with cumin, smoked paprika, chili powder, garlic, and lime. Serve over quinoa with black beans, salsa, avocado, and a little chipotle ranch or spicy mayo. To keep the chicken tender, marinate it briefly and avoid overcooking.\n\n2. **Mexican lentil-quinoa bowls**  \n   Make a simple lentil bolognese-style mixture with tomatoes, onions, garlic, cumin, and chili powder. Serve it with quinoa, roasted sweet potatoes, corn, and cilantro-lime yogurt. It keeps well and is a great vegetarian protein option.\n\n3. **Japanese-inspired salmon or tofu bowls**  \n   Pair quinoa or rice with roasted broccoli, edamame, salmon or baked tofu, and a soy-ginger glaze. Add sesame seeds, scallions, and pickled cucumbers for brightness.\n\n4. **BBQ chicken and roasted vegetable bowls**  \n   Use homemade BBQ sauce on shredded or cubed chicken, then serve it with quinoa, roasted sweet potatoes, and steamed greens. A tangy slaw would add freshness and crunch.\n\n5. **Lentil bolognese meal prep**  \n   Prepare lentils simmered with crushed tomatoes, onion, garlic, carrots, and Italian herbs. Serve with quinoa, whole-grain pasta, or roasted vegetables. It also freezes well.\n\nFor snacks, homemade granola with oats, nuts, seeds, cinnamon, and a small amount of maple syrup would pair nicely with yogurt or fruit. For variety, prepare one Mexican-style bowl and one Japanese-inspired bowl so you don’t get tired of the same flavors during the week.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-23T13:10:00.000 Tue User is looking for new meal-prep ideas and protein sources that pair well with quinoa and roasted vegetables.",
+    "2023-05-24T17:44:00.000 Wed User is trying to plan healthy meals for the weekend and is looking for healthy recipes online.",
+    "2023-05-24T17:44:01.000 Wed User is interested in recipe suggestions and websites specializing in Mexican cuisine.",
+    "2023-05-23T13:10:03.000 Tue User is considering adding roasted sweet potatoes to their meal prep this week.",
+    "2023-05-24T17:44:01.000 Wed User is considering making Mexican-inspired dishes, possibly involving chicken or vegetables.",
+    "2023-05-24T02:45:00.000 Wed User is looking for BBQ sauce recipes and wants recommendations.",
+    "2023-05-24T17:44:05.000 Wed User is thinking about making chicken fajitas this weekend.",
+    "2023-05-24T17:44:04.000 Wed User plans to make a batch of sweet potato fries this weekend.",
+    "2023-05-23T13:10:05.000 Tue User wants ideas for customizing a granola recipe to match their taste preferences.",
+    "2023-05-23T13:10:03.000 Tue User wants suggestions for seasoning roasted sweet potatoes.",
+    "2023-05-23T13:10:01.000 Tue User wants a simple recipe for lentil bolognese.",
+    "2023-05-23T22:32:01.000 Tue User is particularly interested in trying traditional Japanese cuisine.",
+    "2023-05-23T13:10:05.000 Tue User is considering making homemade granola to snack on throughout the week.",
+    "2023-05-24T17:44:02.000 Wed User wants tips for making sweet potato fries with a crispy exterior and fluffy interior.",
+    "2023-05-24T17:44:04.000 Wed User is considering making spicy mayonnaise or chipotle ranch dressing as dipping sauces for the sweet potato fries.",
+    "2023-05-23T13:10:01.000 Tue User has previously eaten grilled chicken and turkey breast.",
+    "2023-05-25T04:15:00.000 Thu User is planning a trip to New York City in a few weeks and is looking for recommendations for good restaurants and cafes.",
+    "2023-05-24T02:45:05.000 Wed User wants recommendations for aromatics that pair well with beef broth and red wine.",
+    "2023-05-24T17:44:05.000 Wed User wants advice on cooking chicken breast so that it is tender.",
+    "2023-05-23T13:10:02.000 Tue User wants suggestions for sides or add-ins to serve with lentil bolognese and quinoa."
+  ],
+  "answer_session_ids": [
+    "answer_8414cc57"
+  ],
+  "time_build_s": 1756.9584531784058,
+  "time_retrieve_s": 0.1981964111328125,
+  "time_answer_s": 11.215448141098022,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

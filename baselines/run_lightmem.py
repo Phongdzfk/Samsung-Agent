@@ -14,6 +14,7 @@ chờ mạng gọi LLM qua 9router, không phải tính toán trên embedder/llm
 phải là nút thắt.
 """
 import argparse
+import gc
 import json
 import os
 import shutil
@@ -92,6 +93,31 @@ def patch_manager_client(lightmem, model_kw_fix=True):
         return orig(**kw)
 
     client.chat.completions.create = create
+
+
+_TLS = threading.local()
+
+
+def install_model_cache():
+    """Mỗi luồng chỉ nạp llmlingua-2 và embedder MỘT lần, dùng lại cho mọi câu hỏi mà luồng đó xử lý.
+
+    Mặc định LightMemory nạp lại cả hai model (~1GB) cho từng câu hỏi; các bản cũ không được giải phóng
+    kịp nên sau vài giờ RAM/pagefile cạn ("paging file is too small", "memory allocation failed").
+    Cache theo luồng (không dùng chung giữa các luồng) để không phải lo tính an toàn luồng của model.
+    """
+    from lightmem.factory.pre_compressor.factory import PreCompressorFactory
+    from lightmem.factory.text_embedder.factory import TextEmbedderFactory
+
+    for factory in (PreCompressorFactory, TextEmbedderFactory):
+        orig = factory.from_config.__func__
+
+        def cached(cls, config, _orig=orig, _name=factory.__name__):
+            cache = _TLS.__dict__.setdefault("cache", {})
+            if _name not in cache:
+                cache[_name] = _orig(cls, config)
+            return cache[_name]
+
+        factory.from_config = classmethod(cached)
 
 
 # accelerate/transformers dùng device_map="cpu"/"cuda" để nạp model qua "meta tensor"
@@ -203,6 +229,7 @@ def process_case(item, out, api_key, base_url, llm, judge, llm_model, judge_mode
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     del lm
+    gc.collect()
     if not keep_qdrant:
         shutil.rmtree(out / "qdrant" / qid, ignore_errors=True)
     return qid
@@ -225,6 +252,7 @@ def main():
     base_url = _env("NINEROUTER_BASE_URL", required=True)
     llm_model = _env("LLM_MODEL", "gpt-5.5")
     judge_model = _env("JUDGE_MODEL", "gpt-4o")
+    install_model_cache()
     device = args.device or ("cuda" if args.workers <= 1 else "cpu")
 
     data = json.load(open(args.data, encoding="utf-8"))
@@ -243,6 +271,13 @@ def main():
     judge = Chat(judge_model, api_key, base_url, max_tokens=50)
 
     pending = [it for it in data if not (out / "cases" / f"{it['question_id']}.json").exists()]
+    # ưu tiên loại câu hỏi còn ít kết quả nhất (chưa chạy loại nào thì chạy trước), để nếu bị ngắt giữa chừng
+    # thì bảng kết quả vẫn phủ được nhiều loại
+    done_by_type: dict = {}
+    for it in data:
+        if it not in pending:
+            done_by_type[it["question_type"]] = done_by_type.get(it["question_type"], 0) + 1
+    pending.sort(key=lambda it: done_by_type.get(it["question_type"], 0))
     print(f"{len(data)} câu, {len(data) - len(pending)} đã có kết quả, còn {len(pending)} cần chạy, workers={args.workers}, device={device}")
 
     errors = []

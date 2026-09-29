@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_2c50253f",
+  "question_type": "temporal-reasoning",
+  "question": "What time do I wake up on Tuesdays and Thursdays?",
+  "ground_truth": "6:45 AM",
+  "generated_answer": "You wake up at **6:45 AM on Tuesdays and Thursdays**, 15 minutes earlier than your usual 7:00 AM wake-up time.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T18:20:00.000 Sat User recently started waking up at 7:00 AM instead of their usual 8:30 AM wake-up time.",
+    "2023-05-27T07:56:00.000 Sat User wakes up 15 minutes earlier on Tuesdays and Thursdays to meditate and practice yoga poses.",
+    "2023-05-27T07:56:01.000 Sat User practices meditation on Tuesdays and Thursdays.",
+    "2023-05-27T07:56:00.000 Sat User is creating a personalized morning routine.",
+    "2023-05-27T18:20:00.000 Sat User is looking for healthy breakfast ideas that can be prepared the night before.",
+    "2023-05-27T07:56:00.000 Sat User is interested in healthy breakfast ideas that can be prepared the night before.",
+    "2023-05-27T07:56:03.000 Sat User plans to meditate at the same time every day, after their morning walk, to build a habit.",
+    "2023-05-27T23:58:00.000 Sat User plans to check schedules using one of the available options.",
+    "2023-05-27T07:56:03.000 Sat User plans to commit to a daily meditation practice of at least 10 minutes.",
+    "2023-05-27T18:20:04.000 Sat User is looking for new ways to make their 30-minute morning walk more enjoyable.",
+    "2023-05-27T04:25:02.000 Sat User usually winds down by watching an episode of their favorite television show before bed, while reading is a close second.",
+    "2023-05-27T04:25:01.000 Sat User likes to unwind by reading a good book before bed.",
+    "2023-05-27T18:20:03.000 Sat User is considering topping the overnight oats with sliced banana and a sprinkle of cinnamon in the morning.",
+    "2023-05-27T04:25:04.000 Sat User is considering setting up recurring tasks or calendar events for regular activities, including yoga sessions and reading time.",
+    "2023-05-27T07:56:00.000 Sat User has been feeling more energized and focused throughout the day since starting morning walks.",
+    "2023-05-27T07:56:01.000 Sat User plans to incorporate stretches and exercises into their morning walks.",
+    "2023-05-27T06:03:00.000 Sat User set up their aquarium on February 10th.",
+    "2023-05-27T07:56:00.000 Sat User is interested in stretches or exercises that can be done during morning walks to improve flexibility and overall health.",
+    "2023-05-27T20:24:03.000 Sat User is making sure to drink plenty of water throughout the day.",
+    "2023-05-27T17:47:03.000 Sat User is considering spending one or two days in Split while traveling to Plitvice Lakes National Park."
+  ],
+  "answer_session_ids": [
+    "answer_9af4e346_1",
+    "answer_9af4e346_2"
+  ],
+  "time_build_s": 2580.0939812660217,
+  "time_retrieve_s": 0.05753636360168457,
+  "time_answer_s": 2.5518643856048584,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

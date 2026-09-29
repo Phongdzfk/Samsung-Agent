@@ -1,0 +1,39 @@
+{
+  "question_id": "001be529",
+  "question_type": "single-session-user",
+  "question": "How long did I wait for the decision on my asylum application?",
+  "ground_truth": "over a year",
+  "generated_answer": "You waited over a year for the decision on your asylum application.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-28T18:12:00.000 Sun User's asylum application took over a year to get approved.",
+    "2023-05-28T18:12:00.000 Sun User's asylum application has now been approved.",
+    "2023-05-28T18:12:00.000 Sun The uncertainty surrounding the asylum application was difficult for the user.",
+    "2023-05-24T01:12:01.000 Wed User is considering a study in which a parent chooses among ear-tube surgery, waiting several more months to see whether ear-infection frequency decreases, refusing antibiotics to see whether the body eventually fights off the infection, or continuing antibiotics as ear infections occur.",
+    "2023-05-24T01:12:05.000 Wed User wants to determine the sample size for the ear-infection treatment-choice study.",
+    "2023-05-24T01:12:06.000 Wed User wants to determine how to quantify data for the ear-infection treatment-choice study.",
+    "2023-05-23T22:46:05.000 Tue User is particularly interested in the Irish immigrant experience in the United States during the 19th century.",
+    "2023-05-28T18:12:01.000 Sun User volunteers at a nonprofit organization that helps refugees.",
+    "2023-05-21T03:29:00.000 Sun User returned from a trip to Los Angeles and San Diego in April 2023.",
+    "2023-05-21T03:29:01.000 Sun User is considering a quick weekend getaway lasting two to three days.",
+    "2023-05-24T01:12:04.000 Wed User wants to identify the independent and dependent variables for the ear-infection treatment-choice study.",
+    "2023-05-21T03:29:04.000 Sun User has not started looking for accommodations in Pittsburgh.",
+    "2023-05-28T18:12:03.000 Sun User plans to focus their housing search on Neighborhood 1 for now.",
+    "2023-05-27T04:39:02.000 Sat User has been putting off cleaning the bathroom for a while but is determined to complete it.",
+    "2023-05-24T01:12:02.000 Wed User wants to formulate a hypothesis for the ear-infection treatment-choice study.",
+    "2023-05-26T07:39:04.000 Fri User has been in their current job for about five years and has made progress there.",
+    "2023-05-26T16:01:04.000 Fri User wants to know when the Declaration of Independence was signed.",
+    "2023-05-21T03:29:03.000 Sun User had a layover in Chicago while returning from San Diego.",
+    "2023-05-26T07:39:00.000 Fri User is trying to get their life together and wants help creating a five-year plan.",
+    "2023-05-21T03:29:02.000 Sun User recently visited Boston."
+  ],
+  "answer_session_ids": [
+    "answer_530960c1"
+  ],
+  "time_build_s": 1729.3294961452484,
+  "time_retrieve_s": 0.017547607421875,
+  "time_answer_s": 1.8714420795440674,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

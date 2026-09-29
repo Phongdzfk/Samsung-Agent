@@ -1,0 +1,40 @@
+{
+  "question_id": "2ebe6c92",
+  "question_type": "temporal-reasoning",
+  "question": "Which book did I finish a week ago?",
+  "ground_truth": "'The Nightingale' by Kristin Hannah",
+  "generated_answer": "You finished **_The Nightingale_ by Kristin Hannah** a week ago, on January 31, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-01-13T05:54:02.000 Fri User wants to explore more of Neil Gaiman's work and is seeking recommendations for his fantasy audiobooks or e-books.",
+    "2023-01-10T12:59:03.000 Tue User has been enjoying books that reimagine classic stories or retell them from different perspectives.",
+    "2023-01-31T02:37:00.000 Tue User finished the historical fiction novel \"The Nightingale\" by Kristin Hannah on January 31, 2023.",
+    "2023-01-31T02:37:00.000 Tue User is looking for book recommendations similar to \"The Nightingale\" and is currently in the mood for historical fiction.",
+    "2023-01-31T15:00:05.000 Tue User has already started following some book blogs and websites and is excited to explore new reads.",
+    "2023-01-16T23:55:02.000 Mon User thinks mystery and thriller novels would be a good place to start reading fiction again.",
+    "2023-01-13T05:54:05.000 Fri User is seeking additional self-help and history audiobooks similar to \"The 7 Habits of Highly Effective People\" and \"Sapiens: A Brief History of Humankind,\" with preferred lengths of approximately 6–10 hours.",
+    "2023-01-13T05:54:03.000 Fri User is interested in self-help books focused on productivity and time management and is seeking popular titles or authors in that area.",
+    "2023-01-13T05:54:04.000 Fri User is seeking audiobooks approximately 10–14 hours long that are similar to \"The 7 Habits of Highly Effective People\" and \"Sapiens: A Brief History of Humankind.\"",
+    "2023-01-16T23:55:01.000 Mon User wants recommendations for mystery or thriller novels.",
+    "2023-01-16T23:55:00.000 Mon User wants recommendations for true-crime or mystery books.",
+    "2023-01-16T23:55:01.000 Mon User wants to explore the true-crime subject more deeply through books.",
+    "2023-01-31T15:00:00.000 Tue User is looking for inspiration from other sources and recommendations for popular fiction books.",
+    "2023-01-31T02:37:02.000 Tue User is looking for books similar to \"The Nightingale\" in emotional depth and historical-fiction elements, but with a different focus or time period.",
+    "2023-01-13T05:54:01.000 Fri User has already listened to \"The 7 Habits of Highly Effective People\" and \"Sapiens: A Brief History of Humankind\" and wants recommendations for similar audiobooks.",
+    "2023-01-16T23:55:01.000 Mon User has been meaning to get into reading fiction again.",
+    "2023-01-31T02:37:01.000 Tue User has heard of some recommended books before and is intrigued by \"The Alice Network.\"",
+    "2023-01-31T15:00:00.000 Tue User began actively participating in a \"Book Lovers\" group discussion on January 31, 2023.",
+    "2023-01-13T05:54:00.000 Fri User is looking for audiobook recommendations in the self-help and history genres, particularly popular titles or authors.",
+    "2023-01-10T12:59:02.000 Tue User has already read \"The Poppy War\" and enjoyed it."
+  ],
+  "answer_session_ids": [
+    "answer_c9d35c00_1",
+    "answer_c9d35c00_2"
+  ],
+  "time_build_s": 1746.1166188716888,
+  "time_retrieve_s": 0.01959061622619629,
+  "time_answer_s": 2.4740257263183594,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

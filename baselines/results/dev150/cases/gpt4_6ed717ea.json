@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_6ed717ea",
+  "question_type": "temporal-reasoning",
+  "question": "Which item did I purchase first, the dog bed for Max or the training pads for Luna?",
+  "ground_truth": "Training pads for Luna",
+  "generated_answer": "You purchased the **training pads for Luna first**—about one month ago. The dog bed for Max was purchased about three weeks ago.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-29T21:15:00.000 Mon User bought Max an Orthopedic Memory Foam dog bed from Petco about three weeks ago.",
+    "2023-05-29T19:41:00.000 Mon User uses eco-friendly potty-training pads from Chewy.com for Luna.",
+    "2023-05-29T21:15:00.000 Mon User believes the Orthopedic Memory Foam dog bed is helping Max's arthritis.",
+    "2023-05-29T19:41:01.000 Mon User is seeking better flea and tick prevention for both Luna and Max.",
+    "2023-05-29T21:15:01.000 Mon User is seeking healthy dog treats that can support Max's weight management.",
+    "2023-05-29T19:41:00.000 Mon User has a puppy named Luna who is still being potty-trained.",
+    "2023-05-29T21:15:04.000 Mon User bought Max an Orthopedic Memory Foam dog bed from Petco three weeks ago and believes it has been helping with his arthritis.",
+    "2023-05-29T19:41:00.000 Mon User bought a set of 10 eco-friendly training pads for $25 about one month ago and considers them a lifesaver.",
+    "2023-05-29T21:15:02.000 Mon Max has been somewhat picky about the new grain-free dog food.",
+    "2023-05-29T13:15:00.000 Mon The new brake pads gave the user more confidence during hard-braking zones.",
+    "2023-05-29T19:41:02.000 Mon User wants recommendations for other grain-free dog foods and advice on making Max's food transition smoother.",
+    "2023-05-29T19:41:00.000 Mon User is considering buying additional supplies for Luna.",
+    "2023-05-29T19:41:02.000 Mon User recently bought Max a 30-pound bag of Acana dog food from PetSmart for $70.",
+    "2023-05-29T21:15:03.000 Mon User recently got a pack of dental chews for a new puppy named Luna.",
+    "2023-05-29T19:41:01.000 Mon User has a golden retriever named Max.",
+    "2023-05-29T21:15:03.000 Mon User is seeking healthy chews for Max that are suitable for his age and breed.",
+    "2023-05-29T13:15:00.000 Mon User installed new brake pads before the Turbocharged Weekend event.",
+    "2023-05-29T21:15:05.000 Mon User is considering getting Max a Kong toy.",
+    "2023-05-29T19:41:04.000 Mon User wants recommendations for dental chews or toys that could support Luna's oral health.",
+    "2023-05-29T19:41:02.000 Mon User is considering switching Max to grain-free, high-protein dog food."
+  ],
+  "answer_session_ids": [
+    "answer_d50a8a33_1",
+    "answer_d50a8a33_2"
+  ],
+  "time_build_s": 2383.5183370113373,
+  "time_retrieve_s": 0.1947031021118164,
+  "time_answer_s": 2.6040937900543213,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

@@ -1,0 +1,39 @@
+{
+  "question_id": "3b6f954b",
+  "question_type": "single-session-user",
+  "question": "Where did I attend for my study abroad program?",
+  "ground_truth": "University of Melbourne in Australia",
+  "generated_answer": "You attended the University of Melbourne for your study abroad program.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-23T10:24:04.000 Tue User visited the Great Ocean Road with friends during a study-abroad program at the University of Melbourne.",
+    "2023-05-23T14:26:00.000 Tue User is interested in the role athletics plays in campus culture at the University of Saskatchewan and how it compares with universities in Canada and North America.",
+    "2023-05-23T14:26:02.000 Tue User wants to know whether students from faculties who are not involved in varsity sports can use the University of Saskatchewan's athletic facilities and whether there is a fee.",
+    "2023-05-28T04:21:02.000 Sun User wants to learn how to find career transition programs and determine which programs are most effective.",
+    "2023-05-30T01:26:00.000 Tue User recently visited Kyoto with friends from work approximately two months ago.",
+    "2023-05-28T22:50:02.000 Sun The user is interested in attending cultural events related to language and cultural exchange.",
+    "2023-05-28T04:21:00.000 Sun User is interested in industries that commonly offer career transition programs or training.",
+    "2023-05-23T14:26:01.000 Tue User is interested in how the University of Saskatchewan's athletic facilities compare with those at other Canadian universities and whether they have distinctive features.",
+    "2023-05-23T14:26:03.000 Tue User is interested in whether the University of Saskatchewan plans to expand or upgrade its athletic facilities in the near future.",
+    "2023-05-30T01:26:01.000 Tue User enjoyed kaiseki, a multi-course meal, during their visit to Kyoto.",
+    "2023-05-23T10:24:04.000 Tue User enjoyed exploring the coast, hiking, and taking in the views during that Great Ocean Road trip.",
+    "2023-05-22T07:09:03.000 Mon User attended a music festival in Brooklyn with a group of friends.",
+    "2023-05-28T22:50:04.000 Sun The user wants resources focused specifically on connecting language learners with native French speakers in their local area.",
+    "2023-05-28T22:50:05.000 Sun The user is looking for a language-exchange partner who is a native French speaker and lives in their local area.",
+    "2023-05-28T04:32:00.000 Sun User is interested in how climate change has affected the travel industry and in potential solutions.",
+    "2023-05-28T22:50:03.000 Sun The user is seeking websites or resources that can help them find a language-exchange partner.",
+    "2023-05-21T07:39:03.000 Sun User suggests that surf schools and tour operators could offer eco-friendly packages.",
+    "2023-05-28T22:50:03.000 Sun The user is interested in finding language-exchange partners who are native French speakers.",
+    "2023-05-30T01:26:05.000 Tue User recently had an amazing experience at a kaiseki restaurant in Kyoto.",
+    "2023-05-23T10:24:04.000 Tue User has previously visited the Great Ocean Road."
+  ],
+  "answer_session_ids": [
+    "answer_94030872"
+  ],
+  "time_build_s": 2087.1274304389954,
+  "time_retrieve_s": 0.17009329795837402,
+  "time_answer_s": 1.3895766735076904,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

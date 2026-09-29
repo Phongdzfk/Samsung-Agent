@@ -1,0 +1,40 @@
+{
+  "question_id": "603deb26",
+  "question_type": "knowledge-update",
+  "question": "How many times have I tried making a Negroni at home since my friend Emma showed me how to make it?",
+  "ground_truth": "10",
+  "generated_answer": "You’ve tried making a Negroni at home **10 times** since Emma showed you how.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-11-30T01:59:03.000 Thu User has been perfecting their Negroni and has made it at home 10 times since their friend Emma taught them how.",
+    "2023-11-30T01:59:00.000 Thu User has been perfecting their Negroni and has made it at home 10 times since their friend Emma taught them how.",
+    "2023-11-30T01:59:05.000 Thu User has been perfecting their Negroni and has made it at home 10 times since their friend Emma taught them how.",
+    "2023-08-11T17:11:02.000 Fri User learned how to make a Negroni from Emma.",
+    "2023-08-11T17:11:02.000 Fri User has made their Negroni at home five times.",
+    "2023-08-11T17:11:01.000 Fri User has been experimenting with different Negroni recipes at home.",
+    "2023-08-11T17:11:02.000 Fri User has been trying to perfect their Negroni recipe.",
+    "2023-08-11T17:11:03.000 Fri User has been meaning to experiment with a White Negroni.",
+    "2023-08-11T17:11:03.000 Fri User has heard that a White Negroni is a good way to showcase gin and bitter liqueur.",
+    "2023-08-11T17:11:02.000 Fri User feels they are getting closer to making their Negroni just right.",
+    "2023-08-11T17:11:01.000 Fri User has found that Hendrick's gin brings out the flavors in their Negroni recipes.",
+    "2023-08-11T17:11:02.000 Fri User has found that using Hendrick's gin and Carpano Antica vermouth brings out the flavors in their Negroni.",
+    "2023-11-30T16:07:00.000 Thu User has been experimenting with new recipes on weekends since their mother started teaching them how to cook their mother's favorite dishes.",
+    "2023-08-11T17:11:03.000 Fri User intends to try different bitter liqueurs to see how they change the flavor profile of their Negroni.",
+    "2023-08-11T17:11:02.000 Fri User is interested in trying bitter liqueurs as substitutes for Campari in a Negroni.",
+    "2023-08-14T16:17:00.000 Mon User made the same pasta dish for their family the weekend after taking a beginner's cooking class, and their family loved it.",
+    "2023-09-24T21:36:04.000 Sun User plans to try making lentil soup and chia seed pudding.",
+    "2023-11-30T16:07:04.000 Thu User decided to serve Chianti with dinner because they have had it before and consider it a classic choice.",
+    "2023-11-30T01:59:03.000 Thu User recently hosted a dinner party where they served a Cranberry Sparkler, which was a huge hit.",
+    "2023-10-02T00:53:00.000 Mon User's first home was in a lovely neighborhood across the street from a butcher shop or deli."
+  ],
+  "answer_session_ids": [
+    "answer_8afdebac_1",
+    "answer_8afdebac_2"
+  ],
+  "time_build_s": 3538.8650286197662,
+  "time_retrieve_s": 0.48207640647888184,
+  "time_answer_s": 6.047755718231201,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

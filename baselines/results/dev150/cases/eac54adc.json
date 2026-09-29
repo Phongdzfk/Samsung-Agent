@@ -1,0 +1,40 @@
+{
+  "question_id": "eac54adc",
+  "question_type": "temporal-reasoning",
+  "question": "How many days ago did I launch my website when I signed a contract with my first client?",
+  "ground_truth": "19 days ago. 20 days (including the last day) is also acceptable.",
+  "generated_answer": "You launched your website **19 days before** signing your first-client contract (February 10 to March 1, 2023). As of March 25, 2023, that launch was **43 days ago**.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-03-01T03:03:00.000 Wed User signed a contract with their first client on March 1, 2023.",
+    "2023-02-10T18:00:00.000 Fri User has launched a website and created a business plan outline.",
+    "2023-03-01T06:21:00.000 Wed User later worked as a consultant for several companies.",
+    "2023-02-14T17:31:05.000 Tue User joined an online book club in September.",
+    "2023-03-01T05:15:01.000 Wed User was baptized and received their first communion at the Catholic church approximately 25 to 30 years ago.",
+    "2023-02-14T17:31:03.000 Tue User took about six weeks to finish \"The First Fifteen Lives of Harry August.\"",
+    "2023-02-14T17:31:05.000 Tue User took about six weeks to finish \"The First Fifteen Lives of Harry August.\"",
+    "2023-02-14T17:31:00.000 Tue User took about six weeks to finish \"The First Fifteen Lives of Harry August.\"",
+    "2023-02-14T17:31:04.000 Tue User took about six weeks to finish \"The First Fifteen Lives of Harry August.\"",
+    "2023-03-01T03:03:00.000 Wed User is seeking advice on creating solid contracts for freelance clients.",
+    "2023-03-01T06:21:00.000 Wed User is a seasoned marketer with approximately 15 years of experience in marketing, leadership, and business development.",
+    "2023-03-01T04:53:00.000 Wed About a month ago, user went camping with friends at a state park approximately one hour outside the city.",
+    "2023-02-16T00:20:00.000 Thu User first tried making a Negroni at home about three weeks before February 16, 2023.",
+    "2023-03-01T06:21:00.000 Wed After returning to Saudi Arabia, user resumed work in digital marketing.",
+    "2023-03-01T03:03:02.000 Wed User recently attended a marketing workshop.",
+    "2023-02-20T12:44:00.000 Mon The campaign end date shown in the report is 2023-03-01.",
+    "2023-02-26T02:12:00.000 Sun User has been reading for at least 30 minutes a day for the past three weeks.",
+    "2023-03-01T03:03:00.000 Wed User wants to ensure their contracts cover all necessary bases for future projects.",
+    "2023-03-01T06:21:00.000 Wed User started the Singularity Syndicate group.",
+    "2023-03-01T06:21:00.000 Wed User presents themselves as a potential co-partner for an impact-driven startup."
+  ],
+  "answer_session_ids": [
+    "answer_0d4d0347_1",
+    "answer_0d4d0347_2"
+  ],
+  "time_build_s": 1982.9274837970734,
+  "time_retrieve_s": 0.12078666687011719,
+  "time_answer_s": 14.564825296401978,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

@@ -1,0 +1,41 @@
+{
+  "question_id": "gpt4_45189cb4",
+  "question_type": "temporal-reasoning",
+  "question": "What is the order of the sports events I watched in January?",
+  "ground_truth": "First, I attended a NBA game at the Staples Center, then I watched the College Football National Championship game, and finally, I watched the NFL playoffs.",
+  "generated_answer": "The sports events you watched in January, in chronological order, were:\n\n1. **January 5** – NBA game at Staples Center: **Los Angeles Lakers vs. Chicago Bulls**\n2. **January 14** – **College Football National Championship** watched at home with your family\n3. **January 22** – **Chiefs game** watched at Mike’s place with approximately five people",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-01-05T16:31:00.000 Thu User is considering planning a team-building event for their office and is thinking about organizing a sports-themed outing.",
+    "2023-01-05T16:31:02.000 Thu User went to an NBA game at Staples Center with their coworkers on January 5, 2023, had a lot of fun, and watched the Los Angeles Lakers play the Chicago Bulls.",
+    "2023-01-22T03:42:00.000 Sun User needs help organizing their schedule for the next few weeks and wants the dates for the Robotics Summit in Chicago.",
+    "2023-01-22T12:52:02.000 Sun User wants to know whether Buffalo Wild Wings currently has any deals or promotions.",
+    "2023-01-22T17:40:03.000 Sun User is interested in e-commerce conferences and trade shows taking place on the East Coast.",
+    "2023-01-22T17:40:01.000 Sun User is interested in upcoming technology events scheduled at the Las Vegas Convention Center.",
+    "2023-01-15T00:46:01.000 Sun User watched the College Football National Championship game with their family at home the previous day.",
+    "2023-01-22T08:53:01.000 Sun User's group tennis lessons meet every Thursday evening from 7:00 to 8:30 p.m.",
+    "2023-01-22T17:40:01.000 Sun User thought Tech Expo 2022 was a great event and considered the venue well suited for it.",
+    "2023-01-22T18:57:01.000 Sun User participated in a three-day autocross event called \"Turbocharged\" on the first weekend of May.",
+    "2023-01-22T03:42:03.000 Sun User is thinking about how to make the most of their time at the Robotics Summit in Chicago and wants information about networking opportunities or side events around McCormick Place.",
+    "2023-01-22T17:40:04.000 Sun User is interested in learning more about the CommerceNext event in New York City.",
+    "2023-01-05T16:31:02.000 Thu User is considering holding a sports-themed scavenger hunt around Staples Center in Los Angeles.",
+    "2023-01-22T18:57:05.000 Sun User recently participated in a three-day \"Turbocharged\" autocross event at the San Bernardino County Fairgrounds.",
+    "2023-01-22T17:40:03.000 Sun User attended a similar e-commerce event in New York in April.",
+    "2023-01-22T12:52:01.000 Sun Approximately five people were at Mike's place for the Chiefs game.",
+    "2023-01-05T16:31:05.000 Thu User is considering a challenge in which teams find a specific sports-themed store or restaurant in the LA Live complex and complete a task or answer a question related to that location.",
+    "2023-01-22T18:57:00.000 Sun User recently participated in an autocross event at the San Bernardino County Fairgrounds.",
+    "2023-01-22T18:57:01.000 Sun User participated in the \"Novice\" group at the autocross event.",
+    "2023-01-22T17:40:01.000 Sun User attended Tech Expo 2022 at the Las Vegas Convention Center in March 2022."
+  ],
+  "answer_session_ids": [
+    "answer_e6c20e52_3",
+    "answer_e6c20e52_2",
+    "answer_e6c20e52_1"
+  ],
+  "time_build_s": 1926.515906572342,
+  "time_retrieve_s": 0.023263216018676758,
+  "time_answer_s": 8.277164459228516,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

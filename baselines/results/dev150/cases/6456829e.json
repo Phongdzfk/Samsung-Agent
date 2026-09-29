@@ -1,0 +1,40 @@
+{
+  "question_id": "6456829e",
+  "question_type": "multi-session",
+  "question": "How many plants did I initially plant for tomatoes and cucumbers?",
+  "ground_truth": "8",
+  "generated_answer": "You initially planted **five tomato plants and three cucumber plants**, for a total of **eight plants**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-29T16:07:04.000 Mon User initially planted five tomato plants.",
+    "2023-05-28T06:58:00.000 Sun User has three cucumber plants that are producing a lot of cucumbers.",
+    "2023-05-26T14:11:01.000 Fri User plans to plant tomatoes, peppers, cucumbers, and marigolds together in their raised bed.",
+    "2023-05-29T16:07:04.000 Mon User's five tomato plants have been producing a very large harvest.",
+    "2023-05-29T16:07:02.000 Mon User has been getting a large quantity of tomatoes from their garden.",
+    "2023-05-28T06:58:00.000 Sun User grows cucumbers in their own garden.",
+    "2023-05-28T06:58:03.000 Sun User has been harvesting cucumbers from their garden daily.",
+    "2023-05-29T16:07:02.000 Mon User wants advice on keeping their tomato plants healthy and productive throughout the growing season.",
+    "2023-05-29T16:07:04.000 Mon User has been harvesting tomatoes almost daily.",
+    "2023-05-26T14:11:05.000 Fri User wants specific advice on fertilizing tomato plants and on signs that indicate whether the plants are receiving enough nutrients.",
+    "2023-05-26T14:11:04.000 Fri User wants specific advice on fertilizing tomato plants and on signs that indicate whether the plants are receiving enough nutrients.",
+    "2023-05-29T16:07:03.000 Mon User reduced their tomato plants' watering schedule, and the plants now appear healthier.",
+    "2023-05-26T14:11:05.000 Fri User plans to use compost to fertilize their tomato plants.",
+    "2023-05-26T14:11:04.000 Fri User plans to use compost to fertilize their tomato plants.",
+    "2023-05-29T16:07:00.000 Mon User is looking for recipe ideas featuring fresh tomatoes as the main ingredient.",
+    "2023-05-29T16:07:00.000 Mon User wants advice on storing fresh tomatoes to keep them fresh for longer.",
+    "2023-05-28T06:58:00.000 Sun User is planning their meals for the week and is looking for recipe suggestions that feature cucumbers as the main ingredient.",
+    "2023-05-29T16:07:04.000 Mon User uses their harvested tomatoes in salads, sandwiches, and cooked dishes.",
+    "2023-05-28T06:58:03.000 Sun User is excited to try a cucumber-pickling recipe.",
+    "2023-05-29T16:07:03.000 Mon User researched the problem and concluded that they might have been overwatering their tomato plants."
+  ],
+  "answer_session_ids": [
+    "answer_743f03a1_2",
+    "answer_743f03a1_1"
+  ],
+  "time_build_s": 1918.2239611148834,
+  "time_retrieve_s": 0.06130075454711914,
+  "time_answer_s": 3.261272668838501,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

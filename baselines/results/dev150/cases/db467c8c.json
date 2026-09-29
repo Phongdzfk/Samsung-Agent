@@ -1,0 +1,40 @@
+{
+  "question_id": "db467c8c",
+  "question_type": "knowledge-update",
+  "question": "How long have my parents been staying with me in the US?",
+  "ground_truth": "nine months",
+  "generated_answer": "As of October 22, 2023, your parents had been staying with you in the United States for **nine months**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-07-16T07:07:01.000 Sun User's parents have been living with the user in the United States for the past six months.",
+    "2023-07-16T07:07:00.000 Sun User is concerned about whether having their parents living with them in the United States could affect their green card application.",
+    "2023-10-20T00:00:05.000 Fri User's parents have overstayed their visas by nine months.",
+    "2023-10-20T00:00:00.000 Fri User's parents have been staying with the user for nine months.",
+    "2023-07-16T07:07:00.000 Sun User's parents live with the user in the United States.",
+    "2023-07-16T07:07:02.000 Sun User is concerned about the financial aspects of applying for a green card while their parents live with them.",
+    "2023-10-20T00:00:05.000 Fri User plans to ask an immigration attorney how the waiver of inadmissibility process might apply to their parents' situation.",
+    "2023-10-20T00:00:00.000 Fri User's parents have provided substantial help preparing their immigration paperwork.",
+    "2023-10-20T00:00:03.000 Fri User plans to ask an immigration attorney how they can help address the user's parents' visa overstay, which has lasted nine months.",
+    "2023-07-16T07:07:03.000 Sun User wants to ensure they can demonstrate financial support for their parents if their parents are included in the green card application.",
+    "2023-10-20T00:00:02.000 Fri User plans to ask an immigration attorney how they can help address the issue of the user's parents overstaying their visas.",
+    "2023-10-20T00:00:04.000 Fri User wants to understand how a waiver of inadmissibility might apply to their parents' situation.",
+    "2023-07-16T07:07:03.000 Sun User's parents are not working and are living with the user.",
+    "2023-07-16T07:07:01.000 Sun User enjoys spending time with their parents and is glad to have them around.",
+    "2023-10-20T00:00:00.000 Fri User is planning to apply for a green card soon.",
+    "2023-10-20T00:00:02.000 Fri User plans to ask an immigration attorney about the attorney's experience with green card applications.",
+    "2023-07-16T07:07:01.000 Sun User's parents are taking English-language classes.",
+    "2023-07-16T07:07:00.000 Sun User is considering applying for a green card.",
+    "2023-10-20T00:00:03.000 Fri User plans to ask an immigration attorney about their experience with cases similar to the user's.",
+    "2023-07-15T10:48:00.000 Sat User previously flew Delta from Boston to Orlando."
+  ],
+  "answer_session_ids": [
+    "answer_611b6e83_1",
+    "answer_611b6e83_2"
+  ],
+  "time_build_s": 3349.544027328491,
+  "time_retrieve_s": 0.1490635871887207,
+  "time_answer_s": 2.775721311569214,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

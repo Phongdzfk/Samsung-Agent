@@ -1,0 +1,39 @@
+{
+  "question_id": "e01b8e2f",
+  "question_type": "single-session-user",
+  "question": "Where did I go on a week-long trip with my family?",
+  "ground_truth": "Hawaii",
+  "generated_answer": "You went to **Hawaii** with your family for a week.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-25T06:59:01.000 Thu User's first recently recalled trip was a weekend getaway to the mountains with friends approximately three months earlier.",
+    "2023-05-22T22:01:01.000 Mon User loved visiting Hawaii with their family for a week last month.",
+    "2023-05-25T06:59:01.000 Thu During the mountain trip, user rented a cabin, spent two days hiking and exploring the area, and saw an amazing view from the top of a challenging trail.",
+    "2023-05-25T06:59:03.000 Thu Approximately one month after the mountain trip, user took a solo trip to the beach for several days.",
+    "2023-05-22T22:01:00.000 Mon User is planning a new trip and is torn between traveling solo and traveling with family.",
+    "2023-05-21T06:32:01.000 Sun User is considering planning another trip soon.",
+    "2023-05-22T22:01:04.000 Mon User plans to take a day trip to Hilo.",
+    "2023-05-28T12:02:00.000 Sun User is planning a trip to Los Angeles next month.",
+    "2023-05-25T06:59:05.000 Thu User believes the beach trip was to a beach town and stayed in a small Airbnb apartment on the beach in South Beach, Florida.",
+    "2023-05-25T06:59:02.000 Thu User believes the mountain trip took place in late spring, probably in early May, on an ordinary weekend without a holiday.",
+    "2023-05-21T06:32:02.000 Sun User is considering a weekend getaway to Boston.",
+    "2023-05-25T06:59:04.000 Thu User considered whether the beach trip location was a specific beach town or a national park.",
+    "2023-05-25T06:59:00.000 Thu User wants to create a calendar event for each trip they have taken.",
+    "2023-05-22T22:01:03.000 Mon User is considering taking a day trip to Hilo from Kailua-Kona.",
+    "2023-05-25T06:59:00.000 Thu User has been trying to keep track of the trips they have taken recently and wants to organize them into a timeline.",
+    "2023-05-22T22:01:01.000 Mon User is considering returning to Hawaii.",
+    "2023-05-21T06:32:01.000 Sun User recently returned from their fifth trip to New York City since January.",
+    "2023-05-28T20:24:01.000 Sun User previously went fishing with friends at Lake Michigan.",
+    "2023-05-28T12:02:05.000 Sun User plans to mention to Sophia that they met on a flight from Chicago to New York a few weeks ago so they can reminisce about their initial conversation.",
+    "2023-05-22T22:01:01.000 Mon User is interested in activities on Hawaii's Big Island."
+  ],
+  "answer_session_ids": [
+    "answer_5ca6cd28"
+  ],
+  "time_build_s": 1728.677330493927,
+  "time_retrieve_s": 0.08545112609863281,
+  "time_answer_s": 1.684976577758789,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

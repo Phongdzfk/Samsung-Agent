@@ -1,0 +1,41 @@
+{
+  "question_id": "2b8f3739",
+  "question_type": "multi-session",
+  "question": "What is the total amount of money I earned from selling my products at the markets?",
+  "ground_truth": "$495",
+  "generated_answer": "You earned **$495 total** from selling your products at the markets:\n\n- Fresh organic herbs: $120  \n- Homemade jam: $225  \n- Potted herb plants: 20 × $7.50 = $150",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-06-01T23:14:00.000 Thu User earned a total of $120 from selling those 12 bunches of fresh organic herbs.",
+    "2023-06-01T07:48:00.000 Thu User sold 15 jars of homemade jam at the Homemade and Handmade Market on May 29 and earned $225.",
+    "2023-06-01T22:01:00.000 Thu User sold 20 potted herb plants at the Summer Solstice Market for $7.50 each.",
+    "2023-06-01T22:25:01.000 Thu User's annual gross income is $85,000.",
+    "2023-06-01T23:14:00.000 Thu User sold 12 bunches of fresh organic herbs from their backyard garden at a farmers' market on May 15th.",
+    "2023-06-01T23:14:00.000 Thu User has had a successful season selling products so far.",
+    "2023-06-01T23:14:01.000 Thu User is considering herbal teas and herb-infused oils as possible products to sell.",
+    "2023-06-01T06:16:00.000 Thu The content reports that 53% of trade permits were submitted online.",
+    "2023-06-01T22:01:02.000 Thu User is considering offering loyalty rewards based on the number of purchases or the total amount spent.",
+    "2023-06-01T23:14:03.000 Thu User wants advice on pricing their herbal teas and infused oils competitively in the market.",
+    "2023-06-01T07:48:00.000 Thu User sells homemade products, including jam and spice blends.",
+    "2023-06-01T09:34:00.000 Thu User recently acquired several new clothing pieces, including a winter coat bought at a local department-store warehouse sale for 70% off.",
+    "2023-06-01T23:14:00.000 Thu User wants to research popular herb-based products to sell alongside fresh herbs.",
+    "2023-06-01T23:14:04.000 Thu User is seeking resources and tips for formulating and manufacturing herbal skincare products.",
+    "2023-06-01T23:14:04.000 Thu User is considering expanding their product line to include herbal skincare products such as face creams and body lotions.",
+    "2023-06-01T22:25:00.000 Thu User is looking to buy a new condo in downtown Chicago and wants to estimate how much they can afford based on their income.",
+    "2023-06-01T22:01:03.000 Thu User is considering offering rewards based on the number of purchases while giving customers bonus points for reaching specific spending thresholds.",
+    "2023-06-01T23:14:00.000 Thu User is considering expanding their product offerings for the upcoming Harvest Festival Market.",
+    "2023-06-01T22:01:04.000 Thu User plans to start their loyalty program by awarding 1 point for every dollar spent.",
+    "2023-06-01T19:28:01.000 Thu User plans to start tracking their expenses."
+  ],
+  "answer_session_ids": [
+    "answer_23759615_2",
+    "answer_23759615_3",
+    "answer_23759615_1"
+  ],
+  "time_build_s": 2127.997114419937,
+  "time_retrieve_s": 0.5141503810882568,
+  "time_answer_s": 2.79248046875,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

@@ -1,0 +1,40 @@
+{
+  "question_id": "852ce960",
+  "question_type": "knowledge-update",
+  "question": "What was the amount I was pre-approved for when I got my mortgage from Wells Fargo?",
+  "ground_truth": "$400,000",
+  "generated_answer": "You were pre-approved for a **$400,000 mortgage from Wells Fargo** on November 30, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-08-11T00:01:01.000 Fri User was pre-approved for a $350,000 mortgage from Wells Fargo.",
+    "2023-11-30T00:36:00.000 Thu User was pre-approved for a $400,000 mortgage from Wells Fargo.",
+    "2023-08-11T00:01:01.000 Fri User is buying a house priced at $325,000.",
+    "2023-08-11T00:01:03.000 Fri The seller has already agreed to provide a $2,000 credit toward the user's closing costs.",
+    "2023-08-11T00:01:04.000 Fri User wants to estimate their out-of-pocket closing costs if the seller agrees to provide the additional $3,250 credit.",
+    "2023-08-11T00:01:03.000 Fri User is evaluating whether requesting an additional $3,250 seller credit is reasonable given the inspection findings and local market conditions.",
+    "2023-08-11T00:01:05.000 Fri User wants to understand their monthly mortgage payment, property taxes, and homeowners insurance costs.",
+    "2023-08-11T00:01:03.000 Fri User is considering asking the seller to cover an additional 1% of the purchase price, equal to $3,250, toward closing costs.",
+    "2023-08-11T00:01:04.000 Fri User plans to ask the seller to cover an additional $3,250 toward closing costs because of the minor issues found in the inspection report.",
+    "2023-08-11T00:01:00.000 Fri User is in the process of buying a new home and is trying to finalize their budget.",
+    "2023-11-30T00:36:00.000 Thu User is looking forward to owning a home after a long process.",
+    "2023-08-26T11:43:05.000 Sat User is interested in the Stanford Venture Capital Private Equity Club.",
+    "2023-08-17T02:26:05.000 Thu User intends to obtain donors' permission before listing their names and donation amounts.",
+    "2023-08-11T00:01:02.000 Fri User is considering negotiating with the seller to cover some closing costs based on the inspection report.",
+    "2023-08-26T11:43:04.000 Sat User is interested in Stanford GSB's entrepreneurial finance course.",
+    "2023-08-11T00:01:03.000 Fri The inspection report found minor issues with the house's roof and plumbing.",
+    "2023-11-20T07:10:05.000 Mon User has set up a price alert for flights to Rome on Kayak.",
+    "2023-09-09T03:57:05.000 Sat User wants to learn about Return on Investment (ROI) and Customer Acquisition Cost (CAC).",
+    "2023-11-30T00:36:05.000 Thu User needs to confirm the moving date, truck size, and availability of labor assistance with the storage-unit company.",
+    "2023-11-30T00:36:03.000 Thu User needs to schedule a home insurance policy with Liberty Mutual."
+  ],
+  "answer_session_ids": [
+    "answer_3a6f1e82_1",
+    "answer_3a6f1e82_2"
+  ],
+  "time_build_s": 3080.1953959465027,
+  "time_retrieve_s": 0.25334811210632324,
+  "time_answer_s": 2.670640468597412,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

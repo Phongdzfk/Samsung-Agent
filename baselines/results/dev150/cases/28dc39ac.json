@@ -1,0 +1,43 @@
+{
+  "question_id": "28dc39ac",
+  "question_type": "multi-session",
+  "question": "How many hours have I spent playing games in total?",
+  "ground_truth": "140 hours",
+  "generated_answer": "You have spent approximately **140 hours** playing games in total.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-20T14:21:03.000 Sat User spent approximately 70 hours playing Assassin's Creed Odyssey.",
+    "2023-05-20T17:35:03.000 Sat User has been meaning to get into video games but has not had time lately.",
+    "2023-05-27T12:34:00.000 Sat User has played Celeste and took 10 hours to complete it.",
+    "2023-05-25T14:10:00.000 Thu User spent 30 hours completing The Last of Us Part II on hard difficulty.",
+    "2023-05-25T14:10:03.000 Thu User has been reflecting on their gaming habits.",
+    "2023-05-25T14:10:00.000 Thu User has been playing many action-adventure games recently.",
+    "2023-05-29T00:59:00.000 Mon User finished The Last of Us Part II on normal difficulty in 25 hours.",
+    "2023-05-20T17:35:01.000 Sat User's commute lasts approximately 45 minutes.",
+    "2023-05-29T00:59:00.000 Mon User was surprised to learn that the game took 5–6 years to develop.",
+    "2023-05-20T14:21:00.000 Sat User recently finished playing Assassin's Creed Odyssey.",
+    "2023-05-23T12:05:00.000 Tue User took approximately five hours to finish Hyper Light Drifter.",
+    "2023-05-21T01:56:00.000 Sun User has about 30 minutes to get dressed and eat breakfast before leaving the house.",
+    "2023-05-28T01:47:00.000 Sun User participated in the Run Disney 5K event at Disneyland on October 8 and finished in under 35 minutes.",
+    "2023-05-29T00:59:02.000 Mon User is interested in learning more about the gaming industry and staying up to date with the latest gaming news and developments.",
+    "2023-05-20T17:35:04.000 Sat User started making lunch the night before, which saves approximately 30 minutes in the morning.",
+    "2023-05-27T12:34:03.000 Sat User is more interested in games with a strong focus on storytelling and character development.",
+    "2023-05-20T14:21:03.000 Sat User found Assassin's Creed Odyssey's combat engaging but not overly complex.",
+    "2023-05-25T14:10:01.000 Thu User is considering playing Uncharted 4 and God of War.",
+    "2023-05-29T00:59:03.000 Mon User enjoyed Game Informer's magazine in the past.",
+    "2023-05-29T00:59:01.000 Mon User has not played What Remains of Edith Finch or Firewatch."
+  ],
+  "answer_session_ids": [
+    "answer_8d015d9d_3",
+    "answer_8d015d9d_5",
+    "answer_8d015d9d_2",
+    "answer_8d015d9d_4",
+    "answer_8d015d9d_1"
+  ],
+  "time_build_s": 1622.5278754234314,
+  "time_retrieve_s": 0.03366565704345703,
+  "time_answer_s": 4.513610363006592,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

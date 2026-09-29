@@ -1,0 +1,42 @@
+{
+  "question_id": "d23cf73b",
+  "question_type": "multi-session",
+  "question": "How many different cuisines have I learned to cook or tried out in the past few months?",
+  "ground_truth": 4,
+  "generated_answer": "You’ve explored about **six different cuisines or culinary traditions**:\n\n1. Thai  \n2. Indian  \n3. Vegan cuisine  \n4. Ethiopian  \n5. Korean (kimchi)  \n6. German/central European (sauerkraut)",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-21T05:29:01.000 Sun User has heard a lot about Pok Pok and is interested in learning what type of cuisine it serves.",
+    "2023-05-29T15:26:00.000 Mon User is looking for weekly meal-preparation ideas, has been trying to cook more at home, and wants to use all the ingredients they buy.",
+    "2023-05-22T16:12:03.000 Mon User is considering buying a cookbook focused on cooking basics and meal planning, such as The Kitchn Cookbook, for the newlywed couple.",
+    "2023-05-24T14:34:00.000 Wed User is looking for meal-prep recipe ideas.",
+    "2023-05-26T14:14:00.000 Fri User learned to make chicken tikka masala in an Indian cuisine class, and chicken tikka masala is definitely on the dinner party menu.",
+    "2023-05-30T02:40:00.000 Tue User recently attended a vegan-cuisine class, which inspired them.",
+    "2023-05-26T14:14:05.000 Fri User is planning to make additional Indian-inspired dishes for the dinner party, including naan bread and saag paneer.",
+    "2023-05-26T14:14:00.000 Fri User is considering serving an Indian-inspired dish at the dinner party.",
+    "2023-05-29T15:26:01.000 Mon User is considering making chicken and mixed-vegetable stir-fry this week.",
+    "2023-05-22T16:12:02.000 Mon User is interested in cookbook recommendations suitable for newlyweds.",
+    "2023-05-30T02:40:03.000 Tue User recently attended a class on vegan cuisine.",
+    "2023-05-24T03:37:00.000 Wed User is interested in learning about top-rated restaurants in Tokyo and what distinguishes them in the city's food scene.",
+    "2023-05-24T14:34:05.000 Wed User plans to adjust the recipe and experiment with different ratios and ingredients.",
+    "2023-05-30T02:40:00.000 Tue User is looking for healthy meal-preparation ideas.",
+    "2023-05-24T14:34:00.000 Wed User has recently been preparing a lot of rice and roasted vegetables for meal prep.",
+    "2023-05-30T02:40:02.000 Tue User learned how to make sauerkraut and kimchi at the fermentation workshop.",
+    "2023-05-21T05:29:03.000 Sun User loves spicy food and is interested in very spicy dishes at Pok Pok.",
+    "2023-05-21T05:29:02.000 Sun User is eager to try Pok Pok's Fish Sauce Wings and wants recommendations for other dishes there.",
+    "2023-05-24T14:34:01.000 Wed User is considering making Ethiopian-inspired dishes, especially misir wot.",
+    "2023-05-30T12:13:01.000 Tue User mainly wants kitchen utensils for general kitchen tasks and cooking preparation."
+  ],
+  "answer_session_ids": [
+    "answer_5a0d28f8_4",
+    "answer_5a0d28f8_2",
+    "answer_5a0d28f8_3",
+    "answer_5a0d28f8_1"
+  ],
+  "time_build_s": 1645.357933998108,
+  "time_retrieve_s": 0.23987674713134766,
+  "time_answer_s": 8.042459487915039,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

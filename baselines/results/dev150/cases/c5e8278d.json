@@ -1,0 +1,39 @@
+{
+  "question_id": "c5e8278d",
+  "question_type": "single-session-user",
+  "question": "What was my last name before I changed it?",
+  "ground_truth": "Johnson",
+  "generated_answer": "Your last name before you changed it was **Johnson**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-28T20:27:05.000 Sun User wants to know what they should be aware of when updating their credit card information after changing their name.",
+    "2023-05-28T20:27:05.000 Sun User needs to update their credit card information to reflect their new name.",
+    "2023-05-28T20:27:00.000 Sun User recently changed their last name from Johnson to Winters.",
+    "2023-05-28T20:27:00.000 Sun User is still getting used to their new last name, Winters.",
+    "2023-05-28T20:27:04.000 Sun User is wondering whether they need to update their credit reports with Experian, TransUnion, and Equifax to reflect their name change.",
+    "2023-05-28T20:27:01.000 Sun User wants to know whether they need to notify the DMV about their recent name change from Johnson to Winters.",
+    "2023-05-25T09:56:00.000 Thu User's mother was born in Dublin.",
+    "2023-05-23T21:04:05.000 Tue User considered wearing an old black coat instead of the gray T-shirt.",
+    "2023-05-28T20:21:04.000 Sun User graduated with a Bachelor's degree in Business Administration five years ago.",
+    "2023-05-28T20:27:05.000 Sun User wants to know whether they need to call their credit card company or can update their name online.",
+    "2023-05-29T08:35:00.000 Mon User owns a fiddle-leaf fig named Felix.",
+    "2023-05-28T20:21:00.000 Sun User recently completed a survey for their alma mater and realized that it has been five years since they graduated with a Bachelor's degree in Business Administration.",
+    "2023-05-23T21:04:05.000 Tue User lent their old black coat to their roommate.",
+    "2023-05-25T09:56:00.000 Thu User recently discovered that they have Asian heritage through a great-great-grandfather from Mongolia.",
+    "2023-05-27T01:06:00.000 Sat User plays on a volleyball team called the Net Ninjas.",
+    "2023-05-28T14:33:03.000 Sun User is considering asking their grandparents about their parents, who are the user's great-grandparents.",
+    "2023-05-28T20:27:02.000 Sun User is concerned about updating their Facebook profile without losing their friends or memories.",
+    "2023-05-26T21:50:01.000 Fri User's last outdoor running event was over a year ago.",
+    "2023-05-29T04:13:00.000 Mon User was inspired by recipes on Instagram, especially the \"Vegan Recipes\" account.",
+    "2023-05-28T20:27:00.000 Sun User needs to update their address with their health insurance provider."
+  ],
+  "answer_session_ids": [
+    "answer_f6168136"
+  ],
+  "time_build_s": 2089.590474843979,
+  "time_retrieve_s": 0.08202099800109863,
+  "time_answer_s": 1.552661418914795,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}
