@@ -1,0 +1,40 @@
+{
+  "question_id": "720133ac",
+  "question_type": "multi-session",
+  "question": "What is the total cost of Lola's vet visit and flea medication?",
+  "ground_truth": "$75",
+  "generated_answer": "Lola’s vet visit cost $50, and her flea medication cost $25. The total cost was **$75**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-30T14:21:00.000 Tue User bought Lola flea and tick prevention medication costing $25 for a three-month supply.",
+    "2023-05-25T00:43:05.000 Thu User reiterates that Lola's veterinary consultation cost $50 at a discounted rate for regular customers.",
+    "2023-05-25T00:43:00.000 Thu User received a discounted veterinary consultation fee of $50 for Lola because they were a regular customer.",
+    "2023-05-30T14:21:05.000 Tue User owns a pet grooming kit for Lola that cost $80 when purchased the previous year.",
+    "2023-05-25T00:43:00.000 Thu User took Lola to the veterinarian last week.",
+    "2023-05-25T00:43:05.000 Thu User reiterates that they took Lola to the veterinarian last week.",
+    "2023-05-30T14:21:02.000 Tue User bought Lola a 20-pound bag of cat food from Petco for $35.",
+    "2023-05-25T00:43:01.000 Thu User wants dog-bed recommendations in the $40–$50 price range.",
+    "2023-05-25T00:43:04.000 Thu User needs to check the prices of dog beds and pet-grooming kits at Petco.",
+    "2023-05-30T14:21:03.000 Tue User saw a dog bed at a nearby pet store that costs $40.",
+    "2023-05-25T00:43:05.000 Thu User is considering checking the prices of dog beds and pet-grooming kits at Petco.",
+    "2023-05-25T00:43:02.000 Thu User wants recommendations for a pet-grooming kit costing around $80.",
+    "2023-05-30T14:21:00.000 Tue User got Lola a new type of cat litter from Petco the previous Saturday but is unsure whether it is the best option for her.",
+    "2023-05-30T14:21:03.000 Tue User is looking for recommendations for dog beds for Max.",
+    "2023-05-30T14:21:04.000 Tue User plans to visit the pet store that weekend to look at its selection of dog beds for Max.",
+    "2023-05-25T00:43:04.000 Thu User thinks Petco may have good deals on dog beds and pet-grooming kits.",
+    "2023-05-25T00:43:05.000 Thu User thinks Petco may have good deals on dog beds and pet-grooming kits.",
+    "2023-05-30T14:21:02.000 Tue Lola seems to be doing fine with the cat food.",
+    "2023-05-30T14:21:01.000 Tue Lola is the only cat that uses the litter box.",
+    "2023-05-30T14:21:05.000 Tue User uses Lola's grooming kit regularly and considers it a good investment."
+  ],
+  "answer_session_ids": [
+    "answer_c9dfeaea_1",
+    "answer_c9dfeaea_2"
+  ],
+  "time_build_s": 1868.831925868988,
+  "time_retrieve_s": 0.08089065551757812,
+  "time_answer_s": 9.261090755462646,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

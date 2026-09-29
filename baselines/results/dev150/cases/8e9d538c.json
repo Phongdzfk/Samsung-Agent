@@ -1,0 +1,39 @@
+{
+  "question_id": "8e9d538c",
+  "question_type": "single-session-user",
+  "question": "How many skeins of worsted weight yarn did I find in my stash?",
+  "ground_truth": "17",
+  "generated_answer": "You found **17 skeins** of worsted-weight yarn in your stash.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T11:27:01.000 Sat User has a stash of 17 skeins of worsted-weight yarn that they would like to use for amigurumi toys.",
+    "2023-05-27T11:27:01.000 Sat User used worsted-weight yarn from their stash to make the gloves.",
+    "2023-05-27T11:27:02.000 Sat User wants to make amigurumi toys using the same worsted-weight yarn.",
+    "2023-05-27T11:27:01.000 Sat User wants to know whether worsted-weight yarn can be used for amigurumi toys.",
+    "2023-05-21T19:19:04.000 Sun User is interested in Everlane sweaters, particularly sweaters made from recycled cashmere.",
+    "2023-05-27T11:27:00.000 Sat User wants general guidance on hook size and yarn weight for making small- to medium-sized amigurumi toys.",
+    "2023-05-21T19:19:05.000 Sun User is interested in Everlane's Recycled Cashmere Crew sweater.",
+    "2023-05-21T19:19:05.000 Sun User wants information about the fit and sizing of the Recycled Cashmere Crew.",
+    "2023-05-27T11:27:02.000 Sat User plans to make more fingerless gloves using the same yarn and hook size.",
+    "2023-05-21T19:19:05.000 Sun User has previously had issues with cashmere sweaters being too tight or too loose.",
+    "2023-05-21T19:19:00.000 Sun User returned a black turtleneck sweater from Zara on January 15.",
+    "2023-05-27T11:27:01.000 Sat User is considering using the same yarn and hook size for additional gloves and is unsure whether to adjust them for different hand sizes.",
+    "2023-05-21T03:38:00.000 Sun User and their household have been unpacking for weeks, but still feel that they have many belongings everywhere.",
+    "2023-05-27T11:27:03.000 Sat User recently repaired their sewing machine.",
+    "2023-05-21T09:29:02.000 Sun User tried on a Chanel bag at the luxury department store but could not justify its price.",
+    "2023-05-21T19:19:03.000 Sun User is considering ordering items from Everlane besides jeans.",
+    "2023-05-21T19:19:00.000 Sun User recently bought a pair of high-waisted jeans from Zara.",
+    "2023-05-21T13:25:02.000 Sun User asked which plant is named for its shape, with answer choices poison oak, cattails, Gerber daisy, and feverfew.",
+    "2023-05-21T03:38:01.000 Sun User believes they have many items that could be donated or sold.",
+    "2023-05-24T20:08:00.000 Wed User wants instructions for making vegetable Ukrainian borsch."
+  ],
+  "answer_session_ids": [
+    "answer_7bdcbd23"
+  ],
+  "time_build_s": 1545.9520082473755,
+  "time_retrieve_s": 0.02174234390258789,
+  "time_answer_s": 2.8763744831085205,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

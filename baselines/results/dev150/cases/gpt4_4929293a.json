@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_4929293a",
+  "question_type": "temporal-reasoning",
+  "question": "Which event happened first, my cousin's wedding or Michael's engagement party?",
+  "ground_truth": "Michael's engagement party",
+  "generated_answer": "Michael’s engagement party happened first, on May 6, 2023. Your cousin’s wedding was on June 15, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-06T03:02:00.000 Sat User attended Michael's engagement party at a trendy rooftop bar on May 6, 2023, which prompted thoughts about their own wedding plans.",
+    "2023-06-15T03:20:04.000 Thu At the cousin's wedding, a special song meaningful to the cousin and her partner was played during the ceremony.",
+    "2023-06-15T03:20:00.000 Thu User was a bridesmaid at their cousin's wedding on June 15, 2023.",
+    "2023-06-15T03:20:00.000 Thu Being a bridesmaid at their cousin's wedding made the user think about their own wedding.",
+    "2023-06-15T03:20:04.000 Thu Being a bridesmaid at their cousin's wedding made the user appreciate how small details can make a big difference.",
+    "2023-05-06T03:02:00.000 Sat User is planning a small wedding ceremony for next year.",
+    "2023-06-15T03:20:01.000 Thu User is considering having a small, intimate wedding ceremony.",
+    "2023-06-15T03:20:02.000 Thu User has already started looking at wedding venues.",
+    "2023-06-15T03:20:00.000 Thu User is getting ready to plan their own wedding.",
+    "2023-06-15T03:20:02.000 Thu User is considering having a fall wedding.",
+    "2023-06-15T03:20:05.000 Thu User wants their wedding ceremony to feel intimate and romantic.",
+    "2023-06-15T03:20:05.000 Thu User and their partner are still brainstorming their ceremony details.",
+    "2023-06-15T03:20:03.000 Thu User wants to create an atmosphere at their own wedding similar to the atmosphere at their cousin's wedding.",
+    "2023-06-15T03:20:03.000 Thu User is imagining how to make the wedding space feel intimate and special.",
+    "2023-05-06T03:02:01.000 Sat User is considering two wedding venue options: a cozy bed and breakfast in the countryside or a beautiful art museum in the city.",
+    "2023-06-15T03:20:04.000 Thu User thought the special song made the ceremony feel more intimate.",
+    "2023-06-15T03:20:03.000 Thu User is enjoying looking at different wedding venues.",
+    "2023-06-15T03:20:04.000 Thu User wants to incorporate a meaningful special song into their own wedding ceremony.",
+    "2023-06-15T03:20:02.000 Thu User feels they have a clear idea of what they want for their wedding.",
+    "2023-06-15T03:20:02.000 Thu User is considering managing the fall wedding without a wedding planner."
+  ],
+  "answer_session_ids": [
+    "answer_add9b012_2",
+    "answer_add9b012_1"
+  ],
+  "time_build_s": 1753.3201801776886,
+  "time_retrieve_s": 0.12940478324890137,
+  "time_answer_s": 2.7089011669158936,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

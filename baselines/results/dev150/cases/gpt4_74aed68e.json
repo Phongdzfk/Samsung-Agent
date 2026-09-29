@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_74aed68e",
+  "question_type": "temporal-reasoning",
+  "question": "How many days passed between the day I replaced my spark plugs and the day I participated in the Turbocharged Tuesdays auto racking event?",
+  "ground_truth": "29 days. 30 days (including the last day) is also acceptable.",
+  "generated_answer": "29 days passed—from February 14, 2023, when you replaced the spark plugs, to March 15, 2023, when you participated in the Turbocharged Tuesdays event.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-02-14T16:29:00.000 Tue User replaced the car's spark plugs with new NGK spark plugs on February 14, 2023.",
+    "2023-02-14T16:29:00.000 Tue User reports that replacing the spark plugs made a huge difference.",
+    "2023-02-14T16:29:00.000 Tue User noticed a slight misfire during their daily commute before replacing the spark plugs.",
+    "2023-03-15T08:37:00.000 Wed User replaced their car's spark plugs with new NGK spark plugs.",
+    "2023-03-15T08:37:01.000 Wed User previously had a dyno test at the \"Tune-Up Saturday\" event at Performance Garage.",
+    "2023-02-24T11:52:02.000 Fri User's energy levels typically dip on Wednesdays.",
+    "2023-02-24T11:52:04.000 Fri User has noticed that they feel more energized on Mondays and Tuesdays and that their energy dips on Wednesdays.",
+    "2023-02-24T11:52:02.000 Fri User tends to feel more energized on Mondays and Tuesdays.",
+    "2023-03-15T08:37:00.000 Wed After replacing the spark plugs, the user's engine felt smoother and more responsive.",
+    "2023-03-13T11:41:01.000 Mon User spent approximately $250 on train tickets and car gas for commuting during the past month.",
+    "2023-02-22T05:59:01.000 Wed User wants information about the battery life and installation difficulty of the Cygolite Hotrod 50 and Lezyne Strip Drive Pro.",
+    "2023-02-24T11:52:02.000 Fri User believes their lower Wednesday energy is caused by having many meetings on Wednesdays.",
+    "2023-03-13T11:41:03.000 Mon User plans to try the bike-and-train option for one week.",
+    "2023-03-15T08:37:00.000 Wed User is preparing for a future auto racing event.",
+    "2023-03-15T08:37:00.000 Wed User is planning to participate in another auto-racing event.",
+    "2023-02-14T16:29:00.000 Tue User is trying to optimize their car's performance for an upcoming autocross event.",
+    "2023-03-13T11:41:00.000 Mon User has been taking the 7:15 AM train from their local station to downtown every weekday for the past three months.",
+    "2023-03-15T08:37:00.000 Wed User noticed a slight engine misfire during their daily commute.",
+    "2023-03-13T11:41:01.000 Mon User is considering trying the bike-and-train option for one week.",
+    "2023-03-15T08:37:00.000 Wed User completed 10 laps at Speed Demon Racing Track with an average speed of 85 mph during the Turbocharged Tuesdays event."
+  ],
+  "answer_session_ids": [
+    "answer_aed8cf17_1",
+    "answer_aed8cf17_2"
+  ],
+  "time_build_s": 1865.1368749141693,
+  "time_retrieve_s": 0.2256791591644287,
+  "time_answer_s": 5.4101643562316895,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

@@ -1,0 +1,40 @@
+{
+  "question_id": "9a707b81",
+  "question_type": "temporal-reasoning",
+  "question": "How many days ago did I attend a baking class at a local culinary school when I made my friend's birthday cake?",
+  "ground_truth": "21 days. 22 days (including the last day) is also acceptable.",
+  "generated_answer": "You attended the baking class on March 20, 2022—26 days before April 15, 2022.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2022-03-21T15:54:01.000 Mon User took an amazing baking class at a local culinary school yesterday.",
+    "2022-04-10T14:14:05.000 Sun User baked a chocolate cake for a friend's birthday party today, and it turned out amazing.",
+    "2022-02-27T20:18:00.000 Sun Last Saturday, user and their friends had a potluck dinner.",
+    "2022-04-10T14:14:05.000 Sun The chocolate cake was made using a new recipe found online.",
+    "2022-03-21T15:54:00.000 Mon User has been very interested in baking lately.",
+    "2022-04-10T14:14:00.000 Sun User has been especially interested in baking lately.",
+    "2022-03-21T15:54:00.000 Mon User is looking for inspiration for their next baking project.",
+    "2022-04-10T08:10:00.000 Sun User attended their friend Jack's birthday party today and had an amazing time.",
+    "2022-03-21T15:54:04.000 Mon User made a batch of cookies with bread flour, and the cookies turned out chewier than usual.",
+    "2022-03-21T14:50:00.000 Mon User bought a coffee maker as a birthday gift for their coworker Sarah.",
+    "2022-04-10T14:14:00.000 Sun User is hosting a dinner party next weekend and is looking for unique dessert ideas.",
+    "2022-03-21T15:54:05.000 Mon User plans to try bread flour first for their sourdough shortcake.",
+    "2022-04-10T14:14:01.000 Sun User made a strawberry rhubarb crisp a few weeks ago and thought it was incredible.",
+    "2022-02-27T20:18:01.000 Sun User has been meal-prepping on weekends and packing lunch for work.",
+    "2022-04-10T14:14:04.000 Sun User plans to make croissants from scratch for the dinner party.",
+    "2022-04-10T00:14:01.000 Sun User wants to meal-prep easy recipes that can be stored and eaten throughout the week.",
+    "2022-04-10T00:14:01.000 Sun User considers about half an hour of preparation time to be the upper end of what they enjoy, but is willing to accept longer cooking times.",
+    "2022-04-10T18:31:01.000 Sun User wants quick and easy homemade recipes for sweet potato chews or carrot-and-apple biscuits that can be made in under 30 minutes.",
+    "2022-02-27T20:18:00.000 Sun User went to Whole Foods with friends to buy organic ingredients for their potluck dish.",
+    "2022-02-27T20:18:01.000 Sun User bought meal containers and ingredients from Target last week."
+  ],
+  "answer_session_ids": [
+    "answer_dba89487_2",
+    "answer_dba89487_1"
+  ],
+  "time_build_s": 1812.17600607872,
+  "time_retrieve_s": 0.13306307792663574,
+  "time_answer_s": 6.862661361694336,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

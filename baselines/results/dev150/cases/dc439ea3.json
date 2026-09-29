@@ -1,0 +1,39 @@
+{
+  "question_id": "dc439ea3",
+  "question_type": "single-session-assistant",
+  "question": "I was looking back at our previous conversation about Native American powwows and I was wondering, which traditional game did you say was often performed by skilled dancers at powwows?",
+  "ground_truth": "Hoop Dance",
+  "generated_answer": "You were referring to **hoop dancing**—a traditional Native American performance in which skilled dancers manipulate multiple hoops to create symbolic shapes and patterns.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-23T13:51:00.000 Tue User is interested in learning about traditional games played during Native American powwows.",
+    "2023-05-23T13:51:01.000 Tue User was surprised to learn that many traditional games are played during powwows and is interested in which game is most exciting to watch.",
+    "2023-05-23T13:51:02.000 Tue User wants to attend a Native American powwow and is seeking recommendations for the best powwows to attend.",
+    "2023-05-23T13:51:03.000 Tue User plans to attend a powwow soon.",
+    "2023-05-23T13:51:02.000 Tue User has always been interested in Native American culture.",
+    "2023-05-23T13:51:03.000 Tue User wants advice on what to wear and bring to a powwow.",
+    "2023-05-20T07:30:04.000 Sat User found Pollock's inspiration from Navajo sand paintings fascinating.",
+    "2023-05-20T07:30:04.000 Sat User learned during the Modern Art Gallery guided tour that Pollock was inspired by Navajo sand paintings.",
+    "2023-05-23T16:35:00.000 Tue The user is proud to be part of a musical tradition and legacy.",
+    "2023-05-30T13:08:01.000 Tue User is interested in how the Mau Mau Uprising fit into the broader context of decolonization across Africa and in similar independence movements in other African colonies.",
+    "2023-05-23T16:35:00.000 Tue From a young age, the user was drawn to Caribbean rhythms, art, and music-making in Jamaica.",
+    "2023-05-30T13:08:00.000 Tue User is interested in how decolonization played a role in the Mau Mau Uprising in Kenya.",
+    "2023-05-30T13:08:03.000 Tue User finds it fascinating to learn about different independence movements across Africa and is interested in ongoing struggles for independence or self-determination on the continent.",
+    "2023-05-23T13:58:04.000 Tue User is leaning toward a garden-party theme because they find it romantic and whimsical.",
+    "2023-05-30T08:09:00.000 Tue User is looking for historical dramas similar to \"The Crown\".",
+    "2023-05-23T16:35:00.000 Tue The user spent countless hours honing their craft and investing their heart and soul into every beat, verse, and chorus.",
+    "2023-05-28T23:48:05.000 Sun User is considering adding summer-themed games or activities to the barbecue.",
+    "2023-05-20T07:30:05.000 Sat User is curious about Abstract Expressionism's impact on modern art and its influence on subsequent art movements.",
+    "2023-05-20T07:30:01.000 Sat User was fascinated by the works of Jackson Pollock and Mark Rothko during the guided tour.",
+    "2023-05-25T02:05:03.000 Thu User has been experimenting with different cuisines, including Indian recipes such as chicken tikka masala and Korean dishes such as bibimbap."
+  ],
+  "answer_session_ids": [
+    "answer_ultrachat_459954"
+  ],
+  "time_build_s": 3339.2693195343018,
+  "time_retrieve_s": 0.6161365509033203,
+  "time_answer_s": 5.717849254608154,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

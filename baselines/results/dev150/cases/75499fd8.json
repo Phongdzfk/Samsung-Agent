@@ -1,0 +1,39 @@
+{
+  "question_id": "75499fd8",
+  "question_type": "single-session-user",
+  "question": "What breed is my dog?",
+  "ground_truth": "Golden Retriever",
+  "generated_answer": "Max is a Golden Retriever.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-25T23:07:04.000 Thu User is considering getting Max a new collar with a name tag and wants a collar suitable for a Golden Retriever.",
+    "2023-05-25T23:07:05.000 Thu User is considering a durable, easy-to-clean nylon collar from Yellow Dog Design for Max because of Max's active lifestyle, along with an engraved name tag.",
+    "2023-05-25T23:07:00.000 Thu User needs a reliable dog walker in their area and is looking for recommendations or service platforms.",
+    "2023-05-25T23:07:01.000 Thu User has a dog named Max and wants a dog walker to apply Max's flea and tick prevention medication every two weeks.",
+    "2023-05-25T23:07:03.000 Thu Max likes peanut butter, and the user thinks Max would enjoy a Kong toy filled with peanut butter as a special treat.",
+    "2023-05-25T03:02:01.000 Thu User is interested in an example of a dialect that evolved over time.",
+    "2023-05-20T00:44:00.000 Sat User's search results included Shinichi Hoshi, a Japanese science-fiction writer known for short stories.",
+    "2023-05-22T19:33:00.000 Mon User is interested in favorite hot chocolate brands or recipes.",
+    "2023-05-25T03:02:03.000 Thu User is interested in other examples of dialects that have evolved over time.",
+    "2023-05-29T03:15:03.000 Mon User plans to call the music store beforehand to confirm whether a Fender Mustang II is in stock.",
+    "2023-05-25T03:02:00.000 Thu User wants to learn how dialects form and evolve over time.",
+    "2023-05-28T00:06:00.000 Sun The primary star is intended to be an unremarkable, main-sequence, older Population I star.",
+    "2023-05-22T19:33:00.000 Mon User is looking for recommendations for hot chocolate mixes.",
+    "2023-05-22T13:11:01.000 Mon User has previously eaten at Wahaca and is interested in trying Mildreds and Redemption.",
+    "2023-05-29T03:15:04.000 Mon User plans to ask the music store about both Fender Mustang II amplifiers and drumheads.",
+    "2023-05-20T09:51:00.000 Sat User recently bought a skincare set from Drunk Elephant at a new Sephora store and loves it.",
+    "2023-05-22T13:11:03.000 Mon User expects to have difficulty choosing what to order at Mildreds or Redemption and wants to know whether either restaurant accepts reservations.",
+    "2023-05-29T03:15:02.000 Mon User wants to know whether the downtown music store carries Fender Mustang II amplifiers.",
+    "2023-05-20T09:51:04.000 Sat The Asian fusion meal combined a variety of flavors and options.",
+    "2023-05-28T00:06:00.000 Sun User wants relevant stellagraphical data about the primary star."
+  ],
+  "answer_session_ids": [
+    "answer_723bf11f"
+  ],
+  "time_build_s": 2307.527459859848,
+  "time_retrieve_s": 0.027636051177978516,
+  "time_answer_s": 2.353271245956421,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

@@ -1,0 +1,40 @@
+{
+  "question_id": "89941a93",
+  "question_type": "knowledge-update",
+  "question": "How many bikes do I currently own?",
+  "ground_truth": "4",
+  "generated_answer": "You currently own **four bikes**: a road bike, mountain bike, commuter bike, and hybrid bike.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-02-22T20:54:03.000 Wed User is wondering whether owning three bikes is too many.",
+    "2023-10-10T01:12:02.000 Tue User's four bikes are a road bike, a mountain bike, a commuter bike, and a new hybrid bike.",
+    "2023-02-22T20:54:02.000 Wed User owns three bikes: a road bike, a mountain bike, and a commuter bike.",
+    "2023-10-10T01:12:02.000 Tue User will have four bikes with them on the trip.",
+    "2023-10-10T01:12:01.000 Tue User plans to bring all of their bikes on the trip.",
+    "2023-10-10T01:12:02.000 Tue User wants to book accommodations with bike storage in advance so they can accommodate all four bikes.",
+    "2023-10-10T01:12:03.000 Tue User is considering renting a bike for a day.",
+    "2023-10-10T01:12:02.000 Tue User recently purchased a new hybrid bike.",
+    "2023-10-10T01:12:03.000 Tue User is looking forward to trying their new hybrid bike on scenic routes.",
+    "2023-02-22T20:54:00.000 Wed User is planning a 50-mile bike ride this weekend.",
+    "2023-02-22T20:54:03.000 Wed User plans to use their road bike for the century ride.",
+    "2023-02-22T20:54:02.000 Wed User has already ridden 2,000 miles on their current road bike.",
+    "2023-10-10T01:12:03.000 Tue User wants to know whether bike shops along the route offer bike rentals or guided tours.",
+    "2023-02-22T20:54:01.000 Wed User is considering upgrading their road bike to carbon-fiber wheels.",
+    "2023-02-22T20:54:03.000 Wed User uses their road bike for long rides on weekends.",
+    "2023-10-10T01:12:00.000 Tue User wants help finding bike-friendly routes for the road trip.",
+    "2023-02-22T20:54:03.000 Wed User uses their mountain bike for trail rides.",
+    "2023-02-22T20:54:00.000 Wed User owns a road bike and wants to ensure it is in top condition for the ride.",
+    "2023-02-22T20:54:04.000 Wed User has already ridden 2,000 miles on their current wheels.",
+    "2023-02-22T20:54:03.000 Wed User uses their commuter bike for daily commutes."
+  ],
+  "answer_session_ids": [
+    "answer_e1403127_1",
+    "answer_e1403127_2"
+  ],
+  "time_build_s": 3382.22585773468,
+  "time_retrieve_s": 0.41089367866516113,
+  "time_answer_s": 2.0146994590759277,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

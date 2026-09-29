@@ -1,0 +1,39 @@
+{
+  "question_id": "0862e8bf",
+  "question_type": "single-session-user",
+  "question": "What is the name of my cat?",
+  "ground_truth": "Luna",
+  "generated_answer": "Your cat’s name is Luna.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-24T17:25:05.000 Wed User's cat is named Luna.",
+    "2023-05-24T17:25:04.000 Wed User has been meaning to have their cat microchipped for some time.",
+    "2023-05-24T17:25:03.000 Wed User is considering having their cat microchipped and is seeking information about the process and recommendations for local veterinarians.",
+    "2023-05-24T17:25:04.000 Wed User's front door is not closing properly, and they are worried that their cat might get out.",
+    "2023-05-24T17:25:01.000 Wed User is seeking cat litter that is easy to clean and controls odors.",
+    "2023-05-24T17:25:02.000 Wed User's cat has recently been having litter-box issues, and the litter box has been becoming very smelly.",
+    "2023-05-24T17:25:01.000 Wed User has already started giving their cat a probiotic supplement, which seems to be helping.",
+    "2023-05-24T17:25:01.000 Wed User got a new litter box with low sides for their cat and is considering switching to a better type of litter.",
+    "2023-05-24T17:25:00.000 Wed User is experiencing issues with their cat's digestive health and is seeking recommendations for probiotic supplements for cats.",
+    "2023-05-24T17:25:02.000 Wed User believes that new cat litter could help control odors.",
+    "2023-05-24T17:25:02.000 Wed User washed all of their cat's blankets and beds on January 25 because they had become smelly.",
+    "2023-05-26T08:34:05.000 Fri User requested a story about a dwarf marrying a faerie who became the queen of a new utopia.",
+    "2023-05-26T08:34:03.000 Fri User requested a story about faeries and dwarves merging their lost kingdoms into a utopia in the mountains.",
+    "2023-05-24T17:25:05.000 Wed User describes Luna as very sweet, including while the user has been making changes to her environment.",
+    "2023-05-29T03:47:05.000 Mon User wants to learn more about the hosts of Coffee Break German, including their backgrounds and how they present the podcast.",
+    "2023-05-30T03:36:01.000 Tue User wants information about which brands Moosejaw has on sale and what kinds of boots are available.",
+    "2023-05-28T15:16:02.000 Sun User wants a list of possible titles, though the subject of the titles is unspecified.",
+    "2023-05-30T03:36:05.000 Tue User is interested in purchasing The North Face Thermoball boots from Moosejaw.",
+    "2023-05-24T03:30:02.000 Wed User wanted the poem rewritten in the previously specified no-spaces style.",
+    "2023-05-27T07:10:04.000 Sat User is interested in Shimokitazawa and has heard that it is a trendy neighborhood with a lot of character."
+  ],
+  "answer_session_ids": [
+    "answer_c6fd8ebd"
+  ],
+  "time_build_s": 2038.419276714325,
+  "time_retrieve_s": 0.14197587966918945,
+  "time_answer_s": 1.694333553314209,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

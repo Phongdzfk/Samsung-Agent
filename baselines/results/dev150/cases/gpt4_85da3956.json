@@ -1,0 +1,39 @@
+{
+  "question_id": "gpt4_85da3956",
+  "question_type": "temporal-reasoning",
+  "question": "How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?",
+  "ground_truth": "3 weeks ago",
+  "generated_answer": "You attended the “Summer Nights” festival **3 weeks ago**, on July 15, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-07-15T08:13:00.000 Sat User attended the \"Summer Nights\" festival at Universal Studios Hollywood and enjoyed spending time in the Wizarding World of Harry Potter.",
+    "2023-07-15T08:13:03.000 Sat User spent hours exploring the Wizarding World of Harry Potter at Universal Studios Hollywood during the \"Summer Nights\" festival with Rachel and Mike.",
+    "2023-07-15T08:13:01.000 Sat User saw the Nighttime Lights at Hogwarts Castle show at Universal Studios Hollywood during the \"Summer Nights\" festival with Rachel and Mike.",
+    "2023-07-15T08:13:05.000 Sat User visited Toothsome Chocolate Emporium & Savory Feast Kitchen at Universal CityWalk for a birthday dinner about a month ago.",
+    "2023-07-15T08:13:00.000 Sat User recently visited Universal Studios Hollywood with friends Rachel and Mike.",
+    "2023-07-15T07:40:00.000 Sat User set up their aquarium on February 10, 2023, and has had a positive experience so far.",
+    "2023-07-15T09:44:00.000 Sat User has previously stayed at a Bali hostel that cost $15 per night and had a beautiful garden and pool.",
+    "2023-07-15T08:13:01.000 Sat User is considering visiting Six Flags Magic Mountain on a weekend.",
+    "2023-07-15T14:52:00.000 Sat User took sunset photographs at a beach on April 25th.",
+    "2023-07-13T00:55:00.000 Thu During the previous Chicago trip, user flew there for a funeral and spent a few days with Rachel and her family.",
+    "2023-06-26T02:30:02.000 Mon User has always wanted to visit the University of Virginia and wants to know whether guided tours are available for visitors.",
+    "2023-07-13T00:55:00.000 Thu User has visited Chicago before, but the trip was for a funeral and they did not get to explore much.",
+    "2023-07-15T18:46:01.000 Sat User framed the watercolor painting last weekend.",
+    "2023-07-15T09:44:04.000 Sat User is considering visiting the Gili Islands on March 20.",
+    "2023-06-26T02:30:03.000 Mon User wants information about where to find details about University of Virginia guided tours and how to book one.",
+    "2023-07-15T08:13:05.000 Sat User thought their birthday dinner at Toothsome Chocolate Emporium & Savory Feast Kitchen was amazing.",
+    "2023-07-15T09:44:05.000 Sat User is looking forward to visiting the Gili Islands on March 20.",
+    "2023-07-15T08:13:01.000 Sat User thinks a General Admission ticket may be the best option for their Six Flags Magic Mountain visit.",
+    "2023-07-15T14:52:01.000 Sat User is considering trying nighttime photography, including photographing stars and nighttime cityscapes.",
+    "2023-07-15T14:52:02.000 Sat User has had a good experience using a graduated neutral-density filter during their beach sunset shoot on April 25th."
+  ],
+  "answer_session_ids": [
+    "answer_581ab834_1"
+  ],
+  "time_build_s": 2073.821099758148,
+  "time_retrieve_s": 0.2443833351135254,
+  "time_answer_s": 6.648130655288696,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

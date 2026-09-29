@@ -1,0 +1,41 @@
+{
+  "question_id": "gpt4_f49edff3",
+  "question_type": "temporal-reasoning",
+  "question": "Which three events happened in the order from first to last: the day I helped my friend prepare the nursery, the day I helped my cousin pick out stuff for her baby shower, and the day I ordered a customized phone case for my friend's birthday?",
+  "ground_truth": "First, I helped my friend prepare the nursery, then I helped my cousin pick out stuff for her baby shower, and lastly, I ordered a customized phone case for my friend's birthday.",
+  "generated_answer": "1. Helped a friend prepare the nursery — February 5, 2023  \n2. Helped their cousin pick out items for a baby shower — February 10, 2023  \n3. Ordered a customized phone case for their friend’s birthday — February 20, 2023",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-02-20T13:12:00.000 Mon User ordered a customized phone case for their friend's birthday on February 20, 2023, and the friend really loves it.",
+    "2023-02-10T21:05:00.000 Fri User previously helped their cousin choose items for a baby shower and bought diapers, wipes, and a baby monitor at Target.",
+    "2023-02-05T18:29:00.000 Sun User helped a friend prepare a nursery by spending an entire Sunday afternoon shopping for baby supplies and decorations at Buy Buy Baby.",
+    "2023-02-05T05:22:00.000 Sun User attended their annual family picnic in June and had a great time.",
+    "2023-02-07T05:33:03.000 Tue User recently celebrated an anniversary with their partner, Rachel.",
+    "2023-02-10T21:05:02.000 Fri User decided to choose a more universally useful baby item instead of a carrier or sling.",
+    "2023-02-05T16:56:00.000 Sun User bought tickets to see John Mayer in concert on May 10th.",
+    "2023-02-09T09:21:02.000 Thu User is considering having their grandmother's antique vase appraised; they received the vase from their grandmother three weeks ago.",
+    "2023-02-05T05:22:04.000 Sun User again recalled that their annual family picnic in June was enjoyable.",
+    "2023-02-20T19:10:00.000 Mon User ordered bell peppers, carrots, broccoli, ground chicken breast, and a few eggs through Instacart.",
+    "2023-02-10T21:05:03.000 Fri User is deciding how to present the gift basket and whether to include a card with a personal message or a simple congratulations.",
+    "2023-02-05T18:29:00.000 Sun Someone in the user's social circle is expecting a new baby, and the user is considering buying a gift.",
+    "2023-02-05T16:56:04.000 Sun User attended a music festival featuring The Killers on April 17th and 18th.",
+    "2023-02-07T13:07:00.000 Tue Before the Cancun vacation, user took a solo trip to Portland, Oregon, from May 28 to May 31, to attend a friend's wedding.",
+    "2023-02-05T05:22:02.000 Sun User had a similar salad at their family picnic in June, and it was a big hit.",
+    "2023-02-10T21:05:00.000 Fri User is considering buying a baby gift for a coworker's new baby.",
+    "2023-02-07T05:33:02.000 Tue User and their boss discussed the user's career goals and objectives for the next quarter during a celebratory lunch.",
+    "2023-02-09T09:21:05.000 Thu User is looking forward to having the vase appraised and learning more about its history and significance.",
+    "2023-02-09T02:48:02.000 Thu User arrived in Tokyo about six months ago as of February 9, 2023.",
+    "2023-02-16T10:55:00.000 Thu User is planning a team-building event for their company."
+  ],
+  "answer_session_ids": [
+    "answer_3e9fce53_1",
+    "answer_3e9fce53_2",
+    "answer_3e9fce53_3"
+  ],
+  "time_build_s": 1723.056645154953,
+  "time_retrieve_s": 0.17579030990600586,
+  "time_answer_s": 5.804863929748535,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

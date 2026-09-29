@@ -1,0 +1,39 @@
+{
+  "question_id": "b320f3f8",
+  "question_type": "single-session-user",
+  "question": "What type of action figure did I buy from a thrift store?",
+  "ground_truth": "a blue Snaggletooth",
+  "generated_answer": "You bought a rare blue Snaggletooth action figure.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-29T13:48:00.000 Mon User recently acquired a rare blue Snaggletooth action figure from a thrift store a few weeks ago.",
+    "2023-05-29T13:48:00.000 Mon User has a vintage watch collection.",
+    "2023-05-29T13:48:01.000 Mon User is seeking a reputable seller of vintage camera equipment.",
+    "2023-05-29T13:48:00.000 Mon User owns a 1960s Omega Seamaster and wants to display it in a showcase.",
+    "2023-05-29T13:48:05.000 Mon User has a collectible sneaker collection.",
+    "2023-05-29T13:48:01.000 Mon User is looking for a rare camera to add to their collection.",
+    "2023-05-23T17:02:00.000 Tue User provided a prompt example depicting an ancient deer with gigantic pi antlers walking through an ancient forest with tropical birds and nests on its sharp antlers, using a focused fantasy-photography style with Cinestill 800T 35mm film, vibrant color, and a Canon EF 35mm f/1.4 II USM at ISO 800.",
+    "2023-05-29T13:48:05.000 Mon User was looking for limited-edition Nike Air Jordan sneakers in the 'Black Toe' design.",
+    "2023-05-23T17:02:00.000 Tue User provided a prompt example depicting a full-body photo of a 21-year-old girl in winter clothing surrounded by Christmas lights, with colored hair, a pin-up-girl appearance, a curvaceous figure, detailed symmetrical photorealistic eyes, and photorealistic styling.",
+    "2023-05-23T17:02:00.000 Tue User provided a prompt example depicting a Viking warrior with battle arms, Viking tattoos, long hair, sweat, and dirt on his face, hugging a puppy outside in a large field with smoke and fire in the background, styled as high-detail historical photography.",
+    "2023-05-23T17:02:00.000 Tue User provided a prompt example involving thistlepunk samurai fashion, a spiky flower empress in Kyoto, an anthropomorphic sea-urchin punk Harajuku geisha in photography style associated with Alejandra Giraud, a Gustav Klimt painting, a spiky thistle in a magical dream with cinematic lighting, and a golden shrine or castle empress.",
+    "2023-05-23T17:02:00.000 Tue User provided a prompt example depicting a stunning Aphrodite muse amid a crowd as a minimalist vector painting and beauty key visual using three colors and editorial illustration styling, as well as a stunning high-rise building in a photographic style associated with Andreas Gursky and Jun Kaneko.",
+    "2023-05-29T13:48:01.000 Mon User likes the idea of a glass-fronted wooden case for displaying collectibles.",
+    "2023-05-29T13:48:05.000 Mon User found a pair of Nike Air Jordan 'Black Toe' sneakers in their size from a reputable seller.",
+    "2023-05-23T17:02:00.000 Tue User provided a prompt example depicting a 1944 World War II scene on a runway in which a young fighter aviator kisses his girlfriend goodbye, conveying a strong, worried mood before flight, with sunshine, dark clouds, and a dark sky; the requested style includes 8K HD high-quality portrait photography, no shadows, low contrast, low sharpness, cinema-lens colors, professional color grading, light effects, and f/1.8 depth of field.",
+    "2023-05-23T17:02:00.000 Tue User provided a prompt example depicting a smiling girl in a red coat and hat walking in front of a giant panda in a bamboo forest, with rich colors and detailed art inspired by Shinkai and Studio Ghibli, in HD smooth style.",
+    "2023-05-23T18:32:05.000 Tue User is considering buying a mountain bike with a dropper post.",
+    "2023-05-29T13:48:03.000 Mon User is looking for a rare Pokémon trading card, specifically the Pikachu Illustrator card.",
+    "2023-05-27T17:07:04.000 Sat Minimalist wall art, framed photos, a small vase, or a decorative bowl were suggested as additional room decorations.",
+    "2023-05-23T17:02:00.000 Tue User provided a large collection of visual and photographic prompt concepts, including primordial darkness, the Greek god Erebus, galaxies, solar systems, Western cowboys, desert scenes, anime, portraits, snow goddesses, hourglasses, time travel, snake dragons, Spartan armor, SpaceX-style mechsuits, Halo's Master Chief, golden tortoise beetles, vector landscapes, and an abandoned Japanese child."
+  ],
+  "answer_session_ids": [
+    "answer_5cc9b056"
+  ],
+  "time_build_s": 1649.6132724285126,
+  "time_retrieve_s": 0.1910393238067627,
+  "time_answer_s": 1.628739356994629,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

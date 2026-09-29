@@ -1,0 +1,39 @@
+{
+  "question_id": "d52b4f67",
+  "question_type": "single-session-user",
+  "question": "Where did I attend my cousin's wedding?",
+  "ground_truth": "The Grand Ballroom",
+  "generated_answer": "You attended your cousin’s wedding at the Grand Ballroom.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-28T19:17:02.000 Sun User attended their cousin's wedding at the Grand Ballroom the previous weekend.",
+    "2023-05-28T19:17:02.000 Sun User thought their mother looked stunning at the cousin's wedding.",
+    "2023-05-28T19:17:05.000 Sun User and Emily attended a wedding expo together a few weeks ago and enjoyed trying different products and talking to vendors.",
+    "2023-05-28T19:17:01.000 Sun User plans to spend approximately $100 on their mother's birthday gift.",
+    "2023-05-29T17:49:00.000 Mon User attended a Billie Eilish concert in Philadelphia.",
+    "2023-05-28T19:17:00.000 Sun User's mother's birthday is on the 15th of the following month, and the user is looking for a unique gift for her.",
+    "2023-05-23T21:10:04.000 Tue User decided to give the mini-garden ceramic sculpture to their sister as a birthday gift.",
+    "2023-05-29T17:49:00.000 Mon User has attended many great concerts recently.",
+    "2023-05-23T21:10:03.000 Tue User was considering giving their mini-garden ceramic sculpture to their sister as a birthday gift or keeping it for themselves.",
+    "2023-05-29T17:49:01.000 Mon User had a great time at a jazz night at a local bar on May 29, 2023.",
+    "2023-05-22T16:19:00.000 Mon User recently met a tourist named Anna who was attending a work-related sustainable energy conference.",
+    "2023-05-21T07:48:00.000 Sun User requested the next 100 most well-known festivals, excluding festivals mentioned previously.",
+    "2023-05-26T14:18:02.000 Fri User and their colleagues had a great time participating in the Walk for Hunger event.",
+    "2023-05-26T14:18:05.000 Fri User is considering partnering with influencers and ambassadors to promote the event and share their own experiences.",
+    "2023-05-29T17:49:03.000 Mon User plans to search for jazz festivals and events in their area.",
+    "2023-05-28T22:32:05.000 Sun User plans to check out meetups and events related to their interests.",
+    "2023-05-28T22:32:04.000 Sun User has been meeting up with an old friend at a bookstore.",
+    "2023-05-29T17:49:03.000 Mon User is excited to attend outdoor jazz concerts during the summer.",
+    "2023-05-21T13:40:04.000 Sun User is planning to display photos from previous charity events at the auction or raffle, including photos from the breast cancer awareness walk held on October 17th.",
+    "2023-05-23T21:10:04.000 Tue User sees giving the sculpture to their sister as a way to share their creativity with her."
+  ],
+  "answer_session_ids": [
+    "answer_0df6aa4b"
+  ],
+  "time_build_s": 2189.01487660408,
+  "time_retrieve_s": 0.20000147819519043,
+  "time_answer_s": 1.5783464908599854,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

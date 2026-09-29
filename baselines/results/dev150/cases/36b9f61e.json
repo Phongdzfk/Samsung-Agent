@@ -1,0 +1,41 @@
+{
+  "question_id": "36b9f61e",
+  "question_type": "multi-session",
+  "question": "What is the total amount I spent on luxury items in the past few months?",
+  "ground_truth": "$2,500",
+  "generated_answer": "You spent **$2,500** on luxury items in the past few months:\n\n- Gucci handbag: **$1,200**\n- Luxury evening gown: **$800**\n- High-end Italian leather boots: **$500**",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-25T00:39:01.000 Thu User splurges on luxury items every few months, usually when feeling stressed or celebratory.",
+    "2023-05-28T16:24:01.000 Sun User has noticed that they tend to alternate between luxury and budget-friendly purchases.",
+    "2023-05-25T00:39:01.000 Thu User does not set a budget before making luxury purchases and recognizes this as a bad habit.",
+    "2023-05-24T20:23:01.000 Wed User tends to splurge on luxury items when feeling stressed or celebratory.",
+    "2023-05-25T00:39:03.000 Thu User sometimes justifies luxury purchases by viewing them as investment pieces.",
+    "2023-05-25T00:39:00.000 Thu User also tries to balance luxury purchases with more budget-friendly options.",
+    "2023-05-28T16:24:01.000 Sun User also recently made a luxury purchase consisting of a pair of leather boots from a high-end Italian designer for $500.",
+    "2023-05-28T16:24:00.000 Sun User wants help tracking their expenses and categorizing purchases as luxury or budget-friendly.",
+    "2023-05-25T00:39:00.000 Thu User sometimes splurges on luxury items, including a Gucci designer handbag that cost $1,200.",
+    "2023-05-25T00:39:03.000 Thu User tends to splurge on high-end accessories such as handbags and shoes, as well as occasional luxury clothing items such as evening gowns.",
+    "2023-05-24T20:23:01.000 Wed User recently bought a luxury evening gown for a wedding for $800.",
+    "2023-05-25T00:39:04.000 Thu User likes the idea of setting a 'treat yourself' budget so they can buy desired luxury items without feeling as guilty.",
+    "2023-05-25T00:39:03.000 Thu User recognizes that their luxury purchases are often emotional responses to a particular occasion or mood.",
+    "2023-05-24T20:23:00.000 Wed User is trying to better understand their spending habits and create a personal budget.",
+    "2023-05-24T20:23:01.000 Wed User felt the $800 luxury evening gown purchase was necessary to make a good impression.",
+    "2023-05-24T20:23:01.000 Wed User plans to try using a spreadsheet to track their expenses.",
+    "2023-05-25T00:39:05.000 Thu User wants to know whether unused money from their 'treat yourself' budget can roll over to the following month or must be spent by the end of the current month.",
+    "2023-05-25T00:39:05.000 Thu User is considering using a formula to establish their 'treat yourself' budget.",
+    "2023-05-25T00:39:02.000 Thu User is interested in identifying which fashion items they tend to splurge on besides Gucci handbags.",
+    "2023-05-24T20:23:03.000 Wed User has been trying to cut back on unnecessary expenses."
+  ],
+  "answer_session_ids": [
+    "answer_ef74281f_2",
+    "answer_ef74281f_1",
+    "answer_ef74281f_3"
+  ],
+  "time_build_s": 1714.6960532665253,
+  "time_retrieve_s": 0.18002080917358398,
+  "time_answer_s": 2.5969464778900146,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

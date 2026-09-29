@@ -1,0 +1,40 @@
+{
+  "question_id": "0ddfec37",
+  "question_type": "knowledge-update",
+  "question": "How many autographed baseballs have I added to my collection in the first three months of collection?",
+  "ground_truth": "15",
+  "generated_answer": "You added **15 autographed baseballs** during the first three months of collecting.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-12-30T02:28:00.000 Sat User added 20 autographed baseballs to their collection over the past few months.",
+    "2023-07-11T14:38:00.000 Tue User has 15 autographed baseballs in their collection.",
+    "2023-07-11T14:38:00.000 Tue User started collecting autographed baseballs three months ago.",
+    "2023-12-30T02:28:04.000 Sat User is considering selling their autographed baseballs to make room for new additions to their collection.",
+    "2023-12-30T02:28:04.000 Sat User is looking for resources to determine the value of their autographed baseballs and potentially sell them.",
+    "2023-12-30T02:28:00.000 Sat User organized their sports memorabilia collection after returning from the trip.",
+    "2023-07-11T14:38:00.000 Tue User acquired a signed Mike Trout baseball the previous week.",
+    "2023-12-30T02:28:00.000 Sat User is looking for information about upcoming sports memorabilia auctions in their city, especially notable auctions happening within the next few weeks.",
+    "2023-07-11T14:38:00.000 Tue User is interested in Mike Trout's current batting average and home-run total for the season.",
+    "2023-07-11T14:38:03.000 Tue User is interested in notable stamp shows or exhibitions taking place in the next few months.",
+    "2023-12-30T02:28:01.000 Sat User is considering selling their vinyl records to create more space in their collection.",
+    "2023-07-11T14:38:02.000 Tue User is considering expanding their vinyl record collection to include more international pressings.",
+    "2023-07-11T14:38:04.000 Tue User is considering selling vintage cameras to make room for new additions to their collection.",
+    "2024-01-01T13:58:03.000 Mon User ordered pizza and wings for the previous playoffs gathering.",
+    "2023-07-03T03:21:00.000 Mon User has many female cousins and counted 8 male cousins during the last family reunion.",
+    "2024-01-05T20:41:01.000 Fri User has attended several book events recently.",
+    "2024-01-05T20:41:02.000 Fri User has been attending many book events lately.",
+    "2023-07-11T14:38:02.000 Tue User is interested in finding rare vinyl records from Japan.",
+    "2023-07-11T14:38:03.000 Tue User is considering attending a stamp show next quarter.",
+    "2023-06-25T22:19:00.000 Sun User has three cucumber plants that are producing a large quantity of cucumbers."
+  ],
+  "answer_session_ids": [
+    "answer_a22b654d_1",
+    "answer_a22b654d_2"
+  ],
+  "time_build_s": 3398.5684151649475,
+  "time_retrieve_s": 0.17264294624328613,
+  "time_answer_s": 3.1160411834716797,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

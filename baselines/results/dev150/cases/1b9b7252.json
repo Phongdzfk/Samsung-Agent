@@ -1,0 +1,39 @@
+{
+  "question_id": "1b9b7252",
+  "question_type": "single-session-assistant",
+  "question": "I wanted to follow up on our previous conversation about mindfulness techniques. You mentioned some great resources for guided imagery exercises, can you remind me of the website that had free exercises like 'The Mountain Meditation' and 'The Body Scan Meditation'?",
+  "ground_truth": "Mindful.org.",
+  "generated_answer": "The website was likely **UCLA Mindful** (the UCLA Mindful Awareness Research Center): **https://www.uclahealth.org/programs/marc/free-guided-meditations**\n\nIt offers free guided practices, including **“The Mountain Meditation”** and **“The Body Scan Meditation.”**",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-25T16:50:01.000 Thu User is interested in guided imagery exercises and resources.",
+    "2023-05-25T16:50:02.000 Thu User plans to explore mindfulness resources.",
+    "2023-05-25T16:50:02.000 Thu User is seeking tips for incorporating mindfulness into their daily routine.",
+    "2023-05-25T16:50:00.000 Thu User is seeking effective mindfulness techniques for people who cannot participate in strenuous physical activities.",
+    "2023-05-25T16:50:03.000 Thu User is interested in incorporating mindfulness into daily activities such as showering and washing dishes.",
+    "2023-05-25T08:37:04.000 Thu User is seeking recommendations for other forms of exercise or physical activities they might enjoy.",
+    "2023-05-25T16:50:03.000 Thu User is seeking specific tips for being more mindful during routine household activities.",
+    "2023-05-24T02:24:05.000 Wed User plans to follow a gentle-flow yoga class or use an app to guide their practice.",
+    "2023-05-22T11:36:03.000 Mon User intends to check out the recommended hiking-trail resources.",
+    "2023-05-27T08:53:02.000 Sat User is seeking resources to improve English pronunciation and conversational skills.",
+    "2023-05-25T08:37:05.000 Thu User is seeking tips for getting the most out of a yoga class as a beginner.",
+    "2023-05-28T17:19:06.000 Sun User wants recommendations for places where they can take traditional dance lessons or workshops in Botswana.",
+    "2023-05-24T02:24:04.000 Wed User is considering doing yoga to stretch and feel energized for the day.",
+    "2023-05-24T12:57:01.000 Wed User wants an extensive list of highly practical actions that can be applied immediately from the previously mentioned perfectionism resources.",
+    "2023-05-27T08:53:01.000 Sat User is looking for English-learning resources geared toward beginners.",
+    "2023-05-22T11:36:02.000 Mon User wants recommendations for good hiking trails in their area.",
+    "2023-05-28T21:22:00.000 Sun User is looking for resources to improve their data visualization skills.",
+    "2023-05-25T08:37:05.000 Thu User is a beginner at yoga.",
+    "2023-05-24T02:24:04.000 Wed User is seeking feedback on whether yoga would be a good morning exercise.",
+    "2023-05-21T17:50:03.000 Sun User has heard positive things about TrainingPeaks and is interested in finding a marathon coach experienced with runners at a similar pace."
+  ],
+  "answer_session_ids": [
+    "answer_ultrachat_115151"
+  ],
+  "time_build_s": 3450.915050983429,
+  "time_retrieve_s": 0.36300134658813477,
+  "time_answer_s": 5.439428806304932,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

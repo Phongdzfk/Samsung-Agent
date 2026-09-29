@@ -1,0 +1,39 @@
+{
+  "question_id": "37d43f65",
+  "question_type": "single-session-user",
+  "question": "How much RAM did I upgrade my laptop to?",
+  "ground_truth": "16GB",
+  "generated_answer": "You upgraded your laptop’s RAM to **16 GB**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-28T17:03:00.000 Sun User recently upgraded their laptop's RAM, resulting in a significant performance improvement.",
+    "2023-05-28T17:03:01.000 Sun Before upgrading the laptop's RAM, the user typically got approximately 6–7 hours of battery life.",
+    "2023-05-28T17:03:01.000 Sun After upgrading the laptop's RAM to 16 GB, the user's battery life decreased to approximately 4–5 hours.",
+    "2023-05-28T17:03:01.000 Sun The user has not made any other recent hardware or software changes besides the RAM upgrade.",
+    "2023-05-28T17:03:01.000 Sun User's laptop is a Dell Inspiron 15 5000 series model from 2018.",
+    "2023-05-28T17:03:05.000 Sun User recently upgraded their desktop computer's monitor to a 24-inch 4K LG monitor.",
+    "2023-05-28T17:03:04.000 Sun User is considering upgrading their desktop computer's graphics card.",
+    "2023-05-28T17:03:02.000 Sun User plans to try calibrating the laptop battery to see whether it improves battery life.",
+    "2023-05-28T17:03:01.000 Sun User uses the Dell Inspiron as their primary work laptop.",
+    "2023-05-25T04:49:05.000 Thu User has been trying to be more mindful of their phone's storage capacity.",
+    "2023-05-25T15:51:03.000 Thu User is considering getting a power bank with a capacity of around 20,000 mAh.",
+    "2023-05-28T17:03:04.000 Sun The NVIDIA GeForce RTX 3070 is somewhat beyond the user's budget because it costs approximately $500.",
+    "2023-05-28T17:03:00.000 Sun User is experiencing issues with their laptop's battery life and wants help troubleshooting the problem.",
+    "2023-05-28T17:03:03.000 Sun User purchased the 1 TB Western Digital portable external hard drive from Best Buy for approximately $50.",
+    "2023-05-28T17:03:05.000 Sun User considers the 24-inch 4K LG monitor a major improvement over their previous 1080p monitor.",
+    "2023-05-25T04:49:05.000 Thu User has freed up a few gigabytes of phone storage so far.",
+    "2023-05-28T17:03:05.000 Sun User wants tips for getting the most out of their new monitor.",
+    "2023-05-25T04:49:04.000 Thu User has many old photos and videos taking up space on their phone.",
+    "2023-05-28T17:03:04.000 Sun User wants recommendations for more affordable graphics card options.",
+    "2023-05-26T09:50:00.000 Fri The corrective actions included addressing 8 mentions on YouTube, 7 mentions on currently available Shopify products, and 5 mentions on the company's website and blog."
+  ],
+  "answer_session_ids": [
+    "answer_55161935"
+  ],
+  "time_build_s": 2231.9351308345795,
+  "time_retrieve_s": 0.07897663116455078,
+  "time_answer_s": 2.3602705001831055,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

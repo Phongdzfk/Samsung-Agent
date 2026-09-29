@@ -1,0 +1,40 @@
+{
+  "question_id": "9ea5eabc",
+  "question_type": "knowledge-update",
+  "question": "Where did I go on my most recent family trip?",
+  "ground_truth": "Paris",
+  "generated_answer": "You went to **Paris, France** on your most recent family trip.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T10:03:03.000 Sat User's previous Japan trip was a family trip.",
+    "2023-05-28T04:55:04.000 Sun User recently took a family trip to Paris.",
+    "2023-05-26T23:01:03.000 Fri User plans to try solo excursions on their next family trip.",
+    "2023-05-26T23:01:03.000 Fri User is considering taking a few extra days after a family trip to explore independently.",
+    "2023-05-28T04:55:00.000 Sun User is planning a family-friendly trip to Europe and is seeking itinerary-planning tips.",
+    "2023-05-28T04:55:04.000 Sun User wants help comparing and contrasting traveling with family versus traveling solo.",
+    "2023-05-28T04:55:01.000 Sun User is considering visiting Paris and traveled there with their family last month.",
+    "2023-05-28T04:55:01.000 Sun User had an amazing experience in Paris, and their children loved the trip.",
+    "2023-05-26T23:01:00.000 Fri User is planning their next trip and is undecided between traveling solo and traveling with family.",
+    "2023-05-27T10:03:03.000 Sat Before the previous Japan trip, user spent 10 days island-hopping in Hawaii.",
+    "2023-05-28T16:48:02.000 Sun User attended Sunday mass on March 12th, but initially needed help remembering where.",
+    "2023-05-26T23:01:01.000 Fri User recently took a family trip to Hawaii, had a great time snorkeling together, and felt somewhat constrained by the trip's schedule.",
+    "2023-05-28T04:55:03.000 Sun User wants to try experiences in Tokyo that differ from their recent family trip to Paris.",
+    "2023-05-28T03:05:01.000 Sun User and their partner rode a river route the previous weekend, enjoyed it, and visited several breweries along the way.",
+    "2023-05-26T20:45:01.000 Fri User wants recommendations for activities or attractions in Santa Monica suitable for a solo traveler or a couple.",
+    "2023-05-26T23:01:04.000 Fri User is interested in popular food-tour destinations and cuisines or regions that are popular among travelers.",
+    "2023-05-27T21:03:00.000 Sat User is already thinking about their next travel destination.",
+    "2023-05-26T23:01:02.000 Fri Snorkeling together was a highlight of the user's Hawaii trip.",
+    "2023-05-21T05:39:01.000 Sun User took a solo camping trip to Yosemite approximately six weeks before May 21, 2023.",
+    "2023-05-28T04:56:00.000 Sun User is planning a four-day trip to New York City."
+  ],
+  "answer_session_ids": [
+    "answer_02e66dec_1",
+    "answer_02e66dec_2"
+  ],
+  "time_build_s": 3667.333153486252,
+  "time_retrieve_s": 0.22921490669250488,
+  "time_answer_s": 3.4748218059539795,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

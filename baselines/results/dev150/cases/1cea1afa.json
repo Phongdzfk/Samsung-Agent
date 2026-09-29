@@ -1,0 +1,40 @@
+{
+  "question_id": "1cea1afa",
+  "question_type": "knowledge-update",
+  "question": "How many Instagram followers do I currently have?",
+  "ground_truth": "600",
+  "generated_answer": "You currently have **600 Instagram followers**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-28T22:57:00.000 Sun User has reached 600 Instagram followers, which they consider a nice milestone.",
+    "2023-05-27T07:39:00.000 Sat User reached 500 Instagram followers the previous week and wants to maintain that momentum.",
+    "2023-05-28T22:57:05.000 Sun User's planned Q&A announcement invited followers to ask about their writing process, freelancing, or other topics using Instagram's Question Sticker.",
+    "2023-05-27T07:39:04.000 Sat User plans to post an Instagram Story poll asking followers what they would like to see more of in the user's content.",
+    "2023-05-27T07:39:03.000 Sat User is considering using Instagram's Poll feature to ask followers whether they want more writing tips or more behind-the-scenes content.",
+    "2023-05-28T22:57:01.000 Sun User is considering hosting a Q&A session and is deciding between using Instagram Stories' Question Sticker feature or creating a post asking followers to submit questions in the comments.",
+    "2023-05-27T07:39:00.000 Sat User has been trying to increase their social media presence, especially on Instagram.",
+    "2023-05-27T07:39:03.000 Sat User plans to ask followers about their content preferences.",
+    "2023-05-28T22:57:00.000 Sun User is trying to increase their social media presence and wants ideas for more engaging promotional content on Instagram.",
+    "2023-05-27T07:39:05.000 Sat User plans to create a follow-up Instagram Story featuring a graphic or screenshot of the poll results.",
+    "2023-05-28T22:57:05.000 Sun User planned to post an Instagram Story update reminding followers about a Q&A session scheduled for the following day.",
+    "2023-05-27T07:39:02.000 Sat User plans to start posting snippets of their manuscript on Instagram Stories.",
+    "2023-05-27T07:39:01.000 Sat User wants to know effective ways to encourage followers to share user-generated content.",
+    "2023-05-27T07:39:04.000 Sat User plans to ask followers to share their thoughts and opinions in the comments section.",
+    "2023-05-27T07:39:01.000 Sat User is considering using Instagram Stories to share their writing process, including snippets of their manuscript and research.",
+    "2023-05-27T07:39:05.000 Sat User plans to thank followers for participating and providing feedback.",
+    "2023-05-28T22:57:02.000 Sun User plans to try Instagram Stories' Question Sticker feature first for their Q&A session because it seems like a quick and easy way to get started.",
+    "2023-05-28T16:17:04.000 Sun User requested another tweet table for movies 1 through 5 using newly added persona data.",
+    "2023-05-27T07:39:01.000 Sat User's followers enjoy seeing photos of the user's cat, Luna.",
+    "2023-05-27T07:39:04.000 Sat User plans to share the poll results in a follow-up post or Story to keep followers engaged."
+  ],
+  "answer_session_ids": [
+    "answer_79c395a9_1",
+    "answer_79c395a9_2"
+  ],
+  "time_build_s": 3399.1079485416412,
+  "time_retrieve_s": 0.25981831550598145,
+  "time_answer_s": 2.141556739807129,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

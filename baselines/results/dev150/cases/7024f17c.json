@@ -1,0 +1,41 @@
+{
+  "question_id": "7024f17c",
+  "question_type": "multi-session",
+  "question": "How many hours of jogging and yoga did I do last week?",
+  "ground_truth": "0.5 hours",
+  "generated_answer": "Based on the memories, you did **0 hours of jogging and 0 hours of yoga last week**. The only recorded jog was **30 minutes on Saturday, May 20**, which was the week before.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-22T23:10:00.000 Mon User used to practice yoga three times a week for two hours per session but has been slacking off during the current month and is trying to resume the practice.",
+    "2023-05-22T23:10:03.000 Mon User plans to schedule yoga practice for Monday, Wednesday, and Friday mornings at 7:00 AM.",
+    "2023-05-23T18:03:00.000 Tue User may restart yoga by doing one or two sessions per week.",
+    "2023-05-23T18:03:00.000 Tue User hopes to get back into yoga this week.",
+    "2023-05-20T18:15:00.000 Sat User went for a 30-minute jog around their neighborhood on Saturday.",
+    "2023-05-23T18:03:02.000 Tue User plans to set realistic yoga goals and find a yoga buddy to stay motivated.",
+    "2023-05-22T23:10:01.000 Mon User is looking for beginner-friendly yoga classes or routines to help them return to yoga.",
+    "2023-05-22T23:10:05.000 Mon User plans to keep their yoga space clean and organized.",
+    "2023-05-22T23:10:05.000 Mon User plans to invest in a good-quality yoga mat.",
+    "2023-05-23T18:03:03.000 Tue User plans to focus on their breathing and listen to their body during yoga class.",
+    "2023-05-23T18:03:01.000 Tue User is getting back into yoga practice and plans to try several methods to find a suitable yoga studio.",
+    "2023-05-22T23:10:04.000 Mon User wants advice on creating a conducive yoga space at home.",
+    "2023-05-22T23:10:03.000 Mon User is considering setting reminders for their yoga practice.",
+    "2023-05-23T18:03:00.000 Tue User is a beginner interested in trying yoga and is looking for yoga studios or classes in their area.",
+    "2023-05-22T23:10:02.000 Mon User wants to make their yoga practice consistent and turn it into a habit.",
+    "2023-05-22T23:10:04.000 Mon User plans to set reminders on their phone and calendar so they do not forget their yoga practice.",
+    "2023-05-23T18:03:04.000 Tue User plans to wear comfortable clothing and bring a water bottle and towel to yoga class.",
+    "2023-05-20T18:15:04.000 Sat User is considering incorporating strength training into their exercise routine.",
+    "2023-05-22T23:10:01.000 Mon User plans to try Todoist for task management and Down Dog for yoga.",
+    "2023-05-22T23:10:02.000 Mon User is considering starting the \"Foundations of Yoga\" series on Down Dog."
+  ],
+  "answer_session_ids": [
+    "answer_a21f3697_1",
+    "answer_a21f3697_2",
+    "answer_a21f3697_3"
+  ],
+  "time_build_s": 1707.3914694786072,
+  "time_retrieve_s": 0.24536657333374023,
+  "time_answer_s": 4.456931829452515,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

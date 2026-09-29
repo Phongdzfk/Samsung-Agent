@@ -1,0 +1,39 @@
+{
+  "question_id": "577d4d32",
+  "question_type": "single-session-user",
+  "question": "What time do I stop checking work emails and messages?",
+  "ground_truth": "7 pm",
+  "generated_answer": "You stop checking work emails and messages by **7:00 p.m.**",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-29T04:01:02.000 Mon Stopping work emails and messages by 7 p.m. has helped the user relax and avoid thinking about work during personal time.",
+    "2023-05-29T04:01:02.000 Mon User stops reading work emails and messages by 7 p.m. to separate work life from personal life.",
+    "2023-05-22T14:08:01.000 Mon User plans to limit their screen time and take breaks from their phone throughout the day.",
+    "2023-05-22T14:08:02.000 Mon User may start taking walks in the morning instead of scrolling through their phone in bed.",
+    "2023-05-28T02:19:02.000 Sun User is seeking tips for waking up feeling more refreshed and alert in the morning.",
+    "2023-05-28T02:19:04.000 Sun User plans to set reminders and notifications to help maintain their sleep schedule and wake-up routine.",
+    "2023-05-28T02:19:02.000 Sun User sometimes sleeps in late the day after staying up late.",
+    "2023-05-28T02:19:04.000 Sun User plans to use a habit-tracking app and keep a sleep diary to track their progress.",
+    "2023-05-28T02:19:02.000 Sun User believes they need to establish a consistent sleep schedule.",
+    "2023-05-28T02:19:02.000 Sun User sometimes stays up late watching TV or scrolling through their phone.",
+    "2023-05-29T04:01:03.000 Mon User reads as part of their evening routine.",
+    "2023-05-28T02:19:02.000 Sun User plans to set regular bedtime and wake-up times.",
+    "2023-05-29T04:01:03.000 Mon User practices meditation before bed.",
+    "2023-05-27T08:27:03.000 Sat User sent 12 messages to a particular fitness influencer on July 15, asking about her workout routine.",
+    "2023-05-28T02:19:01.000 Sun User plans to evaluate sleep-tracking apps to determine which works best for them.",
+    "2023-05-28T02:19:01.000 Sun User is seeking recommendations for adjusting their sleep schedule to get better rest.",
+    "2023-05-29T04:01:04.000 Mon User finds body scan meditation helpful for relaxing their muscles and calming their mind before bed.",
+    "2023-05-29T04:01:02.000 Mon User is trying to establish a better evening routine.",
+    "2023-05-27T23:15:05.000 Sat User plans to manage the layover carefully and leave buffer time for unexpected delays.",
+    "2023-05-29T04:01:02.000 Mon User is seeking relaxing evening activities to incorporate into their routine."
+  ],
+  "answer_session_ids": [
+    "answer_0dd4d99a"
+  ],
+  "time_build_s": 1782.6575183868408,
+  "time_retrieve_s": 0.13236784934997559,
+  "time_answer_s": 1.6760828495025635,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

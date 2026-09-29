@@ -1,0 +1,40 @@
+{
+  "question_id": "cc6d1ec1",
+  "question_type": "temporal-reasoning",
+  "question": "How long had I been bird watching when I attended the bird watching workshop?",
+  "ground_truth": "Two months",
+  "generated_answer": "You had been bird watching for about two months when you attended the workshop.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-21T08:56:00.000 Sun User has been bird-watching for about three months and finds it fascinating.",
+    "2023-05-21T20:08:00.000 Sun User attended a bird-watching workshop at a local Audubon Society about a month ago and learned about attracting birds to their yard.",
+    "2023-05-21T20:08:05.000 Sun User is looking forward to the birder's meetup and learning more about local bird species.",
+    "2023-05-21T08:56:05.000 Sun User has seen 35 bird species so far.",
+    "2023-05-21T20:08:04.000 Sun User is considering attending a birder's meetup next weekend.",
+    "2023-05-21T20:08:05.000 Sun User expects the guided walk to be a good opportunity to see new bird species.",
+    "2023-05-21T08:56:05.000 Sun User keeps a life list of birds they have seen.",
+    "2023-05-21T20:08:05.000 Sun User has been trying to get out more often to spot birds.",
+    "2023-05-21T20:08:03.000 Sun User wants to learn more about bird calls.",
+    "2023-05-21T20:08:03.000 Sun User has been listening to bird-call recordings on their phone to help identify birds by ear.",
+    "2023-05-21T08:56:03.000 Sun User is trying to learn more about bird calls.",
+    "2023-05-21T20:08:03.000 Sun User is looking for tips to improve their ability to identify birds by their calls.",
+    "2023-05-21T08:56:03.000 Sun User listens to bird-call recordings on their phone to help identify birds by ear.",
+    "2023-05-21T08:56:04.000 Sun User has been trying to recognize bird calls in their backyard, but finds it challenging.",
+    "2023-05-21T20:08:02.000 Sun User is looking for a beginner-friendly bird field guide.",
+    "2023-05-21T20:08:02.000 Sun User is considering getting a field guide to learn more about different bird species and their habits.",
+    "2023-05-21T20:08:00.000 Sun User is considering getting a bird feeder for their backyard.",
+    "2023-05-21T20:08:01.000 Sun User is considering getting a birdbath to use with their feeder.",
+    "2023-05-21T08:56:05.000 Sun User is curious about which birds are particularly difficult to spot in their area.",
+    "2023-05-21T08:56:00.000 Sun User is looking to set up a bird feeder in their backyard."
+  ],
+  "answer_session_ids": [
+    "answer_be73098b_2",
+    "answer_be73098b_1"
+  ],
+  "time_build_s": 2180.9074018001556,
+  "time_retrieve_s": 0.05409383773803711,
+  "time_answer_s": 2.1657471656799316,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

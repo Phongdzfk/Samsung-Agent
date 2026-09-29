@@ -1,0 +1,40 @@
+{
+  "question_id": "c4ea545c",
+  "question_type": "knowledge-update",
+  "question": "Do I go to the gym more frequently than I did previously?",
+  "ground_truth": "Yes",
+  "generated_answer": "Yes. Previously, you went to the gym three times a week—Tuesdays, Thursdays, and Saturdays. By August 15, you had increased this to four times a week, so you’re going more frequently now.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-08-15T20:17:00.000 Tue User has been consistent with their gym routine, exercising four times a week.",
+    "2023-06-01T09:48:02.000 Thu User goes to the gym on Tuesdays, Thursdays, and Saturdays.",
+    "2023-06-01T09:48:01.000 Thu User needs to fit workouts into their schedule.",
+    "2023-08-28T01:06:04.000 Mon User wants advice on staying motivated to practice meditation regularly.",
+    "2023-08-15T20:17:05.000 Tue User currently uses a habit-tracker app to monitor daily and weekly tasks, meditation, and exercise.",
+    "2023-09-01T09:50:04.000 Fri User likes the idea of using the phrase \"with every step\" as a refrain to create a sense of rhythmic momentum.",
+    "2023-08-24T00:09:01.000 Thu User wants a hypertrophy-focused workout routine based on their body.",
+    "2023-08-15T20:17:00.000 Tue User plans to reward themself with a post-workout smoothie on Saturday.",
+    "2023-09-01T09:50:05.000 Fri User is considering the lyric, \"With every step, I feel the weight of my trials, but with every step, I find a way to rise above; look back on the miles I've traveled, see how far I've come.\"",
+    "2023-09-01T09:50:05.000 Fri User is considering using the idea of looking back to contrast with the \"with every step\" refrain.",
+    "2023-08-15T20:17:05.000 Tue User finds the habit-tracker app helpful for staying consistent and on track.",
+    "2023-09-01T09:50:03.000 Fri User is considering the lyric, \"I've been walking this road for miles, with every step, I feel the weight of my trials,\" as a starting point.",
+    "2023-08-24T03:29:01.000 Thu User has been performing 25% water changes every two weeks and is considering increasing their frequency to once a week.",
+    "2023-09-01T09:50:04.000 Fri User is considering the lyric, \"With every step, I feel the weight of my trials, but with every step, I find a way to rise above.\"",
+    "2023-08-28T01:06:05.000 Mon User plans to set realistic meditation goals and make meditation part of their daily routine.",
+    "2023-08-28T01:06:05.000 Mon User believes consistency is important for seeing results from meditation.",
+    "2023-08-28T01:06:06.000 Mon User has tried meditation a few times before but often becomes distracted and does not finish the session.",
+    "2023-08-28T01:06:04.000 Mon User plans to try the meditation apps and determine which one works best for them.",
+    "2023-08-28T01:06:06.000 Mon User wants strategies for staying focused during meditation practice.",
+    "2023-06-01T09:48:04.000 Thu User prefers healthier meal options with lean proteins and vegetables."
+  ],
+  "answer_session_ids": [
+    "answer_d3bf812b_1",
+    "answer_d3bf812b_2"
+  ],
+  "time_build_s": 3270.2523307800293,
+  "time_retrieve_s": 0.28809690475463867,
+  "time_answer_s": 2.4246134757995605,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

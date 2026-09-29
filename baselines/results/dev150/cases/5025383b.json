@@ -1,0 +1,40 @@
+{
+  "question_id": "5025383b",
+  "question_type": "multi-session",
+  "question": "What are the two hobbies that led me to join online communities?",
+  "ground_truth": "photography and cooking",
+  "generated_answer": "The two hobbies are **cooking and photography**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-30T18:40:03.000 Tue User has already joined a few online communities related to cooking.",
+    "2023-05-30T18:40:01.000 Tue User has already joined a few online communities related to cooking.",
+    "2023-05-30T18:40:01.000 Tue User wants online communities or forums where they can engage with food enthusiasts and learn from their experiences.",
+    "2023-05-29T18:43:02.000 Mon User has joined online photography communities that have been helpful for learning new techniques and receiving feedback on their work.",
+    "2023-05-30T18:40:03.000 Tue User wants to make sure they are engaging appropriately in cooking-related online communities.",
+    "2023-05-30T18:40:03.000 Tue User has been trying to engage more with online communities related to cooking.",
+    "2023-05-29T18:43:05.000 Mon User has learned a great deal from online photography communities.",
+    "2023-05-29T18:43:04.000 Mon User wants to share photography, personal experiences, tutorials, and tips on the blog.",
+    "2023-05-24T16:52:00.000 Wed User is particularly interested in television shows that explore themes of identity and self-discovery.",
+    "2023-05-29T18:43:04.000 Mon User has learned a lot from online photography communities and wants to give back to the community.",
+    "2023-05-30T18:40:04.000 Tue User enjoys learning from experienced chefs and home cooks who share their knowledge and expertise through video content.",
+    "2023-05-30T18:40:01.000 Tue User's participation in cooking communities has led them to engage in discussions about recipe techniques and share thoughts on food-related posts.",
+    "2023-05-30T18:40:03.000 Tue User's participation in cooking communities has led them to engage in discussions about recipe techniques and share thoughts on food-related posts.",
+    "2023-05-24T16:52:01.000 Wed User is interested in watching The OA and Sense8 to explore themes of identity and self-discovery.",
+    "2023-05-30T18:40:02.000 Tue User wants to contribute positively to food and cooking conversations without coming across as a know-it-all or a newbie.",
+    "2023-05-30T18:40:02.000 Tue User wants advice on how to approach online discussions about food and cooking.",
+    "2023-05-29T14:04:04.000 Mon User enjoys their online art class.",
+    "2023-05-29T18:43:05.000 Mon User wants to give back to the photography community by sharing their knowledge and experiences.",
+    "2023-05-24T16:31:00.000 Wed User is developing or exploring a DaySculpting personal-development program focused on neuroscience, success, habits, mindset, energy, and behavior change.",
+    "2023-05-29T18:43:03.000 Mon User is considering starting a photography blog to share their photographs and experiences with others."
+  ],
+  "answer_session_ids": [
+    "answer_688f9a3f_1",
+    "answer_688f9a3f_2"
+  ],
+  "time_build_s": 2019.1379308700562,
+  "time_retrieve_s": 0.13814401626586914,
+  "time_answer_s": 5.697551488876343,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

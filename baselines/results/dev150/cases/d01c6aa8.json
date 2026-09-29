@@ -1,0 +1,40 @@
+{
+  "question_id": "d01c6aa8",
+  "question_type": "temporal-reasoning",
+  "question": "How old was I when I moved to the United States?",
+  "ground_truth": "27",
+  "generated_answer": "You were approximately **27 years old** when you moved to the United States.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T22:00:00.000 Sat User has been living in the United States for the past five years on a work visa sponsored by their company.",
+    "2023-05-27T00:34:05.000 Sat User is uncertain whether they want to remain permanently in the United States but wants to work there for a few years.",
+    "2023-05-27T12:19:01.000 Sat User's paternal grandparents live in Orlando, Florida.",
+    "2023-05-27T00:34:00.000 Sat User is a 32-year-old man seeking to understand the green card application process, particularly the EB-2 visa category for professionals with advanced degrees.",
+    "2023-05-27T12:19:05.000 Sat User is from the same area where their maternal grandparents live.",
+    "2023-05-27T03:59:00.000 Sat User visited New York City from March 15th to March 22nd during the previous trip.",
+    "2023-05-27T12:19:01.000 Sat User is 20 years old.",
+    "2023-05-27T22:00:00.000 Sat User is planning to apply for a green card.",
+    "2023-05-27T03:59:00.000 Sat User stayed at a hostel in Brooklyn during a previous trip.",
+    "2023-05-27T07:37:03.000 Sat User had not heard \"Take On Me\" in years before rediscovering it.",
+    "2023-05-27T07:37:04.000 Sat 1980s synth-pop brings back fond memories of the user's childhood.",
+    "2023-05-27T00:17:00.000 Sat User is planning to move to the UK for a study-abroad program.",
+    "2023-05-27T06:52:00.000 Sat User lives on a farm in Indiana.",
+    "2023-05-27T06:52:00.000 Sat User loved skateboarding in elementary school.",
+    "2023-05-27T21:53:00.000 Sat Witnessing social isolation motivated the user to build YAPA Kids.",
+    "2023-05-27T00:34:05.000 Sat User wants guidance on how to answer interview questions about their long-term plans in the United States.",
+    "2023-05-27T06:52:00.000 Sat Barbara got married about 10 years ago.",
+    "2023-05-27T08:43:01.000 Sat User attended their niece's high school graduation ceremony last weekend.",
+    "2023-05-27T22:00:03.000 Sat User is originally from India.",
+    "2023-05-27T12:38:01.000 Sat Another one of the user's cousins is due to give birth in mid-May."
+  ],
+  "answer_session_ids": [
+    "answer_991d55e5_1",
+    "answer_991d55e5_2"
+  ],
+  "time_build_s": 2200.6297612190247,
+  "time_retrieve_s": 0.13937830924987793,
+  "time_answer_s": 3.211392641067505,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

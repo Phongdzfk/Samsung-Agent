@@ -1,0 +1,40 @@
+{
+  "question_id": "7405e8b1",
+  "question_type": "multi-session",
+  "question": "Did I receive a higher percentage discount on my first order from HelloFresh, compared to my first UberEats order?",
+  "ground_truth": "Yes.",
+  "generated_answer": "Yes. Your first HelloFresh order had a **40% discount**, compared with **20% off** your first Uber Eats order—so the HelloFresh discount was **20 percentage points higher**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-23T07:40:00.000 Tue User recently tried HelloFresh and received a 40% discount on their first order.",
+    "2023-05-23T07:40:00.000 Tue User considered the HelloFresh first-order discount to be a great deal.",
+    "2023-05-28T06:20:00.000 Sun User received 20% off their Uber Eats order last week and was pleased with the discount.",
+    "2023-05-23T07:40:02.000 Tue User is interested in promotions or discounts for Grubhub and Uber Eats.",
+    "2023-05-23T07:40:02.000 Tue User has been using coupons for online food delivery services such as Grubhub and Uber Eats.",
+    "2023-05-28T06:20:00.000 Sun User is planning to order food from Uber Eats again this week.",
+    "2023-05-28T06:20:04.000 Sun User is interested in whether discounts can apply to a specific dish or usually apply to the entire order.",
+    "2023-05-28T06:20:05.000 Sun User is interested in whether delivery fees can be discounted or whether discounts usually apply only to food items.",
+    "2023-05-23T07:40:03.000 Tue User has been using Uber Eats especially frequently.",
+    "2023-05-30T12:05:02.000 Tue User recently bought a floor-length gown from ASOS for $80.",
+    "2023-05-30T12:05:01.000 Tue User has new tops from Target that cost $10 each.",
+    "2023-05-23T07:40:05.000 Tue User plans to take a closer look at Sun Basket's low-carb meal plan.",
+    "2023-05-21T21:40:03.000 Sun User recently bought a storage cube from Amazon.",
+    "2023-05-23T07:40:05.000 Tue User is interested in Sun Basket's pricing and delivery options.",
+    "2023-05-23T15:57:01.000 Tue Good highway fuel economy is a major priority for the user.",
+    "2023-05-29T10:16:02.000 Mon User wants to know about weekly sales or promotions on household essentials at Walgreens.",
+    "2023-05-22T02:01:03.000 Mon User signed up for the ridesharing program last week.",
+    "2023-05-28T06:20:02.000 Sun User is considering ordering again from a new Italian restaurant downtown.",
+    "2023-05-23T07:40:00.000 Tue User is interested in recommendations or promotions for popular meal kit brands such as Blue Apron and Plated.",
+    "2023-05-28T06:20:04.000 Sun User is planning to check reviews and the menu description before ordering."
+  ],
+  "answer_session_ids": [
+    "answer_80323f3f_1",
+    "answer_80323f3f_2"
+  ],
+  "time_build_s": 1809.8960597515106,
+  "time_retrieve_s": 0.14184331893920898,
+  "time_answer_s": 4.230782747268677,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

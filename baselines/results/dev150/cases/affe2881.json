@@ -1,0 +1,40 @@
+{
+  "question_id": "affe2881",
+  "question_type": "knowledge-update",
+  "question": "How many different species of birds have I seen in my local park?",
+  "ground_truth": "32",
+  "generated_answer": "You have seen **32 different bird species** in your local park.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-24T01:31:02.000 Wed User has been tracking the bird species they have seen in their local park and has spotted 27 different species so far.",
+    "2023-05-29T17:18:01.000 Mon User has observed 32 bird species in total.",
+    "2023-05-24T01:31:02.000 Wed User is impressed by the diversity of bird life in a small area.",
+    "2023-05-24T01:31:03.000 Wed User wants to explore more birding locations in their area and is looking for nearby nature reserves or parks known for bird diversity.",
+    "2023-04-29T15:06:03.000 Sat User wants to know whether the guided tours focus on specific bird species or habitats.",
+    "2023-04-29T15:06:02.000 Sat User wants recommendations for specific birding trails and areas of the sanctuary known for particular bird species.",
+    "2023-05-24T01:31:04.000 Wed User is planning a trip to a nearby lake next weekend and hopes to spot waterbirds.",
+    "2023-04-29T15:06:00.000 Sat User is planning a birding trip to a nearby sanctuary and wants information about the best time of year to visit and which species they might see.",
+    "2023-04-29T15:06:05.000 Sat User wants to know whether tour participants must stay on designated trails and avoid approaching birds too closely.",
+    "2023-04-29T15:06:01.000 Sat User wants to know whether late April or early May is a good time to see a variety of bird species at the sanctuary.",
+    "2023-05-24T01:31:03.000 Wed User finds the eBird app helpful for organizing their records and seeing which birds other birders have spotted in the area.",
+    "2023-05-24T01:31:05.000 Wed User heard that the lake is a good place to spot Ospreys and Bald Eagles.",
+    "2023-04-29T15:06:01.000 Sat User is interested in a bird sanctuary located in southern Wisconsin.",
+    "2023-05-24T01:31:01.000 Wed User has been trying to improve their bird identification skills and wants tips for identifying warblers and sparrows, which they find difficult to distinguish.",
+    "2023-05-24T01:31:05.000 Wed User would like to get a closer look at Ospreys and Bald Eagles and wants tips for increasing their chances of spotting them.",
+    "2023-05-29T17:18:05.000 Mon User hopes to spot warblers or sparrows with their binoculars.",
+    "2023-05-29T17:18:00.000 Mon User wants to bring bird-friendly food to attract birds they have been seeing lately.",
+    "2023-05-24T01:31:00.000 Wed User has been trying to improve their bird photography skills and wants tips for taking better close-up photographs of birds, especially skittish birds such as Northern Flickers.",
+    "2023-04-29T15:06:02.000 Sat User is interested in guided tours and birding events held during the spring migration period.",
+    "2023-04-29T15:06:00.000 Sat User has been using their spotting scope to observe the nesting habits of a pair of American Robins in their backyard."
+  ],
+  "answer_session_ids": [
+    "answer_90de9b4d_1",
+    "answer_90de9b4d_2"
+  ],
+  "time_build_s": 3459.201798439026,
+  "time_retrieve_s": 0.3287062644958496,
+  "time_answer_s": 2.7283618450164795,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

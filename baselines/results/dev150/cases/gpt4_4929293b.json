@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_4929293b",
+  "question_type": "temporal-reasoning",
+  "question": "What was the the life event of one of my relatives that I participated in a week ago?",
+  "ground_truth": "my cousin's wedding",
+  "generated_answer": "You participated in your cousin’s wedding as a bridesmaid, even walking down the aisle.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-06-15T19:26:05.000 Thu User attended their cousin Rachel's baby shower in February.",
+    "2023-04-15T05:17:04.000 Sat User remembers holding their niece in their arms at the hospital shortly after she was born.",
+    "2023-04-15T05:17:02.000 Sat User caught up with their niece during the graduation party.",
+    "2023-06-15T10:02:04.000 Thu User loved that their cousin had a special song played during the ceremony that was meaningful to the cousin and the cousin's partner.",
+    "2023-06-15T10:02:03.000 Thu Being a bridesmaid at their cousin's wedding prompted the user to think about creating a similar atmosphere at their own wedding.",
+    "2023-04-15T05:17:01.000 Sat User's niece had her kindergarten graduation ceremony the previous week.",
+    "2023-06-15T19:26:00.000 Thu The user's cousin Rachel's baby shower took place in February.",
+    "2023-06-15T10:02:03.000 Thu User recently walked down the aisle as a bridesmaid at their cousin's wedding.",
+    "2023-04-15T05:17:01.000 Sat User's sister hosted a small reception after the niece's kindergarten graduation, serving cupcakes and juice boxes for the children.",
+    "2023-06-15T19:26:00.000 Thu The user recently returned from attending their cousin Rachel's baby shower.",
+    "2023-05-17T19:58:00.000 Wed User went to the mall with friends last Saturday.",
+    "2023-04-10T13:05:04.000 Mon User hosted Thanksgiving dinner at their home this year, which encouraged them to take better care of their skin.",
+    "2023-04-16T13:44:00.000 Sun User missed nephew Jack's eighth-grade graduation ceremony the previous month.",
+    "2023-04-15T05:17:04.000 Sat User's niece's kindergarten graduation ceremony was on June 10th.",
+    "2023-04-15T05:17:05.000 Sat User is looking forward to spending time with family and friends at the BBQ that weekend.",
+    "2023-06-15T10:02:05.000 Thu User and their partner are still brainstorming ceremony details.",
+    "2023-06-15T10:02:04.000 Thu Being a bridesmaid at their cousin's wedding made the user realize that small details can make a big difference.",
+    "2023-06-15T10:02:05.000 Thu User and their partner are discussing having a unity candle or sand ceremony to symbolize their commitment to each other.",
+    "2023-04-16T07:58:01.000 Sun User is particularly interested in visiting historical landmarks.",
+    "2023-04-10T10:20:00.000 Mon User is interested in the role Kassel's Enlightenment history played in the city's cultural response to the COVID-19 pandemic."
+  ],
+  "answer_session_ids": [
+    "answer_add9b013_2",
+    "answer_add9b013_1"
+  ],
+  "time_build_s": 1884.278370141983,
+  "time_retrieve_s": 0.38091516494750977,
+  "time_answer_s": 3.6945712566375732,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

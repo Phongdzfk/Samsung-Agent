@@ -1,0 +1,40 @@
+{
+  "question_id": "a346bb18",
+  "question_type": "multi-session",
+  "question": "How many minutes did I exceed my target time by in the marathon?",
+  "ground_truth": "12",
+  "generated_answer": "You exceeded your target marathon time by **12 minutes** (4 hours 22 minutes minus 4 hours 10 minutes).",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-20T14:05:00.000 Sat User's target marathon time is 4 hours and 10 minutes.",
+    "2023-05-25T13:48:00.000 Thu User completed their first full marathon in 4 hours and 22 minutes.",
+    "2023-05-30T04:57:02.000 Tue User's personal-best half-marathon finish time is 2 hours and 15 minutes.",
+    "2023-05-30T04:57:02.000 Tue User achieved their personal-best half-marathon time on February 10th.",
+    "2023-05-30T04:57:02.000 Tue User wants information about the average half-marathon finish time and tips for improving their time.",
+    "2023-05-20T14:05:01.000 Sat User completed 30 miles during the \"Pedal for a Purpose\" cycling event in 2 hours and 15 minutes.",
+    "2023-05-25T13:48:03.000 Thu User completed 30 miles in 2 hours and 15 minutes during the Pedal for a Purpose charity cycling event.",
+    "2023-05-20T14:05:01.000 Sat User can dedicate 4 to 5 days per week to triathlon training.",
+    "2023-05-20T14:05:01.000 Sat User has approximately 12 weeks remaining until their triathlon.",
+    "2023-05-20T14:05:00.000 Sat User hopes to apply their marathon endurance training to triathlon preparation.",
+    "2023-05-30T04:57:02.000 Tue User is considering signing up for another half-marathon.",
+    "2023-05-25T13:48:01.000 Thu User prefers running routes around 6 to 8 miles long.",
+    "2023-05-20T14:05:02.000 Sat User wants to build swimming endurance to complete 750 meters without stopping.",
+    "2023-05-20T14:05:00.000 Sat User plans to start training for a triathlon in approximately two months.",
+    "2023-05-20T14:05:04.000 Sat User wants to understand interval training in the context of swimming.",
+    "2023-05-20T14:05:02.000 Sat User is preparing to complete the 750-meter swimming segment of their triathlon.",
+    "2023-05-30T04:57:01.000 Tue User has swimming lessons on Tuesdays and Thursdays, and each lesson lasts 45 minutes.",
+    "2023-05-30T04:57:01.000 Tue User wants to increase their cycling mileage.",
+    "2023-05-30T04:57:01.000 Tue User wants to include a mix of endurance and interval training in their cycling routine.",
+    "2023-05-20T14:05:03.000 Sat User wants guidance on whether to use a specific pace, heart-rate zone, or comfortable effort during the bike and run portions of brick workouts."
+  ],
+  "answer_session_ids": [
+    "answer_4934b2d7_2",
+    "answer_4934b2d7_1"
+  ],
+  "time_build_s": 1981.317641735077,
+  "time_retrieve_s": 0.04972481727600098,
+  "time_answer_s": 3.581921339035034,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

@@ -1,0 +1,41 @@
+{
+  "question_id": "d682f1a2",
+  "question_type": "multi-session",
+  "question": "How many different types of food delivery services have I used recently?",
+  "ground_truth": 3,
+  "generated_answer": "You’ve used **one identifiable type** recently: a **pre-made meal delivery service**, such as Fresh Fusion.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-22T01:26:00.000 Mon User has been relying heavily on food delivery services recently.",
+    "2023-05-30T10:38:00.000 Tue User found a food delivery service called Fresh Fusion that offers pre-made meals.",
+    "2023-05-30T10:38:00.000 Tue User has been relying on food delivery services because they have been busy.",
+    "2023-05-22T21:28:05.000 Mon User plans to add the recommended restaurants to their list.",
+    "2023-05-22T21:28:01.000 Mon User wants to compare the food quality of the restaurant options previously discussed in Valparaíso.",
+    "2023-05-27T21:06:05.000 Sat User is interested in learning more about meal planning and creating grocery lists based on planned meals.",
+    "2023-05-27T21:06:02.000 Sat User does not know what type of meal-preparation containers to use.",
+    "2023-05-27T21:06:02.000 Sat User wants recommendations for meal-preparation containers because they plan to start meal prepping for the week.",
+    "2023-05-30T10:38:02.000 Tue User has all the ingredients needed for the suggested meal at home.",
+    "2023-05-27T21:06:04.000 Sat User has many cookbooks and online recipes and wants to consolidate them for easier access.",
+    "2023-05-30T10:38:03.000 Tue User has been wanting to do more meal preparation on weekends.",
+    "2023-05-30T10:38:05.000 Tue User wants suggestions for unique breakfast-burrito fillings or toppings that add flavor and nutrition.",
+    "2023-05-22T01:26:00.000 Mon User is looking for healthy meal ideas suitable for busy weekdays.",
+    "2023-05-22T21:28:04.000 Mon User is planning to visit Valparaíso and try the restaurants previously discussed.",
+    "2023-05-26T06:40:05.000 Fri User is planning to bring several different types of cookies to the vegan potluck.",
+    "2023-05-30T10:38:00.000 Tue User is looking for healthy lunch recipe ideas.",
+    "2023-05-28T23:04:03.000 Sun User invested in a community-supported agriculture (CSA) program last month.",
+    "2023-05-21T14:10:00.000 Sun User has been cooking at home more frequently over the past three months and enjoys trying new recipes and techniques.",
+    "2023-05-24T14:27:00.000 Wed User is asking what resources they can give customers.",
+    "2023-05-22T21:28:05.000 Mon User wants to know whether any of the recommended restaurants have outdoor seating."
+  ],
+  "answer_session_ids": [
+    "answer_c008e5df_1",
+    "answer_c008e5df_2",
+    "answer_c008e5df_3"
+  ],
+  "time_build_s": 1551.4081649780273,
+  "time_retrieve_s": 0.14769220352172852,
+  "time_answer_s": 4.879012107849121,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

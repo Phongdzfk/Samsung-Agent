@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_8c8961ae",
+  "question_type": "temporal-reasoning",
+  "question": "Which trip did I take first, the one to Europe with family or the solo trip to Thailand?",
+  "ground_truth": "The solo trip to Thailand",
+  "generated_answer": "You took the solo trip to Thailand first. It was last year, while your family trip to Europe was last month.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-28T05:31:00.000 Sun User has traveled solo before, including a trip to Thailand last year.",
+    "2023-05-28T05:31:01.000 Sun User experienced popular tourist spots in Thailand during their previous solo trip.",
+    "2023-05-28T20:06:00.000 Sun User found traveling with their family in Europe to be different from traveling solo.",
+    "2023-05-28T05:31:00.000 Sun During the user's solo trip to Thailand last year, they had complete freedom to do whatever they wanted.",
+    "2023-05-28T05:31:02.000 Sun User met other travelers while staying in hostels in Thailand.",
+    "2023-05-28T20:06:00.000 Sun User went on a two-week trip to Europe last month with their parents and younger brother.",
+    "2023-05-28T20:06:01.000 Sun During their family trip to Europe, user had to compromise significantly on the itinerary.",
+    "2023-05-28T05:31:02.000 Sun User stayed in hostels during their solo trip to Thailand last year.",
+    "2023-05-28T05:31:00.000 Sun User is planning a solo trip to South America and is considering traveling independently or joining a group tour.",
+    "2023-05-28T20:06:04.000 Sun User's parents were more worn out by the end of their Europe trip but still had a great time.",
+    "2023-05-28T20:06:00.000 Sun User is deciding between traveling with a group tour and traveling independently.",
+    "2023-05-28T20:06:00.000 Sun User is considering planning a solo trip to South America and is researching possible itineraries.",
+    "2023-05-28T20:06:04.000 Sun User intends to keep the provided family-travel and Patagonia tips in mind while planning their trip.",
+    "2023-05-28T20:06:03.000 Sun User's parents became tired from the amount of walking and sightseeing during the Europe trip.",
+    "2023-05-28T05:31:05.000 Sun User is unsure whether visiting the Galapagos Islands is feasible as a solo traveler.",
+    "2023-05-28T23:56:03.000 Sun User is deciding between attending a multilingual event with people from around the world and an event specifically for Spanish-language learners.",
+    "2023-05-28T05:31:02.000 Sun User is looking for social opportunities in South America similar to those they experienced in Thailand.",
+    "2023-05-28T20:06:01.000 Sun User is looking forward to making their own decisions and changing plans as they go during solo travel.",
+    "2023-05-28T15:28:01.000 Sun User is planning to visit their wife's family in London.",
+    "2023-05-28T05:31:04.000 Sun User is unsure whether Patagonia would be a good fit for them as a solo traveler."
+  ],
+  "answer_session_ids": [
+    "answer_72d9aa58_1",
+    "answer_72d9aa58_2"
+  ],
+  "time_build_s": 2177.9781613349915,
+  "time_retrieve_s": 0.06963872909545898,
+  "time_answer_s": 2.0176191329956055,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

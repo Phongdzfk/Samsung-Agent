@@ -1,0 +1,42 @@
+{
+  "question_id": "b46e15ed",
+  "question_type": "temporal-reasoning",
+  "question": "How many months have passed since I participated in two charity events in a row, on consecutive days?",
+  "ground_truth": 2,
+  "generated_answer": "Two months have passed since the consecutive charity events on February 14 and 15, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-03-19T15:02:05.000 Sun User has been participating in many charity events lately, including multiple volunteering events.",
+    "2023-02-14T09:06:00.000 Tue User cycled continuously for four hours during the charity event.",
+    "2023-02-14T09:06:02.000 Tue User cycled nonstop for four hours during the charity event.",
+    "2023-03-19T15:02:03.000 Sun User has been participating in many charity events lately.",
+    "2023-03-19T15:02:00.000 Sun User participated in the Walk for Hunger charity event on March 19, 2023, with colleagues from work, walking five kilometers to raise money for a local food bank.",
+    "2023-03-19T15:02:05.000 Sun User sometimes feels overwhelmed when volunteering for multiple charity events.",
+    "2023-01-30T13:00:00.000 Mon User attended a charity gala organized by the Cancer Research Foundation at a hotel in downtown on January 30, 2023.",
+    "2023-02-14T09:06:02.000 Tue User recently participated in a charity cycling event to raise money for a local children's hospital.",
+    "2023-03-19T15:02:04.000 Sun User is preparing for their next charity walk.",
+    "2023-02-15T19:39:00.000 Wed User volunteered at the Books for Kids charity book drive at their local library on February 15, 2023, helping sort and pack over 500 books for underprivileged children in their neighborhood.",
+    "2023-02-08T02:39:00.000 Wed User described spending approximately two years learning how to walk through grief and loss and recognizing the importance of support and encouragement.",
+    "2023-02-15T08:39:00.000 Wed User recently participated in the 'Ride to Cure Cancer' charity bike ride.",
+    "2023-01-22T04:34:03.000 Sun User earned over 500 Target rewards points during the past month.",
+    "2023-02-05T15:52:03.000 Sun User's training plan contains nine weeks.",
+    "2023-02-14T09:06:00.000 Tue User was feeling somewhat tired after returning from a 24-hour bike ride charity event.",
+    "2023-02-05T15:52:00.000 Sun User has a marathon scheduled for April 17, 2023.",
+    "2023-02-08T02:39:00.000 Wed The outreach material was titled or centered on \"Hope Holidays\" and included an evening of support, discussion, and prayer.",
+    "2023-02-08T02:39:00.000 Wed User was preparing conversational, compassionate outreach-event material to support people experiencing grief during the holiday season.",
+    "2023-02-14T09:06:00.000 Tue The bike ride charity event raised money for a local children's hospital.",
+    "2023-02-05T15:52:01.000 Sun User stated that the training plan had been started in January and that the current date was February 15."
+  ],
+  "answer_session_ids": [
+    "answer_4bfcc250_4",
+    "answer_4bfcc250_3",
+    "answer_4bfcc250_2",
+    "answer_4bfcc250_1"
+  ],
+  "time_build_s": 1904.3800203800201,
+  "time_retrieve_s": 0.25391364097595215,
+  "time_answer_s": 4.979676961898804,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

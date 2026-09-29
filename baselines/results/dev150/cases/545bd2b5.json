@@ -1,0 +1,39 @@
+{
+  "question_id": "545bd2b5",
+  "question_type": "single-session-user",
+  "question": "How much screen time have I been averaging on Instagram per day?",
+  "ground_truth": "2 hours",
+  "generated_answer": "You’ve been averaging about **2 hours of Instagram screen time per day** over the past two weeks.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T04:20:02.000 Sat User has averaged about two hours of Instagram screen time per day over the past two weeks.",
+    "2023-05-27T04:20:02.000 Sat User is considering setting a daily Instagram time limit of 30 minutes as a starting point.",
+    "2023-05-27T04:20:01.000 Sat User is considering setting time limits for social-media apps such as Instagram.",
+    "2023-05-27T04:20:02.000 Sat User believes their current Instagram usage is excessive.",
+    "2023-05-23T11:45:01.000 Tue User plans to try tips for improving their Instagram presence and is already seeing engagement on recent posts.",
+    "2023-05-23T11:45:02.000 Tue User posts regularly on Instagram and engages with their audience.",
+    "2023-05-23T11:45:02.000 Tue User has been meaning to explore more Instagram features.",
+    "2023-05-23T11:45:00.000 Tue User's recent Instagram posts received 127 likes.",
+    "2023-05-23T11:45:01.000 Tue User wants to make full use of Instagram.",
+    "2023-05-23T11:45:00.000 Tue User posts regularly on Instagram and engages with their followers.",
+    "2023-05-23T11:45:02.000 Tue User views Instagram Live as a good way to engage with their audience through behind-the-scenes content.",
+    "2023-05-23T11:45:00.000 Tue User has not yet explored Instagram's IGTV or Reels features.",
+    "2023-05-23T11:45:00.000 Tue User wants tips for growing their Instagram audience and increasing engagement on their posts.",
+    "2023-05-23T11:45:01.000 Tue User has been receiving a lot of engagement on their recent Instagram posts.",
+    "2023-05-23T11:45:02.000 Tue User has been receiving a lot of engagement on their recent Instagram posts.",
+    "2023-05-23T11:45:00.000 Tue User is trying to increase their online presence, especially on Instagram.",
+    "2023-05-23T11:45:02.000 Tue User wants to grow their Instagram following further.",
+    "2023-05-23T11:45:01.000 Tue User plans to use Instagram Live to share behind-the-scenes content and sneak peeks.",
+    "2023-05-23T11:45:00.000 Tue User is considering using Instagram Live to share behind-the-scenes content and sneak peeks of upcoming posts.",
+    "2023-05-23T11:45:00.000 Tue User wants to try Instagram Live."
+  ],
+  "answer_session_ids": [
+    "answer_47ffab4c"
+  ],
+  "time_build_s": 1522.1476287841797,
+  "time_retrieve_s": 0.09576225280761719,
+  "time_answer_s": 1.5652167797088623,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

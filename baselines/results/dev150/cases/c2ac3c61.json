@@ -1,0 +1,40 @@
+{
+  "question_id": "c2ac3c61",
+  "question_type": "multi-session",
+  "question": "How many online courses have I completed in total?",
+  "ground_truth": 5,
+  "generated_answer": "You have completed **5 online courses in total**: **3 on Coursera** and **2 on edX**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-23T14:39:05.000 Tue User has completed three courses on Coursera.",
+    "2023-05-30T10:29:03.000 Tue User is familiar with the online learning format because they have completed two courses on edX.",
+    "2023-05-23T14:39:00.000 Tue User has already completed some courses on Coursera.",
+    "2023-05-30T10:29:00.000 Tue User has completed two courses on edX.",
+    "2023-05-30T10:29:00.000 Tue User is looking for additional online courses or platforms related to data science, natural language processing, and deep learning.",
+    "2023-05-30T10:29:00.000 Tue User finds the two completed edX courses helpful in their current role as a software engineer.",
+    "2023-05-23T14:39:02.000 Tue User wants information about the course's duration, difficulty level, and topics covered.",
+    "2023-05-30T09:06:05.000 Tue User is interested in online courses and workshops focused on creative writing, specifically poetry.",
+    "2023-05-23T14:39:04.000 Tue User wants to know the course prerequisites, required background knowledge, programming skills, and tools.",
+    "2023-05-22T00:32:00.000 Mon User is interested in TAM, SAM, and SOM in the context of online education.",
+    "2023-05-23T14:39:03.000 Tue User wants to know what tasks they would complete in the course and how their work would be evaluated.",
+    "2023-05-30T10:29:04.000 Tue User is looking forward to studying the specialization's course material.",
+    "2023-05-23T14:39:03.000 Tue User wants information about the course's assignments and final project.",
+    "2023-05-23T14:39:00.000 Tue User is seeking books and online courses to get started with natural language processing and deep learning.",
+    "2023-05-23T14:39:01.000 Tue User is seeking online courses or tutorials focused on deep learning for natural language processing.",
+    "2023-05-25T22:52:01.000 Thu User requested a comprehensive beginner's curriculum for learning digital product design, assuming no prior design or research experience and aiming to develop novice-to-intermediate knowledge and experience.",
+    "2023-05-25T22:52:01.000 Thu User wants the digital product design curriculum to cover all areas needed for a digital product designer to excel.",
+    "2023-05-25T22:52:02.000 Thu User requested an expansion of module 4 of the digital product design curriculum with practical exercises.",
+    "2023-05-30T10:29:03.000 Tue User feels confident that they can adapt to the specialization's course structure and assignments.",
+    "2023-05-23T13:58:00.000 Tue User is seeking online resources for practicing English grammar and vocabulary."
+  ],
+  "answer_session_ids": [
+    "answer_923c0221_1",
+    "answer_923c0221_2"
+  ],
+  "time_build_s": 2076.875810146332,
+  "time_retrieve_s": 0.2334742546081543,
+  "time_answer_s": 2.2943530082702637,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

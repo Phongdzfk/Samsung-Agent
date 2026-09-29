@@ -1,0 +1,40 @@
+{
+  "question_id": "078150f1",
+  "question_type": "multi-session",
+  "question": "How much more money did I raise than my initial goal in the charity cycling event?",
+  "ground_truth": "$50",
+  "generated_answer": "You raised **$50 more** than your initial goal.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-20T03:00:04.000 Sat User initially aimed to raise $200 in donations for a local children's hospital through the charity cycling event.",
+    "2023-05-28T14:28:00.000 Sun User raised $250 in donations through the charity cycling event.",
+    "2023-05-28T14:28:00.000 Sun User recently participated in a charity cycling event.",
+    "2023-05-20T03:00:04.000 Sat User recently participated in a charity cycling event.",
+    "2023-05-28T14:28:00.000 Sun User had a great experience participating in the charity cycling event.",
+    "2023-05-23T08:25:00.000 Tue User plans to start training for a 5K charity run today.",
+    "2023-05-23T08:25:02.000 Tue User is excited to begin training for the 5K charity run.",
+    "2023-05-23T08:25:00.000 Tue User wants help creating a beginner workout schedule for the 5K charity run.",
+    "2023-05-23T03:40:01.000 Tue User wants to keep the team-building event budget under $200, including equipment rental and refreshments.",
+    "2023-05-20T03:00:03.000 Sat User wants to track their cycling progress and stay motivated.",
+    "2023-05-23T08:25:02.000 Tue User views the charity run as a way to stay active and give back to the community.",
+    "2023-05-20T03:00:00.000 Sat User wants to advance their cycling training to the next level.",
+    "2023-05-29T18:09:04.000 Mon User received an email stating that spending $50 within the next two weeks would earn them a $10 reward.",
+    "2023-05-27T05:46:01.000 Sat User views the underestimation of the Olympic costs as a major mistake.",
+    "2023-05-27T05:46:03.000 Sat User believes the organizers of the Montreal Olympics could have managed costs and communication more effectively.",
+    "2023-05-27T05:46:01.000 Sat User is interested in why the Canadian government underestimated the cost of the 1976 Summer Olympics.",
+    "2023-05-27T05:46:02.000 Sat User is interested in whether the Montreal Olympics produced any positive outcomes despite the controversy.",
+    "2023-05-20T03:00:05.000 Sat User is excited to start training for a triathlon.",
+    "2023-05-20T03:00:05.000 Sat User believes they should begin triathlon training now and increase it gradually.",
+    "2023-05-28T14:28:04.000 Sun Rachel participated in a 5K run with the user the previous Saturday."
+  ],
+  "answer_session_ids": [
+    "answer_254d8b09_1",
+    "answer_254d8b09_2"
+  ],
+  "time_build_s": 2142.522045135498,
+  "time_retrieve_s": 0.0579526424407959,
+  "time_answer_s": 6.5685646533966064,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

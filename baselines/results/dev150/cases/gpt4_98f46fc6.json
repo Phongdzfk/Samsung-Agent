@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_98f46fc6",
+  "question_type": "temporal-reasoning",
+  "question": "Which event did I participate in first, the charity gala or the charity bake sale?",
+  "ground_truth": "I participated in the charity bake sale first.",
+  "generated_answer": "You participated in the **charity bake sale first**, on March 15, 2023. The charity gala was on March 28, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-03-15T00:21:00.000 Wed User helped organize a charity bake sale at their office on March 15, 2023.",
+    "2023-03-28T16:44:04.000 Tue User plans to mention the charity gala on their fundraising page.",
+    "2023-03-28T16:44:03.000 Tue User is attending a charity gala tonight.",
+    "2023-03-28T16:44:03.000 Tue User is considering mentioning their charity gala attendance on their fundraising page to inspire others to donate.",
+    "2023-03-15T00:21:02.000 Wed User plans to bring savory snacks to balance the sweet treats at the charity bake sale.",
+    "2023-03-28T16:44:02.000 Tue User raised $250 in donations from friends and family during the previous charity event.",
+    "2023-03-15T00:21:02.000 Wed User wants a charity-focused social media post to promote the bake sale and encourage donations.",
+    "2023-02-19T22:11:03.000 Sun User thinks Screamfest may have been a special event that was not publicly advertised.",
+    "2023-03-15T00:21:04.000 Wed User participated in a charity walk for cancer research during the previous month.",
+    "2023-03-28T16:44:02.000 Tue The local food bank's organization previously hosted a 'Run for Hunger' event that the user participated in a few weeks ago.",
+    "2023-03-15T00:21:05.000 Wed User is interested in learning more about the charity walk for cancer research in which they participated the previous month.",
+    "2023-03-15T00:21:03.000 Wed User wants a template for a charity thank-you note or email to send to donors and supporters after the bake sale.",
+    "2023-02-19T22:11:05.000 Sun During that visit, user attended the Taste of Universal food festival instead of Halloween Horror Nights.",
+    "2023-03-28T16:44:02.000 Tue User hopes to exceed the previous $250 fundraising goal.",
+    "2023-02-19T22:11:03.000 Sun User says Screamfest was a Halloween-themed event at Magic Kingdom that ran from October 1 through November 1.",
+    "2023-03-15T00:21:04.000 Wed User wants suggestions for staying motivated to continue participating in charity events and giving back to the community.",
+    "2023-03-15T00:21:05.000 Wed User wants to know how the funds raised through the charity walk are used to support cancer research.",
+    "2023-02-19T22:11:05.000 Sun User wants to know whether the Taste of Universal food festival will be held again this year.",
+    "2023-02-19T22:11:05.000 Sun User enjoyed trying food from different countries at the Taste of Universal food festival.",
+    "2023-03-28T16:44:00.000 Tue User has been participating in many charity events recently and wants to stay motivated to maintain momentum."
+  ],
+  "answer_session_ids": [
+    "answer_5850de18_2",
+    "answer_5850de18_1"
+  ],
+  "time_build_s": 1985.7904379367828,
+  "time_retrieve_s": 0.08617949485778809,
+  "time_answer_s": 2.3878026008605957,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

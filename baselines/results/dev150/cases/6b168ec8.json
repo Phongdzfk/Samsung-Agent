@@ -1,0 +1,39 @@
+{
+  "question_id": "6b168ec8",
+  "question_type": "single-session-user",
+  "question": "How many bikes do I own?",
+  "ground_truth": "three",
+  "generated_answer": "You own **three bicycles**: a road bike, a mountain bike, and a commuter bike.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T07:08:02.000 Sat User uses their three bicycles for different types of rides.",
+    "2023-05-27T07:08:02.000 Sat User owns three bicycles: a road bike, a mountain bike, and a commuter bike.",
+    "2023-05-27T07:08:02.000 Sat User wants advice on keeping their three bicycles organized and properly maintained.",
+    "2023-05-27T07:08:00.000 Sat User wants advice on which type of bike is best for long road rides.",
+    "2023-05-27T07:08:03.000 Sat User wants recommendations for bike locks and GPS-tracking systems.",
+    "2023-05-27T07:08:04.000 Sat User wants recommendations for specific GPS-tracking bike locks that work well for their road bike, mountain bike, and commuter bike.",
+    "2023-05-27T07:08:04.000 Sat User is considering a bike lock with integrated GPS tracking so they can monitor their three bicycles when they are away from them.",
+    "2023-05-27T07:08:01.000 Sat User is considering upgrading their road bike's wheels to carbon-fiber wheels to make the bike lighter and faster.",
+    "2023-05-27T07:08:01.000 Sat User is considering taking their Trek Emonda on the long ride because they consider it suitable for long-distance road riding.",
+    "2023-05-27T07:08:00.000 Sat User is planning a long road ride this weekend and wants to prepare for it.",
+    "2023-05-27T07:08:02.000 Sat User has been researching carbon-fiber wheels and expects to purchase them within the next few months.",
+    "2023-05-27T07:08:05.000 Sat User decided to choose an Abus SmartX bike lock with GPS tracking.",
+    "2023-05-27T07:08:00.000 Sat User wants tips on properly cleaning and lubricating a bicycle chain.",
+    "2023-05-27T07:08:03.000 Sat User is considering getting a bike lock with a GPS tracker to keep their bikes safe when they are away from them.",
+    "2023-05-23T04:22:00.000 Tue The speaker and his wife have four children and 11 grandchildren.",
+    "2023-05-26T12:12:01.000 Fri User spent 10 days exploring Oahu, Maui, and Kauai in Hawaii.",
+    "2023-05-27T07:08:05.000 Sat User believes the Abus SmartX bike lock with GPS tracking offers the best balance of security and convenience for their needs.",
+    "2023-05-26T17:54:00.000 Fri The client wants help determining a model that equates the number of instructors with the number of instructional hours provided.",
+    "2023-05-23T04:22:00.000 Tue The speaker considers his family—his four children and 11 grandchildren—to be a great source of wealth.",
+    "2023-05-29T03:08:00.000 Mon User wants to learn more about the Fitbit Inspire series."
+  ],
+  "answer_session_ids": [
+    "answer_e623ae87"
+  ],
+  "time_build_s": 2315.5589501857758,
+  "time_retrieve_s": 0.23169541358947754,
+  "time_answer_s": 1.8014156818389893,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

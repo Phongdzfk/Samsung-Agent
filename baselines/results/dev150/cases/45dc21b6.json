@@ -1,0 +1,40 @@
+{
+  "question_id": "45dc21b6",
+  "question_type": "knowledge-update",
+  "question": "How many of Emma's recipes have I tried out?",
+  "ground_truth": "3",
+  "generated_answer": "You have tried **three of Emma’s recipes**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-30T06:32:00.000 Tue User has tried three of Emma's recipes and thinks they are all amazing.",
+    "2023-05-29T04:51:00.000 Mon User has been enjoying Emma's recipes on her channel and has already tried two of them.",
+    "2023-05-30T06:32:00.000 Tue User has been trying new recipes.",
+    "2023-05-29T04:51:00.000 Mon User is thinking about trying new recipes over the weekend.",
+    "2023-05-29T04:51:01.000 Mon User is planning to try Chocolate Chia Pudding.",
+    "2023-05-29T04:51:00.000 Mon User is interested in vegan dessert recipes.",
+    "2023-06-01T22:23:05.000 Thu User has finalized a nutritious soup-kitchen meal consisting of vegetable-packed minestrone soup, bread, and a fruit platter.",
+    "2023-05-29T07:44:05.000 Mon User is looking forward to trying a new BBQ sauce recipe.",
+    "2023-06-01T22:23:04.000 Thu User plans to prepare a Summer Mix fruit platter containing sliced peaches, nectarines, plums, and fresh berries.",
+    "2023-05-29T07:44:02.000 Mon User plans to start with the basic BBQ recipe that was provided.",
+    "2023-06-01T22:23:00.000 Thu User wants to provide nutritious meals at the soup kitchen.",
+    "2023-06-01T22:23:01.000 Thu User is particularly interested in making a large batch of vegetable-packed minestrone soup.",
+    "2023-05-29T18:02:05.000 Mon User wants recommendations for traditional Irish recipes and decorations for the dinner party.",
+    "2023-05-29T04:51:01.000 Mon User has already tried vegan cheesecake.",
+    "2023-05-29T07:44:03.000 Mon User is considering trying new BBQ sauces and is looking for beginner-friendly recommendations or recipes.",
+    "2023-05-17T14:35:00.000 Wed User is looking for a BBQ sauce recipe combining sweet and tangy flavors.",
+    "2023-05-17T14:35:04.000 Wed User had the baked bean and coleslaw mixture at Smokey's the week before their cousin's housewarming party.",
+    "2023-05-17T14:35:04.000 Wed User is considering making a side dish similar to the baked bean and coleslaw mixture they had at Smokey's BBQ restaurant.",
+    "2023-05-29T07:44:04.000 Mon User is considering making a BBQ sauce with a honey-and-brown-sugar flavor profile.",
+    "2023-05-29T07:44:03.000 Mon User intends to try the caramelization tips."
+  ],
+  "answer_session_ids": [
+    "answer_07664d43_1",
+    "answer_07664d43_2"
+  ],
+  "time_build_s": 3371.005377292633,
+  "time_retrieve_s": 0.435438871383667,
+  "time_answer_s": 2.282975912094116,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

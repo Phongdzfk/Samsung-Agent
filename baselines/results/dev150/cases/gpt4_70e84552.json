@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_70e84552",
+  "question_type": "temporal-reasoning",
+  "question": "Which task did I complete first, fixing the fence or trimming the goats' hooves?",
+  "ground_truth": "Fixing the fence",
+  "generated_answer": "You completed trimming the goats’ hooves first—about two weeks ago. You fixed the fence about three weeks ago, so actually, **fixing the fence came first**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-25T07:52:03.000 Thu User last trimmed the goats' hooves about two weeks ago and was proud of completing the job without making a mess.",
+    "2023-05-25T07:52:03.000 Thu User has become much better at trimming the goats' hooves through practice.",
+    "2023-05-25T14:25:00.000 Thu Fixing the broken fence has provided the user with significant relief because the goats are now safe and secure.",
+    "2023-05-25T07:52:00.000 Thu User has been keeping up with trimming their goats' hooves and last trimmed them about two weeks ago.",
+    "2023-05-25T07:52:03.000 Thu User has been trying to trim their goats' hooves more regularly.",
+    "2023-05-25T14:25:00.000 Thu The user's goats graze near the east-side fence.",
+    "2023-05-25T07:52:00.000 Thu User considered the goat-hoof trimming two weeks ago a success because it caused no mess.",
+    "2023-05-25T14:25:00.000 Thu User fixed a broken fence on the east side of their property three weeks ago.",
+    "2023-05-25T14:25:03.000 Thu User has a lot to consider regarding the farm open-house event and selecting a new cow breed.",
+    "2023-05-25T14:25:01.000 Thu User has been planning to get their goats vaccinated against parasites.",
+    "2023-05-25T14:25:02.000 Thu User has been researching cow breeds online and talking to other farmers in their area.",
+    "2023-05-25T07:52:03.000 Thu User has been researching dairy cows online and talking with other farmers in the area.",
+    "2023-05-25T14:25:01.000 Thu User got their goats vaccinated against parasites last Thursday.",
+    "2023-05-25T07:52:02.000 Thu User wants advice on choosing the right cow breed for dairy production.",
+    "2023-05-25T21:04:05.000 Thu User says their goat is well-behaved, enjoys trying new food and drinks, and is asking whether an exception could be made to allow the goat on a tour.",
+    "2023-05-25T21:04:04.000 Thu User is considering bringing their pet goat on a food-and-drink tour in Dublin and views the goat as a good travel companion.",
+    "2023-05-25T21:04:06.000 Thu User describes their goat as small and promises that it will not cause trouble while accompanying them on a tour.",
+    "2023-05-25T07:52:03.000 Thu User is considering getting either a Brown Swiss or a Jersey cow for dairy production.",
+    "2023-05-25T14:25:02.000 Thu User is considering getting a new cow, possibly a Brown Swiss or Jersey, to increase milk production.",
+    "2023-05-25T14:25:02.000 Thu User thinks they may be ready to invest in a new cow soon."
+  ],
+  "answer_session_ids": [
+    "answer_b3070ec4_2",
+    "answer_b3070ec4_1"
+  ],
+  "time_build_s": 2356.069719314575,
+  "time_retrieve_s": 0.1670844554901123,
+  "time_answer_s": 2.741560459136963,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}
