@@ -45,7 +45,7 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 
 // 2 ─ LightMem làm gì
 {
-  const s = base("LightMem lưu và truy xuất ký ức thế nào", "BASELINE LÀ GÌ",
+  const s = base("LightMem lưu và truy xuất ký ức thế nào", "CÁCH HOẠT ĐỘNG",
     "LightMem (ICLR 2026) nén hội thoại trước khi đưa vào LLM để tiết kiệm token. Cấu hình dùng: messages_use=user_only, top-k=20.");
   const steps = [["Nén trước", "LLMLingua-2 bỏ token ít thông tin"], ["Chia chủ đề", "Cắt hội thoại thành các topic"],
     ["Trích fact", "LLM tóm fact + metadata cho mỗi topic"], ["Lập chỉ mục", "Nhúng MiniLM, lưu Qdrant"], ["Truy xuất", "Top-20 ký ức → LLM trả lời"]];
@@ -59,7 +59,7 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
     s.addText(st[1], { x: x + 0.15, y: 2.58, w: w - 0.3, h: 0.65, fontFace: BF, fontSize: 11.5, color: C.mute, valign: "top", isTextBox: true, margin: 0 });
   });
   card(s, 0.5, 3.6, 4.4, 1.4, C.pale);
-  s.addText([{ text: "Điểm cần nhớ", options: { bold: true, breakLine: true, color: C.ink } },
+  s.addText([{ text: "Giới hạn quan trọng", options: { bold: true, breakLine: true, color: C.ink } },
     { text: "Chỉ lưu lượt của người dùng (user_only). Nội dung do trợ lý nói không vào bộ nhớ.", options: { color: C.text } }],
     { x: 0.7, y: 3.7, w: 4.0, h: 1.2, fontFace: BF, fontSize: 12.5, valign: "top", isTextBox: true, margin: 0 });
   card(s, 5.1, 3.6, 4.4, 1.4, C.pale);
@@ -105,7 +105,9 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 
 // 5 ─ Kết quả
 {
-  const s = base("Độ chính xác theo loại câu hỏi", "KẾT QUẢ",
+  const asstT = S.types.find((t) => t.type === "single-session-assistant");
+  const others = S.types.filter((t) => t.done && t !== asstT).map((t) => t.acc * 100);
+  const s = base(`Năm loại đạt ${Math.round(Math.min(...others))}–${Math.round(Math.max(...others))}%, riêng lượt trợ lý ${Math.round(asstT.acc * 100)}%`, "KẾT QUẢ",
     `Micro ${pct(S.micro)} trên ${done} câu, macro ${pct(S.macro)} trên 6 loại. Điểm đáng chú ý nhất: loại đơn phiên · trợ lý thấp hẳn, và nguyên nhân nằm ở cấu hình user_only của LightMem chứ không phải ngẫu nhiên.`);
   const ran = S.types.filter((t) => t.done);
   s.addChart(pres.charts.BAR, [{ name: "Accuracy", labels: ran.map((t) => `${VI[t.type]} (n=${t.done})`), values: ran.map((t) => +(t.acc * 100).toFixed(1)) }],
@@ -119,7 +121,7 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
   s.addText(pct(S.macro), { x: 6.3, y: 1.3, w: 3.2, h: 0.62, align: "center", fontFace: HF, fontSize: 32, bold: true, color: C.teal, isTextBox: true, margin: 0 });
   s.addText(`macro-average, 6/6 loại · micro ${pct(S.micro)}`, { x: 6.3, y: 1.9, w: 3.2, h: 0.3, align: "center", fontFace: BF, fontSize: 10.5, color: C.mute, isTextBox: true, margin: 0 });
 
-  const asst = S.types.find((t) => t.type === "single-session-assistant");
+  const asst = asstT;
   card(s, 6.3, 2.45, 3.2, 2.0, "FBEAE5");
   s.addText(pct(asst.acc), { x: 6.3, y: 2.55, w: 3.2, h: 0.6, align: "center", fontFace: HF, fontSize: 32, bold: true, color: C.red, isTextBox: true, margin: 0 });
   s.addText(`Đơn phiên · trợ lý (${asst.correct}/${asst.done})`, { x: 6.3, y: 3.15, w: 3.2, h: 0.3, align: "center", fontFace: BF, fontSize: 11, bold: true, color: C.ink, isTextBox: true, margin: 0 });
@@ -169,15 +171,15 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 
   const nAsstNoData = asstW.filter(noData).length;
   card(s, 3.6, 4.55, 5.9, 0.75, C.pale);
-  s.addText([{ text: "Bằng chứng cho kiểu 2: ", options: { bold: true, color: C.ink } },
-    { text: `${nAsstNoData}/6 câu sai loại lượt trợ lý, hệ trả lời thẳng là không tìm thấy thông tin trong bộ nhớ, đúng như dự đoán từ cấu hình user_only.`, options: { color: C.text } }],
+  s.addText([{ text: "Bằng chứng: ", options: { bold: true, color: C.ink } },
+    { text: `${nAsstNoData}/6 câu sai loại lượt trợ lý, hệ trả lời thẳng là không tìm thấy thông tin trong bộ nhớ, khớp với cấu hình user_only.`, options: { color: C.text } }],
     { x: 3.8, y: 4.6, w: 5.5, h: 0.65, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
 }
 
 // 7 ─ Chi phí
 {
   const b = S.build_min;
-  const s = base("Chi phí và thời gian", "VẬN HÀNH",
+  const s = base("Dựng bộ nhớ chiếm gần như toàn bộ thời gian", "VẬN HÀNH",
     "Thời gian dựng bộ nhớ chiếm gần như toàn bộ; truy xuất và trả lời rất nhanh. 9router chèn thêm khoảng 2.500 token system prompt vào mỗi lời gọi, nên số token đo qua router bị phình.");
   const stats = [[b ? b.median.toFixed(0) + " phút" : "—", "dựng bộ nhớ mỗi câu (trung vị)"], [S.retrieve_s ? S.retrieve_s.toFixed(2).replace(".", ",") + " s" : "—", "truy xuất"], [S.answer_s ? S.answer_s.toFixed(1).replace(".", ",") + " s" : "—", "sinh câu trả lời"]];
   stats.forEach((st, i) => {
@@ -197,7 +199,7 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 
 // 8 ─ Sự cố
 {
-  const s = base("Sự cố gặp phải và cách xử lý", "GHI LẠI ĐỂ KHỎI LẶP", "Các lỗi này đều nằm ở môi trường chạy, không phải ở thiết kế baseline.");
+  const s = base("Sự cố gặp phải và cách xử lý", "SỰ CỐ KỸ THUẬT", "Các lỗi này đều nằm ở môi trường chạy, không phải ở thiết kế baseline.");
   const hdr = (t) => ({ text: t, options: { bold: true, color: "FFFFFF", fill: { color: C.teal } } });
   const rows = [[hdr("Sự cố"), hdr("Nguyên nhân"), hdr("Cách xử lý")],
     ["Script gốc không chạy", "Dùng f-string kiểu Python 3.12, môi trường là 3.11", "Viết script bọc ngoài, không sửa mã gốc"],
@@ -212,8 +214,8 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 {
   const s = pres.addSlide();
   s.background = { color: C.ink };
-  s.addText("Tổng kết và bước tiếp", { x: 0.7, y: 0.5, w: 8.6, h: 0.7, fontFace: HF, fontSize: 32, bold: true, color: "FFFFFF", isTextBox: true, margin: 0 });
-  s.addText(partial ? `Tạm thời, mới ${done}/${total} câu dev` : `Đã chạy đủ ${total} câu dev`, { x: 0.7, y: 1.2, w: 8.6, h: 0.35, fontFace: BF, fontSize: 14, bold: true, color: C.amber, isTextBox: true, margin: 0 });
+  s.addText("Baseline chạy được, chưa đủ kết luận", { x: 0.7, y: 0.45, w: 8.6, h: 0.75, fontFace: HF, fontSize: 30, bold: true, color: "FFFFFF", isTextBox: true, margin: 0 });
+  s.addText(partial ? `Số liệu trên ${done}/${total} câu dev` : `Đã chạy đủ ${total} câu dev`, { x: 0.7, y: 1.2, w: 8.6, h: 0.35, fontFace: BF, fontSize: 14, bold: true, color: C.amber, isTextBox: true, margin: 0 });
   const asst = S.types.find((t) => t.type === "single-session-assistant");
   const left = [`Cài đặt xong LightMem, chạy đầu-cuối được trên LongMemEval-S với ${S.llm}.`,
     `Chia dev/test khớp bản gốc của nhóm (150/350).`,
