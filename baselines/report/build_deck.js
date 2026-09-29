@@ -4,6 +4,8 @@ const fs = require("fs");
 const path = require("path");
 
 const S = JSON.parse(fs.readFileSync(path.join(__dirname, "stats.json"), "utf-8"));
+// ket qua soi tay (khong sinh tu dong) — xem ghi chu trong chinh file do
+const MR = JSON.parse(fs.readFileSync(path.join(__dirname, "manual_review.json"), "utf-8"));
 const OUT = path.join(__dirname, "..", "bao-cao-lightmem-baseline.pptx");
 
 const C = { ink: "10243E", teal: "1F6F8B", mint: "5FB49C", amber: "F2A541", red: "C8553D",
@@ -176,6 +178,70 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
     { x: 3.8, y: 4.6, w: 5.5, h: 0.65, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
 }
 
+// 7 ─ Truy xuất có trúng bằng chứng không
+{
+  const R = S.retrieval, nw = R.wrong_with_evidence + R.wrong_without_evidence;
+  const s = base("Lỗi không nằm ở khâu tìm kiếm", "TÁCH NGUỒN LỖI",
+    `Truy xuất trúng phiên chứa bằng chứng ở ${R.hit}/${R.n} câu. Trong ${nw} câu sai, ${R.wrong_with_evidence} câu đã có bằng chứng trong 20 ký ức lấy về mà vẫn trả lời sai. Lưu ý: "trúng phiên" chưa chắc là "giữ được chi tiết cần thiết", vì LightMem nén và tóm tắt trước khi lưu.`);
+
+  card(s, 0.4, 1.3, 2.9, 3.2);
+  s.addText(pct(R.hit / R.n), { x: 0.4, y: 1.45, w: 2.9, h: 0.8, align: "center", fontFace: HF, fontSize: 40, bold: true, color: C.teal, isTextBox: true, margin: 0 });
+  s.addText(`truy xuất trúng phiên chứa bằng chứng (${R.hit}/${R.n} câu)`,
+    { x: 0.6, y: 2.25, w: 2.5, h: 0.6, align: "center", fontFace: BF, fontSize: 12, color: C.mute, valign: "top", isTextBox: true, margin: 0 });
+  s.addText([{ text: "Đo thế nào", options: { bold: true, breakLine: true, color: C.ink } },
+    { text: "Mỗi ký ức LightMem trả về đều mở đầu bằng mốc thời gian của phiên. Khớp mốc đó với haystack_dates để biết ký ức đến từ phiên nào, rồi so với answer_session_ids của bộ dữ liệu.", options: { color: C.text } }],
+    { x: 0.6, y: 2.95, w: 2.5, h: 1.45, fontFace: BF, fontSize: 10.5, valign: "top", isTextBox: true, margin: 0 });
+
+  const boxes = [
+    { n: R.wrong_with_evidence, col: C.red, bg: "FBEAE5", y: 1.7, h: 1.75,
+      head: "đã có bằng chứng trong ký ức lấy về, vẫn trả lời sai",
+      body: "Lỗi nằm ở tầng trích xuất (nén làm mất chi tiết) hoặc tầng suy luận, không phải tầng tìm kiếm. Ví dụ rõ nhất: một câu tính khoảng ngày, hệ nêu đúng cả hai mốc 22/03 và 15/04/2023 nhưng tính ra 18 ngày thay vì 24 — ký ức đúng, phép trừ sai." },
+    { n: R.wrong_without_evidence, col: C.mute, bg: C.card, y: 3.6, h: 1.0,
+      head: "không truy xuất được bằng chứng",
+      body: "Câu duy nhất thuộc loại lượt trợ lý, mà lời trợ lý thì không được lưu do cấu hình user_only." }];
+  s.addText(`Trong ${nw} câu sai`, { x: 3.6, y: 1.3, w: 5.9, h: 0.3, fontFace: HF, fontSize: 15, bold: true, color: C.ink, isTextBox: true, margin: 0 });
+  boxes.forEach((b) => {
+    card(s, 3.6, b.y, 5.9, b.h, b.bg);
+    s.addText(String(b.n), { x: 3.75, y: b.y + 0.15, w: 0.95, h: 0.8, align: "center", fontFace: HF, fontSize: 38, bold: true, color: b.col, valign: "middle", isTextBox: true, margin: 0 });
+    s.addText(b.head, { x: 4.8, y: b.y + 0.14, w: 4.55, h: 0.42, fontFace: BF, fontSize: 12.5, bold: true, color: C.ink, valign: "middle", isTextBox: true, margin: 0 });
+    s.addText(b.body, { x: 4.8, y: b.y + 0.56, w: 4.55, h: b.h - 0.68, fontFace: BF, fontSize: 11, color: C.text, valign: "top", isTextBox: true, margin: 0 });
+  });
+
+  card(s, 0.4, 4.75, 9.1, 0.6, "FDF3E1");
+  s.addText([{ text: "Ý nghĩa cho hệ của nhóm: ", options: { bold: true, color: C.ink } },
+    { text: "trên bộ dữ liệu này, cải thiện khâu tìm kiếm gần như không còn dư địa; điểm số phụ thuộc vào việc trích xuất giữ được bao nhiêu chi tiết và mô hình suy luận ra sao.", options: { color: C.text } }],
+    { x: 0.6, y: 4.8, w: 8.7, h: 0.5, fontFace: BF, fontSize: 11.5, valign: "middle", isTextBox: true, margin: 0 });
+}
+
+// 8 ─ Soi tay model chấm
+{
+  const A = MR.mau_cham_dung, W = MR.mau_cham_sai;
+  const s = base("Model chấm đáng tin, nhưng hơi khắt khe", "ĐỘ TIN CẬY CỦA PHÉP ĐO",
+    `Soi tay ${A.n} câu được chấm đúng và toàn bộ ${W.n} câu bị chấm sai. Không có câu nào được chấm đúng oan; có ${W.so_dang_ngo} câu nhóm cho rằng đáng lẽ nên tính đúng, nên accuracy thật có thể cao hơn khoảng 1,6 điểm.`);
+
+  const stats = [[`${A.so_cham_sai}/${A.n}`, C.teal, "câu chấm đúng bị sai", "Soi ngẫu nhiên trong nhóm được chấm đúng. Không có câu nào được cho điểm oan."],
+                 [`${W.so_dang_ngo}/${W.n}`, C.amber, "câu chấm sai đáng ngờ", "Soi toàn bộ nhóm bị chấm sai. Hai câu dưới đây nhóm thấy nên tính đúng."]];
+  stats.forEach((b, i) => {
+    const x = 0.4 + i * 4.65;
+    card(s, x, 1.3, 4.45, 1.3);
+    s.addText(b[0], { x: x + 0.15, y: 1.45, w: 1.35, h: 0.75, align: "center", fontFace: HF, fontSize: 30, bold: true, color: b[1], valign: "middle", isTextBox: true, margin: 0 });
+    s.addText(b[2], { x: x + 1.6, y: 1.42, w: 2.7, h: 0.4, fontFace: BF, fontSize: 12.5, bold: true, color: C.ink, valign: "middle", isTextBox: true, margin: 0 });
+    s.addText(b[3], { x: x + 1.6, y: 1.82, w: 2.7, h: 0.85, fontFace: BF, fontSize: 10.5, color: C.text, valign: "top", isTextBox: true, margin: 0 });
+  });
+
+  const hdr = (t) => ({ text: t, options: { bold: true, color: "FFFFFF", fill: { color: C.teal } } });
+  const cut = (t, n) => (t.length > n ? t.slice(0, n - 1).trimEnd() + "…" : t);
+  const rowsT = [[hdr("Đáp án gốc"), hdr("Hệ trả lời"), hdr("Vì sao nhóm thấy đáng ngờ")]];
+  MR.cac_cau_dang_ngo.forEach((c) => rowsT.push([cut(c.dap_an_goc, 120), cut(c.he_tra_loi, 135), cut(c.vi_sao_dang_ngo, 165)]));
+  s.addTable(rowsT, { x: 0.4, y: 2.75, w: 9.1, colW: [2.7, 3.0, 3.4], fontFace: BF, fontSize: 9,
+    color: C.text, border: { type: "solid", color: C.line, pt: 0.75 }, valign: "middle", rowH: 0.72 });
+
+  card(s, 0.4, 5.02, 9.1, 0.48, C.pale);
+  s.addText([{ text: "Vì vậy: ", options: { bold: true, color: C.ink } },
+    { text: "giữ nguyên kế hoạch chấm 3 lần lấy trung bình, và dùng đúng một model chấm cho cả LightMem lẫn APEX-MEM để sai lệch này triệt tiêu khi so sánh.", options: { color: C.text } }],
+    { x: 0.6, y: 5.04, w: 8.7, h: 0.44, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
+}
+
 // 7 ─ Chi phí
 {
   const b = S.build_min;
@@ -221,6 +287,7 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
     `Chia dev/test khớp bản gốc của nhóm (150/350).`,
     `Sơ bộ: ${pct(S.macro)} macro trên 6/6 loại, ${done}/${total} câu dev.`,
     `Điểm yếu rõ nhất: loại lượt trợ lý chỉ ${pct(asst.acc)}, do cấu hình user_only không lưu lời trợ lý.`,
+    `Truy xuất trúng bằng chứng ${S.retrieval.hit}/${S.retrieval.n} câu, nên lỗi nằm ở trích xuất và suy luận.`,
     `Thời gian là nút thắt: ~${S.build_min ? S.build_min.median.toFixed(0) : "?"} phút mỗi câu.`];
   s.addText(left.map((t, i) => ({ text: t, options: { bullet: true, breakLine: i < left.length - 1, paraSpaceAfter: 8 } })),
     { x: 0.7, y: 1.72, w: 4.3, h: 2.45, fontFace: BF, fontSize: 12, color: "E6EEF7", valign: "top", isTextBox: true, margin: 0 });

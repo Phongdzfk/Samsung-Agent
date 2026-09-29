@@ -1,0 +1,40 @@
+{
+ "_ghi_chu": "Kết quả SOI TAY, không sinh tự động. Mục đích: kiểm tra model chấm (cx/gpt-5.6-terra) có đáng tin không, vì mọi con số accuracy đều dựa vào nó. Làm trên kết quả của 125 câu dev. Nếu chạy thêm câu thì phải soi lại và cập nhật file này.",
+ "ngay_soi": "2026-09-29",
+ "nguoi_soi": "nhóm (soi tay, đối chiếu đáp án gốc với câu trả lời của hệ)",
+ "mau_cham_dung": {
+  "n": 12,
+  "cach_chon": "chọn ngẫu nhiên, seed 7, trong số các câu được chấm là đúng",
+  "so_cham_sai": 0,
+  "nhan_xet": "Không có câu nào bị chấm đúng oan. Câu trả lời đều khớp đáp án gốc."
+ },
+ "mau_cham_sai": {
+  "n": 20,
+  "cach_chon": "soi toàn bộ các câu được chấm là sai",
+  "so_dang_ngo": 2,
+  "nhan_xet": "18 câu sai thật. 2 câu dưới đây nhóm thấy đáng lẽ nên tính đúng, nên accuracy thật có thể cao hơn khoảng 1,6 điểm."
+ },
+ "cac_cau_dang_ngo": [
+  {
+   "id": "75f70248",
+   "loai": "single-session-preference",
+   "cau_hoi": "I've been sneezing quite a bit lately. Do you think it might be my living room?",
+   "dap_an_goc": "Đáp án là một rubric: câu trả lời cần xét tới ảnh hưởng của con mèo Luna và việc nó rụng lông.",
+   "he_tra_loi": "Yes, it could be. Your cat sheds heavily, so the living room may contain cat hair and dander…",
+   "vi_sao_dang_ngo": "Câu trả lời đã nhắc đúng việc mèo rụng lông, tức là đáp ứng rubric, nhưng vẫn bị chấm sai."
+  },
+  {
+   "id": "eac54adc",
+   "loai": "temporal-reasoning",
+   "cau_hoi": "How many days ago did I launch my website when I signed a contract with my first client?",
+   "dap_an_goc": "19 days ago. 20 days (including the last day) is also acceptable.",
+   "he_tra_loi": "You launched your website 19 days before signing your first-client contract (February 10 to March 1, 2023). As of March 25, 2023, that launch was 43 days ago.",
+   "vi_sao_dang_ngo": "Câu trả lời có nêu đúng con số 19 ngày. Nhưng nó nói thêm '43 days ago' ở cuối, nên có thể bị hiểu là đáp án cuối cùng là 43. Trường hợp này thật sự mập mờ."
+  }
+ ],
+ "phat_hien_them": {
+  "tieu_de": "Lỗi tính khoảng ngày là lỗi số học, không phải lỗi nhớ sai",
+  "vi_du_id": "gpt4_1d4ab0c9",
+  "noi_dung": "Câu hỏi khoảng cách giữa ngày bắt đầu tưới vườn thảo mộc và ngày thu hoạch. Hệ nêu đúng hai mốc 22/03/2023 và 15/04/2023 — đúng như đáp án gốc — nhưng tính ra 18 ngày trong khi thực tế là 24 ngày. Tức là ký ức đã lấy đúng, chỉ phép trừ ngày là sai."
+ }
+}

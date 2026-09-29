@@ -13,6 +13,8 @@ gốc của LightMem; toàn bộ phần chạy nằm trong một script bọc ng
 | `report/gen_stats.py` | Gộp kết quả thành `stats.json` | có |
 | `report/build_deck.js` | Dựng slide từ `stats.json` | có |
 | `bao-cao-lightmem-baseline.pptx` | Slide báo cáo | có |
+| `ket-qua-baseline-lightmem.md` | Kết quả và phân tích bằng văn bản | có |
+| `report/manual_review.json` | Bản soi tay kiểm tra model chấm (không sinh tự động) | có |
 | `LightMem/` | Repo gốc `zjunlp/LightMem` (có git riêng) | không |
 | `models/` | LLMLingua-2 + all-MiniLM-L6-v2 (~1,6 GB) | không |
 | `data/longmemeval_s.json` | Bộ dữ liệu (277 MB) | không |
@@ -60,8 +62,8 @@ Mặc định chỉ chạy tập **dev**; tập test khóa đến tuần 7.
 
 ```powershell
 cd report
-python gen_stats.py     # results/ -> stats.json
-node build_deck.js      # stats.json -> ../bao-cao-lightmem-baseline.pptx
+python gen_stats.py     # results/ -> stats.json (mất 1-2 phút vì phải đọc cả bộ dữ liệu)
+node build_deck.js      # stats.json + manual_review.json -> ../bao-cao-lightmem-baseline.pptx
 ```
 
 Mọi số trên slide đọc từ `stats.json`, nên chạy thêm câu xong chỉ cần chạy lại hai lệnh này.
