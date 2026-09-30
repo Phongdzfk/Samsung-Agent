@@ -53,6 +53,18 @@ $env:PYTHONIOENCODING    = "utf-8"
 
 Mặc định chỉ chạy tập **dev**; tập test khóa đến tuần 7.
 
+Hai tuỳ chọn để làm thí nghiệm tách phần thiệt do cấu hình:
+
+```powershell
+# chỉ chạy một loại câu hỏi
+.\LightMem\.venv\Scripts\python.exe run_lightmem.py --qtype single-session-assistant --out resultsssistant-user-only
+
+# lưu cả lượt trợ lý vào bộ nhớ (khác cấu hình gốc của bài báo)
+.\LightMem\.venv\Scripts\python.exe run_lightmem.py --qtype single-session-assistant --messages-use user_assistant --out resultsssistant-user-assistant
+```
+
+Kết quả hai lượt phải để ở hai thư mục `--out` khác nhau, vì cùng question_id nhưng khác cấu hình.
+
 - Có **resume**: câu nào đã có file trong `results/dev150/cases/` thì bỏ qua, nên chạy lại
   đúng lệnh trên là tiếp tục từ chỗ dừng.
 - `--workers` là số câu chạy song song. Trên máy 16 GB, 5 luồng là an toàn; 8–9 luồng nhanh
