@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass, field
+from datetime import date, datetime, timedelta
 
 from ..adapters.llm import BaseLLM, LLMError, LLMFatalError
 from ..util import Timer, extract_json, truncate, weekday_of
@@ -19,7 +20,7 @@ using ONLY the long-term memory built from your past conversations with this use
 through tools.
 
 Current date (the date of the question): {qdate} ({weekday}).
-
+{anchors}
 How to work:
 1. Plan, then call tools. Start broad (search / entity_lookup), then verify precisely (graph_sql).
 2. Memory is append-only and time-stamped. For "current/now/latest" questions use the value with
@@ -31,7 +32,18 @@ How to work:
 5. For preference/recommendation questions, ground the answer in the user's stored preferences.
 6. If after searching the information was never mentioned, say you don't know / it was not
    mentioned. Do not guess.
-7. Final answer: short and direct, include the key value (number, name, date). No tool calls in it."""
+7. Relative time in the question ("two months ago", "last week", "in March"): convert it to a date
+   with the reference dates above, then look for events/turns within about +/- 2 weeks of that date
+   (graph_sql on events.anchor_datetime or turns.session_date). Pick the item closest to that
+   date, NOT simply the most recent one.
+8. Who said it matters. Facts with subject "User" and user turns are what the user told you. Facts
+   with subject "Assistant" and assistant turns are your own earlier suggestions, estimates or
+   general information. If the question asks about the user's own situation (e.g. "how much will I
+   save", "what did I pay", "how long did I wait") and the needed value appears only in an
+   assistant estimate or nowhere, answer that the information is not enough / was not mentioned.
+   Exception: questions that explicitly ask what you (the assistant) said, recommended or listed.
+9. Yes/no questions: start with "Yes" or "No", and make it consistent with the evidence you cite.
+10. Final answer: short and direct, include the key value (number, name, date). No tool calls in it."""
 
 JSON_PROTOCOL = """
 
@@ -46,6 +58,34 @@ After each tool call you will receive "Observation: ...". """
 
 FORCE_ANSWER = ("You have used the maximum number of tool calls. Give your best final answer now, "
                 "based only on what you found. If nothing relevant was found, say you don't know.")
+
+
+class _Default(dict):
+    """format_map giữ nguyên {khóa} lạ → template cũ (chat) không có {anchors} vẫn dùng được."""
+
+    def __missing__(self, key):
+        return "{" + key + "}"
+
+
+def _shift_months(d: date, months: int) -> date:
+    y, m = divmod(d.month - 1 - months, 12)
+    y, m = d.year + y, m + 1
+    last = [31, 29 if y % 4 == 0 and (y % 100 or y % 400 == 0) else 28, 31, 30, 31, 30, 31, 31,
+            30, 31, 30, 31][m - 1]
+    return date(y, m, min(d.day, last))
+
+
+def date_anchors(qdate: str | None) -> str:
+    """Python tính sẵn các mốc thời gian tương đối — việc cần chính xác không giao cho LLM nhẩm."""
+    if not qdate:
+        return ""
+    d = datetime.fromisoformat(qdate[:19]).date()
+    items = [("yesterday", d - timedelta(days=1)), ("1 week ago", d - timedelta(weeks=1)),
+             ("2 weeks ago", d - timedelta(weeks=2)), ("3 weeks ago", d - timedelta(weeks=3)),
+             ("1 month ago", _shift_months(d, 1)), ("2 months ago", _shift_months(d, 2)),
+             ("3 months ago", _shift_months(d, 3)), ("6 months ago", _shift_months(d, 6)),
+             ("1 year ago", _shift_months(d, 12))]
+    return "Reference dates: " + "; ".join(f"{k} = {v.isoformat()}" for k, v in items) + ".\n"
 
 
 @dataclass
@@ -71,8 +111,9 @@ class ReActAgent:
 
     def system_prompt(self, qdate: str | None) -> str:
         qd = qdate or "unknown"
-        s = self.system_template.format(qdate=qd[:16].replace("T", " "),
-                                        weekday=weekday_of(qdate) if qdate else "")
+        fields = {"qdate": qd[:16].replace("T", " "), "weekday": weekday_of(qdate) if qdate else "",
+                  "anchors": date_anchors(qdate)}
+        s = self.system_template.format_map(_Default(fields))
         if self.protocol == "json":
             specs = "\n".join(f"- {n}({', '.join(TOOL_SPECS[n]['parameters']['properties'])}): "
                               f"{TOOL_SPECS[n]['description']}" for n in self.tools)

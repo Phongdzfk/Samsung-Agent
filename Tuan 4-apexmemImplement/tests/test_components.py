@@ -198,3 +198,37 @@ def test_judge_label_is_yes_in_response():
     ok, raw = judge(FakeLLM({"judge": "Yes."}), "multi-session", "q", "a", "r", False)
     assert ok and raw == "Yes."
 
+
+
+def test_retries_exhausted_is_fatal(monkeypatch):
+    import httpx
+    import openai
+    from ltm.adapters.llm import LLMFatalError
+
+    llm = OpenAICompatLLM({"base_url": "http://localhost:1/v1", "model": "m", "max_retries": 2,
+                           "max_wait": 0.01}, cache=None)
+    llm.cache = None
+    req = httpx.Request("POST", "http://localhost:1/v1/chat/completions")
+
+    def always_429(messages, tools, params):
+        raise openai.RateLimitError("quota", response=httpx.Response(429, request=req), body=None)
+
+    monkeypatch.setattr(llm, "_call", always_429)
+    monkeypatch.setattr("time.sleep", lambda s: None)
+    with pytest.raises(LLMFatalError):
+        llm.chat([{"role": "user", "content": "x"}])
+
+
+def test_rpm_pacing(monkeypatch):
+    llm = OpenAICompatLLM({"base_url": "http://localhost:1/v1", "model": "m", "rpm": 60}, cache=None)
+    slept = []
+    monkeypatch.setattr("time.sleep", lambda s: slept.append(s))
+    for _ in range(3):
+        llm._pace()
+    assert len(slept) == 2 and all(0.9 < s <= 2.01 for s in slept)
+
+
+def test_extraction_prompt_asks_for_place_companion_units():
+    x = FactExtractor(FakeLLM(), DEFAULT_ONTOLOGY)
+    p = x._prompt("2023-05-20T00:00:00", [(0, "user", "hi")], [])
+    assert "WITH WHOM" in p and "companion" in p and "Never guess a unit" in p

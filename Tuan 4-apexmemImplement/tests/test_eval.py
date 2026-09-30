@@ -141,3 +141,26 @@ def test_model_not_found_stops_run_without_writing(patched, monkeypatch):
         g = GraphDB(db)
         assert g.get_meta("build_done") is None
         g.close()
+
+
+def test_kv_baseline_needs_no_graph_and_turn_level_classifier(patched):
+    d = patched
+    runmod.main(["--config", "simple_search_kv", "--ids-file", str(d / "ids.txt")])
+    rows = rows_of(d / "runs" / "simple_search_kv" / "ids" / "results.jsonl")
+    assert len(rows) == 3
+    assert all("extract" not in (r["build"].get("usage") or {}) for r in rows)   # 0 lời gọi dựng
+    assert not list((d / "graphs").glob("*/*.db")) or all(
+        "turns-only" in str(p.parent) for p in (d / "graphs").glob("*/*.db"))
+    assert all(r["uses_facts"] is False for r in rows)
+    # đồ thị full: nhãn has_answer theo lượt được ghi lại
+    runmod.main(["--config", "full", "--ids-file", str(d / "ids.txt")])
+    full = {r["question_id"]: r for r in rows_of(d / "runs" / "full" / "ids" / "results.jsonl")}
+    assert full["q1"]["n_answer_turns"] == 1 and full["q1"]["facts_in_answer_turns"] >= 1
+
+
+def test_classify_error_turn_level():
+    base = {"score": 0, "error": None, "is_abs": False, "filter_recall": 1.0, "tool_recall": 1.0,
+            "facts_in_answer_sessions": 5, "sql_errors": 0}
+    assert runmod.classify_error(dict(base, n_answer_turns=2, facts_in_answer_turns=0)) == "not_extracted"
+    assert runmod.classify_error(dict(base, n_answer_turns=2, facts_in_answer_turns=1)) == "reasoning"
+    assert runmod.classify_error(dict(base, n_answer_turns=0)) == "reasoning"

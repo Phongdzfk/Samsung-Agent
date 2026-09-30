@@ -194,6 +194,10 @@ class OpenAICompatLLM(BaseLLM):
         self.cache = cache if cache is not None else (
             LLMCache(resolve_path(cfg["cache_path"])) if cfg.get("cache_path") else None)
         self._drop_temperature = False
+        # giới hạn nhịp gọi phía client (request/phút); 0 = không giới hạn
+        self._rpm = float(cfg.get("rpm") or 0)
+        self._rpm_lock = threading.Lock()
+        self._next_slot = 0.0
 
     def model_for(self, role: str) -> str:
         return (self.cfg.get("roles") or {}).get(role) or self.cfg["model"]
@@ -268,9 +272,22 @@ class OpenAICompatLLM(BaseLLM):
             print(f"[llm] {type(last).__name__}: chờ {wait:.0f}s rồi thử lại "
                   f"({attempt + 1}/{max_retries})", flush=True)
             time.sleep(wait)
-        raise LLMError(f"hết lượt thử lại: {last}")
+        # Hết lượt thử lại = hạn mức đã cạn (mọi tài khoản 9router đều hết). Coi là lỗi DỪNG:
+        # nếu nuốt, các phiên còn lại được dựng rỗng và bị đánh dấu xong → số liệu hỏng âm thầm.
+        raise LLMFatalError(f"hết {max_retries} lượt thử lại, có thể đã hết hạn mức: {last}")
+
+    def _pace(self) -> None:
+        if self._rpm <= 0:
+            return
+        with self._rpm_lock:
+            now = time.monotonic()
+            slot = max(now, self._next_slot)
+            self._next_slot = slot + 60.0 / self._rpm
+        if slot > now:
+            time.sleep(slot - now)
 
     def _call(self, messages, tools, params) -> LLMResponse:
+        self._pace()
         kw = dict(params, messages=messages)
         if tools:
             kw["tools"] = tools

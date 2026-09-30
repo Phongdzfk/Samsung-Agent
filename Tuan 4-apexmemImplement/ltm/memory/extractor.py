@@ -79,6 +79,18 @@ Each fact:
 Rules:
 - Capture the user's life: preferences, possessions, people, pets, jobs, places, plans, habits,
   purchases, numbers, dates, durations, counts, and changes over time.
+- Every activity the user mentions (visit, trip, class, purchase, event attended, lecture,
+  appointment...) is its OWN event, even when mentioned only in passing ("by the way, I just...",
+  "I went to ... last week"). Do not merge different activities into one event.
+- For each such event always record WHERE ("location" + the place as a participant) and WITH WHOM:
+  add every companion as a participant (people named only by relation get a descriptive name,
+  e.g. "User's father", "User's friend (chemistry professor)") and a fact
+  {{"subject":"User","property":"companion", "value":"<who>"}} tied to that event. If the text says
+  the user went alone, record companion = "alone".
+- Numbers with units or currencies: if the property name contains a unit (price_usd, duration_min)
+  the value MUST be in exactly that unit. Otherwise keep the unit in the value as a string
+  ("¥3,200", "45 minutes") or add a separate fact <property>_currency / <property>_unit.
+  Never guess a unit or currency that the text does not state.
 - Also capture what the ASSISTANT recommended, listed, calculated or promised (subject "Assistant",
   e.g. recommended_restaurants as a list in the given order).
 - Keep exact details: names, titles, brands, amounts, prices, times, ordering.

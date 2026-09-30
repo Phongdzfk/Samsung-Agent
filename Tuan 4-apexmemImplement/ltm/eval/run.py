@@ -41,8 +41,11 @@ PRESETS: dict[str, dict] = {
     "steps10": {"mode": "agent", "tools": ALL_TOOLS, "max_steps": 10},
     "steps40": {"mode": "agent", "tools": ALL_TOOLS, "max_steps": 40},
     "simple_search": {"mode": "simple"},
+    # RAG thường, K = V: tìm phiên chỉ bằng lượt gốc, KHÔNG dùng fact → không cần dựng đồ thị
+    "simple_search_kv": {"mode": "simple", "use_facts": False, "needs_graph": False},
 }
-BUILD_VERSION = 1
+# Tăng khi đổi prompt trích xuất / giải quyết: chữ ký dựng đổi → đồ thị cũ không bị dùng nhầm.
+BUILD_VERSION = 2
 
 
 def build_signature(cfg: Cfg, llm: BaseLLM, embedder: Embedder) -> str:
@@ -71,12 +74,14 @@ def build_case(case: EvalCase, cfg: Cfg, db_path: Path, llm: BaseLLM,
         sysm = MemorySystem(cfg, db_path, scope, embedder)
     t0 = time.perf_counter()
     f = cfg.filter
-    fr = filter_sessions(case.question, case.sessions, embedder, f.top_sessions, f.enabled,
+    fr = filter_sessions(case.question, case.sessions, embedder, f.get("top_sessions", 10),
+                         f.get("enabled", True),
                          mode=f.get("mode"), threshold=f.get("threshold", 0.5),
                          min_sessions=f.get("min_sessions", 5),
                          max_sessions=f.get("max_sessions", 25))
     kept = {s.session_id for s in fr.kept}
-    stats = sysm.builder.build_haystack(case.sessions, kept, f.store_all_turns, progress)
+    stats = sysm.builder.build_haystack(case.sessions, kept, f.get("store_all_turns", True),
+                                        progress)
     info = {"stats": stats, "kept_sessions": sorted(kept),
             "n_sessions": len(case.sessions), "n_kept": len(kept),
             "filter_recall": _recall(kept, case.answer_session_ids),
@@ -84,6 +89,40 @@ def build_case(case: EvalCase, cfg: Cfg, db_path: Path, llm: BaseLLM,
             "usage": scope.meter.snapshot()}
     sysm.db.set_meta("build_done", info)
     return sysm, info
+
+
+def build_turns_only(case: EvalCase, cfg: Cfg, db_path: Path, llm: BaseLLM,
+                     embedder: Embedder) -> tuple[MemorySystem, dict]:
+    """Cho baseline K = V: chỉ lưu lượt gốc của mọi phiên, không trích xuất (0 lời gọi LLM)."""
+    sysm = MemorySystem(cfg, db_path, ScopedLLM(llm), embedder)
+    info = sysm.db.get_meta("build_done")
+    if info:
+        return sysm, info
+    t0 = time.perf_counter()
+    for s in sorted(case.sessions, key=lambda s: s.date):
+        sysm.builder.add_session_turns(s)
+    info = {"stats": {"sessions_built": 0, "counts": sysm.db.counts()}, "kept_sessions": [],
+            "n_sessions": len(case.sessions), "n_kept": 0, "filter_recall": None,
+            "ms": round((time.perf_counter() - t0) * 1000), "usage": {}}
+    sysm.db.set_meta("build_done", info)
+    return sysm, info
+
+
+def answer_turn_keys(case: EvalCase) -> list[tuple[str, int]]:
+    """(session_id, turn_index) của các lượt LongMemEval gán nhãn has_answer = chứa đáp án."""
+    return [(s.session_id, i) for s in case.sessions for i, t in enumerate(s.turns)
+            if t.get("has_answer")]
+
+
+def facts_in_turns(sysm: MemorySystem, keys: list[tuple[str, int]]) -> int:
+    """Số fact có bằng chứng trỏ ĐÚNG vào lượt chứa đáp án (chặt hơn 'cùng phiên')."""
+    if not keys:
+        return 0
+    cond = " OR ".join("(t.session_id=? AND t.turn_index=?)" for _ in keys)
+    params = [x for k in keys for x in k]
+    return sysm.db.conn.execute(
+        f"SELECT COUNT(DISTINCT ev.fact_id) FROM evidence ev JOIN turns t ON t.turn_id=ev.turn_id "
+        f"WHERE {cond}", params).fetchone()[0]
 
 
 def facts_in_sessions(sysm: MemorySystem, session_ids: list[str]) -> int:
@@ -104,8 +143,13 @@ def classify_error(row: dict) -> str | None:
         return "abstention_fail"
     if row["filter_recall"] is not None and row["filter_recall"] < 1:
         return "filtered_out"
-    if row["facts_in_answer_sessions"] == 0:
-        return "not_extracted"
+    if row.get("uses_facts", True):
+        # có nhãn lượt (has_answer) thì kiểm tra theo LƯỢT; không có thì theo phiên
+        if row.get("n_answer_turns"):
+            if not row.get("facts_in_answer_turns"):
+                return "not_extracted"
+        elif row["facts_in_answer_sessions"] == 0:
+            return "not_extracted"
     if row["tool_recall"] is not None and row["tool_recall"] == 0:
         return "tool_miss"
     if row.get("sql_errors"):
@@ -115,8 +159,14 @@ def classify_error(row: dict) -> str | None:
 
 def process_case(case: EvalCase, cfg: Cfg, preset: dict, llm: BaseLLM, embedder: Embedder,
                  graphs_dir: Path, trials: int, build_only: bool, progress: bool) -> dict:
-    db_path = graphs_dir / f"{case.qid}.db"
-    sysm, binfo = build_case(case, cfg, db_path, llm, embedder, progress)
+    if preset.get("needs_graph", True):
+        db_path = graphs_dir / f"{case.qid}.db"
+        sysm, binfo = build_case(case, cfg, db_path, llm, embedder, progress)
+    else:
+        db_path = graphs_dir.parent / f"turns-only-{embedder.model_name.replace('/', '_')}" \
+            / f"{case.qid}.db"
+        db_path.parent.mkdir(parents=True, exist_ok=True)
+        sysm, binfo = build_turns_only(case, cfg, db_path, llm, embedder)
     try:
         row = {"question_id": case.qid, "question_type": case.qtype,
                "ability": "ABS" if case.is_abs else ABILITY.get(case.qtype, "?"),
@@ -131,7 +181,8 @@ def process_case(case: EvalCase, cfg: Cfg, preset: dict, llm: BaseLLM, embedder:
         ans_llm = ScopedLLM(llm)
         if preset["mode"] == "simple":
             res = simple_search_answer(sysm, case.question, case.question_date,
-                                       cfg.baseline.top_sessions, llm=ans_llm)
+                                       cfg.baseline.top_sessions, llm=ans_llm,
+                                       use_facts=preset.get("use_facts", True))
         else:
             res = sysm.answer(case.question, case.question_date, tools=preset["tools"],
                               max_steps=preset.get("max_steps"), llm=ans_llm)
@@ -151,6 +202,9 @@ def process_case(case: EvalCase, cfg: Cfg, preset: dict, llm: BaseLLM, embedder:
             "sql_errors": res.sql_errors, "seen_sessions": sorted(seen),
             "tool_recall": _recall(seen, case.answer_session_ids),
             "facts_in_answer_sessions": facts_in_sessions(sysm, case.answer_session_ids),
+            "n_answer_turns": len(answer_turn_keys(case)),
+            "facts_in_answer_turns": facts_in_turns(sysm, answer_turn_keys(case)),
+            "uses_facts": preset.get("use_facts", True) and preset.get("needs_graph", True),
             "answer_ms": round(res.ms), "judge_ms": round(judge_ms),
             "usage": {"answer": ans_llm.meter.snapshot(), "judge": judge_llm.meter.snapshot()},
         })

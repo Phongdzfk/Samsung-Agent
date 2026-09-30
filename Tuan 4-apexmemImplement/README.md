@@ -72,7 +72,8 @@ python -m ltm.eval.run --config full --split dev --n 20 --workers 1 --progress
 # 2. Ablation theo Bảng 3 của bài báo — DÙNG LẠI đồ thị đã dựng, chỉ tốn lời gọi trả lời
 python -m ltm.eval.run --config a1 --split dev --n 20          # SchemaViewer + EntityLookup
 python -m ltm.eval.run --config a2 --split dev --n 20          # + GraphSQL + PropertySearch
-python -m ltm.eval.run --config simple_search --split dev --n 20   # baseline LongMemEval
+python -m ltm.eval.run --config simple_search --split dev --n 20   # baseline LongMemEval (K = V + fact)
+python -m ltm.eval.run --config simple_search_kv --split dev --n 20 # RAG thường (K = V), không dựng đồ thị
 python -m ltm.eval.run --config steps10 --split dev --n 20     # giới hạn 10 bước (có steps40)
 
 # 3. Bảng so sánh + file demo HTML
@@ -115,7 +116,7 @@ Máy công ty không chạy được Python → dùng file `demo.html` (xuất �
 
 | Điểm | Bài báo | Ở đây | Lý do |
 |---|---|---|---|
-| Trích xuất | 1 lượt / lời gọi, Claude Sonnet 4.5 | 12 lượt / lời gọi, GPT-5.5 | Hạn mức; `extract.turns_per_call: 1` để làm đúng như bài |
+| Trích xuất | 1 lượt / lời gọi, Claude Sonnet 4.5 | ≤ 6 lượt / lời gọi, GPT-5.6 Luna | Hạn mức; `extract.turns_per_call: 1` để làm đúng như bài |
 | Giải quyết | LLM cho mọi nhắc tới, Claude Haiku 4.5 | LLM chỉ khi mơ hồ (trùng tên → dùng lại; không ứng viên → tạo mới) | Giảm số lời gọi (đo thực tế ở mục Chi phí) |
 | Ontology | 35 lớp (26 nêu trong bài) | 26 lớp của bài + 9 lớp nhóm tự thêm | Nên thay bằng danh sách ở Phụ lục I của bài (`TEAM_ONTOLOGY` trong `graphdb.py`) |
 | Công cụ | 4 | 4 + PropertySearch | Bài có số liệu nhưng không mô tả |

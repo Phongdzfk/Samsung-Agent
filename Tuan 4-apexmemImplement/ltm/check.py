@@ -27,6 +27,7 @@ def main() -> int:
     llm.cache = None
     try:
         models = [m.id for m in llm.client.models.list().data]
+        models += [m.split("/", 1)[1] for m in models if m.startswith("models/")]  # Gemini
         print(f"  ✓ kết nối được · {len(models)} model")
         for want in {llm.model_for(r) for r in ("extract", "resolve", "agent", "reader", "judge")}:
             print(f"    {'✓' if want in models else '?'} {want}"

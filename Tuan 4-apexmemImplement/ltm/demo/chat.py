@@ -22,7 +22,7 @@ from ..system import MemorySystem
 CHAT_SYSTEM = """You are a helpful personal assistant with long-term memory of all past
 conversations with this user, accessible through tools.
 Current date: {qdate} ({weekday}).
-- If the message may depend on anything the user told you before (their life, preferences, plans,
+{anchors}- If the message may depend on anything the user told you before (their life, preferences, plans,
   people, past events, things you recommended), look it up with the tools BEFORE answering.
 - For small talk or general knowledge, answer directly without tools.
 - Facts can change over time: prefer the most recent value and mention the change when useful.

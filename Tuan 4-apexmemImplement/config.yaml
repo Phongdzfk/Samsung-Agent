@@ -20,7 +20,7 @@ llm:
     resolve: null
     agent: null
     reader: null                         # baseline SimpleSearch
-    judge: cx/gpt-5.6-luna                   # nên KHÁC model trả lời (slide 12)
+    judge: cx/gpt-5.6-terra                  # model chấm KHÁC model trả lời
 
 embed:
   backend: sentence-transformers         # sentence-transformers | hash (chỉ để test offline)
@@ -40,7 +40,7 @@ filter:
   store_all_turns: true
 
 extract:
-  turns_per_call: 12                     # gom nhiều lượt vào 1 lời gọi (bài báo: 1 lượt/lời gọi)
+  turns_per_call: 6                      # gom ≤6 lượt/lời gọi (bài báo: 1). 12 → 6 để bớt sót chi tiết
   max_turn_chars: 3000
   include_assistant: true
 

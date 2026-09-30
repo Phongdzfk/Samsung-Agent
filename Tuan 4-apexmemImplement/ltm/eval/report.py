@@ -92,6 +92,10 @@ def report(run_dirs: list[Path]) -> str:
     rt.append("| Câu có ≥1 fact từ phiên bằng chứng | " + " | ".join(
         _fmt(_mean(1.0 if r.get("facts_in_answer_sessions") else 0.0 for r in rs
                    if r.get("answer_session_ids")), True) for _, rs in runs) + " |")
+    rt.append("| Câu có ≥1 fact từ đúng LƯỢT chứa đáp án | " + " | ".join(
+        _fmt(_mean((1.0 if r.get("facts_in_answer_turns") else 0.0) for r in rs
+                   if r.get("n_answer_turns") and r.get("uses_facts", True)), True)
+        for _, rs in runs) + " |")
     out += ["## 2. Truy xuất (%)", "", *rt, ""]
 
     # 3. chi phí
