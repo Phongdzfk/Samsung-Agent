@@ -128,7 +128,7 @@ def install_model_cache():
 _LOAD_LOCK = threading.Lock()
 
 
-def build_lightmem(qid, out_dir, api_key, base_url, model, device):
+def build_lightmem(qid, out_dir, api_key, base_url, model, device, messages_use="user_only"):
     from lightmem.memory.lightmem import LightMemory
 
     models = HERE / "models"
@@ -146,7 +146,7 @@ def build_lightmem(qid, out_dir, api_key, base_url, model, device):
         "topic_segment": True,
         "precomp_topic_shared": True,
         "topic_segmenter": {"model_name": "llmlingua-2"},
-        "messages_use": "user_only",
+        "messages_use": messages_use,
         "metadata_generate": True,
         "text_summary": True,
         "memory_manager": {
@@ -173,13 +173,14 @@ def build_lightmem(qid, out_dir, api_key, base_url, model, device):
     return lm
 
 
-def process_case(item, out, api_key, base_url, llm, judge, llm_model, judge_model, topk, device, keep_qdrant):
+def process_case(item, out, api_key, base_url, llm, judge, llm_model, judge_model, topk, device, keep_qdrant,
+                 messages_use="user_only"):
     qid = item["question_id"]
     dest = out / "cases" / f"{qid}.json"
     if dest.exists():
         return None
 
-    lm = build_lightmem(qid, out, api_key, base_url, llm_model, device)
+    lm = build_lightmem(qid, out, api_key, base_url, llm_model, device, messages_use)
     sessions, dates = item["haystack_sessions"], item["haystack_dates"]
 
     t0 = time.time()
@@ -225,7 +226,7 @@ def process_case(item, out, api_key, base_url, llm, judge, llm_model, judge_mode
         "retrieved_memories": memories,
         "answer_session_ids": item.get("answer_session_ids"),
         "time_build_s": t_build, "time_retrieve_s": t_retrieve, "time_answer_s": t_answer,
-        "llm_model": llm_model, "judge_model": judge_model,
+        "llm_model": llm_model, "judge_model": judge_model, "messages_use": messages_use,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     del lm
@@ -240,6 +241,9 @@ def main():
     ap.add_argument("--data", default=_env("LME_DATA", str(HERE / "data" / "longmemeval_s.json")))
     ap.add_argument("--ids", default=_env("LME_IDS", str(HERE / "data" / "split.json")), help="file json/txt chứa danh sách question_id (tập dev)")
     ap.add_argument("--n", type=int, default=0, help="chỉ chạy n câu đầu (0 = tất cả)")
+    ap.add_argument("--qtype", default=None, help="chỉ chạy một loại câu hỏi, vd single-session-assistant")
+    ap.add_argument("--messages-use", default="user_only", choices=["user_only", "user_assistant"],
+                     help="lưu lượt nào vào bộ nhớ. Cấu hình gốc của bài báo là user_only")
     ap.add_argument("--topk", type=int, default=20)
     ap.add_argument("--out", default=str(HERE / "results" / "lightmem"))
     ap.add_argument("--keep-qdrant", action="store_true")
@@ -262,6 +266,8 @@ def main():
         if isinstance(ids, dict):
             ids = ids.get("dev", ids)
         data = [d for d in data if d["question_id"] in set(ids)]
+    if args.qtype:
+        data = [d for d in data if d["question_type"] == args.qtype]
     if args.n:
         data = data[: args.n]
 
@@ -278,14 +284,16 @@ def main():
         if it not in pending:
             done_by_type[it["question_type"]] = done_by_type.get(it["question_type"], 0) + 1
     pending.sort(key=lambda it: done_by_type.get(it["question_type"], 0))
-    print(f"{len(data)} câu, {len(data) - len(pending)} đã có kết quả, còn {len(pending)} cần chạy, workers={args.workers}, device={device}")
+    print(f"{len(data)} câu, {len(data) - len(pending)} đã có kết quả, còn {len(pending)} cần chạy, "
+          f"workers={args.workers}, device={device}, messages_use={args.messages_use}"
+          + (f", qtype={args.qtype}" if args.qtype else ""))
 
     errors = []
     if args.workers <= 1:
         for item in tqdm(pending):
             try:
                 process_case(item, out, api_key, base_url, llm, judge, llm_model, judge_model,
-                             args.topk, device, args.keep_qdrant)
+                             args.topk, device, args.keep_qdrant, args.messages_use)
             except Exception as e:  # noqa: BLE001
                 errors.append((item["question_id"], str(e)))
                 print(f"[LỖI] {item['question_id']}: {e}")
@@ -293,7 +301,7 @@ def main():
         with ThreadPoolExecutor(max_workers=args.workers) as ex:
             futs = {
                 ex.submit(process_case, item, out, api_key, base_url, llm, judge, llm_model, judge_model,
-                          args.topk, device, args.keep_qdrant): item["question_id"]
+                          args.topk, device, args.keep_qdrant, args.messages_use): item["question_id"]
                 for item in pending
             }
             for fut in tqdm(as_completed(futs), total=len(futs)):
