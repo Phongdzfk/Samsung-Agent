@@ -1,0 +1,39 @@
+{
+  "question_id": "ac031881",
+  "question_type": "single-session-assistant",
+  "question": "I'm trying to recall what the designation on my jumpsuit was that helped me find the file number in the records room?",
+  "ground_truth": "The designation on your jumpsuit was 'LIV'.",
+  "generated_answer": "The designation was **A**, which led you to **file/record 54**.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-21T04:56:00.000 Sun User found a file with the name A crossed off, the word \"DISCHARGED\" written beside it, and the name S circled as though someone had made a mistake.",
+    "2023-05-21T04:56:02.000 Sun The user identifies two possible clues: a designation for a study on a jumpsuit and a note on a clipboard about a previous iteration of the study.",
+    "2023-05-21T04:56:03.000 Sun The user recalls that a clipboard said: \"MONITOR LIV CAREFULLY. ABERRATION PREVIOUS ITERATION EXAMINE FILE RECORDS FOR DETAILS.\"",
+    "2023-05-21T04:56:00.000 Sun The user believes that identifying the correct file is necessary to proceed with the task and that the file number must be inferred from previous information.",
+    "2023-05-21T04:56:04.000 Sun The user states that a specific file number is needed and that the files are numbered with Arabic numerals, potentially into the hundreds or thousands.",
+    "2023-05-21T04:56:06.000 Sun The user found record 54, which has the name \"A\" on it and says \"EXPERIMENT IN PROGRESS.\"",
+    "2023-05-21T04:56:00.000 Sun The note lists S's status as unknown and presumed discharged.",
+    "2023-05-21T04:56:04.000 Sun The previously touched squares correspond to Room LIV, the Meeting Hall, and Records.",
+    "2023-05-21T04:56:00.000 Sun The note states that the Directory is in Security and includes a hand-drawn square.",
+    "2023-05-21T04:56:07.000 Sun The user reports that record 54 only says \"EXPERIMENT IN PROGRESS\" and questions the meaning of the instruction to examine records for details about an aberration in a previous iteration.",
+    "2023-05-21T04:56:05.000 Sun A security panel marked with a green slash had a slot for a keycard and a hole for a USB stick.",
+    "2023-05-28T08:10:00.000 Sun User's LinkedIn profile is linkedin.com/in/ryan-mioduski.",
+    "2023-05-30T15:37:03.000 Tue User's employer's HR department updated their payroll information with their new name on February 20th.",
+    "2023-05-21T04:56:00.000 Sun The handwritten message instructs someone to find S in Incubation, wake S, give the opposite of the memory-unlock dosage, and obtain a keycard and the Directory.",
+    "2023-05-28T08:10:00.000 Sun User's phone number is (703) 965-6785.",
+    "2023-05-21T04:56:00.000 Sun The note suggests that a keycard may be in someone's jacket and that one could be taken during a meeting.",
+    "2023-05-21T04:56:01.000 Sun User is trying to recall clues for finding Security.",
+    "2023-05-28T08:10:00.000 Sun User is located in Washington, D.C.",
+    "2023-05-20T10:14:04.000 Sat User wants the release information for the recommended albums.",
+    "2023-05-21T04:56:06.000 Sun The control panel had monitors labeled \"NARCO CHAMBERS.\""
+  ],
+  "answer_session_ids": [
+    "answer_sharegpt_GYqnAhC_190"
+  ],
+  "time_build_s": 2926.4538090229034,
+  "time_retrieve_s": 0.19746160507202148,
+  "time_answer_s": 6.05279541015625,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

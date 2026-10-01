@@ -1,0 +1,40 @@
+{
+  "question_id": "6aeb4375_abs",
+  "question_type": "knowledge-update",
+  "question": "How many Italian restaurants have I tried in my city?",
+  "ground_truth": "The information provided is not enough. You mentioned trying Korean restaurants but not Italian restaurants.",
+  "generated_answer": "You have tried **no Italian restaurants** in your city, based on the memories provided.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-26T13:19:01.000 Fri User has tried four different Korean restaurants in their city.",
+    "2023-04-24T19:17:00.000 Mon User is planning a trip to New Orleans and is looking for restaurant recommendations in the French Quarter.",
+    "2023-05-20T08:03:04.000 Sat User recently tried three different Korean restaurants, each of which had its own unique flavor and style.",
+    "2023-05-26T13:19:05.000 Fri User has been intending to try the new Indian restaurant in their neighborhood.",
+    "2023-05-26T13:19:01.000 Fri User is looking for recommendations for new Korean restaurants in their city.",
+    "2023-05-20T08:03:01.000 Sat User is planning to serve dishes from multiple cuisines at the dinner party, including Korean barbecue, Indian dishes, and Middle Eastern dishes, and wants Indian dishes that are easy to make in large quantities.",
+    "2023-05-26T13:19:05.000 Fri A new Indian restaurant has opened in the user's neighborhood.",
+    "2023-05-23T12:39:01.000 Tue User is seeking recommendations for specific restaurants in County Clare that offer vegetarian or vegan options.",
+    "2023-05-20T08:03:05.000 Sat At one Korean restaurant, the user tried excellent bibimbap; at another, the user tried spicy kimchi stew; and at a third, the user tried a unique version of japchae made with sweet potato noodles.",
+    "2023-04-24T19:17:02.000 Mon User is interested in finding out whether the Omni Hotel has suites with views of Bourbon Street.",
+    "2023-05-26T13:19:05.000 Fri User heard that the new Indian restaurant's chicken tikka masala is amazing.",
+    "2023-05-20T08:03:03.000 Sat User has been experimenting with different types of noodles and wants recommendations for popular Korean noodle dishes to make at home.",
+    "2023-05-25T14:55:00.000 Thu User is looking for recommendations for must-try foods and restaurants in the Shinjuku area.",
+    "2023-04-24T19:17:01.000 Mon User is interested in special deals or packages for repeat guests at the Omni Hotel.",
+    "2023-04-24T19:17:03.000 Mon User is interested in special amenities or services that the hotel offers for bachelor or bachelorette parties.",
+    "2023-05-26T13:19:00.000 Fri User is looking for side dishes that would complement Korean-style barbecue beef.",
+    "2023-05-20T08:03:00.000 Sat User is planning a dinner party and wants popular Korean barbecue dishes that are easy to prepare in large quantities.",
+    "2023-05-26T13:19:02.000 Fri User is considering changing their dinner party menu.",
+    "2023-06-08T14:22:03.000 Thu User previously stayed in an Airbnb in Shibuya for seven nights and paid a total of $450, or approximately $64 per night.",
+    "2023-05-20T08:03:02.000 Sat User is considering making falafel as one of the Middle Eastern dishes and wants it to be crispy on the outside and fluffy on the inside."
+  ],
+  "answer_session_ids": [
+    "answer_3f9693b7_abs_1",
+    "answer_3f9693b7_abs_2"
+  ],
+  "time_build_s": 1685.0856335163116,
+  "time_retrieve_s": 0.12081027030944824,
+  "time_answer_s": 2.8837106227874756,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

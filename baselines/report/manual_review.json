@@ -1,18 +1,18 @@
 {
- "_ghi_chu": "Kết quả SOI TAY, không sinh tự động. Mục đích: kiểm tra model chấm (cx/gpt-5.6-terra) có đáng tin không, vì mọi con số accuracy đều dựa vào nó. Làm trên kết quả của 125 câu dev. Nếu chạy thêm câu thì phải soi lại và cập nhật file này.",
- "ngay_soi": "2026-09-29",
+ "_ghi_chu": "Kết quả SOI TAY, không sinh tự động. Mục đích: kiểm tra model chấm (cx/gpt-5.6-terra) có đáng tin không, vì mọi con số accuracy đều dựa vào nó. Làm trên kết quả của 150 câu dev (125 câu soi ngày 29/09, 25 câu soi ngày 01/10). Nếu chạy lại hoặc thêm câu thì phải soi lại và cập nhật file này.",
+ "ngay_soi": "2026-10-01",
  "nguoi_soi": "nhóm (soi tay, đối chiếu đáp án gốc với câu trả lời của hệ)",
  "mau_cham_dung": {
-  "n": 12,
-  "cach_chon": "chọn ngẫu nhiên, seed 7, trong số các câu được chấm là đúng",
+  "n": 20,
+  "cach_chon": "chọn ngẫu nhiên, seed 7: 12 câu trong 125 câu đầu và 8 câu trong 25 câu cuối, trong số các câu được chấm là đúng",
   "so_cham_sai": 0,
   "nhan_xet": "Không có câu nào bị chấm đúng oan. Câu trả lời đều khớp đáp án gốc."
  },
  "mau_cham_sai": {
-  "n": 20,
-  "cach_chon": "soi toàn bộ các câu được chấm là sai",
+  "n": 28,
+  "cach_chon": "soi toàn bộ các câu được chấm là sai (20 câu trong 125 câu đầu, 8 câu trong 25 câu cuối)",
   "so_dang_ngo": 2,
-  "nhan_xet": "18 câu sai thật. 2 câu dưới đây nhóm thấy đáng lẽ nên tính đúng, nên accuracy thật có thể cao hơn khoảng 1,6 điểm."
+  "nhan_xet": "26 câu sai thật. 2 câu dưới đây nhóm thấy đáng lẽ nên tính đúng, nên accuracy thật có thể cao hơn khoảng 1,3 điểm (2/150). 8 câu sai mới đều sai thật: 4 câu loại lượt trợ lý (hệ không có dữ liệu hoặc bịa), 2 câu _abs không biết từ chối, 1 câu đếm lệch 37/38, 1 câu chọn nhầm dịch vụ."
  },
  "cac_cau_dang_ngo": [
   {

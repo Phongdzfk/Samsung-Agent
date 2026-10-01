@@ -10,3 +10,4 @@ __pycache__/
 report/node_modules/
 report/*.pdf
 report/slide-*.png
+results/*/qdrant/

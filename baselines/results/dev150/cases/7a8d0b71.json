@@ -1,0 +1,39 @@
+{
+  "question_id": "7a8d0b71",
+  "question_type": "single-session-assistant",
+  "question": "I'm looking back at our previous chat about the DHL Wellness Retreats campaign. Can you remind me how much was allocated for influencer marketing in the campaign plan?",
+  "ground_truth": "$2,000",
+  "generated_answer": "The provided memories don’t specify how much was allocated for influencer marketing in the DHL Wellness Retreats campaign plan.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-24T10:19:00.000 Wed User requested a detailed email marketing campaign for retreats, including example emails.",
+    "2023-05-28T18:24:03.000 Sun User is aiming to launch the marketing campaign in about six weeks.",
+    "2023-05-27T05:44:01.000 Sat The user plans to finance $295,000.",
+    "2023-05-28T18:24:03.000 Sun User is working on a new marketing campaign to promote their company's latest product release.",
+    "2023-05-28T18:24:03.000 Sun User will work closely with the design, content, and development teams to prepare the marketing campaign.",
+    "2023-05-21T17:41:01.000 Sun User attended a charity gala organized by the local Rotary Club one week before a Cancer Research Walkathon.",
+    "2023-05-28T18:24:03.000 Sun The user's marketing campaign aims to increase brand awareness, generate leads, and drive sales.",
+    "2023-05-24T18:12:04.000 Wed User plans to ask REI staff about the trails they intend to hike and request recommendations or advice.",
+    "2023-05-28T18:24:03.000 Sun The target audience for the user's marketing campaign is primarily business owners and decision-makers in the relevant industry.",
+    "2023-05-21T17:41:01.000 Sun At the charity gala, user bid on a silent-auction item and networked with people who shared similar interests in philanthropy.",
+    "2023-05-28T21:37:01.000 Sun User plans to attend several meetings and presentations during the upcoming business trip.",
+    "2023-05-24T10:19:01.000 Wed User requested example emails for retreats.",
+    "2023-05-21T17:41:01.000 Sun User is interested in upcoming charity events or auctions over the next few months.",
+    "2023-05-23T16:30:05.000 Tue User presented their research at a conference over the summer and received positive feedback from educators and policymakers.",
+    "2023-05-24T14:47:02.000 Wed User participated in an online book-club discussion on Facebook about \"The Power\" by Naomi Alderman.",
+    "2023-05-23T03:36:04.000 Tue User plans to create a spreadsheet to organize their vacation research.",
+    "2023-05-27T05:44:00.000 Sat User is looking for an estimate of the total costs involved in buying a house.",
+    "2023-05-21T17:41:05.000 Sun User is looking for volunteer opportunities similar to the food bank event they helped with on March 22.",
+    "2023-05-24T18:12:03.000 Wed User is considering visiting REI in Seattle to buy last-minute gear and get expert advice about trails they plan to hike.",
+    "2023-05-23T16:30:05.000 Tue Several developers contacted the user after the conference because they were interested in learning more about the user's findings and applying them to their own work."
+  ],
+  "answer_session_ids": [
+    "answer_sharegpt_i0tMT9q_9"
+  ],
+  "time_build_s": 2738.2890014648438,
+  "time_retrieve_s": 0.2346787452697754,
+  "time_answer_s": 3.3521580696105957,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

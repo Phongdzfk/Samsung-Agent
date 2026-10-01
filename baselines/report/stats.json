@@ -1,5 +1,5 @@
 {
- "n_done": 125,
+ "n_done": 150,
  "n_dev": 150,
  "n_test": 350,
  "types": [
@@ -15,9 +15,9 @@
    "type": "single-session-assistant",
    "dev": 17,
    "test": 39,
-   "done": 9,
-   "correct": 3,
-   "acc": 0.3333333333333333
+   "done": 17,
+   "correct": 7,
+   "acc": 0.4117647058823529
   },
   {
    "type": "single-session-preference",
@@ -39,33 +39,33 @@
    "type": "temporal-reasoning",
    "dev": 40,
    "test": 93,
-   "done": 30,
-   "correct": 26,
-   "acc": 0.8666666666666667
+   "done": 40,
+   "correct": 34,
+   "acc": 0.85
   },
   {
    "type": "knowledge-update",
    "dev": 23,
    "test": 55,
-   "done": 16,
-   "correct": 15,
-   "acc": 0.9375
+   "done": 23,
+   "correct": 20,
+   "acc": 0.8695652173913043
   }
  ],
- "micro": 0.84,
- "macro": 0.7900462962962962,
+ "micro": 0.8133333333333334,
+ "macro": 0.7890179501752391,
  "n_types_run": 6,
  "abs": {
-  "n": 1,
-  "correct": 1
+  "n": 4,
+  "correct": 2
  },
  "build_min": {
-  "mean": 37.21771642888387,
-  "median": 33.467062922318775,
+  "mean": 36.41453651997778,
+  "median": 33.07095316449801,
   "max": 61.122219224770866
  },
- "retrieve_s": 0.17973302459716797,
- "answer_s": 4.087394472122193,
+ "retrieve_s": 0.17029226144154866,
+ "answer_s": 4.159690806070963,
  "wrong": [
   {
    "id": "0bc8ad93",
@@ -116,6 +116,22 @@
    "retrieved_evidence": true
   },
   {
+   "id": "69fee5aa",
+   "type": "knowledge-update",
+   "q": "How many pre-1920 American coins do I have in my collection?",
+   "gold": "38",
+   "pred": "You have **37 pre-1920 American coins** in your collection.",
+   "retrieved_evidence": true
+  },
+  {
+   "id": "6aeb4375_abs",
+   "type": "knowledge-update",
+   "q": "How many Italian restaurants have I tried in my city?",
+   "gold": "The information provided is not enough. You mentioned trying Korean re",
+   "pred": "You have tried **no Italian restaurants** in your city, based on the memories provided.",
+   "retrieved_evidence": true
+  },
+  {
    "id": "7024f17c",
    "type": "multi-session",
    "q": "How many hours of jogging and yoga did I do last week?",
@@ -124,11 +140,35 @@
    "retrieved_evidence": true
   },
   {
+   "id": "7161e7e2",
+   "type": "single-session-assistant",
+   "q": "I'm checking our previous chat about the shift rotation sheet for GM social media agents. Can you remind me wh",
+   "gold": "Admon was assigned to the 8 am - 4 pm (Day Shift) on Sundays.",
+   "pred": "The available notes don’t specify which Sunday shift was assigned to Admon. They only list the four possible s",
+   "retrieved_evidence": true
+  },
+  {
    "id": "75f70248",
    "type": "single-session-preference",
    "q": "I've been sneezing quite a bit lately. Do you think it might be my living room?",
    "gold": "The user would prefer responses that consider the potential impact of ",
    "pred": "Yes, it could be. Your cat sheds heavily, so the living room may contain cat hair and dander, especially in th",
+   "retrieved_evidence": true
+  },
+  {
+   "id": "778164c6",
+   "type": "single-session-assistant",
+   "q": "I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name ",
+   "gold": "Grilled Snapper with Mango Salsa",
+   "pred": "The dish was **Escovitch Fish**—a Jamaican snapper dish typically topped with a tangy pickled mixture that can",
+   "retrieved_evidence": true
+  },
+  {
+   "id": "7a8d0b71",
+   "type": "single-session-assistant",
+   "q": "I'm looking back at our previous chat about the DHL Wellness Retreats campaign. Can you remind me how much was",
+   "gold": "$2,000",
+   "pred": "The provided memories don’t specify how much was allocated for influencer marketing in the DHL Wellness Retrea",
    "retrieved_evidence": true
   },
   {
@@ -153,6 +193,14 @@
    "q": "How many days ago did I attend a baking class at a local culinary school when I made my friend's birthday cake",
    "gold": "21 days. 22 days (including the last day) is also acceptable.",
    "pred": "You attended the baking class on March 20, 2022—26 days before April 15, 2022.",
+   "retrieved_evidence": true
+  },
+  {
+   "id": "ac031881",
+   "type": "single-session-assistant",
+   "q": "I'm trying to recall what the designation on my jumpsuit was that helped me find the file number in the record",
+   "gold": "The designation on your jumpsuit was 'LIV'.",
+   "pred": "The designation was **A**, which led you to **file/record 54**.",
    "retrieved_evidence": true
   },
   {
@@ -212,6 +260,14 @@
    "retrieved_evidence": true
   },
   {
+   "id": "gpt4_2f56ae70",
+   "type": "temporal-reasoning",
+   "q": "Which streaming service did I start using most recently?",
+   "gold": "Disney+",
+   "pred": "Apple TV+ — you had been using it for a few months, whereas you’d been using Netflix, Hulu, and Amazon Prime f",
+   "retrieved_evidence": true
+  },
+  {
    "id": "gpt4_2f91af09",
    "type": "multi-session",
    "q": "How many total pieces of writing have I completed since I started writing again three weeks ago, including sho",
@@ -226,22 +282,30 @@
    "gold": "I have worked on or bought five model kits. The scales of the models a",
    "pred": "You have worked on or bought **4 model kits**:  1. 1/72-scale B-29 bomber — bought   2. 1/24-scale 1969 Camaro",
    "retrieved_evidence": true
+  },
+  {
+   "id": "gpt4_fe651585_abs",
+   "type": "temporal-reasoning",
+   "q": "Who became a parent first, Tom or Alex?",
+   "gold": "The information provided is not enough. You mentioned Alex becoming a ",
+   "pred": "Alex became a parent first, adopting a baby girl in January.",
+   "retrieved_evidence": true
   }
  ],
  "llm": "cx/gpt-5.6-luna",
  "judge": "cx/gpt-5.6-terra",
  "retrieval": {
-  "n": 125,
-  "hit": 124,
-  "ambiguous": 0,
+  "n": 150,
+  "hit": 149,
+  "ambiguous": 2,
   "by_type": {
    "single-session-user": {
     "n": 21,
     "hit": 21
    },
    "single-session-assistant": {
-    "n": 9,
-    "hit": 8
+    "n": 17,
+    "hit": 16
    },
    "single-session-preference": {
     "n": 9,
@@ -252,17 +316,17 @@
     "hit": 40
    },
    "temporal-reasoning": {
-    "n": 30,
-    "hit": 30
+    "n": 40,
+    "hit": 40
    },
    "knowledge-update": {
-    "n": 16,
-    "hit": 16
+    "n": 23,
+    "hit": 23
    }
   },
-  "wrong_with_evidence": 19,
+  "wrong_with_evidence": 27,
   "wrong_without_evidence": 1,
-  "correct_with_evidence": 105,
+  "correct_with_evidence": 122,
   "correct_without_evidence": 0
  }
 }

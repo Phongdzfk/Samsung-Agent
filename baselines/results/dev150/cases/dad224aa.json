@@ -1,0 +1,40 @@
+{
+  "question_id": "dad224aa",
+  "question_type": "knowledge-update",
+  "question": "What time do I wake up on Saturday mornings?",
+  "ground_truth": "7:30 am",
+  "generated_answer": "You usually wake up at **7:30 a.m. on Saturday mornings**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T02:31:01.000 Sat User usually wakes up at 7:30 a.m. on Saturdays.",
+    "2023-05-23T01:43:01.000 Tue The user's weekday wake-up time is 7:15 a.m.",
+    "2023-05-23T14:12:00.000 Tue User wakes up around 8:30 a.m. on Saturdays.",
+    "2023-05-23T01:43:00.000 Tue Before starting their new job, user typically woke up at 8:30 a.m. on weekdays.",
+    "2023-05-23T01:43:01.000 Tue On the most recent Saturday mentioned, the user woke up at 9:30 a.m.",
+    "2023-05-23T01:43:01.000 Tue The user's weekend wake-up time varies.",
+    "2023-05-23T01:43:01.000 Tue The user would like to wake up at 7:15 a.m. on weekdays.",
+    "2023-05-23T01:43:01.000 Tue On the previous Saturday, the user woke up at 7:30 a.m.",
+    "2023-05-23T14:12:00.000 Tue User prefers Sunday-morning activities that do not require waking up too early because they like sleeping in somewhat later on weekends.",
+    "2023-05-23T01:43:01.000 Tue The user would like to wake up at 8:00 a.m. on weekends.",
+    "2023-05-23T01:43:00.000 Tue On a previous Saturday, the user woke up at 7:30 a.m.",
+    "2023-05-23T01:43:03.000 Tue The user is considering trying to wake up naturally on weekdays as well.",
+    "2023-05-23T01:43:01.000 Tue The user usually goes to bed at 11:00 p.m. every night.",
+    "2023-05-23T01:43:00.000 Tue Since starting the new job, user has been waking up at 7:15 a.m. to have enough time to get ready and catch the 8:00 a.m. bus.",
+    "2023-05-23T01:43:00.000 Tue The user has been doing well with their wake-up schedule on weekdays, but weekends have been more difficult.",
+    "2023-05-23T14:12:01.000 Tue User thinks they can fit in a 30-minute yoga or stretching routine on Sundays because they already wake up at 8:30 a.m. on Saturdays.",
+    "2023-05-23T01:43:03.000 Tue The user has been waking up naturally on weekends.",
+    "2023-05-23T14:12:00.000 Tue User is trying to establish a consistent morning routine on weekends.",
+    "2023-05-23T01:43:00.000 Tue User is willing to try setting their bedtime 15 minutes earlier.",
+    "2023-05-23T14:12:04.000 Tue User plans to read for 30 minutes each night before bed, starting with \"The Lean Startup.\""
+  ],
+  "answer_session_ids": [
+    "answer_4a97ae40_1",
+    "answer_4a97ae40_2"
+  ],
+  "time_build_s": 1781.0075466632843,
+  "time_retrieve_s": 0.37679314613342285,
+  "time_answer_s": 1.8422482013702393,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

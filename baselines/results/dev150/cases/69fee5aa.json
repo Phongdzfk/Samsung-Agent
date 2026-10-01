@@ -1,0 +1,40 @@
+{
+  "question_id": "69fee5aa",
+  "question_type": "knowledge-update",
+  "question": "How many pre-1920 American coins do I have in my collection?",
+  "ground_truth": "38",
+  "generated_answer": "You have **37 pre-1920 American coins** in your collection.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-27T18:09:04.000 Sat User has 37 coins in their pre-1920 American coin collection.",
+    "2023-05-27T18:09:04.000 Sat User wants to display all 37 of their pre-1920 American coins together.",
+    "2023-05-27T18:09:04.000 Sat User is organizing their pre-1920 American coins by denomination and mint mark.",
+    "2023-05-29T00:54:00.000 Mon User recently added a 1915-S Barber quarter to their collection of pre-1920 American coins.",
+    "2023-05-27T18:09:05.000 Sat User is looking for coin display cases or albums that can hold all of their coins.",
+    "2023-05-29T00:54:03.000 Mon User is interested in meeting other collectors and learning more about error coins.",
+    "2023-05-27T18:09:03.000 Sat User has been intending to have their 1913 Liberty Head nickel appraised.",
+    "2023-05-27T18:09:00.000 Sat User collects coins, records, cameras, and books.",
+    "2023-05-29T00:54:00.000 Mon User wants to learn more about error coins, especially coins with misprinted dates, including notable examples and methods for identifying them.",
+    "2023-05-29T00:54:03.000 Mon User is interested in finding good deals on vintage cameras at coin shows or conventions.",
+    "2023-05-27T18:09:05.000 Sat User is excited to organize and display their coins.",
+    "2023-05-29T00:54:02.000 Mon User is interested in finding upcoming coin shows or conventions in their area.",
+    "2023-05-29T00:54:01.000 Mon User wants to have error coins authenticated, particularly a 1972 doubled-die cent they recently bought.",
+    "2023-05-27T18:09:01.000 Sat User is considering using Coin Collector's Assistant to catalog their coins.",
+    "2023-05-27T18:09:03.000 Sat User owns a 1913 Liberty Head nickel.",
+    "2023-05-29T00:54:03.000 Mon User plans to look for resources about upcoming coin shows in their area.",
+    "2023-05-27T18:09:03.000 Sat User is looking for reputable coin appraisal services or experts.",
+    "2023-05-16T17:06:01.000 Tue User typically wants to redeem loyalty rewards after reaching amounts such as $10 or $20.",
+    "2023-05-27T18:09:02.000 Sat User wants information about the value of their 1940s-era Leica IIIa and 1960s-era Nikon F.",
+    "2023-05-29T00:54:02.000 Mon User has heard that PCGS is more popular among error-coin collectors."
+  ],
+  "answer_session_ids": [
+    "answer_d6028d6e_1",
+    "answer_d6028d6e_2"
+  ],
+  "time_build_s": 2041.805950164795,
+  "time_retrieve_s": 0.019463539123535156,
+  "time_answer_s": 2.5409696102142334,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

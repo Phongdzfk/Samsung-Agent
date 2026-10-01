@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_d31cdae3",
+  "question_type": "temporal-reasoning",
+  "question": "Which trip did the narrator take first, the solo trip to Europe or the family road trip across the American Southwest?",
+  "ground_truth": "The family road trip across the American Southwest",
+  "generated_answer": "The family road trip across the American Southwest came first. The user took it a few years ago, then went on the solo trip to Europe last summer.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-22T00:37:00.000 Mon User previously visited the Grand Canyon with their family on a road trip across the American Southwest a few years ago.",
+    "2023-05-22T05:20:01.000 Mon User wants specific examples from Garibaldi's travel writings that demonstrate lessons about travel and personal growth.",
+    "2023-05-22T11:56:05.000 Mon User took a solo trip to Europe last summer and spent two weeks backpacking through Italy, Switzerland, and Germany.",
+    "2023-05-22T00:27:00.000 Mon User is planning a trip.",
+    "2023-05-22T05:20:00.000 Mon User is interested in lessons from Giuseppe Garibaldi's travel writings, particularly the relationship between travel and personal growth.",
+    "2023-05-22T05:20:02.000 Mon User is interested in travel writers whose work resembles Garibaldi's in exploring personal growth and political activism.",
+    "2023-05-22T00:27:03.000 Mon User plans to focus on travel and adventure content.",
+    "2023-05-22T11:56:05.000 Mon User visited Munich during that solo European backpacking trip and considered it an amazing experience.",
+    "2023-05-22T00:27:01.000 Mon User enjoys this travel influencer's content and finds it inspiring for their own travels.",
+    "2023-05-22T00:37:00.000 Mon User is planning a solo trip to Arizona and wants recommendations for must-see attractions and activities.",
+    "2023-05-22T00:37:00.000 Mon User wants to explore more of Arizona independently this time.",
+    "2023-05-22T00:27:01.000 Mon User recently discovered a travel influencer on Instagram who posts photographs and stories from her adventures.",
+    "2023-05-22T20:05:02.000 Mon User wants more information about Jack's early life and how he relates to his best friend, who is a main supporting character.",
+    "2023-05-22T20:09:01.000 Mon User thinks museums in Paris sound amazing and is seeking a recommendation for which one to visit first.",
+    "2023-05-22T00:27:00.000 Mon User is looking for travel blogs or Instagram influencers to follow for travel inspiration.",
+    "2023-05-22T00:37:01.000 Mon User is looking for hiking trails in Sedona that are suitable for solo travelers.",
+    "2023-05-22T01:22:04.000 Mon User's commute takes approximately one hour each way.",
+    "2023-05-22T00:37:02.000 Mon User is considering staying in Sedona for a few days before traveling to Monument Valley for a guided tour.",
+    "2023-05-22T00:27:03.000 Mon User's target audience is primarily young adults interested in exploring new places and experiencing different cultures.",
+    "2023-05-22T00:37:01.000 Mon User is interested in exploring Sedona and Monument Valley because they have already visited the Grand Canyon."
+  ],
+  "answer_session_ids": [
+    "answer_8464304d_1",
+    "answer_8464304d_2"
+  ],
+  "time_build_s": 1531.5254974365234,
+  "time_retrieve_s": 0.027647018432617188,
+  "time_answer_s": 2.3829195499420166,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

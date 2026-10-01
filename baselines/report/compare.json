@@ -1,0 +1,473 @@
+{
+ "n": 150,
+ "apex": {
+  "correct": 127,
+  "micro": 0.8466666666666667,
+  "macro": 0.8455422265524567,
+  "ci95": [
+   0.7804188029480452,
+   0.8956012072442565
+  ]
+ },
+ "lm": {
+  "correct": 122,
+  "micro": 0.8133333333333334,
+  "macro": 0.7890179501752391,
+  "ci95": [
+   0.7434413916324496,
+   0.8675766945029
+  ]
+ },
+ "paired": {
+  "both_right": 107,
+  "only_apex": 20,
+  "only_lm": 15,
+  "both_wrong": 8,
+  "mcnemar_p": 0.49955983320251107
+ },
+ "by_type": {
+  "single-session-user": {
+   "n": 21,
+   "apex": 20,
+   "lm": 21,
+   "only_apex": 0,
+   "only_lm": 1,
+   "apex_acc": 0.9523809523809523,
+   "lm_acc": 1.0
+  },
+  "single-session-assistant": {
+   "n": 17,
+   "apex": 14,
+   "lm": 7,
+   "only_apex": 8,
+   "only_lm": 1,
+   "apex_acc": 0.8235294117647058,
+   "lm_acc": 0.4117647058823529
+  },
+  "single-session-preference": {
+   "n": 9,
+   "apex": 7,
+   "lm": 7,
+   "only_apex": 2,
+   "only_lm": 2,
+   "apex_acc": 0.7777777777777778,
+   "lm_acc": 0.7777777777777778
+  },
+  "multi-session": {
+   "n": 40,
+   "apex": 32,
+   "lm": 33,
+   "only_apex": 5,
+   "only_lm": 6,
+   "apex_acc": 0.8,
+   "lm_acc": 0.825
+  },
+  "temporal-reasoning": {
+   "n": 40,
+   "apex": 34,
+   "lm": 34,
+   "only_apex": 3,
+   "only_lm": 3,
+   "apex_acc": 0.85,
+   "lm_acc": 0.85
+  },
+  "knowledge-update": {
+   "n": 23,
+   "apex": 20,
+   "lm": 20,
+   "only_apex": 2,
+   "only_lm": 2,
+   "apex_acc": 0.8695652173913043,
+   "lm_acc": 0.8695652173913043
+  }
+ },
+ "abs": {
+  "n": 4,
+  "apex": 3,
+  "lm": 2
+ },
+ "apex_wrong_class": {
+  "abstention_fail": 1,
+  "reasoning": 21,
+  "filtered_out": 1
+ },
+ "apex_report": {
+  "build_tokens": 89172.0,
+  "answer_tokens": 12036.0,
+  "build_share": 88.1,
+  "build_calls": 22.4,
+  "answer_calls": 3.7,
+  "tool_calls": 3.5,
+  "build_lat_p50_p95_s": [
+   423.9,
+   1384.2
+  ],
+  "answer_lat_p50_p95_s": [
+   33.2,
+   65.1
+  ],
+  "filter_recall": 98.5,
+  "tool_recall": 99.6,
+  "served_models": {
+   "gpt-5.6-luna": 3998,
+   "gpt-5.6-terra": 150
+  }
+ },
+ "lm_cost": {
+  "build_min_p95": 57.44821195205053,
+  "build_min_median": 33.07095316449801,
+  "build_min_mean": 36.41453651997778,
+  "build_min_max": 61.122219224770866,
+  "answer_s_median": 3.256873369216919
+ },
+ "diff_apex_right": [
+  {
+   "id": "1b9b7252",
+   "type": "single-session-assistant",
+   "q": "I wanted to follow up on our previous conversation about mindfulness techniques. You mentioned some great resources for ",
+   "gold": "Mindful.org.",
+   "apex": "The website was **Mindful.org**. It offered free guided exercises including **“The Mountain Meditation”** and **“The Body Scan Meditation.”*",
+   "lm": "The website was likely **UCLA Mindful** (the UCLA Mindful Awareness Research Center): **https://www.uclahealth.org/programs/marc/free-guided"
+  },
+  {
+   "id": "1da05512",
+   "type": "single-session-preference",
+   "q": "I'm trying to decide whether to buy a NAS device now or wait. What do you think?",
+   "gold": "The user would prefer responses that take into account their current home networ",
+   "apex": "Based on what you’ve told me, I’d lean toward **buying now**, provided you find a reasonable price.  You’re already running into storage-cap",
+   "lm": "Given your goals, I’d lean toward buying a NAS now—provided you choose one that fits your storage needs and set it up securely. There’s no m"
+  },
+  {
+   "id": "2bf43736",
+   "type": "single-session-assistant",
+   "q": "I was going through our previous chat and I wanted to clarify something about the prayer of beginners in Tanqueray's Spi",
+   "gold": "Chapter 4 of Book 1, titled 'Vocal Prayer and Meditation'.",
+   "apex": "It’s **Chapter 4 of Book 1 in the second part**, titled **“Vocal Prayer and Meditation.”**",
+   "lm": "In Tanquerey’s *The Spiritual Life*, the **prayer of beginners** is discussed in **Part II, Book I, Chapter III**, titled **“The Prayer of B"
+  },
+  {
+   "id": "3249768e",
+   "type": "single-session-assistant",
+   "q": "I'm looking back at our previous conversation about building a cocktail bar. You recommended five bottles to make the wi",
+   "gold": "Absinthe",
+   "apex": "The fifth bottle was **absinthe**.",
+   "lm": "The memories don’t specify the five-bottle list, so I can’t reliably identify what the fifth bottle was."
+  },
+  {
+   "id": "6aeb4375_abs",
+   "type": "knowledge-update",
+   "q": "How many Italian restaurants have I tried in my city?",
+   "gold": "The information provided is not enough. You mentioned trying Korean restaurants ",
+   "apex": "I don’t know—the memory doesn’t mention you trying any Italian restaurants in your city.",
+   "lm": "You have tried **no Italian restaurants** in your city, based on the memories provided."
+  },
+  {
+   "id": "75f70248",
+   "type": "single-session-preference",
+   "q": "I've been sneezing quite a bit lately. Do you think it might be my living room?",
+   "gold": "The user would prefer responses that consider the potential impact of their cat,",
+   "apex": "It might be. You mentioned that your cat sheds a lot, and the living room was a focus for dust control. Dust, cat dander, and disturbed fur ",
+   "lm": "Yes, it could be. Your cat sheds heavily, so the living room may contain cat hair and dander, especially in the upholstery, rugs, and recent"
+  },
+  {
+   "id": "778164c6",
+   "type": "single-session-assistant",
+   "q": "I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Ja",
+   "gold": "Grilled Snapper with Mango Salsa",
+   "apex": "The dish was **grilled snapper with mango salsa**.",
+   "lm": "The dish was **Escovitch Fish**—a Jamaican snapper dish typically topped with a tangy pickled mixture that can include vegetables and fruit-"
+  },
+  {
+   "id": "7a8d0b71",
+   "type": "single-session-assistant",
+   "q": "I'm looking back at our previous chat about the DHL Wellness Retreats campaign. Can you remind me how much was allocated",
+   "gold": "$2,000",
+   "apex": "The campaign plan allocated **$2,000** for influencer marketing.",
+   "lm": "The provided memories don’t specify how much was allocated for influencer marketing in the DHL Wellness Retreats campaign plan."
+  },
+  {
+   "id": "8fb83627",
+   "type": "knowledge-update",
+   "q": "How many issues of National Geographic have I finished reading?",
+   "gold": "Five",
+   "apex": "You’ve finished **5 issues** of *National Geographic*.",
+   "lm": "You have finished reading **three issues** of National Geographic."
+  },
+  {
+   "id": "ac031881",
+   "type": "single-session-assistant",
+   "q": "I'm trying to recall what the designation on my jumpsuit was that helped me find the file number in the records room?",
+   "gold": "The designation on your jumpsuit was 'LIV'.",
+   "apex": "The designation was **“LIV” inside a square**. It’s the Roman numeral for **54**, which led you to file **54** in the records room.",
+   "lm": "The designation was **A**, which led you to **file/record 54**."
+  },
+  {
+   "id": "ceb54acb",
+   "type": "single-session-assistant",
+   "q": "In our previous chat, you suggested 'sexual compulsions' and a few other options for alternative terms for certain behav",
+   "gold": "I suggested 'sexual fixations', 'problematic sexual behaviors', 'sexual impulsiv",
+   "apex": "The other four options were:  1. **Sexual fixations** 2. **Problematic sexual behaviors** 3. **Sexual impulsivity** 4. **Compulsive sexualit",
+   "lm": "I can’t determine the other four options from the memories provided. They only mention topics such as social-media use, habits, and producti"
+  },
+  {
+   "id": "d23cf73b",
+   "type": "multi-session",
+   "q": "How many different cuisines have I learned to cook or tried out in the past few months?",
+   "gold": "4",
+   "apex": "You’ve explored **4 different cuisines** in the past few months:  1. **Ethiopian** — tried a new Ethiopian restaurant   2. **Indian** — lear",
+   "lm": "You’ve explored about **six different cuisines or culinary traditions**:  1. Thai   2. Indian   3. Vegan cuisine   4. Ethiopian   5. Korean "
+  },
+  {
+   "id": "d682f1a2",
+   "type": "multi-session",
+   "q": "How many different types of food delivery services have I used recently?",
+   "gold": "3",
+   "apex": "You’ve used **3 different food delivery services recently**:  1. **Domino’s Pizza** 2. **Uber Eats** 3. **Fresh Fusion**",
+   "lm": "You’ve used **one identifiable type** recently: a **pre-made meal delivery service**, such as Fresh Fusion."
+  },
+  {
+   "id": "e9327a54",
+   "type": "single-session-assistant",
+   "q": "I'm planning to revisit Orlando. I was wondering if you could remind me of that unique dessert shop with the giant milks",
+   "gold": "The Sugar Factory at Icon Park.",
+   "apex": "The dessert shop was **The Sugar Factory**, located at **ICON Park** in Orlando. It’s known for its specialty drinks and **giant milkshakes*",
+   "lm": "I don’t have the exact shop name in the saved memories—only that you were looking for fun, family-friendly dessert spots in Orlando. You may"
+  },
+  {
+   "id": "eac54adc",
+   "type": "temporal-reasoning",
+   "q": "How many days ago did I launch my website when I signed a contract with my first client?",
+   "gold": "19 days ago. 20 days (including the last day) is also acceptable.",
+   "apex": "You launched your website **19 days before** signing your first client contract—on **February 10, 2023**, compared with **March 1, 2023**.",
+   "lm": "You launched your website **19 days before** signing your first-client contract (February 10 to March 1, 2023). As of March 25, 2023, that l"
+  },
+  {
+   "id": "gpt4_15e38248",
+   "type": "multi-session",
+   "q": "How many pieces of furniture did I buy, assemble, sell, or fix in the past few months?",
+   "gold": "4",
+   "apex": "You handled **4 distinct pieces of furniture** in the past few months:  - **Bought:** coffee table and mattress — 2 - **Assembled:** IKEA bo",
+   "lm": "You handled **3 pieces of furniture** in the past few months:  - **Bought:** 1 coffee table   - **Assembled:** 1 IKEA bookshelf   - **Fixed:"
+  },
+  {
+   "id": "gpt4_1d4ab0c9",
+   "type": "temporal-reasoning",
+   "q": "How many days passed between the day I started watering my herb garden and the day I harvested my first batch of fresh h",
+   "gold": "24 days. 25 days (including the last day) is also acceptable.",
+   "apex": "24 days passed—from March 22, 2023, when you started watering the garden, to April 15, 2023, when you harvested your first batch.",
+   "lm": "18 days passed between March 22, 2023, and April 15, 2023."
+  },
+  {
+   "id": "gpt4_2f91af09",
+   "type": "multi-session",
+   "q": "How many total pieces of writing have I completed since I started writing again three weeks ago, including short stories",
+   "gold": "23",
+   "apex": "You’ve completed **23 pieces**:  - **17 poems** - **5 short stories** - **1 writing-challenge submission** (“The Smell of Old Books”)",
+   "lm": "You completed **25 pieces** in total:  - 17 poems   - 5 short stories   - 3 writing-challenge pieces (one per week for three weeks)"
+  },
+  {
+   "id": "gpt4_59c863d7",
+   "type": "multi-session",
+   "q": "How many model kits have I worked on or bought?",
+   "gold": "I have worked on or bought five model kits. The scales of the models are: Revell",
+   "apex": "You’ve worked on or bought **5 model kits**:  1. 1/72 B-29 bomber   2. 1/24 1969 Camaro   3. Revell F-15 Eagle   4. Tamiya 1/48 Spitfire Mk.",
+   "lm": "You have worked on or bought **4 model kits**:  1. 1/72-scale B-29 bomber — bought   2. 1/24-scale 1969 Camaro — bought   3. Tamiya 1/48-sca"
+  },
+  {
+   "id": "gpt4_fe651585_abs",
+   "type": "temporal-reasoning",
+   "q": "Who became a parent first, Tom or Alex?",
+   "gold": "The information provided is not enough. You mentioned Alex becoming a parent in ",
+   "apex": "I don’t know. Alex became a parent through adoption in January, but Tom’s parenthood date wasn’t mentioned.",
+   "lm": "Alex became a parent first, adopting a baby girl in January."
+  }
+ ],
+ "diff_lm_right": [
+  {
+   "id": "09ba9854_abs",
+   "type": "multi-session",
+   "q": "How much will I save by taking the bus from the airport to my hotel instead of a taxi?",
+   "gold": "The information provided is not enough. You did not mention how much will the bu",
+   "apex": "You’d save about **¥9,000**—the bus was estimated at around **¥1,000**, versus roughly **¥10,000 for a taxi**. That’s approximately **$60**,",
+   "lm": "The bus fare isn’t provided in the available information, so the exact savings can’t be calculated.    If you meant the train, which was est"
+  },
+  {
+   "id": "2e6d26dc",
+   "type": "multi-session",
+   "q": "How many babies were born to friends and family members in the last few months?",
+   "gold": "5",
+   "apex": "**Six babies** were born to friends and family members in the last few months:  - David’s son, **Jasper** - Cousin Rachel’s son, **Max** - M",
+   "lm": "Five babies: Jasper, Charlotte, Max, and the twins Ava and Lily."
+  },
+  {
+   "id": "32260d93",
+   "type": "single-session-preference",
+   "q": "Can you recommend a show or movie for me to watch tonight?",
+   "gold": "The user would prefer recommendations for stand-up comedy specials on Netflix, e",
+   "apex": "Try **_The Lost Pyramid_** (Netflix). Since you’re interested in ancient Egypt and obscure historical mysteries, this documentary’s investig",
+   "lm": "Tonight, try **_Baby Reindeer_** on Netflix. It’s a gripping, true-story-inspired limited series with strong storytelling and a dark, psycho"
+  },
+  {
+   "id": "51c32626",
+   "type": "multi-session",
+   "q": "When did I submit my research paper on sentiment analysis?",
+   "gold": "February 1st",
+   "apex": "You submitted your sentiment analysis research paper to ACL, but the submission date wasn’t mentioned. The conversation was recorded on May ",
+   "lm": "You submitted your sentiment analysis research paper to ACL on **February 1**."
+  },
+  {
+   "id": "852ce960",
+   "type": "knowledge-update",
+   "q": "What was the amount I was pre-approved for when I got my mortgage from Wells Fargo?",
+   "gold": "$400,000",
+   "apex": "You were pre-approved for **$350,000** by Wells Fargo.",
+   "lm": "You were pre-approved for a **$400,000 mortgage from Wells Fargo** on November 30, 2023."
+  },
+  {
+   "id": "9ea5eabc",
+   "type": "knowledge-update",
+   "q": "Where did I go on my most recent family trip?",
+   "gold": "Paris",
+   "apex": "You went to **Hawaii** on your most recent family trip.",
+   "lm": "You went to **Paris, France** on your most recent family trip."
+  },
+  {
+   "id": "b0479f84",
+   "type": "single-session-preference",
+   "q": "I've got some free time tonight, any documentary recommendations?",
+   "gold": "The user would prefer documentary recommendations that are similar in style and ",
+   "apex": "Since you’ve been enjoying nature and wildlife documentaries, I’d recommend:  - **Dynasties** — intimate, dramatic stories following individ",
+   "lm": "Absolutely—since you enjoyed **_Our Planet_**, **_Free Solo_**, and **_Tiger King_**, here are a few strong picks for tonight:  ### Nature a"
+  },
+  {
+   "id": "ba358f49",
+   "type": "multi-session",
+   "q": "How many years will I be when my friend Rachel gets married?",
+   "gold": "33",
+   "apex": "I don’t know your age from our conversations, so I can’t determine how old you’ll be when Rachel gets married next year.",
+   "lm": "You will be **33 years old** when Rachel gets married next year."
+  },
+  {
+   "id": "c2ac3c61",
+   "type": "multi-session",
+   "q": "How many online courses have I completed in total?",
+   "gold": "5",
+   "apex": "You have completed **2 online courses** in total (the latest recorded count, on edX).",
+   "lm": "You have completed **5 online courses in total**: **3 on Coursera** and **2 on edX**."
+  },
+  {
+   "id": "c8f1aeed",
+   "type": "single-session-assistant",
+   "q": "I wanted to follow up on our previous conversation about fracking in the Marcellus Shale region. You mentioned that some",
+   "gold": "Pennsylvania",
+   "apex": "I don’t have a recorded state-specific example from that conversation. I mentioned **state-required baseline testing and post-drilling monit",
+   "lm": "The state mentioned was **Pennsylvania**. Its regulations require fracking operators to test nearby water supplies before drilling and condu"
+  },
+  {
+   "id": "cc6d1ec1",
+   "type": "temporal-reasoning",
+   "q": "How long had I been bird watching when I attended the bird watching workshop?",
+   "gold": "Two months",
+   "apex": "You had been bird watching for about **three months** when you attended the workshop.",
+   "lm": "You had been bird watching for about two months when you attended the workshop."
+  },
+  {
+   "id": "ec81a493",
+   "type": "single-session-user",
+   "q": "How many copies of my favorite artist's debut album were released worldwide?",
+   "gold": "500",
+   "apex": "500 copies worldwide—but the memory specifies this was the **signed poster**, not the debut album itself.",
+   "lm": "500 copies were released worldwide."
+  },
+  {
+   "id": "gpt4_2ba83207",
+   "type": "multi-session",
+   "q": "Which grocery store did I spend the most money at in the past month?",
+   "gold": "Thrive Market",
+   "apex": "Walmart — you spent around **$120** there, more than the approximately **$80 at Trader Joe’s** and **$60 at Publix** in the past month.",
+   "lm": "You spent the most at **Thrive Market**, approximately **$150** in the past month."
+  },
+  {
+   "id": "gpt4_4fc4f797",
+   "type": "temporal-reasoning",
+   "q": "How many days passed between the day I received feedback about my car's suspension and the day I tested my new suspensio",
+   "gold": "38 days. 39 days (including the last day) is also acceptable.",
+   "apex": "7 days passed—from April 17, 2023, when you received the suspension feedback, to April 24, 2023, when you tested the new setup.",
+   "lm": "37 days passed—from March 17, 2023, when you received feedback about the suspension, to April 23, 2023, when you tested the new setup."
+  },
+  {
+   "id": "gpt4_65aabe59",
+   "type": "temporal-reasoning",
+   "q": "Which device did I set up first, the smart thermostat or the mesh network system?",
+   "gold": "Smart thermostat",
+   "apex": "You set up the **mesh network system first**, around **mid-January 2023**. You set up the **smart thermostat about a month ago**, around **A",
+   "lm": "You set up the **smart thermostat first**—about one month ago. You upgraded to the mesh network system approximately three weeks ago."
+  }
+ ],
+ "both_wrong": [
+  {
+   "id": "0bc8ad93",
+   "type": "temporal-reasoning",
+   "q": "I mentioned visiting a museum two months ago. Did I visit with a friend or not?",
+   "gold": "No, you did not visit with a friend.",
+   "apex": "Yes. Two months ago, you visited the Science Museum with a friend who is a chemistry professor.",
+   "lm": "Yes. You visited the museum with someone—specifically, you toured the Science Museum with a friend who is a chemistry professor."
+  },
+  {
+   "id": "37f165cf",
+   "type": "multi-session",
+   "q": "What was the page count of the two novels I finished in January and March?",
+   "gold": "856",
+   "apex": "I don’t have enough information to identify novels finished specifically in January and March. The memory only records:  - **The Power** — *",
+   "lm": "The two novels were:  - **The Nightingale** by Kristin Hannah — **440 pages** - **The Power** by Naomi Alderman — **341 pages**"
+  },
+  {
+   "id": "69fee5aa",
+   "type": "knowledge-update",
+   "q": "How many pre-1920 American coins do I have in my collection?",
+   "gold": "38",
+   "apex": "You have **37 pre-1920 American coins** in your collection.",
+   "lm": "You have **37 pre-1920 American coins** in your collection."
+  },
+  {
+   "id": "7024f17c",
+   "type": "multi-session",
+   "q": "How many hours of jogging and yoga did I do last week?",
+   "gold": "0.5 hours",
+   "apex": "I don’t have enough information to determine how many hours you actually did last week (May 23–29). I only have a plan to resume yoga—one or",
+   "lm": "Based on the memories, you did **0 hours of jogging and 0 hours of yoga last week**. The only recorded jog was **30 minutes on Saturday, May"
+  },
+  {
+   "id": "7161e7e2",
+   "type": "single-session-assistant",
+   "q": "I'm checking our previous chat about the shift rotation sheet for GM social media agents. Can you remind me what was the",
+   "gold": "Admon was assigned to the 8 am - 4 pm (Day Shift) on Sundays.",
+   "apex": "I can’t reliably see the Sunday row for Admon in the saved version. The sheet used these shifts: **8 am–4 pm, 12 pm–8 pm, 4 pm–12 am, and 12",
+   "lm": "The available notes don’t specify which Sunday shift was assigned to Admon. They only list the four possible shifts:  - 8:00 AM–4:00 PM   - "
+  },
+  {
+   "id": "7e00a6cb",
+   "type": "single-session-assistant",
+   "q": "I'm planning my trip to Amsterdam again and I was wondering, what was the name of that hostel near the Red Light Distric",
+   "gold": "International Budget Hostel",
+   "apex": "The hostel was **The Bulldog Hostel Amsterdam**, near the Red Light District.",
+   "lm": "I don’t have the specific hostel name in the available memories—only that you were considering budget-friendly hostels in Amsterdam near the"
+  },
+  {
+   "id": "9a707b81",
+   "type": "temporal-reasoning",
+   "q": "How many days ago did I attend a baking class at a local culinary school when I made my friend's birthday cake?",
+   "gold": "21 days. 22 days (including the last day) is also acceptable.",
+   "apex": "You attended the baking class on **March 20, 2022**, which was **26 days ago**.",
+   "lm": "You attended the baking class on March 20, 2022—26 days before April 15, 2022."
+  },
+  {
+   "id": "gpt4_2f56ae70",
+   "type": "temporal-reasoning",
+   "q": "Which streaming service did I start using most recently?",
+   "gold": "Disney+",
+   "apex": "Apple TV+ — you said you’d been using it for a few months, after starting Disney+ in April.",
+   "lm": "Apple TV+ — you had been using it for a few months, whereas you’d been using Netflix, Hulu, and Amazon Prime for six months."
+  }
+ ]
+}

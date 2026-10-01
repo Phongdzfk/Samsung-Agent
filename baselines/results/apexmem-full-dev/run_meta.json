@@ -1,0 +1,101 @@
+{
+  "preset": "full",
+  "mode": "agent",
+  "tools": [
+    "schema_viewer",
+    "entity_lookup",
+    "graph_sql",
+    "search",
+    "property_search"
+  ],
+  "build_signature": "c46eb4f0b5",
+  "graphs_dir": "C:\\Samsung-Agent\\Tuan 4-apexmemImplement\\data\\graphs\\c46eb4f0b5",
+  "models": {
+    "extract": "cx/gpt-5.6-luna",
+    "resolve": "cx/gpt-5.6-luna",
+    "agent": "cx/gpt-5.6-luna",
+    "reader": "cx/gpt-5.6-luna",
+    "judge": "cx/gpt-5.6-terra"
+  },
+  "embed": "BAAI/bge-m3",
+  "trials": 1,
+  "config": {
+    "llm": {
+      "base_url": "http://localhost:20130/v1",
+      "api_key_env": "NINEROUTER_API_KEY",
+      "model": "cx/gpt-5.6-luna",
+      "temperature": null,
+      "reasoning_effort": null,
+      "max_tokens": null,
+      "timeout": 300,
+      "max_retries": 8,
+      "max_wait": 600,
+      "rpm": 0,
+      "stream": false,
+      "strict_model": false,
+      "cache_path": "data/cache/llm_cache.db",
+      "roles": {
+        "extract": null,
+        "resolve": null,
+        "agent": null,
+        "reader": null,
+        "judge": "cx/gpt-5.6-terra"
+      }
+    },
+    "embed": {
+      "backend": "sentence-transformers",
+      "model": "BAAI/bge-m3",
+      "device": "cpu",
+      "batch_size": 16,
+      "max_seq_length": 512,
+      "cache_path": "data/cache/embed_cache.db"
+    },
+    "filter": {
+      "enabled": true,
+      "mode": "threshold",
+      "threshold": 0.475,
+      "min_sessions": 5,
+      "max_sessions": 20,
+      "top_sessions": 10,
+      "store_all_turns": true
+    },
+    "extract": {
+      "turns_per_call": 6,
+      "max_turn_chars": 3000,
+      "include_assistant": true
+    },
+    "resolve": {
+      "top_k": 5,
+      "min_candidate_sim": 0.6,
+      "prop_auto_merge_sim": 0.97,
+      "prop_candidate_sim": 0.8
+    },
+    "agent": {
+      "protocol": "tools",
+      "max_steps": 20,
+      "tools": [
+        "schema_viewer",
+        "entity_lookup",
+        "graph_sql",
+        "search",
+        "property_search"
+      ],
+      "search_k": 10,
+      "max_tool_chars": 6000
+    },
+    "baseline": {
+      "top_sessions": 5
+    },
+    "eval": {
+      "dataset_path": "data/longmemeval/longmemeval_s_cleaned.json",
+      "runs_dir": "data/runs",
+      "graphs_dir": "data/graphs",
+      "splits_dir": "data/splits",
+      "split_seed": 42,
+      "dev_size": 150,
+      "judge_trials": 1,
+      "workers": 2
+    }
+  },
+  "started": "2026-10-01 22:11:23"
+}

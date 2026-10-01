@@ -6,6 +6,7 @@ const path = require("path");
 const S = JSON.parse(fs.readFileSync(path.join(__dirname, "stats.json"), "utf-8"));
 // ket qua soi tay (khong sinh tu dong) — xem ghi chu trong chinh file do
 const MR = JSON.parse(fs.readFileSync(path.join(__dirname, "manual_review.json"), "utf-8"));
+const CP = JSON.parse(fs.readFileSync(path.join(__dirname, "compare.json"), "utf-8"));   // so sanh APEX-MEM vs LightMem
 const OUT = path.join(__dirname, "..", "bao-cao-lightmem-baseline.pptx");
 
 const C = { ink: "10243E", teal: "1F6F8B", mint: "5FB49C", amber: "F2A541", red: "C8553D",
@@ -15,12 +16,14 @@ const VI = { "single-session-user": "Đơn phiên · người dùng", "single-se
   "single-session-preference": "Đơn phiên · sở thích", "multi-session": "Đa phiên",
   "temporal-reasoning": "Suy luận thời gian", "knowledge-update": "Cập nhật kiến thức" };
 const pct = (x) => (x == null ? "—" : (x * 100).toFixed(1).replace(".", ",") + "%");
+const num1 = (x) => x.toFixed(1).replace(".", ",");
+const thou = (x) => Math.round(x).toLocaleString("en-US").replace(/,/g, ".");
 const done = S.n_done, total = S.n_dev;
 const partial = done < total;
 
 const pres = new pptxgen();
 pres.layout = "LAYOUT_16x9";
-pres.title = "Baseline LightMem trên LongMemEval-S";
+pres.title = "LightMem và APEX-MEM trên LongMemEval-S";
 
 function base(title, kicker, notes) {
   const s = pres.addSlide();
@@ -37,12 +40,12 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 {
   const s = pres.addSlide();
   s.background = { color: C.ink };
-  s.addText("BASELINE LIGHTMEM", { x: 0.7, y: 1.2, w: 8.6, h: 0.4, fontFace: BF, fontSize: 14, bold: true, color: C.amber, isTextBox: true, margin: 0 });
-  s.addText("LightMem trên LongMemEval-S", { x: 0.7, y: 1.65, w: 8.6, h: 1.1, fontFace: HF, fontSize: 40, bold: true, color: "FFFFFF", isTextBox: true, margin: 0 });
-  s.addText("Đường cơ sở để so sánh với hệ thống của nhóm (APEX-MEM tái hiện)", { x: 0.7, y: 2.85, w: 8.6, h: 0.5, fontFace: BF, fontSize: 18, color: "CADCFC", isTextBox: true, margin: 0 });
+  s.addText("BASELINE LIGHTMEM · SO SÁNH VỚI APEX-MEM", { x: 0.7, y: 1.2, w: 8.6, h: 0.4, fontFace: BF, fontSize: 14, bold: true, color: C.amber, isTextBox: true, margin: 0 });
+  s.addText("LightMem và APEX-MEM trên LongMemEval-S", { x: 0.7, y: 1.65, w: 8.6, h: 1.1, fontFace: HF, fontSize: 34, bold: true, color: "FFFFFF", isTextBox: true, margin: 0 });
+  s.addText("Đường cơ sở LightMem và phép so sánh đầu tiên với hệ của nhóm, trên 150 câu dev", { x: 0.7, y: 2.85, w: 8.6, h: 0.5, fontFace: BF, fontSize: 18, color: "CADCFC", isTextBox: true, margin: 0 });
   s.addText(`Tuần 3 · ${partial ? `số liệu sơ bộ ${done}/${total} câu dev` : `đủ ${total} câu dev`} · nhóm 2 thành viên · 09/2026`,
     { x: 0.7, y: 4.6, w: 8.6, h: 0.35, fontFace: BF, fontSize: 13, color: "8FA7C4", isTextBox: true, margin: 0 });
-  s.addNotes("Deck tổng hợp phần cài đặt và chạy baseline LightMem. Số liệu sinh tự động từ thư mục kết quả; chạy lại gen_stats.py và build_deck.js khi có thêm câu.");
+  s.addNotes("Deck tổng hợp baseline LightMem và so sánh với APEX-MEM. Số liệu sinh tự động từ thư mục kết quả; chạy lại gen_stats.py, compare_apex.py và build_deck.js khi có thêm câu.");
 }
 
 // 2 ─ LightMem làm gì
@@ -76,12 +79,15 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
     "Model: kế hoạch ghi GPT-5.5, nhưng tài khoản ChatGPT nối qua 9router không có quyền model này (lỗi 404). Dùng gpt-5.6-luna. Hệ APEX-MEM của nhóm phải chạy cùng model để so công bằng.");
   const rows = [["Dữ liệu", "LongMemEval-S, 500 câu, mỗi câu một haystack ~115K token"],
     ["Chia tập", "Dev 150 / test 350, phân tầng theo loại, seed 42 (khớp split.json của nhóm)"],
-    ["LLM trích xuất + trả lời", S.llm || "cx/gpt-5.6-luna"], ["Model chấm", (S.judge || "cx/gpt-5.6-terra") + " — khác model trả lời"],
-    ["Prompt chấm", "Prompt chính thức của LongMemEval, theo từng loại câu hỏi"], ["Truy xuất", "Top-20 ký ức, embedding all-MiniLM-L6-v2"]];
+    ["Model trả lời (cả hai hệ)", S.llm || "cx/gpt-5.6-luna"],
+    ["Model chấm (cả hai hệ)", (S.judge || "cx/gpt-5.6-terra") + " — khác model trả lời"],
+    ["Prompt chấm", "Prompt chính thức của LongMemEval, theo từng loại câu hỏi"],
+    ["LightMem", "Top-20 ký ức, MiniLM. Chỉ lưu lượt của người dùng"],
+    ["APEX-MEM", "Đồ thị SQLite, agent ReAct ≤ 20 bước, BGE-M3. Lưu cả lượt trợ lý"]];
   rows.forEach((r, i) => {
-    const y = 1.4 + i * 0.6;
-    s.addText(r[0], { x: 0.5, y, w: 2.2, h: 0.5, fontFace: BF, fontSize: 12.5, bold: true, color: C.teal, valign: "middle", isTextBox: true, margin: 0 });
-    s.addText(r[1], { x: 2.7, y, w: 4.1, h: 0.5, fontFace: BF, fontSize: 12.5, color: C.text, valign: "middle", isTextBox: true, margin: 0 });
+    const y = 1.3 + i * 0.55;
+    s.addText(r[0], { x: 0.5, y, w: 2.3, h: 0.5, fontFace: BF, fontSize: 12, bold: true, color: i >= 5 ? C.amber : C.teal, valign: "middle", isTextBox: true, margin: 0 });
+    s.addText(r[1], { x: 2.8, y, w: 4.1, h: 0.5, fontFace: BF, fontSize: 11.5, color: C.text, valign: "middle", isTextBox: true, margin: 0 });
   });
   card(s, 7.1, 1.4, 2.4, 3.5);
   s.addText(String(S.n_dev), { x: 7.1, y: 1.6, w: 2.4, h: 0.9, align: "center", fontFace: HF, fontSize: 54, bold: true, color: C.teal, isTextBox: true, margin: 0 });
@@ -90,26 +96,77 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
   s.addText("câu test, khóa đến tuần 7", { x: 7.1, y: 4.1, w: 2.4, h: 0.4, align: "center", fontFace: BF, fontSize: 12, color: C.mute, isTextBox: true, margin: 0 });
 }
 
-// 4 ─ Tiến độ theo loại
+// 4 ─ So sánh theo loại
 {
-  const s = base("Tiến độ chạy tập dev theo loại câu hỏi", "TIẾN ĐỘ", "Các câu chạy theo thứ tự trong tập dev nên chưa phủ đều 6 loại; loại chưa chạy sẽ chạy ở lượt sau.");
-  const labels = S.types.map((t) => VI[t.type]);
+  const ci = (c) => `${(c[0] * 100).toFixed(0)}–${(c[1] * 100).toFixed(0)}%`;
+  const s = base(`APEX-MEM ${pct(CP.apex.micro)}, LightMem ${pct(CP.lm.micro)}: chưa khác biệt`, "SO SÁNH TRỰC TIẾP",
+    `Cùng ${CP.n} câu dev, cùng model trả lời (luna), cùng model chấm (terra). Gộp chung APEX-MEM ${CP.apex.correct}/${CP.n}, LightMem ${CP.lm.correct}/${CP.n}. Hai khoảng tin cậy 95% chồng lên nhau gần hết.`);
+  const order = ["single-session-user", "single-session-assistant", "single-session-preference", "multi-session", "temporal-reasoning", "knowledge-update"];
+  const labels = order.map((t) => `${VI[t]} (n=${CP.by_type[t].n})`);
   s.addChart(pres.charts.BAR, [
-    { name: "Đã chạy", labels, values: S.types.map((t) => t.done) },
-    { name: "Còn lại", labels, values: S.types.map((t) => t.dev - t.done) }],
-    { x: 0.5, y: 1.3, w: 9, h: 3.7, barDir: "bar", barGrouping: "stacked", chartColors: [C.teal, "C9D5DF"],
-      showLegend: true, legendPos: "b", legendFontSize: 11, legendColor: C.mute,
-      showValue: true, dataLabelPosition: "ctr", dataLabelColor: "FFFFFF", dataLabelFontSize: 11,
-      dataLabelFormatCode: "0;;;",
-      catAxisLabelColor: C.text, catAxisLabelFontSize: 11, catAxisOrientation: "maxMin",
-      valAxisLabelColor: C.mute, valAxisLabelFontSize: 10, valGridLine: { color: C.line, size: 0.5 }, catGridLine: { style: "none" } });
+    { name: "APEX-MEM", labels, values: order.map((t) => +(CP.by_type[t].apex_acc * 100).toFixed(1)) },
+    { name: "LightMem", labels, values: order.map((t) => +(CP.by_type[t].lm_acc * 100).toFixed(1)) }],
+    { x: 0.4, y: 1.2, w: 6.3, h: 3.45, barDir: "col", barGrouping: "clustered", chartColors: [C.teal, C.amber],
+      showLegend: true, legendPos: "t", legendFontSize: 11, legendColor: C.mute,
+      showValue: true, dataLabelPosition: "outEnd", dataLabelFormatCode: '0"%"', dataLabelFontSize: 9, dataLabelColor: C.ink,
+      valAxisMinVal: 0, valAxisMaxVal: 110, valAxisHidden: true, valGridLine: { style: "none" },
+      catAxisLabelColor: C.text, catAxisLabelFontSize: 8.5, catGridLine: { style: "none" } });
+  [["APEX-MEM", CP.apex, C.teal], ["LightMem", CP.lm, C.amber]].forEach(([name, d, col], i) => {
+    const y = 1.3 + i * 1.7;
+    card(s, 6.9, y, 2.6, 1.55);
+    s.addText(name, { x: 6.9, y: y + 0.08, w: 2.6, h: 0.3, align: "center", fontFace: BF, fontSize: 12, bold: true, color: col, isTextBox: true, margin: 0 });
+    s.addText(pct(d.micro), { x: 6.9, y: y + 0.38, w: 2.6, h: 0.65, align: "center", fontFace: HF, fontSize: 32, bold: true, color: C.ink, isTextBox: true, margin: 0 });
+    s.addText(`gộp chung ${d.correct}/${CP.n} · KTC 95% ${ci(d.ci95)}`, { x: 6.9, y: y + 1.0, w: 2.6, h: 0.25, align: "center", fontFace: BF, fontSize: 9.5, color: C.mute, isTextBox: true, margin: 0 });
+    s.addText(`theo loại (macro) ${pct(d.macro)}`, { x: 6.9, y: y + 1.24, w: 2.6, h: 0.25, align: "center", fontFace: BF, fontSize: 9.5, color: C.mute, isTextBox: true, margin: 0 });
+  });
+  card(s, 0.4, 4.8, 9.1, 0.55, "FDF3E1");
+  s.addText([{ text: "Đọc đúng mức: ", options: { bold: true, color: C.red } },
+    { text: `chênh ${CP.apex.correct - CP.lm.correct} câu trên ${CP.n} câu; nhóm câu từ chối (_abs) chỉ có ${CP.abs.n} câu (APEX-MEM ${CP.abs.apex}, LightMem ${CP.abs.lm}). Cả hai hệ cùng model nên khác biệt đến từ cách lưu và truy xuất ký ức.`, options: { color: C.text } }],
+    { x: 0.6, y: 4.83, w: 8.7, h: 0.5, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
+}
+
+// 5 ─ Chênh lệch đến từ đâu
+{
+  const P = CP.paired, bt = CP.by_type;
+  const asst = bt["single-session-assistant"];
+  const restN = CP.n - asst.n, restA = CP.apex.correct - asst.apex, restL = CP.lm.correct - asst.lm;
+  const p = CP.paired.mcnemar_p.toFixed(2).replace(".", ",");
+  const s = base("Toàn bộ chênh lệch nằm ở loại lượt trợ lý", "CHÊNH LỆCH ĐẾN TỪ ĐÂU",
+    `Kiểm định McNemar trên cặp câu hỏi: APEX-MEM đúng riêng ${P.only_apex} câu, LightMem đúng riêng ${P.only_lm} câu, p = ${p}. Tách theo loại: loại lượt trợ lý APEX-MEM hơn ${asst.apex - asst.lm} câu, năm loại còn lại LightMem hơn ${restL - restA} câu.`);
+  const boxes = [[P.both_right, "cả hai đúng", C.teal, C.card], [P.only_apex, "chỉ APEX-MEM đúng", C.teal, "E4F1F5"],
+                 [P.only_lm, "chỉ LightMem đúng", C.amber, "FDF3E1"], [P.both_wrong, "cả hai sai", C.mute, C.card]];
+  boxes.forEach((b, i) => {
+    const x = 0.4 + (i % 2) * 2.35, y = 1.3 + Math.floor(i / 2) * 1.5;
+    card(s, x, y, 2.25, 1.4, b[3]);
+    s.addText(String(b[0]), { x, y: y + 0.12, w: 2.25, h: 0.75, align: "center", fontFace: HF, fontSize: 38, bold: true, color: b[2], isTextBox: true, margin: 0 });
+    s.addText(b[1], { x, y: y + 0.9, w: 2.25, h: 0.3, align: "center", fontFace: BF, fontSize: 11.5, color: C.text, isTextBox: true, margin: 0 });
+  });
+  s.addText(`McNemar chính xác: p = ${p} (chưa khác biệt)`, { x: 0.4, y: 4.32, w: 4.6, h: 0.3, fontFace: BF, fontSize: 11, bold: true, color: C.ink, isTextBox: true, margin: 0 });
+
+  const rows = [["Loại lượt trợ lý", `${asst.apex}/${asst.n}`, `${asst.lm}/${asst.n}`, `+${asst.apex - asst.lm}`, true],
+                ["Năm loại còn lại", `${restA}/${restN}`, `${restL}/${restN}`, `${restA - restL}`, false]];
+  const hdr = (t) => ({ text: t, options: { bold: true, color: "FFFFFF", fill: { color: C.teal }, align: "center" } });
+  const tb = [[{ text: "", options: { fill: { color: C.teal } } }, hdr("APEX-MEM"), hdr("LightMem"), hdr("Chênh")]];
+  rows.forEach((r) => tb.push([{ text: r[0], options: { bold: true } }, { text: r[1], options: { align: "center" } }, { text: r[2], options: { align: "center" } },
+    { text: r[3], options: { align: "center", bold: true, color: r[4] ? C.teal : C.red } }]));
+  s.addTable(tb, { x: 5.2, y: 1.3, w: 4.3, colW: [1.45, 1.15, 1.0, 0.7], fontFace: BF, fontSize: 11, color: C.text, border: { type: "solid", color: C.line, pt: 0.75 }, valign: "middle", rowH: 0.5 });
+  s.addText(`Năm loại còn lại: APEX-MEM ${pct(restA / restN)}, LightMem ${pct(restL / restN)}.`, { x: 5.2, y: 2.95, w: 4.3, h: 0.5, fontFace: BF, fontSize: 11, color: C.text, valign: "top", isTextBox: true, margin: 0 });
+  card(s, 5.2, 3.5, 4.3, 1.12, "FBEAE5");
+  s.addText([{ text: "Khác biệt cấu hình: ", options: { bold: true, color: C.red } },
+    { text: "APEX-MEM lưu cả lượt trợ lý, LightMem mặc định chỉ lưu lượt người dùng. Loại câu hỏi này hỏi đúng về lời trợ lý.", options: { color: C.text } }],
+    { x: 5.35, y: 3.55, w: 4.0, h: 1.02, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
+
+  card(s, 0.4, 4.78, 9.1, 0.58, C.pale);
+  s.addText([{ text: "Chưa kết luận được: ", options: { bold: true, color: C.ink } },
+    { text: "giả thuyết là khác biệt cấu hình, không phải đồ thị, tạo ra chênh lệch. Muốn kiểm chứng phải chạy lại LightMem loại này với messages_use = user_assistant.", options: { color: C.text } }],
+    { x: 0.6, y: 4.81, w: 8.7, h: 0.52, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
 }
 
 // 5 ─ Kết quả
 {
   const asstT = S.types.find((t) => t.type === "single-session-assistant");
   const others = S.types.filter((t) => t.done && t !== asstT).map((t) => t.acc * 100);
-  const s = base(`Năm loại đạt ${Math.round(Math.min(...others))}–${Math.round(Math.max(...others))}%, riêng lượt trợ lý ${Math.round(asstT.acc * 100)}%`, "KẾT QUẢ",
+  const s = base(`Năm loại đạt ${Math.round(Math.min(...others))}–${Math.round(Math.max(...others))}%, riêng lượt trợ lý ${Math.round(asstT.acc * 100)}%`, "KẾT QUẢ LIGHTMEM",
     `Micro ${pct(S.micro)} trên ${done} câu, macro ${pct(S.macro)} trên 6 loại. Điểm đáng chú ý nhất: loại đơn phiên · trợ lý thấp hẳn, và nguyên nhân nằm ở cấu hình user_only của LightMem chứ không phải ngẫu nhiên.`);
   const ran = S.types.filter((t) => t.done);
   s.addChart(pres.charts.BAR, [{ name: "Accuracy", labels: ran.map((t) => `${VI[t.type]} (n=${t.done})`), values: ran.map((t) => +(t.acc * 100).toFixed(1)) }],
@@ -132,8 +189,8 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 
   const inc = S.types.filter((t) => t.done < t.dev);
   card(s, 0.4, 4.65, 9.1, 0.65, "FDF3E1");
-  s.addText([{ text: "Số liệu sơ bộ. ", options: { bold: true, color: C.red } },
-    { text: `${inc.length ? "Chưa chạy đủ: " + inc.map((t) => `${VI[t.type]} ${t.done}/${t.dev}`).join(" · ") + ". " : ""}Nhóm câu từ chối (_abs) mới có ${S.abs.n} câu.`, options: { color: C.text } }],
+  s.addText([{ text: inc.length ? "Số liệu sơ bộ. " : "Đủ 150 câu dev. ", options: { bold: true, color: C.red } },
+    { text: `${inc.length ? "Chưa chạy đủ: " + inc.map((t) => `${VI[t.type]} ${t.done}/${t.dev}`).join(" · ") + ". " : ""}Nhóm câu từ chối (_abs) chỉ có ${CP.abs.n} câu, quá ít để nói về năng lực biết từ chối.`, options: { color: C.text } }],
     { x: 0.6, y: 4.7, w: 8.7, h: 0.55, fontFace: BF, fontSize: 11.5, valign: "middle", isTextBox: true, margin: 0 });
 }
 
@@ -174,7 +231,7 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
   const nAsstNoData = asstW.filter(noData).length;
   card(s, 3.6, 4.55, 5.9, 0.75, C.pale);
   s.addText([{ text: "Bằng chứng: ", options: { bold: true, color: C.ink } },
-    { text: `${nAsstNoData}/6 câu sai loại lượt trợ lý, hệ trả lời thẳng là không tìm thấy thông tin trong bộ nhớ, khớp với cấu hình user_only.`, options: { color: C.text } }],
+    { text: `${nAsstNoData}/${asstW.length} câu sai loại lượt trợ lý, hệ trả lời thẳng là không tìm thấy thông tin trong bộ nhớ, khớp với cấu hình user_only.`, options: { color: C.text } }],
     { x: 3.8, y: 4.6, w: 5.5, h: 0.65, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
 }
 
@@ -189,7 +246,7 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
   s.addText(`truy xuất trúng phiên chứa bằng chứng (${R.hit}/${R.n} câu)`,
     { x: 0.6, y: 2.25, w: 2.5, h: 0.6, align: "center", fontFace: BF, fontSize: 12, color: C.mute, valign: "top", isTextBox: true, margin: 0 });
   s.addText([{ text: "Đo thế nào", options: { bold: true, breakLine: true, color: C.ink } },
-    { text: "Mỗi ký ức LightMem trả về đều mở đầu bằng mốc thời gian của phiên. Khớp mốc đó với haystack_dates để biết ký ức đến từ phiên nào, rồi so với answer_session_ids của bộ dữ liệu.", options: { color: C.text } }],
+    { text: "Mỗi ký ức LightMem trả về đều mở đầu bằng mốc thời gian của phiên. Khớp mốc đó với haystack_dates để biết ký ức đến từ phiên nào, rồi so với answer_session_ids của bộ dữ liệu." + (R.ambiguous ? ` Có ${R.ambiguous} câu có phiên trùng mốc với phiên khác nên khớp chưa chắc chắn.` : ""), options: { color: C.text } }],
     { x: 0.6, y: 2.95, w: 2.5, h: 1.45, fontFace: BF, fontSize: 10.5, valign: "top", isTextBox: true, margin: 0 });
 
   const boxes = [
@@ -217,7 +274,7 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 {
   const A = MR.mau_cham_dung, W = MR.mau_cham_sai;
   const s = base("Model chấm đáng tin, nhưng hơi khắt khe", "ĐỘ TIN CẬY CỦA PHÉP ĐO",
-    `Soi tay ${A.n} câu được chấm đúng và toàn bộ ${W.n} câu bị chấm sai. Không có câu nào được chấm đúng oan; có ${W.so_dang_ngo} câu nhóm cho rằng đáng lẽ nên tính đúng, nên accuracy thật có thể cao hơn khoảng 1,6 điểm.`);
+    `Soi tay ${A.n} câu được chấm đúng và toàn bộ ${W.n} câu bị chấm sai. Không có câu nào được chấm đúng oan; có ${W.so_dang_ngo} câu nhóm cho rằng đáng lẽ nên tính đúng, nên accuracy thật có thể cao hơn khoảng ${num1(W.so_dang_ngo / done * 100)} điểm.`);
 
   const stats = [[`${A.so_cham_sai}/${A.n}`, C.teal, "câu chấm đúng bị sai", "Soi ngẫu nhiên trong nhóm được chấm đúng. Không có câu nào được cho điểm oan."],
                  [`${W.so_dang_ngo}/${W.n}`, C.amber, "câu chấm sai đáng ngờ", "Soi toàn bộ nhóm bị chấm sai. Hai câu dưới đây nhóm thấy nên tính đúng."]];
@@ -242,25 +299,28 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
     { x: 0.6, y: 5.04, w: 8.7, h: 0.44, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
 }
 
-// 7 ─ Chi phí
+// 10 ─ Chi phí so sánh
 {
-  const b = S.build_min;
-  const s = base("Dựng bộ nhớ chiếm gần như toàn bộ thời gian", "VẬN HÀNH",
-    "Thời gian dựng bộ nhớ chiếm gần như toàn bộ; truy xuất và trả lời rất nhanh. 9router chèn thêm khoảng 2.500 token system prompt vào mỗi lời gọi, nên số token đo qua router bị phình.");
-  const stats = [[b ? b.median.toFixed(0) + " phút" : "—", "dựng bộ nhớ mỗi câu (trung vị)"], [S.retrieve_s ? S.retrieve_s.toFixed(2).replace(".", ",") + " s" : "—", "truy xuất"], [S.answer_s ? S.answer_s.toFixed(1).replace(".", ",") + " s" : "—", "sinh câu trả lời"]];
-  stats.forEach((st, i) => {
-    const x = 0.5 + i * 3.05;
-    card(s, x, 1.4, 2.9, 1.5);
-    s.addText(st[0], { x, y: 1.5, w: 2.9, h: 0.8, align: "center", fontFace: HF, fontSize: 34, bold: true, color: i === 0 ? C.red : C.teal, isTextBox: true, margin: 0 });
-    s.addText(st[1], { x, y: 2.3, w: 2.9, h: 0.4, align: "center", fontFace: BF, fontSize: 12, color: C.mute, isTextBox: true, margin: 0 });
-  });
+  const R = CP.apex_report, L = CP.lm_cost;
+  const s = base("Cả hai hệ đều tốn nhất ở bước dựng bộ nhớ", "CHI PHÍ VÀ THỜI GIAN",
+    "LightMem: thời gian dựng trung vị 33 phút, trả lời 3 giây. APEX-MEM: 88% token nằm ở bước dựng. Thời gian đo trong điều kiện chạy song song khác nhau nên không dùng để kết luận hệ nào nhanh hơn. Chưa có số token của LightMem.");
+  const hdr = (t) => ({ text: t, options: { bold: true, color: "FFFFFF", fill: { color: C.teal }, align: "center" } });
+  const c = (t, o = {}) => ({ text: t, options: { align: "center", ...o } });
+  const rows = [[{ text: "Mỗi câu hỏi", options: { bold: true, color: "FFFFFF", fill: { color: C.teal } } }, hdr("LightMem"), hdr("APEX-MEM")],
+    ["Dựng bộ nhớ, trung vị", c(`${L.build_min_median.toFixed(0)} phút`), c(`${num1(R.build_lat_p50_p95_s[0] / 60)} phút`)],
+    ["Dựng bộ nhớ, p95", c(`${L.build_min_p95.toFixed(0)} phút`), c(`${num1(R.build_lat_p50_p95_s[1] / 60)} phút`)],
+    ["Trả lời, trung vị", c(`${num1(L.answer_s_median)} giây`), c(`${num1(R.answer_lat_p50_p95_s[0])} giây`)],
+    ["Lời gọi LLM khi dựng", c("chưa ghi", { color: C.mute }), c(num1(R.build_calls))],
+    ["Token khi dựng", c("chưa ghi", { color: C.mute }), c(`${thou(R.build_tokens)} (${num1(R.build_share)}% tổng)`)],
+    ["Token khi trả lời", c("chưa ghi", { color: C.mute }), c(thou(R.answer_tokens))]];
+  s.addTable(rows, { x: 0.5, y: 1.3, w: 9, colW: [3.4, 2.6, 3.0], fontFace: BF, fontSize: 12, color: C.text,
+    border: { type: "solid", color: C.line, pt: 0.75 }, valign: "middle", rowH: 0.42 });
   const pts = [
-    "Mỗi câu gọi LLM hàng trăm lần: hội thoại dài chia thành hàng trăm topic, mỗi topic trích fact và xử lý riêng.",
-    `Chạy 5–9 luồng song song, mỗi câu ${S.build_min.median.toFixed(0)} phút (chậm nhất ${S.build_min.max.toFixed(0)} phút); cả tập dev cần vài chục giờ.`,
-    "9router chèn ~2,5 nghìn token system prompt mỗi lời gọi: khi báo cáo token phải tách phần này ra.",
-    "Tài khoản ChatGPT có trần sử dụng: đã chạm giới hạn (429), phải chờ hoặc thêm tài khoản."];
-  s.addText(pts.map((t, i) => ({ text: t, options: { bullet: true, breakLine: i < pts.length - 1, paraSpaceAfter: 6 } })),
-    { x: 0.5, y: 3.15, w: 9, h: 1.9, fontFace: BF, fontSize: 13, color: C.text, valign: "top", isTextBox: true, margin: 0 });
+    "Thời gian đo khi chạy song song khác nhau (LightMem 5–9 luồng, APEX-MEM 2–8 luồng) và bị hạn mức tài khoản làm chậm: chỉ để tham khảo, không dùng để nói hệ nào nhanh hơn.",
+    "LightMem chưa có số token: script không ghi lại, và 9router chèn thêm khoảng 2.500 token vào mỗi lời gọi nên số đếm qua router bị phình.",
+    `APEX-MEM phục vụ đúng model: ${thou(R.served_models["gpt-5.6-luna"])} lời gọi luna và ${R.served_models["gpt-5.6-terra"]} lời gọi terra (chấm), không có model nào bị đổi lén.`];
+  s.addText(pts.map((t, i) => ({ text: t, options: { bullet: true, breakLine: i < pts.length - 1, paraSpaceAfter: 5 } })),
+    { x: 0.5, y: 4.35, w: 9, h: 1.1, fontFace: BF, fontSize: 10.5, color: C.text, valign: "top", isTextBox: true, margin: 0 });
 }
 
 // 8 ─ Sự cố
@@ -272,7 +332,8 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
     ["Lỗi “meta tensor” khi chạy song song", "Nhiều luồng cùng nạp model, đụng nhau", "Khóa phần nạp model; mỗi luồng nạp một lần"],
     ["Cạn RAM (pagefile)", "Nạp lại model cho từng câu, không giải phóng kịp", "Cache model theo luồng, dọn bộ nhớ sau mỗi câu"],
     ["Windows chặn Python", "Smart App Control chặn file chưa ký", "Bật/tắt lại Smart App Control"],
-    ["Lỗi 429 usage limit", "Hết hạn mức tài khoản ChatGPT", "Chờ mở lại hoặc thêm tài khoản"]];
+    ["Hết hạn mức (429), rồi token bị thu hồi (401)", "Tài khoản gói free; chạy 8 luồng cạn nhanh, sau đó 2 token OAuth bị vô hiệu", "Giảm số luồng; đăng nhập lại từ đầu; chờ hạn mức mở lại"],
+    ["9router tắt giữa chừng", "Chưa xác định chắc; nghi máy ngủ hoặc tiến trình bị đóng", "Chạy 9router trong terminal riêng; chạy lại lệnh cũ để tiếp tục"]];
   s.addTable(rows, { x: 0.5, y: 1.4, w: 9, colW: [2.5, 3.4, 3.1], fontFace: BF, fontSize: 11, color: C.text, border: { type: "solid", color: C.line, pt: 0.75 }, valign: "middle", rowH: 0.55 });
 }
 
@@ -280,31 +341,30 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 {
   const s = pres.addSlide();
   s.background = { color: C.ink };
-  s.addText("Baseline chạy được, chưa đủ kết luận", { x: 0.7, y: 0.45, w: 8.6, h: 0.75, fontFace: HF, fontSize: 30, bold: true, color: "FFFFFF", isTextBox: true, margin: 0 });
+  s.addText("Chưa có bằng chứng APEX-MEM hơn LightMem", { x: 0.7, y: 0.45, w: 8.6, h: 0.75, fontFace: HF, fontSize: 28, bold: true, color: "FFFFFF", isTextBox: true, margin: 0 });
   s.addText(partial ? `Số liệu trên ${done}/${total} câu dev` : `Đã chạy đủ ${total} câu dev`, { x: 0.7, y: 1.2, w: 8.6, h: 0.35, fontFace: BF, fontSize: 14, bold: true, color: C.amber, isTextBox: true, margin: 0 });
   const asst = S.types.find((t) => t.type === "single-session-assistant");
-  const left = [`Cài đặt xong LightMem, chạy đầu-cuối được trên LongMemEval-S với ${S.llm}.`,
-    `Chia dev/test khớp bản gốc của nhóm (150/350).`,
-    `Sơ bộ: ${pct(S.macro)} macro trên 6/6 loại, ${done}/${total} câu dev.`,
-    `Điểm yếu rõ nhất: loại lượt trợ lý chỉ ${pct(asst.acc)}, do cấu hình user_only không lưu lời trợ lý.`,
-    `Truy xuất trúng bằng chứng ${S.retrieval.hit}/${S.retrieval.n} câu, nên lỗi nằm ở trích xuất và suy luận.`,
-    `Thời gian là nút thắt: ~${S.build_min ? S.build_min.median.toFixed(0) : "?"} phút mỗi câu.`];
+  const pv = CP.paired.mcnemar_p.toFixed(2).replace(".", ",");
+  const left = [`Cả hai hệ chạy đủ ${total} câu dev, cùng model trả lời, cùng model chấm, cùng prompt chấm.`,
+    `APEX-MEM ${pct(CP.apex.micro)}, LightMem ${pct(CP.lm.micro)}; McNemar p = ${pv}, chưa khác biệt.`,
+    `Chênh lệch nằm ở loại lượt trợ lý (+${CP.by_type["single-session-assistant"].apex - CP.by_type["single-session-assistant"].lm}); năm loại còn lại LightMem hơn nhẹ.`,
+    "Nguyên nhân nghi là cấu hình: LightMem chỉ lưu lượt người dùng, APEX-MEM lưu cả hai.",
+    "Cả hai hệ truy xuất gần như không sai; lỗi nằm ở trích xuất và suy luận."];
   s.addText(left.map((t, i) => ({ text: t, options: { bullet: true, breakLine: i < left.length - 1, paraSpaceAfter: 8 } })),
     { x: 0.7, y: 1.72, w: 4.3, h: 2.45, fontFace: BF, fontSize: 12, color: "E6EEF7", valign: "top", isTextBox: true, margin: 0 });
   s.addText("Bước tiếp", { x: 5.3, y: 1.75, w: 4.0, h: 0.35, fontFace: HF, fontSize: 16, bold: true, color: C.amber, isTextBox: true, margin: 0 });
-  const nxt = [`Chạy nốt ${total - done} câu dev còn lại, nhất là nhóm _abs.`,
-    "Chạy hệ APEX-MEM cùng model và cùng chấm để so công bằng.",
-    "Thử lại LightMem với messages_use = user_assistant, xem loại lượt trợ lý cải thiện bao nhiêu.",
-    "Chốt với anh: có chạy cả 350 câu test cho baseline không, vì hạn mức tài khoản.",
-    "Chấm 3 lần lấy trung bình, đúng kế hoạch đánh giá."];
+  const nxt = ["Chạy lại LightMem loại lượt trợ lý (17 câu) với messages_use = user_assistant để so công bằng.",
+    "Chấm 3 lần lấy trung bình cho cả hai hệ, đúng kế hoạch đánh giá.",
+    `Soi ${CP.paired.only_apex + CP.paired.only_lm} câu hai hệ trả lời khác nhau để biết mỗi hệ mạnh ở đâu.`,
+    "Chốt với anh: chạy cả 350 câu test hay một mẫu con có phân tầng, vì hạn mức tài khoản."];
   s.addText(nxt.map((t, i) => ({ text: `${i + 1}.  ${t}`, options: { breakLine: i < nxt.length - 1, paraSpaceAfter: 8 } })),
     { x: 5.3, y: 2.12, w: 4.0, h: 2.05, fontFace: BF, fontSize: 11.5, color: "E6EEF7", valign: "top", isTextBox: true, margin: 0 });
-  const tiles = [[pct(S.macro), `macro-average, ${S.n_types_run}/6 loại đã chạy`], [`${S.build_min ? S.build_min.median.toFixed(0) : "?"} phút`, "dựng bộ nhớ mỗi câu (trung vị)"]];
+  const tiles = [[`${pct(CP.apex.micro)} · ${pct(CP.lm.micro)}`, "APEX-MEM · LightMem, gộp chung"], [`p = ${pv}`, "McNemar, chưa khác biệt"]];
   tiles.forEach((t, i) => {
     const x = 0.7 + i * 4.6;
     s.addShape(pres.shapes.RECTANGLE, { x, y: 4.25, w: 4.0, h: 0.85, fill: { color: "1B3457" }, line: { color: "2C4A73", width: 0.75 } });
-    s.addText(t[0], { x: x + 0.2, y: 4.35, w: 1.5, h: 0.65, fontFace: HF, fontSize: 26, bold: true, color: C.amber, valign: "middle", isTextBox: true, margin: 0 });
-    s.addText(t[1], { x: x + 1.7, y: 4.35, w: 2.1, h: 0.65, fontFace: BF, fontSize: 11.5, color: "B9C9DD", valign: "middle", isTextBox: true, margin: 0 });
+    s.addText(t[0], { x: x + 0.15, y: 4.35, w: 2.2, h: 0.65, fontFace: HF, fontSize: 21, bold: true, color: C.amber, valign: "middle", isTextBox: true, margin: 0 });
+    s.addText(t[1], { x: x + 2.4, y: 4.35, w: 1.5, h: 0.65, fontFace: BF, fontSize: 11.5, color: "B9C9DD", valign: "middle", isTextBox: true, margin: 0 });
   });
   s.addNotes("Slide tổng kết tự cập nhật theo stats.json. Khi chạy xong 150 câu, chạy lại gen_stats.py và build_deck.js.");
 }

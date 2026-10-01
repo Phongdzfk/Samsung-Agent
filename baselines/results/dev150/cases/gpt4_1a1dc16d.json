@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_1a1dc16d",
+  "question_type": "temporal-reasoning",
+  "question": "Which event happened first, the meeting with Rachel or the pride parade?",
+  "ground_truth": "The meeting with Rachel",
+  "generated_answer": "The meeting with Rachel happened first, on April 10. The pride parade took place later, on May 1.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-09T12:07:00.000 Tue User attended a pride parade in their city on May 1, 2023.",
+    "2023-05-09T12:07:03.000 Tue The pride parade made the user realize that more work is needed to create a more inclusive society.",
+    "2023-05-09T07:55:03.000 Tue User met with their mentor Rachel on April 10.",
+    "2023-05-09T12:07:00.000 Tue Attending the pride parade led the user to think about the importance of diversity and inclusion in all aspects of life.",
+    "2023-05-09T12:07:03.000 Tue User has been thinking about the importance of diversity and inclusion, especially after attending a pride parade.",
+    "2023-05-09T07:55:04.000 Tue User plans to begin the conversation with Rachel by thanking her for her guidance and support.",
+    "2023-05-09T08:23:00.000 Tue User recently attended Halloween Horror Nights at Universal Studios Hollywood with friends Rachel and Mike.",
+    "2023-05-09T01:02:00.000 Tue User feels inspired by Rachel's giving birth to Ethan.",
+    "2023-05-09T01:02:00.000 Tue User's sister-in-law Rachel gave birth to a baby boy named Ethan on May 9, 2023.",
+    "2023-05-09T07:55:04.000 Tue User plans to ask Rachel how to measure the effectiveness of diversity and inclusion initiatives.",
+    "2023-05-09T07:55:03.000 Tue Rachel has been a source of guidance and support for the user.",
+    "2023-05-09T08:23:04.000 Tue User plans for friends Rachel and Mike to play Horror Movie Trivia and Would You Rather: Horror Edition during the marathon.",
+    "2023-05-09T10:02:00.000 Tue User is interested in local festivals and events in Shillong that coincide with trekking season and wants to know what celebrations tourists can expect.",
+    "2023-05-09T07:55:03.000 Tue User believes Rachel can offer valuable insights and advice about how to approach the diversity and inclusion initiative.",
+    "2023-05-09T18:24:01.000 Tue During the theater festival, user met the lead actor, James.",
+    "2023-05-09T10:02:02.000 Tue User plans to attend the Cherry Blossom Festival in Shillong.",
+    "2023-05-09T08:23:05.000 Tue User believes they have covered everything needed to create a memorable horror movie marathon with friends Rachel and Mike.",
+    "2023-05-09T07:55:03.000 Tue User is planning to discuss the diversity and inclusion initiative with their mentor, Rachel.",
+    "2023-05-09T07:55:00.000 Tue User recently attended a seminar about workplace gender equality at their company's headquarters on March 22.",
+    "2023-05-09T07:55:04.000 Tue User plans to ask Rachel about potential strategies for implementing unconscious-bias training."
+  ],
+  "answer_session_ids": [
+    "answer_faad7d7a_2",
+    "answer_faad7d7a_1"
+  ],
+  "time_build_s": 1636.8884472846985,
+  "time_retrieve_s": 0.0694129467010498,
+  "time_answer_s": 1.917750358581543,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

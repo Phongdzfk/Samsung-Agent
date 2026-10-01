@@ -1,0 +1,40 @@
+{
+  "question_id": "c6853660",
+  "question_type": "knowledge-update",
+  "question": "Did I mostly recently increase or decrease the limit on the number of cups of coffee in the morning?",
+  "ground_truth": "You increased the limit (from one cup to two cups)",
+  "generated_answer": "You most recently **increased** the limit, raising it to two cups of coffee in the morning on May 26, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-26T19:25:03.000 Fri User increased their morning coffee limit to two cups.",
+    "2023-05-25T12:35:00.000 Thu User reduced their coffee consumption to one cup in the morning.",
+    "2023-05-26T19:25:00.000 Fri User is considering limiting their morning coffee intake to two cups and is asking whether that is a good idea.",
+    "2023-05-25T12:35:00.000 Thu User feels that drinking one morning cup of darker-roast coffee helps them feel more focused.",
+    "2023-05-26T19:25:02.000 Fri User is considering using French press coffee to make a stronger coffee concentrate for lattes.",
+    "2023-05-25T12:35:00.000 Thu User wants tips for optimizing their coffee-brewing method.",
+    "2023-05-25T12:35:00.000 Thu User is trying to make their morning routine more efficient.",
+    "2023-06-10T02:32:03.000 Sat User usually drinks the tea 10–15 minutes before bed.",
+    "2023-05-26T19:25:01.000 Fri User has been using a darker roast coffee and wants to know whether a French press can make stronger coffee to pair with it.",
+    "2023-05-25T12:35:00.000 Thu User switched to a darker coffee roast.",
+    "2023-05-26T19:25:00.000 Fri User currently uses a drip coffee maker and is considering buying a new coffee maker.",
+    "2023-05-25T12:35:03.000 Thu User has been struggling to produce good foam with their current coffee setup.",
+    "2023-05-25T12:35:01.000 Thu User is considering switching back to a drip coffee maker.",
+    "2023-05-26T19:25:00.000 Fri User is open to exploring coffee-making methods other than a drip coffee maker.",
+    "2023-05-26T19:25:03.000 Fri User is excited to try the French press method with their darker roast coffee.",
+    "2023-06-10T02:32:03.000 Sat User has been drinking the bedtime tea for about five days.",
+    "2023-05-26T19:25:02.000 Fri User plans to try the French press method with their darker roast coffee.",
+    "2023-05-26T19:25:01.000 Fri User is considering continuing with a drip coffee maker but also wants to try the French press method.",
+    "2023-06-10T02:32:04.000 Sat User aims to get at least 7–8 hours of sleep every night.",
+    "2023-05-25T12:35:00.000 Thu User enjoys their more intentional morning routine."
+  ],
+  "answer_session_ids": [
+    "answer_626e93c4_1",
+    "answer_626e93c4_2"
+  ],
+  "time_build_s": 1658.2155508995056,
+  "time_retrieve_s": 0.14656662940979004,
+  "time_answer_s": 3.0200247764587402,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

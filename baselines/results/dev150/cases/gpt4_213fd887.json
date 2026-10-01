@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_213fd887",
+  "question_type": "temporal-reasoning",
+  "question": "Which event did I participate in first, the volleyball league or the charity 5K run to raise money for a local children's hospital?",
+  "ground_truth": "volleyball league",
+  "generated_answer": "You participated in the **volleyball league first**—you joined it about two months ago, while you ran the charity 5K about a month ago.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-24T16:56:00.000 Wed User participated in a charity 5K run for a local children's hospital about a month ago.",
+    "2023-05-24T16:56:05.000 Wed User is interested in finding more charity events like their charity 5K.",
+    "2023-05-24T16:56:00.000 Wed User had a great experience participating in the charity 5K run.",
+    "2023-05-24T16:56:03.000 Wed User views the charity 5K run as a meaningful way to challenge themselves and push their limits.",
+    "2023-05-24T16:56:02.000 Wed User feels that their charity 5K experience helped them build endurance.",
+    "2023-05-24T23:16:02.000 Wed User began focusing on overall fitness about two months ago, around the time they joined a recreational volleyball league with friends from work.",
+    "2023-05-24T23:16:01.000 Wed User has been playing volleyball in a recreational league with friends from work for about two months.",
+    "2023-05-24T16:56:04.000 Wed User was considering joining a tennis league in the spring.",
+    "2023-05-24T23:16:05.000 Wed User is considering joining a tennis league in the spring.",
+    "2023-05-24T23:16:02.000 Wed User wants to incorporate strength-training exercises into their volleyball practice routine.",
+    "2023-05-24T23:16:02.000 Wed User plays volleyball every Thursday evening at a local community center and enjoys it.",
+    "2023-05-24T23:16:01.000 Wed User wants to practice their volleyball serve independently without a partner or court.",
+    "2023-05-24T16:56:00.000 Wed User plays volleyball regularly.",
+    "2023-05-24T23:16:00.000 Wed User has recently been trying to get more into fitness and wants exercises to improve their volleyball serve.",
+    "2023-05-24T16:56:01.000 Wed User signed up for a 20-mile cycling event taking place next month.",
+    "2023-05-24T09:55:02.000 Wed User is considering participating in other local events and markets.",
+    "2023-05-24T01:02:04.000 Wed User planned to offer small prizes to trivia-game winners.",
+    "2023-05-24T23:16:05.000 Wed User has been looking into local tennis league options and trying to find a playing partner.",
+    "2023-05-24T01:02:01.000 Wed User wanted suggestions for making the celebration more personalized and special in recognition of paying off their student loans.",
+    "2023-05-24T01:02:01.000 Wed User's friends and family had held a surprise party for them at a local restaurant the previous month."
+  ],
+  "answer_session_ids": [
+    "answer_53582e7e_2",
+    "answer_53582e7e_1"
+  ],
+  "time_build_s": 1544.6196718215942,
+  "time_retrieve_s": 0.2692873477935791,
+  "time_answer_s": 3.1384084224700928,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

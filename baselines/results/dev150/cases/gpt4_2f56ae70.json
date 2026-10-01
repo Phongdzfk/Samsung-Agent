@@ -1,0 +1,41 @@
+{
+  "question_id": "gpt4_2f56ae70",
+  "question_type": "temporal-reasoning",
+  "question": "Which streaming service did I start using most recently?",
+  "ground_truth": "Disney+",
+  "generated_answer": "Apple TV+ — you had been using it for a few months, whereas you’d been using Netflix, Hulu, and Amazon Prime for six months.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-26T08:25:00.000 Fri User is open to trying other streaming services or finding new content on Netflix, Hulu, and Amazon Prime.",
+    "2023-05-26T08:25:00.000 Fri User has been using Netflix, Hulu, and Amazon Prime for the past six months.",
+    "2023-05-26T23:40:00.000 Fri User has been using Apple TV+ for a few months.",
+    "2023-05-26T23:40:00.000 Fri User is looking for new TV shows to watch.",
+    "2023-05-26T08:25:00.000 Fri User is looking for new shows to watch.",
+    "2023-05-26T23:40:04.000 Fri User is considering Amazon Prime Video's HBO add-on option.",
+    "2023-05-26T23:40:01.000 Fri User is interested in watching The Power on Amazon Prime Video and wants information about its premise and reception.",
+    "2023-05-26T23:40:04.000 Fri User wants information about how the HBO add-on on Amazon Prime Video works, including additional fees and restrictions.",
+    "2023-05-26T23:40:03.000 Fri User wants to know whether Westworld can be watched through Amazon Prime Video or requires a separate HBO subscription.",
+    "2023-05-26T23:40:00.000 Fri User finished watching For All Mankind on Apple TV+ and thought it was great.",
+    "2023-05-26T18:05:05.000 Fri User has been watching YouTube videos about camera collecting and photography techniques.",
+    "2023-05-26T23:40:04.000 Fri User already has an Amazon Prime membership and considers adding HBO to it convenient.",
+    "2023-05-26T18:05:01.000 Fri User is interested in online marketplaces or forums for researching and buying vintage cameras.",
+    "2023-05-26T17:59:03.000 Fri User is particularly interested in indie rock and pop music.",
+    "2023-05-26T08:25:00.000 Fri User enjoys or is interested in shows similar to \"Stranger Things\" and \"The Handmaid's Tale.\"",
+    "2023-05-26T14:09:03.000 Fri User is interested in other e-commerce conferences or trade shows taking place on the East Coast this year.",
+    "2023-05-26T18:05:05.000 Fri User has learned about the history of cameras and different types of film used in photography.",
+    "2023-05-26T23:40:02.000 Fri User is interested in watching Westworld on HBO and wants information about its premise and reception.",
+    "2023-05-26T17:59:05.000 Fri User wants recommendations for popular Chicago venues featuring live music, especially indie rock and pop acts.",
+    "2023-05-26T17:57:04.000 Fri User plans to start setting up their Google Analytics dashboard."
+  ],
+  "answer_session_ids": [
+    "answer_7a36e820_2",
+    "answer_7a36e820_3",
+    "answer_7a36e820_1"
+  ],
+  "time_build_s": 1566.6423041820526,
+  "time_retrieve_s": 0.25197792053222656,
+  "time_answer_s": 4.221276521682739,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

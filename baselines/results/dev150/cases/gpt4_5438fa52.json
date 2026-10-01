@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_5438fa52",
+  "question_type": "temporal-reasoning",
+  "question": "Which event happened first, my attendance at a cultural festival or the start of my Spanish classes?",
+  "ground_truth": "Spanish classes",
+  "generated_answer": "Your Spanish classes started first, about three months ago. You attended the cultural festival yesterday, May 26, 2023.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-27T21:39:00.000 Sat User attended a cultural festival in their hometown yesterday.",
+    "2023-05-27T14:08:02.000 Sat User has been taking Spanish classes for the past three months.",
+    "2023-05-27T14:08:00.000 Sat User has been taking Spanish classes and is curious whether Spanish will be useful during the trip.",
+    "2023-05-27T21:39:00.000 Sat At the cultural festival, user met people from various ethnic backgrounds, which prompted them to think about their own roots.",
+    "2023-05-27T22:43:03.000 Sat User is thinking about arriving at the festival early to see smaller acts.",
+    "2023-05-27T22:43:00.000 Sat User is considering attending a music festival this summer.",
+    "2023-05-27T14:08:05.000 Sat User plans to keep cultural differences and nuances in mind during the trip.",
+    "2023-05-27T17:27:03.000 Sat User plans to arrive 20–30 minutes before class to get settled and do a quick meditation or stretching session.",
+    "2023-05-27T06:20:02.000 Sat User is considering attending another art event this weekend.",
+    "2023-05-27T06:20:01.000 Sat User attended the \"Women in Art\" exhibition on February 10th.",
+    "2023-05-27T01:51:03.000 Sat For the solo trip to Japan, user plans to focus on cultural experiences and write about the challenges and triumphs of traveling solo in a foreign country.",
+    "2023-05-27T14:08:04.000 Sat User wants to learn about cultural differences, nuances, customs, and etiquette when interacting with locals in France and Germany.",
+    "2023-05-27T14:08:03.000 Sat User learned that Spanish and French have many cognates.",
+    "2023-05-27T17:27:04.000 Sat User may arrive 5–10 minutes after a class starts if they are running behind schedule.",
+    "2023-05-27T16:06:02.000 Sat User has gotten to know regular attendees at the Thursday open mics.",
+    "2023-05-27T19:37:02.000 Sat User attended the Sundance Film Festival in Utah in January and has attended several other film festivals.",
+    "2023-05-27T22:43:01.000 Sat User has been listening to music recently and wants to identify the Lollapalooza day with the most acts they would like.",
+    "2023-05-27T06:20:03.000 Sat User is considering attending events or exhibitions featuring local street artists.",
+    "2023-05-27T06:20:00.000 Sat User is considering categorizing and tagging their art-event photos by event or artist.",
+    "2023-05-27T06:20:03.000 Sat User plans to check online event calendars and local art organizations for art events happening this weekend."
+  ],
+  "answer_session_ids": [
+    "answer_b10f3828_1",
+    "answer_b10f3828_2"
+  ],
+  "time_build_s": 1622.5594606399536,
+  "time_retrieve_s": 0.009770631790161133,
+  "time_answer_s": 3.472444534301758,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

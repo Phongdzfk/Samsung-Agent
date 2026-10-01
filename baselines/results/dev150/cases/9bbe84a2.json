@@ -1,0 +1,40 @@
+{
+  "question_id": "9bbe84a2",
+  "question_type": "knowledge-update",
+  "question": "What was my previous goal for my Apex Legends level before I updated my goal?",
+  "ground_truth": "level 100",
+  "generated_answer": "Your previous goal was to reach **level 100 in Apex Legends before the end of the year**.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-09-30T12:45:04.000 Sat User's current Apex Legends goal is to reach level 150.",
+    "2023-09-30T12:45:04.000 Sat User plans to focus on completing daily and weekly Apex Legends challenges to earn experience points and level up faster.",
+    "2023-09-30T12:45:03.000 Sat User plans to focus on improving their overall Apex Legends gameplay.",
+    "2023-09-30T12:45:02.000 Sat User still aims to eventually reach level 150 in Apex Legends, although it is not the main focus for the weekend.",
+    "2023-06-16T04:38:05.000 Fri User wants tips for improving their aim in Apex Legends.",
+    "2023-09-30T12:45:01.000 Sat User is considering whether to focus on reaching level 150 in Apex Legends or simply play for fun.",
+    "2023-09-30T12:45:03.000 Sat User is considering completing daily and weekly Apex Legends challenges to earn experience points and level up faster.",
+    "2023-06-16T04:38:00.000 Fri User is determined to reach level 100 in Apex Legends before the end of the year.",
+    "2023-09-30T12:45:04.000 Sat User is determined to eventually reach level 150 in Apex Legends.",
+    "2023-09-30T12:45:02.000 Sat User plans to play Apex Legends for fun during the weekend rather than focus primarily on leveling up.",
+    "2023-09-30T12:45:03.000 Sat User plans to communicate more effectively with their Apex Legends team.",
+    "2023-09-30T12:45:02.000 Sat User wants to improve their overall Apex Legends gameplay and communication with their team.",
+    "2023-06-16T04:38:00.000 Fri User has been playing a lot of Apex Legends recently.",
+    "2023-09-30T12:45:01.000 Sat User is more interested in playing Apex Legends with friends during the weekend.",
+    "2023-10-01T12:23:04.000 Sun User wants to take the right steps to achieve their career goals and aspirations.",
+    "2023-05-17T23:40:02.000 Wed User is interested in the challenges GAIL may face in achieving its future goals.",
+    "2023-06-16T04:38:05.000 Fri User wants to focus on improving their gameplay skills.",
+    "2023-07-19T02:02:01.000 Wed User helped deliver Project X, an SVP goal project, on a challenging timeline.",
+    "2023-09-30T12:45:04.000 Sat User believes completing daily and weekly challenges will help them stay motivated and track their progress.",
+    "2023-10-01T12:23:03.000 Sun User is thinking about their career goals and aspirations."
+  ],
+  "answer_session_ids": [
+    "answer_c6a0c6c2_1",
+    "answer_c6a0c6c2_2"
+  ],
+  "time_build_s": 1639.313665151596,
+  "time_retrieve_s": 0.18060302734375,
+  "time_answer_s": 3.431872844696045,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

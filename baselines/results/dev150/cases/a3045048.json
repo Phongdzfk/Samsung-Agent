@@ -1,0 +1,40 @@
+{
+  "question_id": "a3045048",
+  "question_type": "temporal-reasoning",
+  "question": "How many days before my best friend's birthday party did I order her gift?",
+  "ground_truth": "7 days. 8 days (including the last day) is also acceptable.",
+  "generated_answer": "You ordered your best friend’s gift **7 days before** her birthday party.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2022-05-15T14:45:02.000 Sun User recently celebrated their best friend's 30th birthday at a party on April 22.",
+    "2022-05-15T04:32:03.000 Sun User ordered the customized Shutterfly photo album on April 15 and it arrived on April 20, in time for their best friend's party.",
+    "2022-05-15T04:32:00.000 Sun User ordered the personalized Shutterfly photo album on April 15 for their best friend's birthday, and it turned out amazingly well.",
+    "2022-05-15T19:06:02.000 Sun User is considering getting Rachel a small gift to commemorate her engagement.",
+    "2022-05-15T09:56:04.000 Sun The user's Instagram birthday-celebration story received approximately 30 replies from friends and family.",
+    "2022-05-15T19:06:00.000 Sun User’s close friend Rachel got engaged last month on May 15th.",
+    "2022-05-15T19:06:05.000 Sun User’s wedding anniversary is coming up on July 22nd.",
+    "2022-05-15T14:45:00.000 Sun User is planning a birthday gift for their brother, whose birthday is in June.",
+    "2022-05-15T04:32:03.000 Sun User recently ordered a customized photo album from Shutterfly for their best friend's birthday, and it turned out amazingly well.",
+    "2022-05-15T09:56:04.000 Sun User posted an Instagram story about a birthday celebration last week.",
+    "2022-05-15T14:45:02.000 Sun User gave their best friend a personalized photo album, which she loved.",
+    "2022-05-15T10:06:03.000 Sun User bought the velvet sofa set on February 15 from Ashley Furniture downtown.",
+    "2022-05-15T19:06:00.000 Sun User is looking for gift ideas for their sister-in-law’s sister, who got married last December.",
+    "2022-05-15T19:06:01.000 Sun User is planning Rachel’s bachelorette party as a weekend beach getaway in August.",
+    "2022-05-15T04:32:00.000 Sun User is looking for a birthday gift for their brother, whose birthday is in June.",
+    "2022-05-15T19:06:00.000 Sun Rachel is already planning her bachelorette party.",
+    "2022-05-15T19:06:03.000 Sun User plans to give Rachel a customized photo frame containing a picture of Rachel’s engagement ring.",
+    "2022-05-15T14:45:05.000 Sun User is considering birthday gifts for their brother other than a watch.",
+    "2022-05-15T19:06:04.000 Sun User plans to write Rachel a heartfelt letter commemorating her engagement.",
+    "2022-05-15T04:32:04.000 Sun User is considering getting their mother a customized necklace for Mother's Day."
+  ],
+  "answer_session_ids": [
+    "answer_016f6bd4_2",
+    "answer_016f6bd4_1"
+  ],
+  "time_build_s": 1678.812525510788,
+  "time_retrieve_s": 0.019732236862182617,
+  "time_answer_s": 6.944626808166504,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

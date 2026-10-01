@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_c27434e8_abs",
+  "question_type": "temporal-reasoning",
+  "question": "Which project did I start first, the Ferrari model or the Porsche 991 Turbo S model?",
+  "ground_truth": "The information provided is not enough. You did not mention starting the Porsche 991 Turbo S model.",
+  "generated_answer": "The Ferrari 288 GTO project was started first—about three weeks before May 23, 2023. No start date for the Porsche 991 Turbo S model is provided in the memories.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-23T20:21:00.000 Tue User started building the Ferrari model about three weeks ago on a Sunday afternoon.",
+    "2023-05-23T20:21:00.000 Tue User is working on a model of the 1980s-era Ferrari 288 GTO.",
+    "2023-05-23T01:15:00.000 Tue User is currently building a Ferrari 288 GTO model.",
+    "2023-05-23T20:21:00.000 Tue User started the Ferrari 288 GTO model about three weeks ago on a Sunday afternoon.",
+    "2023-05-23T20:21:02.000 Tue User is excited to use the compressor on the Ferrari project.",
+    "2023-05-23T20:21:00.000 Tue User is focusing on adding more complexity to the engine compartment and interior of a Ferrari model.",
+    "2023-05-23T20:21:00.000 Tue User spent around five hours initially assembling the model's basic chassis and engine block.",
+    "2023-05-23T01:15:00.000 Tue User started building the Japanese Zero fighter plane model about a month ago.",
+    "2023-05-23T01:15:04.000 Tue For the Ferrari 288 GTO model, user likes the idea of adding a racing mechanic figure and a miniature toolbox.",
+    "2023-05-23T20:21:00.000 Tue User is excited to try the paint-chipping technique on their Ferrari model.",
+    "2023-05-23T20:21:01.000 Tue User recently got a new airbrush compressor and is excited to try it on the Ferrari 288 GTO project.",
+    "2023-05-23T01:15:03.000 Tue User is considering adding extra details to the Ferrari 288 GTO model, such as a miniature toolbox or a racing mechanic figure, to provide context and storytelling.",
+    "2023-05-23T20:21:03.000 Tue User used pre-made decals specifically designed for the Ferrari 288 GTO.",
+    "2023-05-23T20:21:04.000 Tue Seeing John's highly detailed bomber model inspired the user to add more complexity to their own models.",
+    "2023-05-23T20:21:02.000 Tue User recently applied decals to the Ferrari model's engine compartment and body.",
+    "2023-05-23T01:15:04.000 Tue User is considering adding a racing helmet, a pit board, and a miniature trackside scene with grandstands and other racing cars to the Ferrari 288 GTO diorama.",
+    "2023-05-23T01:15:04.000 Tue User is enthusiastic about adding more details to their models.",
+    "2023-05-23T01:15:00.000 Tue User is also building a 1/48-scale Japanese Zero fighter plane model.",
+    "2023-05-23T20:21:00.000 Tue User is considering adding wiring, hoses, cylinders, and pistons to the model's engine compartment.",
+    "2023-05-23T20:21:04.000 Tue At the meetup, user met fellow model-building enthusiasts who showed their models."
+  ],
+  "answer_session_ids": [
+    "answer_d8e33f5c_abs_1",
+    "answer_d8e33f5c_abs_2"
+  ],
+  "time_build_s": 1603.2937021255493,
+  "time_retrieve_s": 0.015853166580200195,
+  "time_answer_s": 5.715075492858887,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

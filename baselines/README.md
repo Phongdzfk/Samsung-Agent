@@ -10,7 +10,9 @@ gốc của LightMem; toàn bộ phần chạy nằm trong một script bọc ng
 | `run_lightmem.py` | Script chạy LightMem trên LongMemEval-S | có |
 | `data/split.json` | Chia dev 150 / test 350, seed 42, phân tầng theo loại | có |
 | `results/dev150/cases/*.json` | Kết quả từng câu (câu trả lời, phán quyết chấm, thời gian) | có |
-| `report/gen_stats.py` | Gộp kết quả thành `stats.json` | có |
+| `results/apexmem-full-dev/` | Kết quả APEX-MEM (full) trên 150 câu dev: `results.jsonl`, `hypotheses.jsonl`, `run_meta.json`, `report.md` | có |
+| `report/gen_stats.py` | Gộp kết quả LightMem thành `stats.json` | có |
+| `report/compare_apex.py` | So sánh APEX-MEM với LightMem (cặp câu, McNemar, theo loại) thành `compare.json` | có |
 | `report/build_deck.js` | Dựng slide từ `stats.json` | có |
 | `bao-cao-lightmem-baseline.pptx` | Slide báo cáo | có |
 | `ket-qua-baseline-lightmem.md` | Kết quả và phân tích bằng văn bản | có |
@@ -75,8 +77,9 @@ Kết quả hai lượt phải để ở hai thư mục `--out` khác nhau, vì 
 
 ```powershell
 cd report
-python gen_stats.py     # results/ -> stats.json (mất 1-2 phút vì phải đọc cả bộ dữ liệu)
-node build_deck.js      # stats.json + manual_review.json -> ../bao-cao-lightmem-baseline.pptx
+python gen_stats.py       # kết quả LightMem -> stats.json (mất 1-2 phút vì phải đọc cả bộ dữ liệu)
+python compare_apex.py    # LightMem vs APEX-MEM -> compare.json
+node build_deck.js        # stats.json + compare.json + manual_review.json -> ../bao-cao-lightmem-baseline.pptx
 ```
 
 Mọi số trên slide đọc từ `stats.json`, nên chạy thêm câu xong chỉ cần chạy lại hai lệnh này.

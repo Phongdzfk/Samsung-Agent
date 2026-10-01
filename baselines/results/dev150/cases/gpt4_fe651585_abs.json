@@ -1,0 +1,40 @@
+{
+  "question_id": "gpt4_fe651585_abs",
+  "question_type": "temporal-reasoning",
+  "question": "Who became a parent first, Tom or Alex?",
+  "ground_truth": "The information provided is not enough. You mentioned Alex becoming a parent in January, but you didn't mention anything about Tom.",
+  "generated_answer": "Alex became a parent first, adopting a baby girl in January.",
+  "judge_verdict": "No",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-03-17T03:29:04.000 Fri The information about the birth mother made Alex's adoption process more meaningful.",
+    "2023-03-17T03:29:04.000 Fri Alex was able to learn more about the birth mother's background and receive updates about her during the adoption process.",
+    "2023-03-17T03:29:00.000 Fri User's cousin Alex adopted a baby girl from China in January.",
+    "2023-03-17T03:29:04.000 Fri User's cousin Alex had a positive adoption experience with an agency that prioritized supporting birth mothers.",
+    "2023-03-17T03:29:05.000 Fri User intends to keep Alex's experience in mind while researching agencies for their own adoption journey.",
+    "2023-03-17T20:01:00.000 Fri The user experienced confusion about their biological mother, aunt, three cousins, and a half-sibling.",
+    "2023-03-17T20:01:00.000 Fri The user's family history involved family drama and hardship.",
+    "2023-03-17T20:01:00.000 Fri The user describes having had a privileged childhood and loving parents.",
+    "2023-03-17T03:29:00.000 Fri User is considering adopting a baby boy from foster care.",
+    "2023-03-17T20:01:00.000 Fri The user's family moved to Conakry when the user was three years old.",
+    "2023-03-17T20:01:00.000 Fri The user's father died in November 1999.",
+    "2023-03-17T12:35:01.000 Fri User's cousin Emma flew in from California for the family reunion, and the user enjoyed catching up with her.",
+    "2023-03-17T20:01:00.000 Fri The user's mother is Congolese, and the user's adoptive father is Belgian.",
+    "2023-03-17T09:14:00.000 Fri User is planning a birthday party for their niece Olivia, who will soon turn six.",
+    "2023-03-17T03:29:03.000 Fri User considers support for birth mothers important when choosing an adoption agency.",
+    "2023-03-17T09:14:04.000 Fri User feels that Jackson and Julia are growing up quickly.",
+    "2023-03-17T09:14:00.000 Fri Jackson and Julia were born on February 12th.",
+    "2023-03-17T20:01:00.000 Fri A family secret contributed to the user's feelings of being lost and to trust issues.",
+    "2023-03-17T09:14:00.000 Fri User has been busy with their sister-in-law's twins, Jackson and Julia.",
+    "2023-03-17T09:14:04.000 Fri User's sister-in-law Rachel is doing well while caring for the twins, Jackson and Julia."
+  ],
+  "answer_session_ids": [
+    "answer_65600ff6_abs_1",
+    "answer_65600ff6_abs_2"
+  ],
+  "time_build_s": 1553.0380022525787,
+  "time_retrieve_s": 0.0,
+  "time_answer_s": 3.411205530166626,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

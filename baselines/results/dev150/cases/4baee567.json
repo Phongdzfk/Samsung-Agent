@@ -1,0 +1,39 @@
+{
+  "question_id": "4baee567",
+  "question_type": "single-session-assistant",
+  "question": "I was looking back at our previous chat and I wanted to confirm, how many times did the Chiefs play the Jaguars at Arrowhead Stadium?",
+  "ground_truth": "The Chiefs played the Jaguars 12 times at Arrowhead Stadium.",
+  "generated_answer": "The Chiefs played the Jaguars **12 times at Arrowhead Stadium** in Kansas City.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-05-28T04:27:04.000 Sun User wants to know how many times the Kansas City Chiefs have played the Jacksonville Jaguars.",
+    "2023-05-28T04:27:05.000 Sun User wants to know how many of the Chiefs-Jaguars games were played in Kansas.",
+    "2023-05-28T04:27:06.000 Sun User wants to know how many of the 12 Chiefs-Jaguars games played in Kansas were won by the Chiefs.",
+    "2023-05-21T12:43:04.000 Sun User again stated that they recently received a football signed by Aaron Rodgers.",
+    "2023-05-28T04:27:09.000 Sun User wants historical matchup information for the San Francisco 49ers versus the Dallas Cowboys, with the 49ers as the reference team.",
+    "2023-05-28T04:27:03.000 Sun User wants to focus on historical NFL results.",
+    "2023-05-28T04:27:07.000 Sun User wants the same home-location and historical-results details for the Philadelphia Eagles versus the New York Giants, with the Eagles as the reference team.",
+    "2023-05-21T12:43:00.000 Sun User recently received a football signed by quarterback Aaron Rodgers.",
+    "2023-05-28T04:27:08.000 Sun User wants historical matchup information for the Buffalo Bills versus the Cincinnati Bengals.",
+    "2023-05-21T12:43:04.000 Sun User displays the signed Aaron Rodgers football in a glass case in their man cave.",
+    "2023-05-21T12:43:00.000 Sun User displays the signed Aaron Rodgers football in a glass case in their man cave.",
+    "2023-05-26T18:24:04.000 Fri User bought a pair of concert tickets from Ticketmaster's website about three weeks ago for a show happening the following month.",
+    "2023-05-21T12:43:00.000 Sun User wants advice on protecting and preserving the signed football for many years.",
+    "2023-05-26T21:14:02.000 Fri User attended their cousin's wedding at the Grand Ballroom last weekend.",
+    "2023-05-21T14:13:04.000 Sun User again stated that their Sunday afternoon strength-training session was successful.",
+    "2023-05-21T12:43:05.000 Sun User considers the signed Aaron Rodgers football in its glass case a subject for their first photographs.",
+    "2023-05-29T08:23:00.000 Mon The bulbs began growing while it was still winter, about a month and a half after Christmas.",
+    "2023-05-21T14:13:02.000 Sun User completed a 5-mile run on Saturday morning.",
+    "2023-05-21T12:43:04.000 Sun User is considering photographing the signed football with their new camera.",
+    "2023-05-26T22:42:03.000 Fri User has been experiencing anxiety attacks approximately three to four times per week, especially at night."
+  ],
+  "answer_session_ids": [
+    "answer_sharegpt_i9adwQn_0"
+  ],
+  "time_build_s": 2738.88240981102,
+  "time_retrieve_s": 0.1557936668395996,
+  "time_answer_s": 17.167367935180664,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

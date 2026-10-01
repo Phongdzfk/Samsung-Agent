@@ -1,0 +1,40 @@
+{
+  "question_id": "cf22b7bf",
+  "question_type": "knowledge-update",
+  "question": "How much weight have I lost since I started going to the gym consistently?",
+  "ground_truth": "10 pounds",
+  "generated_answer": "You have lost **10 pounds** since you started going to the gym consistently three months ago.",
+  "judge_verdict": "yes",
+  "correct": 1,
+  "retrieved_memories": [
+    "2023-06-21T05:37:01.000 Wed User has been consistently going to the gym for three months and has lost 10 pounds since starting.",
+    "2023-05-21T12:29:04.000 Sun User lost approximately 5 pounds during the past month and considers this slow but steady progress.",
+    "2023-05-21T12:29:01.000 Sun User lost approximately 5 pounds during the past month.",
+    "2023-05-21T12:29:01.000 Sun User considers their weight loss progress slow but is comfortable with that pace.",
+    "2023-05-21T12:29:01.000 Sun User has been doing a lot of cardio at the gym.",
+    "2023-05-21T12:29:04.000 Sun User feels they have been doing well with their workouts and diet.",
+    "2023-05-21T12:29:01.000 Sun User has been tracking their progress with a fitness app.",
+    "2023-06-21T05:37:01.000 Wed User wants advice on maintaining energy levels during workouts.",
+    "2023-05-21T12:29:00.000 Sun User is concerned about whether completing a 10K by the end of summer is realistic given their current fitness level.",
+    "2023-06-21T05:37:05.000 Wed User wants to make exercise a sustainable part of their daily routine.",
+    "2023-05-19T23:57:02.000 Fri User is considering doing lower-back exercises once a day or multiple times throughout the day.",
+    "2023-05-21T12:29:02.000 Sun User is sharing workout progress and appreciates having someone to report their progress to.",
+    "2023-06-21T05:37:04.000 Wed User has been doing yoga and Pilates but wants to become more consistent with them.",
+    "2023-05-21T12:29:00.000 Sun User is planning their workout routine for next month.",
+    "2023-05-21T12:29:04.000 Sun User hopes to continue their current progress and reach their goal weight by the end of summer.",
+    "2023-05-21T12:29:01.000 Sun User burns an average of 2,500 calories per week, which is higher than their goal.",
+    "2023-06-17T11:00:02.000 Sat User plans to start with one spinning class per week to see how their body adapts.",
+    "2023-05-19T23:57:02.000 Fri User does not consider themselves exactly a fitness enthusiast.",
+    "2023-06-17T11:00:03.000 Sat User plans to incorporate core exercises into their Sunday Pilates routine.",
+    "2023-06-17T11:00:03.000 Sat User is considering adding planks and crunches to their daily routine."
+  ],
+  "answer_session_ids": [
+    "answer_ae3a122b_1",
+    "answer_ae3a122b_2"
+  ],
+  "time_build_s": 2032.591805934906,
+  "time_retrieve_s": 0.03944587707519531,
+  "time_answer_s": 4.616113901138306,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}

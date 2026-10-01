@@ -1,0 +1,39 @@
+{
+  "question_id": "778164c6",
+  "question_type": "single-session-assistant",
+  "question": "I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Jamaican dish you recommended I try with snapper that has fruit in it?",
+  "ground_truth": "Grilled Snapper with Mango Salsa",
+  "generated_answer": "The dish was **Escovitch Fish**—a Jamaican snapper dish typically topped with a tangy pickled mixture that can include vegetables and fruit-like flavors.",
+  "judge_verdict": "no",
+  "correct": 0,
+  "retrieved_memories": [
+    "2023-05-30T15:28:01.000 Tue User is interested in Caribbean dishes that feature snapper.",
+    "2023-05-30T15:28:04.000 Tue User is interested in other favorite dishes from Caribbean cuisine.",
+    "2023-05-30T15:28:05.000 Tue User is interested in trying other Jamaican dishes.",
+    "2023-05-30T15:28:02.000 Tue User is enthusiastic about Caribbean dishes and wants a recommendation for which one to try first.",
+    "2023-05-30T15:28:00.000 Tue User is interested in fish commonly used in Caribbean dishes.",
+    "2023-05-30T15:28:04.000 Tue User plans to look for Jamaican restaurants in their local area.",
+    "2023-05-24T05:18:03.000 Wed User intends to try the recommended Sochi dishes.",
+    "2023-05-30T15:28:01.000 Tue User likes snapper.",
+    "2023-05-24T05:18:03.000 Wed User is looking for a good place to eat seafood in Sochi.",
+    "2023-05-20T12:23:05.000 Sat User is considering bringing sandwiches and fruit to the music festival.",
+    "2023-05-24T05:18:02.000 Wed User is interested in learning about local cuisine in Sochi.",
+    "2023-05-24T05:18:02.000 Wed User is seeking recommendations for popular dishes and restaurants to try in Sochi.",
+    "2023-05-25T13:44:03.000 Thu User is interested in food pairings for different types of beer.",
+    "2023-05-30T15:28:03.000 Tue User intends to try Escovitch Fish.",
+    "2023-05-24T05:18:04.000 Wed User intends to visit restaurants and try dishes in Sochi.",
+    "2023-05-20T12:23:05.000 Sat User wants advice on keeping sandwiches and fruit fresh and protected from the sun.",
+    "2023-05-30T15:28:05.000 Tue User has tried Jerk Chicken before and loved it.",
+    "2023-05-25T20:10:05.000 Thu User considers the card message sweet, playful, and appropriate for the \"Princess\" theme.",
+    "2023-05-26T12:13:00.000 Fri User sold 12 jars of strawberry jam at the Downtown Farmers Market on Saturday, March 18.",
+    "2023-05-26T12:13:00.000 Fri User sells homemade jams and candles."
+  ],
+  "answer_session_ids": [
+    "answer_ultrachat_399000"
+  ],
+  "time_build_s": 2259.955729007721,
+  "time_retrieve_s": 0.20575594902038574,
+  "time_answer_s": 2.9241905212402344,
+  "llm_model": "cx/gpt-5.6-luna",
+  "judge_model": "cx/gpt-5.6-terra"
+}
