@@ -11,3 +11,5 @@ report/node_modules/
 report/*.pdf
 report/slide-*.png
 results/*/qdrant/
+report/merged/
+report/part-lightmem-wide.pptx

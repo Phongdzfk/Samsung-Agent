@@ -125,6 +125,15 @@ def parse_report(path):
 
 
 apex_report = parse_report(B / "results/apexmem-full-dev/report.md")
+_wrong_ids = [q for q in ids if not a_ok[q]]
+_right_ids = [q for q in ids if a_ok[q]]
+apex_wrong_detail = {
+    "n": len(_wrong_ids),
+    "by_type": {t: sum(1 for q in _wrong_ids if qt[q] == t) for t in ORDER if any(qt[q] == t for q in _wrong_ids)},
+    "with_fact_from_answer_turn": sum(1 for q in _wrong_ids if (apex[q].get("facts_in_answer_turns") or 0) > 0),
+    "tool_calls_wrong": st.mean(apex[q].get("n_tool_calls", 0) for q in _wrong_ids),
+    "tool_calls_right": st.mean(apex[q].get("n_tool_calls", 0) for q in _right_ids),
+}
 macro = lambda key: sum(v[key] for v in by.values()) / len(by)  # noqa: E731
 out = {
     "n": n,
@@ -140,6 +149,7 @@ out = {
     "apex_report": apex_report,
     "lm_cost": {"build_min_p95": sorted(lm_build_min)[int(0.95 * (len(lm_build_min) - 1))], "build_min_median": st.median(lm_build_min), "build_min_mean": st.mean(lm_build_min),
                 "build_min_max": max(lm_build_min), "answer_s_median": st.median(lm_ans_s)},
+    "apex_wrong_detail": apex_wrong_detail,
     "diff_apex_right": diff_apex_right,
     "diff_lm_right": diff_lm_right,
     "both_wrong": both_wrong,

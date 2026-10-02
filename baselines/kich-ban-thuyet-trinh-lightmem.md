@@ -1,4 +1,4 @@
-# KỊCH BẢN THUYẾT TRÌNH — BASELINE LIGHTMEM VÀ SO SÁNH VỚI APEX-MEM (12 slide, khoảng 11–12 phút)
+# KỊCH BẢN THUYẾT TRÌNH — BASELINE LIGHTMEM VÀ SO SÁNH VỚI APEX-MEM (14 slide, khoảng 13–14 phút)
 
 > Mọi số trong kịch bản lấy từ 150/150 câu tập dev của cả hai hệ. Nếu chạy lại thì phải sửa kịch bản
 > cho khớp slide. Dấu **↳** là gợi ý thao tác: chỉ vào đâu trên slide.
@@ -7,7 +7,7 @@
 
 ## Slide 1 · Tiêu đề (0:15)
 
-Phần này em báo cáo đường cơ sở LightMem và phép so sánh đầu tiên với hệ thống của nhóm, APEX-MEM.
+*(Khi ghép vào deck tuần 4, đây là slide mở đầu "Phần 2".)* Phần này em báo cáo đường cơ sở LightMem và phép so sánh đầu tiên với hệ thống của nhóm, APEX-MEM.
 Cả hai hệ đã chạy đủ một trăm năm mươi câu của tập dev.
 
 ---
@@ -26,7 +26,27 @@ và cách lưu ký ức khác hẳn hướng đồ thị của APEX-MEM nên đ�
 
 ---
 
-## Slide 3 · Thiết lập (1:15)
+## Slide 3 · Hai hệ khác nhau ở đâu (1:15)
+
+Trước khi vào kết quả, em xin nói hai hệ khác nhau ở đâu, vì nó giải thích rất nhiều thứ phía sau.
+
+↳ *Chỉ hai hàng màu: "Lượt được lưu" và "Biết câu hỏi lúc dựng".* Đây là hai khác biệt lớn nhất.
+Thứ nhất, APEX-MEM lưu cả lượt trợ lý, còn LightMem chỉ lưu lượt người dùng. Thứ hai, APEX-MEM lọc phiên
+theo câu hỏi: chỉ còn khoảng tám trên bốn mươi bảy phiên được đem đi dựng, giống bài báo gốc. LightMem thì
+dựng từ toàn bộ kho hội thoại, không biết trước câu hỏi.
+
+Em xin nhấn mạnh: cả hai là khác biệt về **giao thức**, không phải về đồ thị. Cả hai đều có thể ảnh
+hưởng kết quả, và phép so sánh hiện tại chưa tách được từng yếu tố.
+
+↳ *Lướt các hàng còn lại.* Dạng ký ức: LightMem lưu đoạn tóm tắt ngắn, APEX-MEM lưu đồ thị có thời gian
+và bằng chứng. Khi thông tin đổi: APEX-MEM chỉ ghi thêm và giữ mọi phiên bản; LightMem có bước gộp ký ức
+offline nhưng là script riêng, không chạy trong lần đo này. Truy xuất: LightMem tìm vector một lần, lấy hai
+mươi ký ức; APEX-MEM dùng agent gọi tối đa hai mươi bước. Số lời gọi LLM khi dựng: APEX-MEM hai mươi hai
+phẩy bốn mỗi câu, LightMem chưa ghi.
+
+---
+
+## Slide 4 · Thiết lập (1:15)
 
 ↳ *Chỉ bảng.* Dữ liệu là LongMemEval-S, năm trăm câu, mỗi câu một kho hội thoại riêng khoảng một
 trăm mười lăm nghìn token. Nhóm chia một trăm năm mươi câu dev và ba trăm năm mươi câu test, phân
@@ -42,7 +62,7 @@ dùng, APEX-MEM lưu cả lượt trợ lý. Em sẽ quay lại điểm này.
 
 ---
 
-## Slide 4 · So sánh trực tiếp (1:30)
+## Slide 5 · So sánh trực tiếp (1:30)
 
 Đây là slide chính.
 
@@ -59,7 +79,7 @@ chỉ có bốn câu nên chưa nói được gì về năng lực biết từ c
 
 ---
 
-## Slide 5 · Chênh lệch đến từ đâu (1:45)
+## Slide 6 · Chênh lệch đến từ đâu (1:45)
 
 ↳ *Chỉ bốn ô bên trái.* Nhìn theo từng cặp câu hỏi: một trăm linh bảy câu cả hai cùng đúng, tám câu
 cả hai cùng sai. APEX-MEM đúng riêng hai mươi câu, LightMem đúng riêng mười lăm câu. Kiểm định
@@ -77,7 +97,28 @@ loại này với cấu hình lưu cả lượt trợ lý. Đó là việc đầ
 
 ---
 
-## Slide 6 · Kết quả riêng của LightMem (0:50)
+## Slide 7 · APEX-MEM sai ở đâu (1:00)
+
+Hai mươi ba câu APEX-MEM sai trong một trăm năm mươi.
+
+↳ *Chỉ danh sách bên trái.* Đa phiên tám câu, suy luận thời gian sáu câu, rồi cập nhật kiến thức và đơn
+phiên trợ lý mỗi loại ba câu.
+
+↳ *Chỉ ba ô phía trên bên phải.* Theo phân loại tự động của hệ: hai mươi mốt câu nhãn reasoning, một câu
+không biết từ chối, một câu bộ lọc loại mất phiên chứa bằng chứng.
+
+Cả hai mươi ba câu đều đã có ít nhất một fact từ đúng lượt chứa đáp án. Giống LightMem: lỗi không nằm ở
+khâu tìm kiếm. Nhưng em xin nói rõ giới hạn: nhãn reasoning chỉ kiểm tra có ít nhất một fact từ phiên bằng
+chứng, nên có thể gồm cả trường hợp trích xuất thiếu đúng fact then chốt. Chính báo cáo tuần bốn của nhóm
+đã nêu hạn chế này.
+
+↳ *Chỉ bảng.* Có tám câu cả hai hệ cùng sai, ví dụ câu hỏi "hai tháng trước" mà hệ chọn nhầm lần gần nhất,
+và câu đếm số đồng xu mà hệ trả lời ba mươi bảy thay vì ba mươi tám. Câu sai dùng trung bình bốn phẩy hai
+lần gọi công cụ, câu đúng ba phẩy bốn lần: agent phải vất vả hơn ở câu khó.
+
+---
+
+## Slide 8 · Kết quả riêng của LightMem (0:50)
 
 ↳ *Chỉ biểu đồ.* Trung bình theo loại bảy mươi tám phẩy chín phần trăm. Năm loại đạt từ bảy mươi
 tám đến một trăm phần trăm, riêng lượt trợ lý bốn mươi mốt phần trăm.
@@ -86,7 +127,7 @@ tám đến một trăm phần trăm, riêng lượt trợ lý bốn mươi mố
 
 ---
 
-## Slide 7 · Phân tích lỗi của LightMem (1:00)
+## Slide 9 · Phân tích lỗi của LightMem (1:00)
 
 Hai mươi tám câu sai, tập trung vào hai kiểu.
 
@@ -100,7 +141,7 @@ Khác biệt quan trọng: kiểu một là lỗi cấu hình, sửa được. K
 
 ---
 
-## Slide 8 · Lỗi không nằm ở khâu tìm kiếm (1:30)
+## Slide 10 · Lỗi không nằm ở khâu tìm kiếm (1:30)
 
 Slide này trả lời câu hỏi kế hoạch tuần ba đặt ra: sai là do không tìm thấy bằng chứng, hay tìm thấy
 rồi mà vẫn suy luận sai?
@@ -121,7 +162,7 @@ tháng ba và mười lăm tháng tư, nhưng tính ra mười tám ngày thay v
 
 ---
 
-## Slide 9 · Model chấm có đáng tin không (1:00)
+## Slide 11 · Model chấm có đáng tin không (1:00)
 
 Mọi con số đều do model chấm quyết định, nên nhóm kiểm tra bằng tay kết quả của LightMem.
 
@@ -137,7 +178,7 @@ tương tự. Em xin nói rõ là mới soi kết quả của LightMem.
 
 ---
 
-## Slide 10 · Chi phí và thời gian (1:00)
+## Slide 12 · Chi phí và thời gian (1:00)
 
 ↳ *Chỉ bảng.* APEX-MEM dựng bộ nhớ trung vị bảy phút, LightMem ba mươi ba phút. Nhưng em xin **không
 dùng số này để kết luận hệ nào nhanh hơn**, vì hai bên chạy với số luồng khác nhau và đều bị hạn mức
@@ -152,7 +193,7 @@ luna và đúng một trăm năm mươi lời gọi chấm, không có model nà
 
 ---
 
-## Slide 11 · Sự cố kỹ thuật (0:50)
+## Slide 13 · Sự cố kỹ thuật (0:50)
 
 Em ghi lại để tuần sau không vấp lại. Đáng kể nhất là dòng thứ năm: các tài khoản đều là gói miễn phí,
 chạy tám luồng thì sáu tài khoản hết hạn mức gần như cùng lúc, rồi hai tài khoản bị thu hồi token.
@@ -160,7 +201,7 @@ Nguyên nhân thu hồi nhóm chưa xác định được. Đây là rủi ro ch
 
 ---
 
-## Slide 12 · Tổng kết (1:00)
+## Slide 14 · Tổng kết (1:00)
 
 ↳ *Chỉ cột trái.* Tóm lại: chưa có bằng chứng APEX-MEM hơn LightMem. Tám mươi tư phẩy bảy so với tám
 mươi mốt phẩy ba, p bằng không phẩy năm. Chênh lệch nằm ở loại lượt trợ lý, và nguyên nhân nghi là
@@ -215,3 +256,8 @@ chín mươi nghìn token để dựng mỗi câu, tám mươi tám phần trăm
 **"Sao 8 tài khoản mà vẫn hết?"**
 Đều là gói miễn phí, hạn mức thấp. Chạy tám luồng song song thì cạn gần như cùng lúc. Nhóm sẽ giảm số
 luồng, và cần quyết định nguồn LLM cho tuần bảy.
+
+**"APEX-MEM lọc phiên theo câu hỏi còn LightMem thì không, vậy có công bằng không?"**
+Giống bài báo gốc của APEX-MEM trên LongMemEval, nhưng đúng là một lợi thế: trợ lý thật không biết trước
+người dùng sẽ hỏi gì. Nhóm đã nêu đây là hạn chế ở báo cáo tuần bốn. Vì vậy phép so sánh hiện tại chưa tách
+được yếu tố này, và nhóm dự định chạy thêm thí nghiệm không lọc phiên trên một số câu.

@@ -7,7 +7,9 @@ const S = JSON.parse(fs.readFileSync(path.join(__dirname, "stats.json"), "utf-8"
 // ket qua soi tay (khong sinh tu dong) — xem ghi chu trong chinh file do
 const MR = JSON.parse(fs.readFileSync(path.join(__dirname, "manual_review.json"), "utf-8"));
 const CP = JSON.parse(fs.readFileSync(path.join(__dirname, "compare.json"), "utf-8"));   // so sanh APEX-MEM vs LightMem
-const OUT = path.join(__dirname, "..", "bao-cao-lightmem-baseline.pptx");
+const PART = !!process.env.PART;      // PART=1: dựng "phần LightMem" khổ rộng để ghép vào deck tuần 4
+const SC = PART ? 13.3333 / 10 : 1;   // deck tuần 4 khổ 13,33x7,5 inch, deck này thiết kế trên 10x5,625
+const OUT = PART ? path.join(__dirname, "part-lightmem-wide.pptx") : path.join(__dirname, "..", "bao-cao-lightmem-baseline.pptx");
 
 const C = { ink: "10243E", teal: "1F6F8B", mint: "5FB49C", amber: "F2A541", red: "C8553D",
   bg: "F7F9FB", card: "FFFFFF", text: "1B2B3A", mute: "5B6B7A", line: "DCE3EA", pale: "E7F0F4" };
@@ -22,7 +24,25 @@ const done = S.n_done, total = S.n_dev;
 const partial = done < total;
 
 const pres = new pptxgen();
-pres.layout = "LAYOUT_16x9";
+pres.layout = PART ? "LAYOUT_WIDE" : "LAYOUT_16x9";
+const _SCALE_KEYS = ["x", "y", "w", "h", "fontSize", "legendFontSize", "dataLabelFontSize", "catAxisLabelFontSize",
+  "valAxisLabelFontSize", "rowH", "paraSpaceAfter", "margin"];
+const _scale = (o) => {
+  if (SC === 1 || !o || typeof o !== "object" || Array.isArray(o)) return o;
+  const r = { ...o };
+  for (const k of _SCALE_KEYS) if (typeof r[k] === "number") r[k] *= SC;
+  if (Array.isArray(r.colW)) r.colW = r.colW.map((v) => v * SC);
+  return r;
+};
+if (SC !== 1) {
+  const _addSlide = pres.addSlide.bind(pres);
+  pres.addSlide = (...a) => {
+    const sl = _addSlide(...a);
+    const wrap = (name, idx) => { const f = sl[name].bind(sl); sl[name] = (...args) => { args[idx] = _scale(args[idx]); return f(...args); }; };
+    wrap("addText", 1); wrap("addShape", 1); wrap("addTable", 1); wrap("addChart", 2); wrap("addImage", 0);
+    return sl;
+  };
+}
 pres.title = "LightMem và APEX-MEM trên LongMemEval-S";
 
 function base(title, kicker, notes) {
@@ -40,10 +60,10 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
 {
   const s = pres.addSlide();
   s.background = { color: C.ink };
-  s.addText("BASELINE LIGHTMEM · SO SÁNH VỚI APEX-MEM", { x: 0.7, y: 1.2, w: 8.6, h: 0.4, fontFace: BF, fontSize: 14, bold: true, color: C.amber, isTextBox: true, margin: 0 });
-  s.addText("LightMem và APEX-MEM trên LongMemEval-S", { x: 0.7, y: 1.65, w: 8.6, h: 1.1, fontFace: HF, fontSize: 34, bold: true, color: "FFFFFF", isTextBox: true, margin: 0 });
-  s.addText("Đường cơ sở LightMem và phép so sánh đầu tiên với hệ của nhóm, trên 150 câu dev", { x: 0.7, y: 2.85, w: 8.6, h: 0.5, fontFace: BF, fontSize: 18, color: "CADCFC", isTextBox: true, margin: 0 });
-  s.addText(`Tuần 3 · ${partial ? `số liệu sơ bộ ${done}/${total} câu dev` : `đủ ${total} câu dev`} · nhóm 2 thành viên · 09/2026`,
+  s.addText(PART ? "PHẦN 2" : "BASELINE LIGHTMEM · SO SÁNH VỚI APEX-MEM", { x: 0.7, y: 1.2, w: 8.6, h: 0.4, fontFace: BF, fontSize: 14, bold: true, color: C.amber, isTextBox: true, margin: 0 });
+  s.addText(PART ? "Baseline LightMem và so sánh với APEX-MEM" : "LightMem và APEX-MEM trên LongMemEval-S", { x: 0.7, y: 1.65, w: 8.6, h: 1.1, fontFace: HF, fontSize: 34, bold: true, color: "FFFFFF", isTextBox: true, margin: 0 });
+  s.addText(PART ? "Kết quả đầy đủ trên 150 câu dev, thay cho kết quả 20 câu ở phần trước. Cả hai hệ cùng model trả lời, cùng model chấm" : "Đường cơ sở LightMem và phép so sánh đầu tiên với hệ của nhóm, trên 150 câu dev", { x: 0.7, y: 2.85, w: 8.6, h: 0.5, fontFace: BF, fontSize: 18, color: "CADCFC", isTextBox: true, margin: 0 });
+  s.addText(`${partial ? `Số liệu sơ bộ ${done}/${total} câu dev` : `Đủ ${total} câu dev`} · nhóm 2 thành viên · 10/2026`,
     { x: 0.7, y: 4.6, w: 8.6, h: 0.35, fontFace: BF, fontSize: 13, color: "8FA7C4", isTextBox: true, margin: 0 });
   s.addNotes("Deck tổng hợp baseline LightMem và so sánh với APEX-MEM. Số liệu sinh tự động từ thư mục kết quả; chạy lại gen_stats.py, compare_apex.py và build_deck.js khi có thêm câu.");
 }
@@ -71,6 +91,32 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
   s.addText([{ text: "Vì sao chọn làm baseline", options: { bold: true, breakLine: true, color: C.ink } },
     { text: "Đã bình duyệt, có mã nguồn mở, chạy được trên LongMemEval. Đối chứng tốt cho hệ dựa trên đồ thị của nhóm.", options: { color: C.text } }],
     { x: 5.3, y: 3.7, w: 4.0, h: 1.2, fontFace: BF, fontSize: 12.5, valign: "top", isTextBox: true, margin: 0 });
+}
+
+// 2b ─ Hai hệ khác nhau ở đâu
+{
+  const s = base("Hai hệ khác nhau ở những điểm nào", "SO SÁNH KIẾN TRÚC",
+    "Hai khác biệt lớn nhất là lượt được lưu và việc biết câu hỏi lúc dựng bộ nhớ. APEX-MEM lưu cả lượt trợ lý và lọc phiên theo câu hỏi, giống bài báo gốc; LightMem dựng từ toàn bộ haystack và chỉ lưu lượt người dùng. Cả hai đều là khác biệt về giao thức chứ không phải về đồ thị.");
+  const hdr = (t) => ({ text: t, options: { bold: true, color: "FFFFFF", fill: { color: C.teal }, align: "center" } });
+  const lab = (t) => ({ text: t, options: { bold: true, color: C.ink } });
+  const hi = (t, col) => ({ text: t, options: { bold: true, color: col } });
+  const rows = [[{ text: "", options: { fill: { color: C.teal } } }, hdr("LightMem"), hdr("APEX-MEM")],
+    [lab("Dạng ký ức"), "Đoạn tóm tắt ngắn: fact kèm metadata, đã nén trước khi lưu",
+      "Đồ thị thuộc tính: thực thể, sự kiện, fact có mốc thời gian và bằng chứng (7 bảng SQLite)"],
+    [lab("Lượt được lưu"), hi("Chỉ lượt người dùng", C.red), hi("Cả lượt người dùng và lượt trợ lý", C.teal)],
+    [lab("Biết câu hỏi lúc dựng"), hi("Không: dựng từ toàn bộ haystack", C.red),
+      hi("Có: lọc còn khoảng 8 trên 47 phiên theo độ liên quan với câu hỏi", C.teal)],
+    [lab("Khi thông tin đổi"), "Mỗi fact lưu riêng; bước gộp ký ức offline là script riêng, không chạy trong lần đo này",
+      "Chỉ ghi thêm, giữ mọi phiên bản; agent chọn bản hợp lệ lúc đọc"],
+    [lab("Cách truy xuất"), "Một lần tìm vector, lấy 20 ký ức gần nhất",
+      "Agent ReAct tối đa 20 bước, 5 công cụ: xem lược đồ, tra thực thể, SQL, tìm lai, tìm thuộc tính"],
+    [lab("Lời gọi LLM khi dựng, mỗi câu"), { text: "chưa ghi", options: { color: C.mute } }, num1(CP.apex_report.build_calls)]];
+  s.addTable(rows, { x: 0.4, y: 1.25, w: 9.1, colW: [2.1, 3.2, 3.8], fontFace: BF, fontSize: 10.5, color: C.text,
+    border: { type: "solid", color: C.line, pt: 0.75 }, valign: "middle", rowH: 0.46 });
+  card(s, 0.4, 4.7, 9.1, 0.65, "FDF3E1");
+  s.addText([{ text: "Hai khác biệt lớn nhất: ", options: { bold: true, color: C.red } },
+    { text: "lượt được lưu và việc biết câu hỏi lúc dựng. Cả hai là khác biệt về giao thức chứ không phải về đồ thị, đều có thể ảnh hưởng kết quả, và phép so sánh hiện tại chưa tách được từng yếu tố.", options: { color: C.text } }],
+    { x: 0.6, y: 4.73, w: 8.7, h: 0.6, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
 }
 
 // 3 ─ Thiết lập
@@ -160,6 +206,45 @@ const card = (s, x, y, w, h, fill) => s.addShape(pres.shapes.RECTANGLE, { x, y, 
   s.addText([{ text: "Chưa kết luận được: ", options: { bold: true, color: C.ink } },
     { text: "giả thuyết là khác biệt cấu hình, không phải đồ thị, tạo ra chênh lệch. Muốn kiểm chứng phải chạy lại LightMem loại này với messages_use = user_assistant.", options: { color: C.text } }],
     { x: 0.6, y: 4.81, w: 8.7, h: 0.52, fontFace: BF, fontSize: 10.5, valign: "middle", isTextBox: true, margin: 0 });
+}
+
+// 5b ─ APEX-MEM sai ở đâu
+{
+  const W = CP.apex_wrong_detail, cls = CP.apex_wrong_class;
+  const s = base(`APEX-MEM sai ${W.n} câu, gần như không do tìm kiếm`, "PHÂN TÍCH LỖI APEX-MEM",
+    `${W.with_fact_from_answer_turn}/${W.n} câu sai đã có ít nhất một fact từ đúng lượt chứa đáp án. Nhãn tự động reasoning chỉ kiểm tra có ít nhất một fact từ phiên bằng chứng nên có thể gồm cả lỗi trích xuất thiếu fact then chốt; chính báo cáo tuần 4 của nhóm đã nêu hạn chế này. Câu sai dùng trung bình ${num1(W.tool_calls_wrong)} lần gọi công cụ, câu đúng ${num1(W.tool_calls_right)}.`);
+  const order = ["multi-session", "temporal-reasoning", "knowledge-update", "single-session-assistant", "single-session-preference", "single-session-user"];
+  card(s, 0.4, 1.3, 2.8, 3.55);
+  s.addText(String(W.n), { x: 0.4, y: 1.4, w: 2.8, h: 0.8, align: "center", fontFace: HF, fontSize: 44, bold: true, color: C.red, isTextBox: true, margin: 0 });
+  s.addText(`câu sai trong ${CP.n} câu`, { x: 0.4, y: 2.2, w: 2.8, h: 0.3, align: "center", fontFace: BF, fontSize: 11.5, color: C.mute, isTextBox: true, margin: 0 });
+  order.filter((t) => W.by_type[t]).forEach((t, i) => {
+    const y = 2.6 + i * 0.37;
+    s.addText(VI[t], { x: 0.6, y, w: 2.0, h: 0.32, fontFace: BF, fontSize: 11, color: C.text, valign: "middle", isTextBox: true, margin: 0 });
+    s.addText(String(W.by_type[t]), { x: 2.6, y, w: 0.45, h: 0.32, align: "right", fontFace: BF, fontSize: 11, bold: true, color: i < 2 ? C.red : C.mute, valign: "middle", isTextBox: true, margin: 0 });
+  });
+
+  const tiles = [[cls.reasoning || 0, "reasoning", C.red], [cls.abstention_fail || 0, "không biết từ chối", C.mute], [cls.filtered_out || 0, "bộ lọc loại mất phiên", C.mute]];
+  tiles.forEach((t, i) => {
+    const x = 3.4 + i * 2.05;
+    card(s, x, 1.3, 1.95, 0.95);
+    s.addText(String(t[0]), { x, y: 1.33, w: 1.95, h: 0.55, align: "center", fontFace: HF, fontSize: 28, bold: true, color: t[2], isTextBox: true, margin: 0 });
+    s.addText(t[1], { x, y: 1.88, w: 1.95, h: 0.3, align: "center", fontFace: BF, fontSize: 10.5, color: C.text, isTextBox: true, margin: 0 });
+  });
+
+  const hdr = (t) => ({ text: t, options: { bold: true, color: "FFFFFF", fill: { color: C.teal } } });
+  const cut = (t, n) => (t.length > n ? t.slice(0, n - 1).trimEnd() + "…" : t);
+  const want = ["temporal-reasoning", "multi-session", "knowledge-update"];
+  const pick = want.map((t) => CP.both_wrong.find((b) => b.type === t)).filter(Boolean);
+  const rowsT = [[hdr("Loại"), hdr("Câu hỏi"), hdr("Đáp án"), hdr("APEX-MEM trả lời")]];
+  pick.forEach((b) => rowsT.push([{ text: VI[b.type], options: { bold: true, color: C.teal } }, cut(b.q, 70), cut(b.gold, 22), cut(b.apex.replace(/\*\*/g, ""), 58)]));
+  s.addText(`Trong ${CP.paired.both_wrong} câu cả hai hệ cùng sai, ví dụ:`, { x: 3.4, y: 2.38, w: 6.1, h: 0.3, fontFace: HF, fontSize: 12.5, bold: true, color: C.ink, isTextBox: true, margin: 0 });
+  s.addTable(rowsT, { x: 3.4, y: 2.72, w: 6.1, colW: [1.2, 2.2, 0.8, 1.9], fontFace: BF, fontSize: 8.5, color: C.text,
+    border: { type: "solid", color: C.line, pt: 0.75 }, valign: "middle", rowH: 0.4 });
+
+  card(s, 0.4, 4.95, 9.1, 0.42, C.pale);
+  s.addText([{ text: "Lưu ý: ", options: { bold: true, color: C.ink } },
+    { text: `${W.with_fact_from_answer_turn}/${W.n} câu sai đã có fact từ đúng lượt chứa đáp án; nhãn reasoning còn gồm cả trích xuất thiếu fact then chốt.`, options: { color: C.text } }],
+    { x: 0.6, y: 4.96, w: 8.7, h: 0.4, fontFace: BF, fontSize: 10, valign: "middle", isTextBox: true, margin: 0 });
 }
 
 // 5 ─ Kết quả

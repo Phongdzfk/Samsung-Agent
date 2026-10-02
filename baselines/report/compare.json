@@ -120,6 +120,20 @@
   "build_min_max": 61.122219224770866,
   "answer_s_median": 3.256873369216919
  },
+ "apex_wrong_detail": {
+  "n": 23,
+  "by_type": {
+   "single-session-user": 1,
+   "single-session-assistant": 3,
+   "single-session-preference": 2,
+   "multi-session": 8,
+   "temporal-reasoning": 6,
+   "knowledge-update": 3
+  },
+  "with_fact_from_answer_turn": 23,
+  "tool_calls_wrong": 4.173913043478261,
+  "tool_calls_right": 3.37007874015748
+ },
  "diff_apex_right": [
   {
    "id": "1b9b7252",

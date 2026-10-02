@@ -105,3 +105,20 @@ Script tự đổi tham số API cho dòng model GPT-5.x (bỏ `temperature`/`to
 
 Prompt chấm và hàm đọc phán quyết lấy **nguyên văn** từ script gốc của LightMem, để điểm số
 so được với bài báo.
+
+## Ghép deck LightMem vào deck tuần 4
+
+`report/merge_decks.py` ghép phần LightMem vào **sau** `Tuan 4/bao-cao-tuan4-apexmem.pptx` thành một
+file mới `Tuan 4/bao-cao-tuan4-tong-hop-apexmem-lightmem.pptx`. Script chỉ đọc hai file gốc, không sửa
+file của ai.
+
+```powershell
+cd report
+$env:PART = "1"; node build_deck.js    # dựng "phần LightMem" khổ rộng 13,33x7,5 (slide đầu thành "Phần 2")
+Remove-Item Env:PART
+python merge_decks.py                  # ghép -> Tuan 4/bao-cao-tuan4-tong-hop-apexmem-lightmem.pptx
+```
+
+Hai deck cùng do pptxgenjs dựng nên cùng bộ khung (một layout, một master); script chép slide, ghi chú
+và biểu đồ sang và đánh lại số thứ tự. Nếu deck tuần 4 đổi sang công cụ khác thì cần kiểm tra lại.
+Kiểu trình bày hai phần khác nhau (deck tuần 4 nền sáng, phần LightMem có slide mở và kết nền xanh đậm).
