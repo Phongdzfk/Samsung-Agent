@@ -87,14 +87,13 @@ def test_run_full_then_ablation_reuses_graph(patched, capsys):
     assert len(graphs) == 3
     mtimes = {p: p.stat().st_mtime_ns for p in graphs}
 
-    # ablation a1 + baseline: không dựng lại đồ thị, không gọi extract
+    # ablation a1: không dựng lại đồ thị, không gọi extract
     runmod.main(["--config", "a1", "--ids-file", str(d / "ids.txt")])
-    runmod.main(["--config", "simple_search", "--ids-file", str(d / "ids.txt")])
     a1 = rows_of(d / "runs" / "a1" / "ids" / "results.jsonl")
     assert all("extract" not in r["usage"]["answer"] for r in a1)
-    ss = rows_of(d / "runs" / "simple_search" / "ids" / "results.jsonl")
-    assert {r["question_id"] for r in ss} == {"q1", "q2", "q3_abs"}
+    assert {r["question_id"] for r in a1} == {"q1", "q2", "q3_abs"}
     assert len(list((d / "graphs").glob("*/*.db"))) == 3
+    assert "simple_search" not in runmod.PRESETS      # chỉ còn baseline K = V
 
     # resume: chạy lại không làm gì thêm
     runmod.main(["--config", "full", "--ids-file", str(d / "ids.txt")])

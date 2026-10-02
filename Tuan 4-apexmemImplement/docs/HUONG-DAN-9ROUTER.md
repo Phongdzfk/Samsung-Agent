@@ -104,7 +104,7 @@ Mỗi câu hỏi LongMemEval-S (giữ 10/~50 phiên):
 
 | Pha | Lời gọi | Ghi chú |
 |---|---|---|
-| Dựng đồ thị | ~10–25 | 1 lời gọi trích xuất / 12 lượt + 0–1 lời gọi giải quyết / đoạn. **Chỉ lần đầu**; các cấu hình sau (a1, a2, simple_search) dùng lại đồ thị |
+| Dựng đồ thị | ~10–25 | 1 lời gọi trích xuất / 12 lượt + 0–1 lời gọi giải quyết / đoạn. **Chỉ lần đầu**; các cấu hình sau (a1, a2, steps*) dùng lại đồ thị; baseline simple_search_kv không cần đồ thị |
 | Trả lời (agent) | ~4–15 | tối đa 20 bước |
 | Chấm | 1 × số lần chấm | |
 

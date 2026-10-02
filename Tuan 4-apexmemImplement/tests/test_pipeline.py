@@ -158,18 +158,11 @@ def test_agent_json_protocol(sysm):
     assert res.answer == "N4" and res.steps[0]["tool"] == "entity_lookup"
 
 
-def test_simple_search_baseline(sysm):
+def test_simple_search_kv_baseline(sysm):
+    from ltm.baselines.simple_search import render_session
+    assert "Extracted facts" not in render_session(sysm, "s2")          # K = V: không đọc fact
     res = simple_search_answer(sysm, "What is my Japanese level now?", "2024-02-01T00:00:00", 2)
     assert "N4" in res.answer and len(res.seen_sessions) == 2   # judge nhận TOÀN BỘ đầu ra
-
-
-def test_simple_search_kv_ignores_facts(sysm):
-    from ltm.baselines.simple_search import render_session
-    assert "Extracted facts" in render_session(sysm, "s2")
-    assert "Extracted facts" not in render_session(sysm, "s2", use_facts=False)
-    res = simple_search_answer(sysm, "What is my Japanese level now?", "2024-02-01T00:00:00", 2,
-                               use_facts=False)
-    assert len(res.seen_sessions) == 2
 
 
 def test_agent_prompt_has_date_anchors_and_rules():

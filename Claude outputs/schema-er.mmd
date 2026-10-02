@@ -1,0 +1,60 @@
+erDiagram
+    turns {
+        INTEGER turn_id PK
+        TEXT session_id
+        INTEGER turn_index
+        TEXT speaker "user | assistant"
+        TEXT text
+        TEXT session_date "ISO 8601"
+    }
+    entities {
+        INTEGER entity_id PK
+        TEXT name
+        TEXT type
+        TEXT role "Speaker | Listener | Agent | Mentioned"
+        TEXT aliases_json
+    }
+    properties {
+        INTEGER property_id PK
+        TEXT name UK "snake_case"
+        TEXT dtype
+    }
+    events {
+        INTEGER event_id PK
+        TEXT type
+        TEXT anchor_datetime "ISO 8601"
+        TEXT location
+        TEXT session_id
+    }
+    event_participants {
+        INTEGER event_id PK, FK
+        INTEGER entity_id PK, FK
+    }
+    facts {
+        INTEGER fact_id PK
+        INTEGER subject_id FK
+        INTEGER property_id FK
+        TEXT value_json
+        TEXT dtype
+        TEXT t_from "hiệu lực từ"
+        TEXT t_to "hiệu lực đến"
+        REAL confidence "0..1"
+        INTEGER event_id FK
+        TEXT created_at
+    }
+    evidence {
+        INTEGER evidence_id PK
+        INTEGER fact_id FK
+        INTEGER event_id FK
+        INTEGER turn_id FK
+        TEXT span
+    }
+
+    entities   ||--o{ facts              : "subject_id"
+    properties ||--o{ facts              : "property_id"
+    events     ||--o{ facts              : "event_id"
+    events     ||--o{ event_participants : "event_id"
+    entities   ||--o{ event_participants : "entity_id"
+    facts      ||--o{ evidence           : "fact_id"
+    events     ||--o{ evidence           : "event_id"
+    turns      ||--o{ evidence           : "turn_id"

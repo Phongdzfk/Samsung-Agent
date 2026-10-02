@@ -19,7 +19,7 @@ llm:
     extract: null
     resolve: null
     agent: null
-    reader: null                         # baseline SimpleSearch
+    reader: null                         # baseline SimpleSearch (K = V)
     judge: cx/gpt-5.6-terra                  # model chấm KHÁC model trả lời
 
 embed:
@@ -58,7 +58,7 @@ agent:
   max_tool_chars: 6000
 
 baseline:
-  top_sessions: 5                        # SimpleSearch: K = V + fact, top-5 phiên
+  top_sessions: 5                        # SimpleSearch: K = V, top-5 phiên
 
 eval:
   dataset_path: data/longmemeval/longmemeval_s_cleaned.json

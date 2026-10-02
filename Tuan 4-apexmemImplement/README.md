@@ -28,7 +28,7 @@ chỉ mục vector = dẫn xuất (tính từ SQLite + cache embedding)      →
 | `ltm/memory/builder.py` | Ghép luồng ghi, ghi nhật ký vết | Hình 1 |
 | `ltm/agent/tools.py` | 5 công cụ | §4, Bảng 3 |
 | `ltm/agent/react.py` | Vòng ReAct (function calling hoặc JSON) | §4 |
-| `ltm/baselines/simple_search.py` | Baseline K = V + fact, top-5 phiên | LongMemEval |
+| `ltm/baselines/simple_search.py` | Baseline SimpleSearch K = V (RAG thường), top-5 phiên | LongMemEval |
 | `ltm/eval/` | nạp dữ liệu, chia dev/test, judge chính thức, chạy, báo cáo, phân loại lỗi | |
 | `ltm/demo/chat.py` | Trợ lý trò chuyện có bộ nhớ thật (nhớ qua các lần mở) | |
 | `ltm/demo/export_html.py` | Xuất kết quả thành 1 file HTML — xem được trên máy không có Python | |
@@ -72,12 +72,11 @@ python -m ltm.eval.run --config full --split dev --n 20 --workers 1 --progress
 # 2. Ablation theo Bảng 3 của bài báo — DÙNG LẠI đồ thị đã dựng, chỉ tốn lời gọi trả lời
 python -m ltm.eval.run --config a1 --split dev --n 20          # SchemaViewer + EntityLookup
 python -m ltm.eval.run --config a2 --split dev --n 20          # + GraphSQL + PropertySearch
-python -m ltm.eval.run --config simple_search --split dev --n 20   # baseline LongMemEval (K = V + fact)
-python -m ltm.eval.run --config simple_search_kv --split dev --n 20 # RAG thường (K = V), không dựng đồ thị
+python -m ltm.eval.run --config simple_search_kv --split dev --n 20 # baseline LongMemEval (K = V), không dựng đồ thị
 python -m ltm.eval.run --config steps10 --split dev --n 20     # giới hạn 10 bước (có steps40)
 
 # 3. Bảng so sánh + file demo HTML
-python -m ltm.eval.report data\runs\full\dev data\runs\a1\dev data\runs\a2\dev data\runs\simple_search\dev
+python -m ltm.eval.report data\runs\full\dev data\runs\a1\dev data\runs\a2\dev data\runs\simple_search_kv\dev
 python -m ltm.demo.export_html data\runs\full\dev data\runs\a1\dev -o demo.html
 ```
 

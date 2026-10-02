@@ -2,11 +2,11 @@
 
     python -m ltm.eval.run --config full --split dev --n 20
     python -m ltm.eval.run --config a1 --split dev          # ablation, dùng lại đồ thị đã dựng
-    python -m ltm.eval.run --config simple_search --split dev
+    python -m ltm.eval.run --config simple_search_kv --split dev   # baseline, không cần đồ thị
     python -m ltm.eval.report data/runs/full/dev data/runs/a1/dev
 
 Mỗi câu hỏi có một file đồ thị riêng data/graphs/<chữ ký dựng>/<qid>.db. Chữ ký dựng gồm mọi
-tham số ảnh hưởng tới đồ thị → các cấu hình trả lời (full, a1, a2, simple_search) dùng CHUNG
+tham số ảnh hưởng tới đồ thị → các cấu hình trả lời (full, a1, a2, steps*) dùng CHUNG
 một đồ thị, chỉ khác cách đọc: so sánh công bằng và không tốn thêm lời gọi dựng.
 Chạy lại lệnh cũ sẽ bỏ qua câu đã có kết quả (resume).
 """
@@ -40,9 +40,9 @@ PRESETS: dict[str, dict] = {
                                       "property_search"]},
     "steps10": {"mode": "agent", "tools": ALL_TOOLS, "max_steps": 10},
     "steps40": {"mode": "agent", "tools": ALL_TOOLS, "max_steps": 40},
-    "simple_search": {"mode": "simple"},
-    # RAG thường, K = V: tìm phiên chỉ bằng lượt gốc, KHÔNG dùng fact → không cần dựng đồ thị
-    "simple_search_kv": {"mode": "simple", "use_facts": False, "needs_graph": False},
+    # Baseline SimpleSearch của LongMemEval, K = V: tìm phiên bằng lượt gốc, KHÔNG dùng fact
+    # → không cần dựng đồ thị
+    "simple_search_kv": {"mode": "simple", "needs_graph": False},
 }
 # Tăng khi đổi prompt trích xuất / giải quyết: chữ ký dựng đổi → đồ thị cũ không bị dùng nhầm.
 BUILD_VERSION = 2
@@ -181,8 +181,7 @@ def process_case(case: EvalCase, cfg: Cfg, preset: dict, llm: BaseLLM, embedder:
         ans_llm = ScopedLLM(llm)
         if preset["mode"] == "simple":
             res = simple_search_answer(sysm, case.question, case.question_date,
-                                       cfg.baseline.top_sessions, llm=ans_llm,
-                                       use_facts=preset.get("use_facts", True))
+                                       cfg.baseline.top_sessions, llm=ans_llm)
         else:
             res = sysm.answer(case.question, case.question_date, tools=preset["tools"],
                               max_steps=preset.get("max_steps"), llm=ans_llm)
@@ -204,7 +203,7 @@ def process_case(case: EvalCase, cfg: Cfg, preset: dict, llm: BaseLLM, embedder:
             "facts_in_answer_sessions": facts_in_sessions(sysm, case.answer_session_ids),
             "n_answer_turns": len(answer_turn_keys(case)),
             "facts_in_answer_turns": facts_in_turns(sysm, answer_turn_keys(case)),
-            "uses_facts": preset.get("use_facts", True) and preset.get("needs_graph", True),
+            "uses_facts": preset.get("needs_graph", True),
             "answer_ms": round(res.ms), "judge_ms": round(judge_ms),
             "usage": {"answer": ans_llm.meter.snapshot(), "judge": judge_llm.meter.snapshot()},
         })
